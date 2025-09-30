@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:butter"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:alfredo_sauce"
+    }
+  ]
+}

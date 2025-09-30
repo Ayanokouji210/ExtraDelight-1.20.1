@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:wild_soybean_item"
+    }
+  ],
+  "result": [
+    {
+      "item": "extradelight:soybean_pod"
+    },
+    {
+      "chance": 0.5,
+      "count": 2,
+      "item": "minecraft:yellow_dye"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

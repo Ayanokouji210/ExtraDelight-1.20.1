@@ -1,0 +1,39 @@
+{
+  "parent": "extradelight:vat",
+  "criteria": {
+    "pickle": {
+      "conditions": {
+        "items": [
+          {
+            "count": {
+              "min": 2
+            },
+            "tag": "forge:foods/pickled"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.pickle.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "extradelight:gherkin_item"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.pickle.name"
+    }
+  },
+  "requirements": [
+    [
+      "pickle"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

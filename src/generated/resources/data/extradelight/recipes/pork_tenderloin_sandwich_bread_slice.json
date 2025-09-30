@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "forge:bread/sliced"
+    },
+    "c": [
+      {
+        "tag": "forge:condiments"
+      },
+      {
+        "tag": "forge:gravy"
+      }
+    ],
+    "m": {
+      "item": "extradelight:pork_tenderloin"
+    }
+  },
+  "pattern": [
+    " b ",
+    "cm ",
+    " b "
+  ],
+  "result": {
+    "item": "extradelight:pork_tenderloin_sandwich"
+  },
+  "show_notification": true
+}

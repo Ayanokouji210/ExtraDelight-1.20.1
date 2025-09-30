@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:smoking/roasted_peanuts_smoke"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "roasted_peanuts_smoking": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:roasted_peanuts"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "roasted_peanuts_smoking",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:smoking/roasted_peanuts_smoke"
+    ]
+  },
+  "sends_telemetry_event": false
+}

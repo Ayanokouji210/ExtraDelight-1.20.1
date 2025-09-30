@@ -1,0 +1,28 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "minecraft:baked_potato"
+    },
+    {
+      "item": "minecraft:baked_potato"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:mayo_fluid",
+      "nbt": {}
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:potato_salad"
+    }
+  ]
+}

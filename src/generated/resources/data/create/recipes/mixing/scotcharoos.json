@@ -1,0 +1,29 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "forge:puffed_rice"
+    },
+    {
+      "tag": "forge:marshmallow"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:butterscotch"
+    },
+    {
+      "tag": "forge:liquid_chocolate"
+    },
+    {
+      "tag": "forge:nut_butter"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:scotcharoo_block"
+    }
+  ]
+}

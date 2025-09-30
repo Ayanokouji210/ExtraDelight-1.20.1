@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:garlic"
+    }
+  ],
+  "result": [
+    {
+      "count": 3,
+      "item": "extradelight:garlic_clove"
+    },
+    {
+      "chance": 0.75,
+      "item": "extradelight:garlic_clove"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

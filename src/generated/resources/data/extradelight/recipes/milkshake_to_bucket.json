@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:milkshake"
+    },
+    {
+      "item": "extradelight:milkshake"
+    },
+    {
+      "item": "extradelight:milkshake"
+    },
+    {
+      "item": "extradelight:milkshake"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "item": "extradelight:milkshake_fluid_bucket"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:jam_from_bucket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "jam": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:jam"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "jam",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:jam_from_bucket"
+    ]
+  },
+  "sends_telemetry_event": false
+}

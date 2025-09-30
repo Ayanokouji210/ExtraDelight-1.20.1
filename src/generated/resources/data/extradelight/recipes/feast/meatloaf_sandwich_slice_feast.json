@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "tag": "forge:bread/sliced"
+  },
+  "out": {
+    "item": "extradelight:meatloaf_feast"
+  },
+  "result": {
+    "item": "extradelight:meatloaf_sandwich"
+  }
+}

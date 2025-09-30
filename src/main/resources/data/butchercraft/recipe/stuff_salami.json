@@ -1,0 +1,21 @@
+{
+	"neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "butchercraft"
+    }
+  ],
+  "type": "butchercraft:grinder",
+  "attachment": {
+    "item": "butchercraft:extruder_tip"
+  },
+  "grinds": 16,
+  "ingredient": {
+    "tag": "c:salami_mix"
+  },
+  "ingredientCount": 8,
+  "result": {
+    "count": 4,
+    "id": "extradelight:unripe_salami_item"
+  }
+}

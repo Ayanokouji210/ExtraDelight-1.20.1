@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:warped_food_display"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "warped_food_display": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:warped_slab"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "warped_food_display",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:warped_food_display"
+    ]
+  },
+  "sends_telemetry_event": false
+}

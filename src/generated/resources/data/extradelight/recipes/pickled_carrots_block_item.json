@@ -1,0 +1,38 @@
+{
+  "type": "extradelight:vat",
+  "ingredients": [
+    {
+      "tag": "forge:crops/carrot"
+    },
+    {
+      "tag": "forge:crops/carrot"
+    },
+    {
+      "tag": "forge:crops/carrot"
+    },
+    {
+      "tag": "forge:crops/carrot"
+    }
+  ],
+  "result": {
+    "item": "extradelight:pickled_carrots_block_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": [],
+      "lid": true,
+      "time": 168000
+    },
+    {
+      "ingredient": {
+        "tag": "forge:salt"
+      },
+      "lid": true,
+      "time": 72000
+    }
+  ],
+  "stages": 2,
+  "usedItem": {
+    "item": "minecraft:glass_bottle"
+  }
+}

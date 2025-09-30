@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:marshmallow_from_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "marshmallow": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:marshmallow_block"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "marshmallow",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:marshmallow_from_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}

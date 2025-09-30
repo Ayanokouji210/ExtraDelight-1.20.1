@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/nut_butter_milkshake"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "nut_butter_milkshake": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:nut_butter_milkshake"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "nut_butter_milkshake"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/nut_butter_milkshake"
+    ]
+  },
+  "sends_telemetry_event": true
+}

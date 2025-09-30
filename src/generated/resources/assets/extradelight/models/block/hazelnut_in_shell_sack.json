@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "extradelight:block/bags/pink_bag_bottom",
+    "east": "extradelight:block/bags/pink_bag_side",
+    "north": "extradelight:block/bags/pink_bag_side_tied",
+    "particle": "extradelight:block/hazelnut_in_shell_bag_top",
+    "south": "extradelight:block/bags/pink_bag_side",
+    "up": "extradelight:block/hazelnut_in_shell_bag_top",
+    "west": "extradelight:block/bags/pink_bag_side"
+  }
+}

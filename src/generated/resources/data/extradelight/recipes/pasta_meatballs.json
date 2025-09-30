@@ -1,0 +1,22 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
+  "ingredients": [
+    {
+      "item": "farmersdelight:tomato_sauce"
+    },
+    {
+      "item": "extradelight:cooked_pasta"
+    },
+    {
+      "item": "farmersdelight:beef_patty"
+    }
+  ],
+  "result": {
+    "item": "farmersdelight:pasta_with_meatballs"
+  },
+  "stirs": 2,
+  "usedItem": {
+    "item": "minecraft:bowl"
+  }
+}

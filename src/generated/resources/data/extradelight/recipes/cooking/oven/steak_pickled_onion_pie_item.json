@@ -1,0 +1,29 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:pie_dish"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:beef/cubed/raw"
+    },
+    {
+      "tag": "forge:foods/pickled/vegetables/onion"
+    },
+    {
+      "tag": "forge:gravy"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "item": "farmersdelight:pie_crust"
+    }
+  ],
+  "result": {
+    "item": "extradelight:steak_pickled_onion_pie_item"
+  }
+}

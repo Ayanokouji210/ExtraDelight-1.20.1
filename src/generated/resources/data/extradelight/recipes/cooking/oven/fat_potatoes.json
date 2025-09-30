@@ -1,0 +1,30 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:square_pan"
+  },
+  "cookingtime": 400,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "tag": "butchercraft:fat"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelight:fat_potatoes"
+  }
+}

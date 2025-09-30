@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "out": {
+    "item": "extradelight:monkey_bread_feast"
+  },
+  "result": {
+    "item": "extradelight:monkey_bread"
+  }
+}

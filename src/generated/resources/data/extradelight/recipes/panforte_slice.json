@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": {
+      "item": "extradelight:panforte_slice"
+    }
+  },
+  "pattern": [
+    "ff ",
+    "ff "
+  ],
+  "result": {
+    "item": "extradelight:panforte"
+  },
+  "show_notification": true
+}

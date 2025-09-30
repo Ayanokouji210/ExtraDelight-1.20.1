@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/nougat"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "nougat": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:nougat"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "nougat"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/nougat"
+    ]
+  },
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "farmersdelight:jungle_cabinet"
+    },
+    {
+      "item": "extradelight:tap"
+    }
+  ],
+  "result": {
+    "item": "extradelight:jungle_sink"
+  }
+}

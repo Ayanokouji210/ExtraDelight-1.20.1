@@ -1,0 +1,38 @@
+{
+  "parent": "extradelight:vat",
+  "criteria": {
+    "lid": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lid"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.lid.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "extradelight:lid"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.lid.name"
+    }
+  },
+  "requirements": [
+    [
+      "lid"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

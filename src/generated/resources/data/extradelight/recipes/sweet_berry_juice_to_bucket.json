@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:sweet_berry_juice"
+    },
+    {
+      "item": "extradelight:sweet_berry_juice"
+    },
+    {
+      "item": "extradelight:sweet_berry_juice"
+    },
+    {
+      "item": "extradelight:sweet_berry_juice"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "item": "extradelight:sweet_berry_fluid_bucket"
+  }
+}

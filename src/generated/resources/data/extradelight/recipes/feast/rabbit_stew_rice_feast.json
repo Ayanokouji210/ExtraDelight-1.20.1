@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "farmersdelight:cooked_rice"
+  },
+  "out": {
+    "item": "extradelight:rabbit_stew_feast"
+  },
+  "result": {
+    "item": "extradelight:rabbit_stew_rice"
+  }
+}

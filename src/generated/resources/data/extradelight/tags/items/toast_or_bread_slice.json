@@ -1,0 +1,10 @@
+{
+  "values": [
+    "#forge:bread/sliced",
+    "#forge:toast",
+    {
+      "id": "#c:bread_slices",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:tea_to_bucket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "tea": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:tea"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "tea",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:tea_to_bucket"
+    ]
+  },
+  "sends_telemetry_event": false
+}

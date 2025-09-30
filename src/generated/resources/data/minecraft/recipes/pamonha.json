@@ -1,0 +1,24 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:seeds/corn"
+    },
+    {
+      "tag": "forge:seeds/corn"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "item": "extradelight:corn_husk"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 2,
+    "item": "extradelight:pamonha"
+  }
+}

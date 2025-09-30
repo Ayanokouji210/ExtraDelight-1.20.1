@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:white_chocolate_bar"
+    },
+    {
+      "item": "extradelight:white_chocolate_bar"
+    },
+    {
+      "item": "extradelight:white_chocolate_bar"
+    },
+    {
+      "item": "extradelight:white_chocolate_bar"
+    },
+    {
+      "item": "extradelight:white_chocolate_bar"
+    },
+    {
+      "item": "extradelight:white_chocolate_bar"
+    },
+    {
+      "item": "extradelight:white_chocolate_bar"
+    },
+    {
+      "item": "extradelight:white_chocolate_bar"
+    },
+    {
+      "item": "extradelight:white_chocolate_bar"
+    }
+  ],
+  "result": {
+    "item": "extradelight:white_chocolate_block"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "extradelight:serving_pot"
+  },
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "tag": "extradelight:broth"
+    },
+    {
+      "tag": "forge:cooked_chicken"
+    },
+    {
+      "tag": "extradelight:processed/chili"
+    },
+    {
+      "tag": "extradelight:processed/vegetable"
+    },
+    {
+      "tag": "extradelight:processed/vegetable"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "extradelight:white_chili_feast"
+  }
+}

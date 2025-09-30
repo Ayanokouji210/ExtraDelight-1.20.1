@@ -1,0 +1,19 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
+  "ingredients": [
+    {
+      "tag": "forge:alfredo_sauce"
+    },
+    {
+      "item": "extradelight:cooked_pasta"
+    }
+  ],
+  "result": {
+    "item": "extradelight:pasta_alfredo"
+  },
+  "stirs": 2,
+  "usedItem": {
+    "item": "minecraft:bowl"
+  }
+}

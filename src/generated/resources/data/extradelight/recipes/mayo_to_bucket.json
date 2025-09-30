@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:mayo_jar_item"
+    },
+    {
+      "item": "extradelight:mayo_jar_item"
+    },
+    {
+      "item": "extradelight:mayo_jar_item"
+    },
+    {
+      "item": "extradelight:mayo_jar_item"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "item": "extradelight:mayo_fluid_bucket"
+  }
+}

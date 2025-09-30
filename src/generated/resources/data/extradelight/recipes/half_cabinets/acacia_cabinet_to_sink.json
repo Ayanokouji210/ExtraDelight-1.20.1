@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "farmersdelight:acacia_cabinet"
+    },
+    {
+      "item": "extradelight:tap"
+    }
+  ],
+  "result": {
+    "item": "extradelight:acacia_sink"
+  }
+}

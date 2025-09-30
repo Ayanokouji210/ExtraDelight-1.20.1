@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "forge:block/milk_chocolate"
+    }
+  },
+  "pattern": [
+    "bb",
+    "bb",
+    "bb"
+  ],
+  "result": {
+    "count": 3,
+    "item": "extradelight:milk_chocolate_door"
+  },
+  "show_notification": true
+}

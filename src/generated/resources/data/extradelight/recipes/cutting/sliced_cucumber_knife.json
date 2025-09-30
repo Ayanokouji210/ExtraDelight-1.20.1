@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:cucumber"
+    }
+  ],
+  "result": [
+    {
+      "count": 3,
+      "item": "extradelight:sliced_cucumber_item"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

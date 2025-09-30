@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:fluid_type.minecraft.milk"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:fluid_type.minecraft.milk",
+      "minecraft:fluid_type.minecraft.milk"
+    ]
+  },
+  "sends_telemetry_event": false
+}

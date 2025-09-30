@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "k": {
+      "tag": "forge:tools/knives"
+    },
+    "w": {
+      "item": "extradelight:fruit_slab"
+    }
+  },
+  "pattern": [
+    "wkw"
+  ],
+  "result": {
+    "item": "extradelight:fruit_knife_block"
+  },
+  "show_notification": true
+}

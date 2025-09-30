@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:foods/cookie"
+    },
+    {
+      "item": "extradelight:chocolate_custard"
+    },
+    {
+      "tag": "forge:gummies"
+    }
+  ],
+  "result": {
+    "item": "extradelight:dirt_cake"
+  }
+}

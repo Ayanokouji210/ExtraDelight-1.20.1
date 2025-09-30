@@ -1,0 +1,19 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:whipped_cream_fluid",
+      "nbt": {}
+    }
+  ],
+  "ingredients": [],
+  "result": {
+    "item": "extradelight:butter"
+  },
+  "stirs": 8,
+  "usedItem": {
+    "count": 0,
+    "item": "minecraft:air"
+  }
+}

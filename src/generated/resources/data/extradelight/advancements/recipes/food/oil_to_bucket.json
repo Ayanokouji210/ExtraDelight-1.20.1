@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:oil_to_bucket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "oil": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:cooking_oil"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "oil",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:oil_to_bucket"
+    ]
+  },
+  "sends_telemetry_event": false
+}

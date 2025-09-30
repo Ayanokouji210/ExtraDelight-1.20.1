@@ -1,0 +1,16 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "forge:cookie_dough/sugar"
+    },
+    {
+      "tag": "forge:chocolate/chips"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:chocolate_chip_cookie_dough"
+    }
+  ]
+}

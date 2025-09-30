@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 400,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:yeast"
+    },
+    {
+      "item": "extradelight:yeast"
+    },
+    {
+      "item": "extradelight:yeast"
+    },
+    {
+      "tag": "forge:salt"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "extradelight:yeast_spread"
+  }
+}

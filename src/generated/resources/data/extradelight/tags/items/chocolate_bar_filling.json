@@ -1,0 +1,20 @@
+{
+  "values": [
+    "#forge:nuts",
+    "#forge:nuts/cooked",
+    "#forge:fruit",
+    "#forge:chocolate/chips",
+    "#forge:puffed_rice",
+    "#forge:corn_flakes",
+    "#forge:chili/powder",
+    "#forge:toffee",
+    "#forge:gummies",
+    "#forge:peanut_brittle",
+    "#forge:trail_mix",
+    "#forge:mint",
+    "#forge:candy",
+    "#extradelight:processed/fruit",
+    "#forge:fruit/dried",
+    "#forge:crops/chili/dried"
+  ]
+}

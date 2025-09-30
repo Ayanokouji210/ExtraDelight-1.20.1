@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "extradelight:dried_chili"
+    },
+    "r": {
+      "item": "farmersdelight:rope"
+    }
+  },
+  "pattern": [
+    "ccc",
+    "crc",
+    "ccc"
+  ],
+  "result": {
+    "item": "extradelight:hanging_dried_chili"
+  },
+  "show_notification": true
+}

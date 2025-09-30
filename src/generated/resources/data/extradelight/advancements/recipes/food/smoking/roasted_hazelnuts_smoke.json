@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:smoking/roasted_hazelnuts_smoke"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "roasted_hazelnuts_smoking": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:roasted_hazelnuts"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "roasted_hazelnuts_smoking",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:smoking/roasted_hazelnuts_smoke"
+    ]
+  },
+  "sends_telemetry_event": false
+}

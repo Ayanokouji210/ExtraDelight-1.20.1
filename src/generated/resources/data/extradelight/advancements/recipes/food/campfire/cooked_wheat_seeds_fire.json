@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "cooked_wheat_seeds_campfire": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:cooked_wheat_seeds"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:campfire/cooked_wheat_seeds_fire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "cooked_wheat_seeds_campfire",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:campfire/cooked_wheat_seeds_fire"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "extradelight:bread_slice"
+    },
+    {
+      "tag": "forge:beef/scrap"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "forge:milk"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:sos"
+    }
+  ]
+}

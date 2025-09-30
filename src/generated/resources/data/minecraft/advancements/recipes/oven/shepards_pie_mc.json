@@ -1,0 +1,32 @@
+{
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:cooking/oven/shepards_pie_mc"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "shepards_pie": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:ground_meat/raw"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "shepards_pie",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:cooking/oven/shepards_pie_mc"
+    ]
+  },
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:fluid_type.extradelight.golden_jam_fluid"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:fluid_type.extradelight.golden_jam_fluid",
+      "minecraft:fluid_type.extradelight.golden_jam_fluid"
+    ]
+  },
+  "sends_telemetry_event": false
+}

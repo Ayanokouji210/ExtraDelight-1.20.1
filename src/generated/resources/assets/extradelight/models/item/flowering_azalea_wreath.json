@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/wreath",
+  "textures": {
+    "all": "minecraft:block/flowering_azalea_leaves"
+  }
+}

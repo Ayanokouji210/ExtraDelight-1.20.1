@@ -1,0 +1,28 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "minecraft:milk",
+      "nbt": {}
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "extradelight:ice_cream"
+    },
+    {
+      "tag": "forge:chocolate/chips"
+    },
+    {
+      "tag": "forge:mint"
+    }
+  ],
+  "result": {
+    "item": "extradelight:mint_chip_milkshake"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "item": "minecraft:glass_bottle"
+  }
+}

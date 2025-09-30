@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "minecraft:paper"
+  },
+  "out": {
+    "item": "extradelight:bruschetta_feast"
+  },
+  "result": {
+    "item": "extradelight:bruschetta"
+  }
+}

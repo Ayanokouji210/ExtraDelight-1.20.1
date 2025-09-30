@@ -1,0 +1,49 @@
+{
+  "criteria": {
+    "has_any_ingredient": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:wheat"
+            ]
+          },
+          {
+            "items": [
+              "minecraft:egg"
+            ]
+          },
+          {
+            "items": [
+              "minecraft:sugar"
+            ]
+          },
+          {
+            "items": [
+              "minecraft:milk_bucket"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:cooking/oven/coffe_cake_feast"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_any_ingredient",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:cooking/oven/coffe_cake_feast"
+    ]
+  },
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:ketchup_to_bucket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "ketchup": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:ketchup_jar_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "ketchup",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:ketchup_to_bucket"
+    ]
+  },
+  "sends_telemetry_event": false
+}

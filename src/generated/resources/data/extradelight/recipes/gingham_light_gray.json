@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "minecraft:light_gray_wool"
+    },
+    "w": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "pattern": [
+    "cw",
+    "wc"
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelight:gingham_light_gray"
+  },
+  "show_notification": true
+}

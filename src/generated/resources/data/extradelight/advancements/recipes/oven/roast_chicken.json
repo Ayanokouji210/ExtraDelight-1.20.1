@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:cooking/oven/roast_chicken"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "roast_chicken": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:chicken"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "roast_chicken",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:cooking/oven/roast_chicken"
+    ]
+  },
+  "sends_telemetry_event": true
+}

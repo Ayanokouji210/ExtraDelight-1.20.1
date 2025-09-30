@@ -1,0 +1,26 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "extradelight:serving_pot"
+    },
+    {
+      "tag": "forge:raw_chicken"
+    },
+    {
+      "item": "extradelight:curry_powder"
+    },
+    {
+      "tag": "extradelight:broth"
+    },
+    {
+      "tag": "forge:crops/onion"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:curry_feast"
+    }
+  ]
+}

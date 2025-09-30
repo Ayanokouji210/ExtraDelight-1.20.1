@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "minecraft:bowl"
+    },
+    "c": {
+      "item": "extradelight:crackers"
+    },
+    "h": {
+      "tag": "forge:cheese"
+    },
+    "m": [
+      {
+        "tag": "forge:meat/cooked"
+      },
+      {
+        "tag": "forge:foods/salami"
+      }
+    ],
+    "p": {
+      "tag": "forge:foods/pickled/vegetables"
+    }
+  },
+  "pattern": [
+    "cmh",
+    "cmh",
+    "pbp"
+  ],
+  "result": {
+    "item": "extradelight:charcuterie_board_feast"
+  },
+  "show_notification": true
+}

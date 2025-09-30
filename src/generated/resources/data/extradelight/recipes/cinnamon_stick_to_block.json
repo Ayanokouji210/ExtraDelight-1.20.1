@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:cinnamon_stick"
+    },
+    {
+      "item": "extradelight:cinnamon_stick"
+    },
+    {
+      "item": "extradelight:cinnamon_stick"
+    },
+    {
+      "item": "extradelight:cinnamon_stick"
+    },
+    {
+      "item": "extradelight:cinnamon_stick"
+    },
+    {
+      "item": "extradelight:cinnamon_stick"
+    },
+    {
+      "item": "extradelight:cinnamon_stick"
+    },
+    {
+      "item": "extradelight:cinnamon_stick"
+    },
+    {
+      "item": "extradelight:cinnamon_stick"
+    }
+  ],
+  "result": {
+    "item": "extradelight:cinnamon_stick_block"
+  }
+}

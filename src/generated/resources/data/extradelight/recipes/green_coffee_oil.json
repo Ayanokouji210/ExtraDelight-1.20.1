@@ -1,0 +1,15 @@
+{
+  "type": "extradelight:mortar",
+  "fluidOut": {
+    "amount": 150,
+    "fluid": "extradelight:oil_fluid"
+  },
+  "grinds": 4,
+  "ingredient": {
+    "tag": "forge:crops/coffee/green"
+  },
+  "result": {
+    "count": 0,
+    "item": "minecraft:air"
+  }
+}

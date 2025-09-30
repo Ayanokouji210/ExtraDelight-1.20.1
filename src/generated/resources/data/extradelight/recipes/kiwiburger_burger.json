@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "farmersdelight:hamburger"
+    },
+    {
+      "tag": "forge:foods/pickled/vegetables/beetroot"
+    },
+    {
+      "item": "farmersdelight:fried_egg"
+    }
+  ],
+  "result": {
+    "item": "extradelight:kiwiburger"
+  }
+}

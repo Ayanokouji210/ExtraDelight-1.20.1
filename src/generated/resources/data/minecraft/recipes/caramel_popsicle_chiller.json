@@ -1,0 +1,23 @@
+{
+  "type": "extradelight:chiller",
+  "consumeContainer": true,
+  "container": {
+    "count": 4,
+    "item": "minecraft:stick"
+  },
+  "cookingTime": 800,
+  "experience": 0.35,
+  "fluid": {
+    "amount": 250,
+    "fluid": "extradelight:caramel_sauce_fluid"
+  },
+  "ingredients": [
+    {
+      "tag": "forge:ice_cream"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelight:caramel_popsicle"
+  }
+}

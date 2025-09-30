@@ -1,0 +1,24 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "forge:eggs/boiled"
+    },
+    {
+      "tag": "forge:eggs/boiled"
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:mayo_fluid",
+      "nbt": {}
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:egg_salad"
+    }
+  ]
+}

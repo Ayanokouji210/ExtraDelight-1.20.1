@@ -1,0 +1,32 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "extradelight:serving_pot"
+  },
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "farmersdelight:tomato_sauce"
+    },
+    {
+      "tag": "extradelight:broth"
+    },
+    {
+      "tag": "forge:meat"
+    },
+    {
+      "tag": "forge:chili/powder"
+    },
+    {
+      "tag": "extradelight:processed/vegetable"
+    },
+    {
+      "tag": "extradelight:processed/vegetable"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "extradelight:chili_con_carne_feast"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "tag": "forge:eggs"
+    },
+    {
+      "tag": "forge:eggs"
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:oil_fluid",
+      "nbt": {}
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:vinegar_fluid",
+      "nbt": {}
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:mayo_jar_item"
+    }
+  ]
+}

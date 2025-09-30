@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "minecraft:paper"
+  },
+  "out": {
+    "item": "extradelight:fudge_block"
+  },
+  "result": {
+    "item": "extradelight:fudge"
+  }
+}

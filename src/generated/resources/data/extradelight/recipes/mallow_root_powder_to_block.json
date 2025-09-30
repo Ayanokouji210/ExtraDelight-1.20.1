@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:mallowroot/powder"
+    },
+    {
+      "tag": "forge:mallowroot/powder"
+    },
+    {
+      "tag": "forge:mallowroot/powder"
+    },
+    {
+      "tag": "forge:mallowroot/powder"
+    },
+    {
+      "tag": "forge:mallowroot/powder"
+    },
+    {
+      "tag": "forge:mallowroot/powder"
+    },
+    {
+      "tag": "forge:mallowroot/powder"
+    },
+    {
+      "tag": "forge:mallowroot/powder"
+    },
+    {
+      "tag": "forge:mallowroot/powder"
+    }
+  ],
+  "result": {
+    "item": "extradelight:mallow_powder_sack"
+  }
+}

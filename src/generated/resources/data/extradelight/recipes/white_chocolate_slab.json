@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "forge:block/white_chocolate"
+    }
+  },
+  "pattern": [
+    "bbb"
+  ],
+  "result": {
+    "count": 6,
+    "item": "extradelight:white_chocolate_slab"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:cocoa_butter_bottle"
+    },
+    {
+      "item": "extradelight:cocoa_butter_bottle"
+    },
+    {
+      "item": "extradelight:cocoa_butter_bottle"
+    },
+    {
+      "item": "extradelight:cocoa_butter_bottle"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "item": "extradelight:cocoa_butter_fluid_bucket"
+  }
+}

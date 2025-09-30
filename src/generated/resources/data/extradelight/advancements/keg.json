@@ -1,0 +1,38 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "keg": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:keg_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.keg.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "extradelight:keg_item"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.keg.name"
+    }
+  },
+  "requirements": [
+    [
+      "keg"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

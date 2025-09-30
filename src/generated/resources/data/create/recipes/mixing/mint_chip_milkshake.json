@@ -1,0 +1,27 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "extradelight:ice_cream"
+    },
+    {
+      "tag": "forge:chocolate/chips"
+    },
+    {
+      "tag": "forge:mint"
+    },
+    {
+      "amount": 250,
+      "fluid": "minecraft:milk",
+      "nbt": {}
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:mint_chip_milkshake"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
+    {
+      "amount": 100,
+      "fluid": "extradelight:cocoa_butter_fluid",
+      "nbt": {}
+    },
+    {
+      "amount": 50,
+      "fluidTag": "forge:blood"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:cocoa/solids"
+    }
+  ],
+  "result": {
+    "item": "extradelight:blood_chocolate_syrup_bottle"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "item": "minecraft:glass_bottle"
+  }
+}

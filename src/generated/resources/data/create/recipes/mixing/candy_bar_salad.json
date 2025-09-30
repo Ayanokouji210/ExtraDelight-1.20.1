@@ -1,0 +1,35 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "forge:chocolate/bar"
+    },
+    {
+      "tag": "forge:apple/sliced"
+    },
+    {
+      "tag": "forge:foods/custard"
+    },
+    {
+      "tag": "forge:marshmallow"
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:whipped_cream_fluid",
+      "nbt": {}
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:caramel_sauce_fluid",
+      "nbt": {}
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:candy_bar_salad"
+    }
+  ]
+}

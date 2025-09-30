@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "extradelight:butter"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:dyes/yellow"
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:whipped_cream_fluid",
+      "nbt": {}
+    }
+  ],
+  "results": [
+    {
+      "count": 4,
+      "item": "extradelight:frosting_yellow"
+    }
+  ]
+}

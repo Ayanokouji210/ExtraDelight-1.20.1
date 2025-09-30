@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:croque_monsieur"
+    },
+    {
+      "tag": "forge:cooked_eggs"
+    }
+  ],
+  "result": {
+    "item": "extradelight:croque_madame"
+  }
+}

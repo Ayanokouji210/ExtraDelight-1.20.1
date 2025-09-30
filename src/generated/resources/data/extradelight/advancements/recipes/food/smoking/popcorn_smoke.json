@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:smoking/popcorn_smoke"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "popcorn_smoking": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:popcorn"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "popcorn_smoking",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:smoking/popcorn_smoke"
+    ]
+  },
+  "sends_telemetry_event": false
+}

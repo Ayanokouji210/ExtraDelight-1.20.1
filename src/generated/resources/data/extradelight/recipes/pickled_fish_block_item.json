@@ -1,0 +1,41 @@
+{
+  "type": "extradelight:vat",
+  "ingredients": [
+    {
+      "tag": "forge:raw_fishes"
+    },
+    {
+      "tag": "forge:raw_fishes"
+    },
+    {
+      "tag": "forge:raw_fishes"
+    },
+    {
+      "tag": "forge:raw_fishes"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "extradelight:pickled_fish_block_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": {
+        "tag": "forge:salt"
+      },
+      "lid": false,
+      "time": 24000
+    },
+    {
+      "ingredient": [],
+      "lid": true,
+      "time": 168000
+    }
+  ],
+  "stages": 2,
+  "usedItem": {
+    "item": "minecraft:glass_bottle"
+  }
+}

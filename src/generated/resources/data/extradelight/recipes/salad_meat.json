@@ -1,0 +1,45 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:oil_fluid",
+      "nbt": {}
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:vinegar_fluid",
+      "nbt": {}
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/cabbage"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "extradelight:processed/carrot"
+    },
+    {
+      "tag": "forge:croutons"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:eggs/boiled"
+    },
+    {
+      "tag": "forge:meat/cooked"
+    }
+  ],
+  "result": {
+    "item": "extradelight:salad_block_item"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "item": "minecraft:bowl"
+  }
+}

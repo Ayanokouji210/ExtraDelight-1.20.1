@@ -1,0 +1,41 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "extradelight:broth"
+    },
+    {
+      "tag": "extradelight:processed/beetroot"
+    },
+    {
+      "tag": "extradelight:processed/carrot"
+    },
+    {
+      "tag": "extradelight:processed/cabbage"
+    },
+    {
+      "tag": "extradelight:processed/potato"
+    },
+    [
+      {
+        "item": "extradelight:sliced_tomato"
+      },
+      {
+        "item": "farmersdelight:tomato_sauce"
+      },
+      {
+        "item": "farmersdelight:tomato"
+      }
+    ]
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 4,
+    "item": "extradelight:borscht"
+  }
+}

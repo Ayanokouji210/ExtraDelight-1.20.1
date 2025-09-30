@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "coffee_cherries": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:coffee_cherry_crate"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:coffee_cherries_from_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "coffee_cherries",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:coffee_cherries_from_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}

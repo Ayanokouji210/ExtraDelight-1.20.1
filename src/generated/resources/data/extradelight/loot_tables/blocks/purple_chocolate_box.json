@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_nbt",
+              "ops": [
+                {
+                  "op": "replace",
+                  "source": "container",
+                  "target": "BlockEntityTag.cotainer"
+                }
+              ],
+              "source": "block_entity"
+            }
+          ],
+          "name": "extradelight:purple_chocolate_box"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "extradelight:blocks/purple_chocolate_box"
+}

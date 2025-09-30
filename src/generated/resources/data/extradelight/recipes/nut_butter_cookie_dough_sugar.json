@@ -1,0 +1,23 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:nut_butter_fluid",
+      "nbt": {}
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "forge:cookie_dough/sugar"
+    }
+  ],
+  "result": {
+    "item": "extradelight:nut_butter_cookie_dough"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "count": 0,
+    "item": "minecraft:air"
+  }
+}

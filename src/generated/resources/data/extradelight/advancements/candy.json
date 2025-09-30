@@ -1,0 +1,983 @@
+{
+  "parent": "extradelight:food",
+  "criteria": {
+    "extradelight.butterscotch": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:butterscotch"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.candied_ginger": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candied_ginger"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.candy_black": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candy_black"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.candy_blue": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candy_blue"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.candy_brown": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candy_brown"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.candy_cane_blue": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candy_cane_blue"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.candy_cane_green": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candy_cane_green"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.candy_cane_red": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candy_cane_red"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.candy_cyan": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candy_cyan"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.candy_gray": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candy_gray"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.candy_green": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candy_green"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.candy_light_blue": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candy_light_blue"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.candy_light_gray": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candy_light_gray"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.candy_lime": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candy_lime"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.candy_magenta": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candy_magenta"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.candy_orange": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candy_orange"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.candy_pink": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candy_pink"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.candy_purple": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candy_purple"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.candy_red": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candy_red"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.candy_white": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candy_white"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.candy_yellow": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candy_yellow"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.caramel_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:caramel_candy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.dark_chocolate_bar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:dark_chocolate_bar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.dark_chocolate_dipped_apple_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:dark_chocolate_dipped_apple_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.dark_chocolate_dipped_bacon": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:dark_chocolate_dipped_bacon"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.dark_chocolate_dipped_coffee_bean": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:dark_chocolate_dipped_coffee_bean"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.dark_chocolate_dipped_glow_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:dark_chocolate_dipped_glow_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.dark_chocolate_dipped_graham_cracker": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:dark_chocolate_dipped_graham_cracker"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.dark_chocolate_dipped_marshmallow": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:dark_chocolate_dipped_marshmallow"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.dark_chocolate_dipped_sweet_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:dark_chocolate_dipped_sweet_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.dark_chocolate_filled_bar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:dark_chocolate_filled_bar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.dark_chocolate_truffle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:dark_chocolate_truffle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.fudge": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:fudge"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.gummies": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:gummies"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.mallow_cup": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:mallow_cup"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.marshmallow": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:marshmallow"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.milk_chocolate_bar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:milk_chocolate_bar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.milk_chocolate_dipped_apple_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:milk_chocolate_dipped_apple_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.milk_chocolate_dipped_bacon": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:milk_chocolate_dipped_bacon"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.milk_chocolate_dipped_coffee_bean": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:milk_chocolate_dipped_coffee_bean"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.milk_chocolate_dipped_glow_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:milk_chocolate_dipped_glow_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.milk_chocolate_dipped_graham_cracker": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:milk_chocolate_dipped_graham_cracker"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.milk_chocolate_dipped_marshmallow": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:milk_chocolate_dipped_marshmallow"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.milk_chocolate_dipped_sweet_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:milk_chocolate_dipped_sweet_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.milk_chocolate_filled_bar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:milk_chocolate_filled_bar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.milk_chocolate_truffle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:milk_chocolate_truffle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.mint_candy_blue": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:mint_candy_blue"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.mint_candy_green": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:mint_candy_green"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.mint_candy_red": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:mint_candy_red"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.nougat": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:nougat"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.peanut_brittle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:peanut_brittle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.peanut_butter_cup": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:peanut_butter_cup"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.peppermint_bark": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:peppermint_bark"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.toffee": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:toffee"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.white_chocolate_bar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:white_chocolate_bar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.white_chocolate_dipped_apple_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:white_chocolate_dipped_apple_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.white_chocolate_dipped_bacon": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:white_chocolate_dipped_bacon"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.white_chocolate_dipped_coffee_bean": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:white_chocolate_dipped_coffee_bean"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.white_chocolate_dipped_glow_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:white_chocolate_dipped_glow_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.white_chocolate_dipped_graham_cracker": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:white_chocolate_dipped_graham_cracker"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.white_chocolate_dipped_marshmallow": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:white_chocolate_dipped_marshmallow"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.white_chocolate_dipped_sweet_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:white_chocolate_dipped_sweet_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.white_chocolate_filled_bar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:white_chocolate_filled_bar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.white_chocolate_truffle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:white_chocolate_truffle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.candy.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "extradelight:mint_candy_red"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.candy.name"
+    }
+  },
+  "requirements": [
+    [
+      "extradelight.white_chocolate_dipped_apple_slice"
+    ],
+    [
+      "extradelight.fudge"
+    ],
+    [
+      "extradelight.candy_magenta"
+    ],
+    [
+      "extradelight.candy_black"
+    ],
+    [
+      "extradelight.white_chocolate_dipped_bacon"
+    ],
+    [
+      "extradelight.dark_chocolate_dipped_marshmallow"
+    ],
+    [
+      "extradelight.candy_cyan"
+    ],
+    [
+      "extradelight.dark_chocolate_dipped_coffee_bean"
+    ],
+    [
+      "extradelight.dark_chocolate_bar"
+    ],
+    [
+      "extradelight.peppermint_bark"
+    ],
+    [
+      "extradelight.gummies"
+    ],
+    [
+      "extradelight.dark_chocolate_dipped_bacon"
+    ],
+    [
+      "extradelight.mint_candy_blue"
+    ],
+    [
+      "extradelight.milk_chocolate_bar"
+    ],
+    [
+      "extradelight.candy_light_blue"
+    ],
+    [
+      "extradelight.candy_light_gray"
+    ],
+    [
+      "extradelight.milk_chocolate_dipped_glow_berry"
+    ],
+    [
+      "extradelight.white_chocolate_dipped_glow_berry"
+    ],
+    [
+      "extradelight.marshmallow"
+    ],
+    [
+      "extradelight.white_chocolate_dipped_graham_cracker"
+    ],
+    [
+      "extradelight.milk_chocolate_dipped_marshmallow"
+    ],
+    [
+      "extradelight.candy_yellow"
+    ],
+    [
+      "extradelight.peanut_butter_cup"
+    ],
+    [
+      "extradelight.candy_cane_green"
+    ],
+    [
+      "extradelight.candy_brown"
+    ],
+    [
+      "extradelight.mint_candy_red"
+    ],
+    [
+      "extradelight.milk_chocolate_dipped_coffee_bean"
+    ],
+    [
+      "extradelight.dark_chocolate_dipped_apple_slice"
+    ],
+    [
+      "extradelight.mint_candy_green"
+    ],
+    [
+      "extradelight.milk_chocolate_dipped_graham_cracker"
+    ],
+    [
+      "extradelight.caramel_candy"
+    ],
+    [
+      "extradelight.white_chocolate_truffle"
+    ],
+    [
+      "extradelight.candy_pink"
+    ],
+    [
+      "extradelight.candy_cane_red"
+    ],
+    [
+      "extradelight.candy_gray"
+    ],
+    [
+      "extradelight.candied_ginger"
+    ],
+    [
+      "extradelight.dark_chocolate_dipped_graham_cracker"
+    ],
+    [
+      "extradelight.milk_chocolate_dipped_sweet_berry"
+    ],
+    [
+      "extradelight.candy_orange"
+    ],
+    [
+      "extradelight.mallow_cup"
+    ],
+    [
+      "extradelight.dark_chocolate_dipped_glow_berry"
+    ],
+    [
+      "extradelight.candy_cane_blue"
+    ],
+    [
+      "extradelight.white_chocolate_dipped_marshmallow"
+    ],
+    [
+      "extradelight.butterscotch"
+    ],
+    [
+      "extradelight.milk_chocolate_truffle"
+    ],
+    [
+      "extradelight.milk_chocolate_filled_bar"
+    ],
+    [
+      "extradelight.milk_chocolate_dipped_apple_slice"
+    ],
+    [
+      "extradelight.nougat"
+    ],
+    [
+      "extradelight.white_chocolate_dipped_coffee_bean"
+    ],
+    [
+      "extradelight.candy_red"
+    ],
+    [
+      "extradelight.candy_lime"
+    ],
+    [
+      "extradelight.candy_blue"
+    ],
+    [
+      "extradelight.candy_purple"
+    ],
+    [
+      "extradelight.white_chocolate_bar"
+    ],
+    [
+      "extradelight.milk_chocolate_dipped_bacon"
+    ],
+    [
+      "extradelight.dark_chocolate_truffle"
+    ],
+    [
+      "extradelight.peanut_brittle"
+    ],
+    [
+      "extradelight.white_chocolate_dipped_sweet_berry"
+    ],
+    [
+      "extradelight.dark_chocolate_dipped_sweet_berry"
+    ],
+    [
+      "extradelight.white_chocolate_filled_bar"
+    ],
+    [
+      "extradelight.dark_chocolate_filled_bar"
+    ],
+    [
+      "extradelight.toffee"
+    ],
+    [
+      "extradelight.candy_white"
+    ],
+    [
+      "extradelight.candy_green"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

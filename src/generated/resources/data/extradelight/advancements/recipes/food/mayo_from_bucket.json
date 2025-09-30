@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mayo_from_bucket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "mayo": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:mayo_jar_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "mayo",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mayo_from_bucket"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,11 @@
+{
+  "type": "extradelight:melting_pot",
+  "cooktime": 400,
+  "ingredient": {
+    "tag": "forge:marshmallow"
+  },
+  "result": {
+    "amount": 250,
+    "fluid": "extradelight:marshmallow_fluff_fluid"
+  }
+}

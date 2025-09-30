@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "cooked_wheat_seeds_smoking": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:cooked_wheat_seeds"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:smoking/cooked_wheat_seeds_smoke"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "cooked_wheat_seeds_smoking",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:smoking/cooked_wheat_seeds_smoke"
+    ]
+  },
+  "sends_telemetry_event": false
+}

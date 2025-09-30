@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:golden_apple_jam"
+    },
+    {
+      "item": "extradelight:golden_apple_jam"
+    },
+    {
+      "item": "extradelight:golden_apple_jam"
+    },
+    {
+      "item": "extradelight:golden_apple_jam"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "item": "extradelight:golden_jam_fluid_bucket"
+  }
+}

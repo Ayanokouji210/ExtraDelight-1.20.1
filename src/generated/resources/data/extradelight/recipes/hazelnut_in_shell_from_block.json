@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:hazelnut_in_shell_sack"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "extradelight:hazelnuts_in_shell"
+  }
+}

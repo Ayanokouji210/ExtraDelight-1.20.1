@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:hanging_chili"
+    }
+  ],
+  "result": [
+    {
+      "count": 8,
+      "item": "extradelight:chili"
+    },
+    {
+      "chance": 0.5,
+      "item": "farmersdelight:rope"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

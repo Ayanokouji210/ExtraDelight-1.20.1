@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:campfire/hashbrowns_fire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "hashbrowns_campfire": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:hashbrowns"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "hashbrowns_campfire",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:campfire/hashbrowns_fire"
+    ]
+  },
+  "sends_telemetry_event": false
+}

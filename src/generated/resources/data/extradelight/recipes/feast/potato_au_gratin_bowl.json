@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "out": {
+    "item": "extradelight:potato_au_gratin_feast"
+  },
+  "result": {
+    "item": "extradelight:potato_au_gratin"
+  }
+}

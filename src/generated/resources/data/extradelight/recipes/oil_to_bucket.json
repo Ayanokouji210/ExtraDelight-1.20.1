@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:cooking_oil"
+    },
+    {
+      "item": "extradelight:cooking_oil"
+    },
+    {
+      "item": "extradelight:cooking_oil"
+    },
+    {
+      "item": "extradelight:cooking_oil"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "item": "extradelight:oil_fluid_bucket"
+  }
+}

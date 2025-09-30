@@ -1,0 +1,36 @@
+{
+  "type": "extradelight:vat",
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/beetroot"
+    },
+    {
+      "tag": "extradelight:processed/beetroot"
+    },
+    {
+      "tag": "extradelight:processed/beetroot"
+    },
+    {
+      "tag": "extradelight:processed/beetroot"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "extradelight:pickled_beets_block_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": {
+        "tag": "forge:salt"
+      },
+      "lid": true,
+      "time": 168000
+    }
+  ],
+  "stages": 1,
+  "usedItem": {
+    "item": "minecraft:glass_bottle"
+  }
+}

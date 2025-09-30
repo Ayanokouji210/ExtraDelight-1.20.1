@@ -1,0 +1,42 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:apple/sliced"
+    },
+    {
+      "tag": "forge:apple/sliced"
+    },
+    {
+      "tag": "forge:apple/sliced"
+    },
+    {
+      "tag": "forge:apple/sliced"
+    },
+    {
+      "tag": "forge:cinnamon/ground"
+    },
+    {
+      "tag": "forge:apple/sliced"
+    },
+    {
+      "tag": "forge:apple/sliced"
+    },
+    {
+      "tag": "forge:apple/sliced"
+    },
+    {
+      "tag": "forge:apple/sliced"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "extradelight:apple_chips"
+  }
+}

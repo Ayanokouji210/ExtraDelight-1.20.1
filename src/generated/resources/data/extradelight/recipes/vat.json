@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "tag": "forge:ingots/copper"
+    }
+  },
+  "pattern": [
+    "c c",
+    "c c",
+    "ccc"
+  ],
+  "result": {
+    "item": "extradelight:vat"
+  },
+  "show_notification": true
+}

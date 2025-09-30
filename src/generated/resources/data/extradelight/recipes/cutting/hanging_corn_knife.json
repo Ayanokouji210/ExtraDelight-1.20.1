@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:hanging_corn"
+    }
+  ],
+  "result": [
+    {
+      "count": 8,
+      "item": "extradelight:corn_on_cob"
+    },
+    {
+      "chance": 0.5,
+      "item": "farmersdelight:rope"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

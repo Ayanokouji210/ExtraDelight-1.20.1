@@ -1,0 +1,26 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "forge:apple/sliced"
+    },
+    {
+      "tag": "forge:apple/sliced"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:butter"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:stewed_apples"
+    }
+  ]
+}

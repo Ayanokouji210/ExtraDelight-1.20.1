@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:vinegar_to_bucket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "vinegar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:vinegar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "vinegar",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:vinegar_to_bucket"
+    ]
+  },
+  "sends_telemetry_event": false
+}

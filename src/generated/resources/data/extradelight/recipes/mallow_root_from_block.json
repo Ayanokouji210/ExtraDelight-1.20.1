@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:mallow_root_crate"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "extradelight:mallow_root"
+  }
+}

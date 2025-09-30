@@ -1,0 +1,24 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "extradelight:ice_cream"
+    },
+    {
+      "tag": "forge:cookie_dough"
+    },
+    {
+      "amount": 250,
+      "fluid": "minecraft:milk",
+      "nbt": {}
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:cookie_dough_milkshake"
+    }
+  ]
+}

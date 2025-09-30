@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:smoking/toast_smoke"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "toast_smoking": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:toast"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "toast_smoking",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:smoking/toast_smoke"
+    ]
+  },
+  "sends_telemetry_event": false
+}

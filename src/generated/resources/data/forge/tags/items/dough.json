@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#forge:dough",
+      "required": false
+    },
+    {
+      "id": "#c:doughs",
+      "required": false
+    }
+  ]
+}

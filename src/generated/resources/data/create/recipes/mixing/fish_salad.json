@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "forge:cooked_fishes"
+    },
+    {
+      "tag": "forge:cooked_fishes"
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:mayo_fluid",
+      "nbt": {}
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:fish_salad"
+    }
+  ]
+}

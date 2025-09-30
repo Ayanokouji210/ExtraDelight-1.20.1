@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "extradelight:marshmallow"
+  },
+  "out": {
+    "item": "extradelight:dark_chocolate_fondue_block"
+  },
+  "result": {
+    "item": "extradelight:dark_chocolate_dipped_marshmallow"
+  }
+}

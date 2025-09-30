@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "forge:block/milk_chocolate"
+    }
+  },
+  "pattern": [
+    "bbb",
+    "bbb"
+  ],
+  "result": {
+    "count": 2,
+    "item": "extradelight:milk_chocolate_trapdoor"
+  },
+  "show_notification": true
+}

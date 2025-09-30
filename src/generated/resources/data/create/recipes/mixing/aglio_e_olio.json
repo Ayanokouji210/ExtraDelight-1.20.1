@@ -1,0 +1,29 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "farmersdelight:raw_pasta"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    },
+    {
+      "tag": "forge:cooking_oil"
+    },
+    {
+      "tag": "extradelight:processed/chili"
+    },
+    {
+      "tag": "forge:cheese"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:aglio_e_olio"
+    }
+  ]
+}

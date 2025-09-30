@@ -1,0 +1,14 @@
+{
+  "type": "extradelight:mortar",
+  "fluidOut": {
+    "amount": 50,
+    "fluid": "extradelight:cocoa_butter_fluid"
+  },
+  "grinds": 4,
+  "ingredient": {
+    "tag": "forge:cocoa_beans/roasted"
+  },
+  "result": {
+    "item": "extradelight:cocoa_solids"
+  }
+}

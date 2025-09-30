@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "i": {
+      "item": "minecraft:stick"
+    },
+    "s": {
+      "item": "minecraft:deepslate"
+    }
+  },
+  "pattern": [
+    "s  ",
+    " i "
+  ],
+  "result": {
+    "item": "extradelight:pestle_deepslate"
+  },
+  "show_notification": true
+}

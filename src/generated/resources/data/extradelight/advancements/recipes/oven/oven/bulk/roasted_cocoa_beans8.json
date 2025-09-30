@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:cooking/oven/oven/bulk/roasted_cocoa_beans8"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "roasted_cocoa_beans": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:tray"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "roasted_cocoa_beans",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:cooking/oven/oven/bulk/roasted_cocoa_beans8"
+    ]
+  },
+  "sends_telemetry_event": true
+}

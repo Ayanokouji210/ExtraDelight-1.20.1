@@ -1,0 +1,27 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:sheet"
+  },
+  "cookingtime": 400,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:chocolate_cookie_dough"
+    },
+    {
+      "item": "extradelight:chocolate_cookie_dough"
+    },
+    {
+      "item": "extradelight:chocolate_cookie_dough"
+    },
+    {
+      "item": "extradelight:chocolate_cookie_dough"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelight:chocolate_cookie_block"
+  }
+}

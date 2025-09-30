@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:crops/peanut/shelled"
+    },
+    {
+      "tag": "forge:crops/peanut/shelled"
+    },
+    {
+      "tag": "forge:crops/peanut/shelled"
+    },
+    {
+      "tag": "forge:crops/peanut/shelled"
+    },
+    {
+      "tag": "forge:crops/peanut/shelled"
+    },
+    {
+      "tag": "forge:crops/peanut/shelled"
+    },
+    {
+      "tag": "forge:crops/peanut/shelled"
+    },
+    {
+      "tag": "forge:crops/peanut/shelled"
+    },
+    {
+      "tag": "forge:crops/peanut/shelled"
+    }
+  ],
+  "result": {
+    "item": "extradelight:peanut_sack"
+  }
+}

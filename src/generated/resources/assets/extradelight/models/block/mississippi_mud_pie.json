@@ -1,0 +1,10 @@
+{
+  "parent": "extradelight:block/pie",
+  "textures": {
+    "bottom": "extradelight:block/mississippi_mud_pie_bottom",
+    "inner": "extradelight:block/mississippi_mud_pie_inner",
+    "particle": "extradelight:block/mississippi_mud_pie_top",
+    "side": "extradelight:block/mississippi_mud_pie_side",
+    "top": "extradelight:block/mississippi_mud_pie_top"
+  }
+}

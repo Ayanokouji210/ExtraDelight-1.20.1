@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:cooking/oven/oven/bulk/hazelnuts_oven3"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "hazelnuts_oven": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:tray"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "hazelnuts_oven",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:cooking/oven/oven/bulk/hazelnuts_oven3"
+    ]
+  },
+  "sends_telemetry_event": true
+}

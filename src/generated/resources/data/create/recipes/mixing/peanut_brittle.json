@@ -1,0 +1,24 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:nuts/cooked"
+    }
+  ],
+  "results": [
+    {
+      "count": 4,
+      "item": "extradelight:peanut_brittle"
+    }
+  ]
+}

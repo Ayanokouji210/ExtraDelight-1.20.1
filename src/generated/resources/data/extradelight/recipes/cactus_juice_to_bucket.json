@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:cactus_juice"
+    },
+    {
+      "item": "extradelight:cactus_juice"
+    },
+    {
+      "item": "extradelight:cactus_juice"
+    },
+    {
+      "item": "extradelight:cactus_juice"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "item": "extradelight:cactus_juice_fluid_bucket"
+  }
+}

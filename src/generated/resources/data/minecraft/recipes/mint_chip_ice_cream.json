@@ -1,0 +1,27 @@
+{
+  "type": "extradelight:chiller",
+  "consumeContainer": true,
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingTime": 800,
+  "experience": 0.35,
+  "fluid": {
+    "amount": 250,
+    "fluid": "minecraft:milk"
+  },
+  "ingredients": [
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:chocolate/chips"
+    },
+    {
+      "tag": "forge:mint"
+    }
+  ],
+  "result": {
+    "item": "extradelight:mint_chip_ice_cream"
+  }
+}

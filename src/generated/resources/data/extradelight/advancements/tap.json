@@ -1,0 +1,38 @@
+{
+  "parent": "extradelight:keg",
+  "criteria": {
+    "tap": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:tap"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.tap.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "extradelight:tap"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.tap.name"
+    }
+  },
+  "requirements": [
+    [
+      "tap"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

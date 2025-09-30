@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "tag": "forge:chocolate/dark/bar"
+    }
+  ],
+  "result": [
+    {
+      "count": 5,
+      "item": "extradelight:dark_chocolate_chips"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

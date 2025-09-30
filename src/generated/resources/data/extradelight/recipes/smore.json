@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:graham_cracker"
+    },
+    {
+      "tag": "forge:chocolate/bar"
+    },
+    {
+      "tag": "forge:marshmallow"
+    }
+  ],
+  "result": {
+    "item": "extradelight:smore"
+  }
+}

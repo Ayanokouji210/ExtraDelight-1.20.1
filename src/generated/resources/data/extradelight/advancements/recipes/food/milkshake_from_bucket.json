@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:milkshake_from_bucket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "milkshake": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:milkshake"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "milkshake",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:milkshake_from_bucket"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,33 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "extradelight:curry_powder"
+    },
+    {
+      "tag": "forge:apple/sliced"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "extradelight:broth"
+    },
+    {
+      "tag": "forge:raw_chicken"
+    },
+    {
+      "item": "farmersdelight:rice"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:mulligatawny_soup"
+    }
+  ]
+}

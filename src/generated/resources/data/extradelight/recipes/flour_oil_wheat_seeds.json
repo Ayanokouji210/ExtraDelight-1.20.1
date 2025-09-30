@@ -1,0 +1,14 @@
+{
+  "type": "extradelight:mortar",
+  "fluidOut": {
+    "amount": 50,
+    "fluid": "extradelight:oil_fluid"
+  },
+  "grinds": 4,
+  "ingredient": {
+    "item": "minecraft:wheat_seeds"
+  },
+  "result": {
+    "item": "extradelight:flour"
+  }
+}

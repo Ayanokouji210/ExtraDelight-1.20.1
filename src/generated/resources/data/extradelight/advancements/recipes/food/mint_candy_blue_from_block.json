@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mint_candy_blue_from_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "mint_candy_blue": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candy_cane_blue"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "mint_candy_blue",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mint_candy_blue_from_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}

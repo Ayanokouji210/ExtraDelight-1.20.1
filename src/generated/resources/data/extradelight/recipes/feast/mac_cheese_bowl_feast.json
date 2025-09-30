@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "out": {
+    "item": "extradelight:macaroni_cheese_feast"
+  },
+  "result": {
+    "item": "extradelight:macaroni_cheese"
+  }
+}

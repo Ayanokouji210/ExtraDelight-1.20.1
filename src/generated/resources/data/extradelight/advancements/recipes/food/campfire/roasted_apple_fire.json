@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:campfire/roasted_apple_fire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "roasted_apple_campfire": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:roasted_apple"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "roasted_apple_campfire",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:campfire/roasted_apple_fire"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,30 @@
+{
+  "type": "extradelight:chiller",
+  "consumeContainer": true,
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingTime": 800,
+  "experience": 0.35,
+  "fluid": {
+    "amount": 250,
+    "fluid": "minecraft:milk"
+  },
+  "ingredients": [
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    }
+  ],
+  "result": {
+    "item": "extradelight:sweet_berry_ice_cream"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "values": [
+    "extradelight:apple_cookie",
+    "extradelight:glow_berry_cookie",
+    "extradelight:pumpkin_cookie",
+    "extradelight:nut_butter_cookie",
+    "extradelight:chocolate_cookie",
+    "#forge:foods/cookie/sugar",
+    "#forge:foods/cookie/gingerbread"
+  ]
+}

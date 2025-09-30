@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:whipped_cream"
+    },
+    {
+      "item": "extradelight:whipped_cream"
+    },
+    {
+      "item": "extradelight:whipped_cream"
+    },
+    {
+      "item": "extradelight:whipped_cream"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "item": "extradelight:whipped_cream_fluid_bucket"
+  }
+}

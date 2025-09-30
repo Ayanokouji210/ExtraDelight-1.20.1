@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/shirazi_salad_mixing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "shirazi_salad_mixing": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:shirazi_salad"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "shirazi_salad_mixing"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/shirazi_salad_mixing"
+    ]
+  },
+  "sends_telemetry_event": true
+}

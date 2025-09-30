@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:cocoa/solids"
+    },
+    {
+      "tag": "forge:cocoa/solids"
+    },
+    {
+      "tag": "forge:cocoa/solids"
+    },
+    {
+      "tag": "forge:cocoa/solids"
+    },
+    {
+      "tag": "forge:cocoa/solids"
+    },
+    {
+      "tag": "forge:cocoa/solids"
+    },
+    {
+      "tag": "forge:cocoa/solids"
+    },
+    {
+      "tag": "forge:cocoa/solids"
+    },
+    {
+      "tag": "forge:cocoa/solids"
+    }
+  ],
+  "result": {
+    "item": "extradelight:cocoa_solids_sack"
+  }
+}

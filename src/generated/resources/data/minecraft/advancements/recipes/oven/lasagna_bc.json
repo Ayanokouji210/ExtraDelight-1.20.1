@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:cooking/oven/lasagna_bc"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "lasagna": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lasagna_noodles"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "lasagna",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:cooking/oven/lasagna_bc"
+    ]
+  },
+  "sends_telemetry_event": true
+}

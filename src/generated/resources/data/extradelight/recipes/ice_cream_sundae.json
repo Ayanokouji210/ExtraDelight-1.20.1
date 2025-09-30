@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:ice_cream"
+    },
+    {
+      "tag": "forge:liquid_chocolate"
+    },
+    {
+      "tag": "forge:nuts/cooked"
+    },
+    {
+      "tag": "forge:berries"
+    }
+  ],
+  "result": {
+    "item": "extradelight:ice_cream_sundae"
+  }
+}

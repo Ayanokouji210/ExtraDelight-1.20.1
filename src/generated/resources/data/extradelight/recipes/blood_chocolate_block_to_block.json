@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:blood_chocolate_bar"
+    },
+    {
+      "item": "extradelight:blood_chocolate_bar"
+    },
+    {
+      "item": "extradelight:blood_chocolate_bar"
+    },
+    {
+      "item": "extradelight:blood_chocolate_bar"
+    },
+    {
+      "item": "extradelight:blood_chocolate_bar"
+    },
+    {
+      "item": "extradelight:blood_chocolate_bar"
+    },
+    {
+      "item": "extradelight:blood_chocolate_bar"
+    },
+    {
+      "item": "extradelight:blood_chocolate_bar"
+    },
+    {
+      "item": "extradelight:blood_chocolate_bar"
+    }
+  ],
+  "result": {
+    "item": "extradelight:blood_chocolate_block"
+  }
+}

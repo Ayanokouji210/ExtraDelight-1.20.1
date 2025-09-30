@@ -1,0 +1,29 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "forge:crops/potato"
+    },
+    {
+      "tag": "forge:crops/potato"
+    },
+    {
+      "tag": "forge:crops/onion"
+    },
+    {
+      "tag": "extradelight:broth"
+    },
+    {
+      "tag": "forge:milk"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:potato_soup"
+    }
+  ]
+}

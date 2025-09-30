@@ -1,0 +1,35 @@
+{
+  "type": "extradelight:vat",
+  "ingredients": [
+    {
+      "tag": "forge:pork/ground/raw"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    },
+    {
+      "tag": "extradelight:processed/chili"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "extradelight:naem_moo_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": {
+        "tag": "forge:salt"
+      },
+      "lid": true,
+      "time": 120000
+    }
+  ],
+  "stages": 1,
+  "usedItem": {
+    "count": 2,
+    "item": "minecraft:big_dripleaf"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:campfire/roasted_coffee_beans_fire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "roasted_coffee_beans_campfire": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:coffee_beans"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "roasted_coffee_beans_campfire",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:campfire/roasted_coffee_beans_fire"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:bacon_egg_pie"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "extradelight:bacon_egg_pie_slice"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

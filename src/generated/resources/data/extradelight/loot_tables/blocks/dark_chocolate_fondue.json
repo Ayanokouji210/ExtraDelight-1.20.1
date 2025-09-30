@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "extradelight:dark_chocolate_fondue",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "servings": "0"
+                  }
+                }
+              ],
+              "name": "minecraft:bucket"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:air"
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "extradelight:blocks/dark_chocolate_fondue"
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:campfire/roasted_peanuts_fire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "roasted_peanuts_campfire": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:roasted_peanuts"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "roasted_peanuts_campfire",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:campfire/roasted_peanuts_fire"
+    ]
+  },
+  "sends_telemetry_event": false
+}

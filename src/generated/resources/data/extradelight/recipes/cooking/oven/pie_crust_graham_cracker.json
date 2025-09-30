@@ -1,0 +1,26 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:pie_dish"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:graham_cracker"
+    },
+    {
+      "tag": "forge:graham_cracker"
+    },
+    {
+      "tag": "forge:graham_cracker"
+    },
+    {
+      "tag": "forge:butter"
+    }
+  ],
+  "result": {
+    "item": "farmersdelight:pie_crust"
+  }
+}

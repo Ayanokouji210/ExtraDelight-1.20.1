@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredient": {
+    "tag": "forge:crops/peanut/shelled"
+  },
+  "result": "extradelight:roasted_peanuts"
+}

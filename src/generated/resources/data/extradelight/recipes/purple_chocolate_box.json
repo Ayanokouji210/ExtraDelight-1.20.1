@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:ribbon"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "forge:chests"
+    },
+    {
+      "tag": "forge:dyes/purple"
+    }
+  ],
+  "result": {
+    "item": "extradelight:purple_chocolate_box"
+  }
+}

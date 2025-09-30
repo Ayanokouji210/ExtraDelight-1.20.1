@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:gingham_carpet_magenta"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "magenta_gingham_carpet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:white_carpet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "magenta_gingham_carpet",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:gingham_carpet_magenta"
+    ]
+  },
+  "sends_telemetry_event": false
+}

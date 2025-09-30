@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:peanut_in_shell_to_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "peanut_in_shell": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:peanuts_in_shell"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "peanut_in_shell",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:peanut_in_shell_to_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}

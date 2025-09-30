@@ -1,0 +1,15 @@
+{
+  "type": "extradelight:mortar",
+  "fluidOut": {
+    "amount": 250,
+    "fluid": "extradelight:oil_fluid"
+  },
+  "grinds": 4,
+  "ingredient": {
+    "item": "extradelight:sunflower_seeds"
+  },
+  "result": {
+    "count": 0,
+    "item": "minecraft:air"
+  }
+}

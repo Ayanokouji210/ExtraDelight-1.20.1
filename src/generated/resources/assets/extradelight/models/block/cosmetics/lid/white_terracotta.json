@@ -1,0 +1,9 @@
+{
+  "parent": "extradelight:block/lid",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "0": "minecraft:block/white_terracotta",
+    "2": "extradelight:block/cosmetics/vat/white_terracotta_side",
+    "particle": "minecraft:block/white_terracotta"
+  }
+}

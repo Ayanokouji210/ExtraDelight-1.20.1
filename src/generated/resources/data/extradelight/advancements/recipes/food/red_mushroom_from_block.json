@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:red_mushroom_from_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "red_mushroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:red_mushroom_crate"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "red_mushroom",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:red_mushroom_from_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}

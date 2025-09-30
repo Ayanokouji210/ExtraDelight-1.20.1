@@ -1,0 +1,30 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "forge:crops/carrot"
+    },
+    {
+      "tag": "forge:crops/carrot"
+    },
+    {
+      "tag": "forge:crops/onion"
+    },
+    {
+      "tag": "extradelight:broth"
+    },
+    {
+      "tag": "forge:milk"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:carrot_soup"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "forge:crops/rice"
+    },
+    {
+      "tag": "extradelight:processed/ginger"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "extradelight:broth"
+    },
+    {
+      "item": "extradelight:boiled_egg"
+    },
+    {
+      "tag": "forge:cooked_chicken"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:lugaw"
+    }
+  ]
+}

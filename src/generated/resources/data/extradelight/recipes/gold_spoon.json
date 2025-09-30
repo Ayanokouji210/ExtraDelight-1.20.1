@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "w": {
+      "tag": "forge:ingots/gold"
+    }
+  },
+  "pattern": [
+    "  w",
+    " s ",
+    "s  "
+  ],
+  "result": {
+    "item": "extradelight:gold_spoon"
+  },
+  "show_notification": true
+}

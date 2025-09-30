@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "farmersdelight:cooked_rice"
+  },
+  "out": {
+    "item": "extradelight:soy_glazed_salmon_block_item"
+  },
+  "result": {
+    "item": "extradelight:soy_glazed_salmon_item"
+  }
+}

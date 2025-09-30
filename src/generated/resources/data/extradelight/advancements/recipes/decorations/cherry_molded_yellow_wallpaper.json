@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:cherry_molded_yellow_wallpaper"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "yellow_cherry_wallpaper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:paper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "yellow_cherry_wallpaper",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:cherry_molded_yellow_wallpaper"
+    ]
+  },
+  "sends_telemetry_event": false
+}

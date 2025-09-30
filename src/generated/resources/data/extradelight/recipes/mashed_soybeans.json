@@ -1,0 +1,14 @@
+{
+  "type": "extradelight:mortar",
+  "fluidOut": {
+    "amount": 0,
+    "fluid": "minecraft:air"
+  },
+  "grinds": 4,
+  "ingredient": {
+    "tag": "forge:soybeans/soaked"
+  },
+  "result": {
+    "item": "extradelight:mashed_soybeans_item"
+  }
+}

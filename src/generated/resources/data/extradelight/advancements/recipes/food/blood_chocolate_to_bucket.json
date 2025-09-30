@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "blood_chocolate": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:blood_chocolate_syrup_bottle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:blood_chocolate_to_bucket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "blood_chocolate",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:blood_chocolate_to_bucket"
+    ]
+  },
+  "sends_telemetry_event": false
+}

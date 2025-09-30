@@ -1,0 +1,398 @@
+{
+  "parent": "extradelight:food",
+  "criteria": {
+    "extradelight.apple_chips": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:apple_chips"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.boiled_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:boiled_egg"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.bruschetta": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:bruschetta"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.caramel_popcorn": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:caramel_popcorn"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.cheeseburger_pickle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:cheeseburger_pickle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.cheesy_garlic_bread": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:cheesy_garlic_bread"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.cheesymite_scroll": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:cheesymite_scroll"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.cinnamon_toast": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:cinnamon_toast"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.crackers": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:crackers"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.edamame": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:edamame"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.garlic_bread": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:garlic_bread"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.graham_cracker": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:graham_cracker"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.jerky": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:jerky"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.naem_moo_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:naem_moo_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.pickled_carrot_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:pickled_carrot_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.pickled_egg_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:pickled_egg_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.pickled_fish_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:pickled_fish_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.popcorn": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:popcorn"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.potato_chips": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:potato_chips"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.roasted_pumpkin_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:roasted_pumpkin_seeds"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.roll": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:roll"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.salami_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:salami_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.sunflower_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:sunflower_seeds"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.toast": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:toast"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.trail_mix": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:trail_mix"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.snacks.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "extradelight:popcorn"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.snacks.name"
+    }
+  },
+  "requirements": [
+    [
+      "extradelight.jerky"
+    ],
+    [
+      "extradelight.apple_chips"
+    ],
+    [
+      "extradelight.potato_chips"
+    ],
+    [
+      "extradelight.crackers"
+    ],
+    [
+      "extradelight.cinnamon_toast"
+    ],
+    [
+      "extradelight.garlic_bread"
+    ],
+    [
+      "extradelight.toast"
+    ],
+    [
+      "extradelight.roll"
+    ],
+    [
+      "extradelight.graham_cracker"
+    ],
+    [
+      "extradelight.cheesymite_scroll"
+    ],
+    [
+      "extradelight.popcorn"
+    ],
+    [
+      "extradelight.bruschetta"
+    ],
+    [
+      "extradelight.pickled_fish_item"
+    ],
+    [
+      "extradelight.pickled_egg_item"
+    ],
+    [
+      "extradelight.pickled_carrot_item"
+    ],
+    [
+      "extradelight.cheesy_garlic_bread"
+    ],
+    [
+      "extradelight.roasted_pumpkin_seeds"
+    ],
+    [
+      "extradelight.salami_item"
+    ],
+    [
+      "extradelight.boiled_egg"
+    ],
+    [
+      "extradelight.edamame"
+    ],
+    [
+      "extradelight.cheeseburger_pickle"
+    ],
+    [
+      "extradelight.naem_moo_item"
+    ],
+    [
+      "extradelight.sunflower_seeds"
+    ],
+    [
+      "extradelight.trail_mix"
+    ],
+    [
+      "extradelight.caramel_popcorn"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

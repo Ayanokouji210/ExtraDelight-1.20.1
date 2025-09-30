@@ -1,0 +1,30 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:tray"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:chicken/breast/raw"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:eggs"
+    },
+    {
+      "tag": "forge:bread/crumbs"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "extradelight:chicken_kiev"
+  }
+}

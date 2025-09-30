@@ -1,0 +1,28 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:mayo_fluid",
+      "nbt": {}
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "forge:carrot/grated"
+    },
+    {
+      "tag": "forge:carrot/grated"
+    },
+    {
+      "tag": "extradelight:processed/apple"
+    }
+  ],
+  "result": {
+    "item": "extradelight:carrot_salad"
+  },
+  "stirs": 8,
+  "usedItem": {
+    "item": "minecraft:bowl"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "tag": "forge:tools/knives"
+  },
+  "out": {
+    "item": "extradelight:pumpkin_roll_feast"
+  },
+  "result": {
+    "item": "extradelight:pumpkin_roll"
+  }
+}

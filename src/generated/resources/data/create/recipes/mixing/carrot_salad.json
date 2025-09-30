@@ -1,0 +1,27 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "forge:carrot/grated"
+    },
+    {
+      "tag": "forge:carrot/grated"
+    },
+    {
+      "tag": "extradelight:processed/apple"
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:mayo_fluid",
+      "nbt": {}
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:carrot_salad"
+    }
+  ]
+}

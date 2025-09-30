@@ -1,0 +1,20 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
+  "ingredients": [
+    {
+      "tag": "forge:cookie_dough/sugar"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    }
+  ],
+  "result": {
+    "item": "extradelight:honey_cookie_dough"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "count": 0,
+    "item": "minecraft:air"
+  }
+}

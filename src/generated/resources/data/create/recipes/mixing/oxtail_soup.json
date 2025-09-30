@@ -1,0 +1,27 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "forge:beef/oxtail"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "tag": "extradelight:broth"
+    },
+    {
+      "tag": "extradelight:processed/tomato"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:oxtail_soup"
+    }
+  ]
+}

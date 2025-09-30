@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:tomato_juice_from_bucket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "tomato_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:tomato_juice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "tomato_juice",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:tomato_juice_from_bucket"
+    ]
+  },
+  "sends_telemetry_event": false
+}

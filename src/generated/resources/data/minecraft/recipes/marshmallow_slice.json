@@ -1,0 +1,27 @@
+{
+  "type": "extradelight:chiller",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:pie_dish"
+  },
+  "cookingTime": 800,
+  "experience": 0.35,
+  "fluid": {
+    "amount": 250,
+    "fluid": "extradelight:marshmallow_fluff_fluid"
+  },
+  "ingredients": [
+    {
+      "tag": "forge:foods/cookie/sugar"
+    },
+    {
+      "tag": "forge:jams"
+    },
+    {
+      "tag": "forge:foods/cookie/sugar"
+    }
+  ],
+  "result": {
+    "item": "extradelight:marshmallow_slice_feast"
+  }
+}

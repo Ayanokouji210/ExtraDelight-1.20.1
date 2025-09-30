@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:hanging_onion"
+    }
+  ],
+  "result": [
+    {
+      "count": 8,
+      "item": "farmersdelight:onion"
+    },
+    {
+      "chance": 0.5,
+      "item": "farmersdelight:rope"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

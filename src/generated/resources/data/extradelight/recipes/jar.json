@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "g": {
+      "tag": "forge:glass"
+    },
+    "s": {
+      "tag": "minecraft:wooden_slabs"
+    }
+  },
+  "pattern": [
+    " s ",
+    "g g",
+    " g "
+  ],
+  "result": {
+    "item": "extradelight:jar"
+  },
+  "show_notification": true
+}

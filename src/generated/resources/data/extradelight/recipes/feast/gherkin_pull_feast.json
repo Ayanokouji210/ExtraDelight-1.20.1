@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "tag": "forge:spoons"
+  },
+  "out": {
+    "item": "extradelight:gherkins_block_item"
+  },
+  "result": {
+    "item": "extradelight:gherkin_item"
+  }
+}

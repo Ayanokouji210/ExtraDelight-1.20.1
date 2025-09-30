@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:smoking/roasted_cocoa_beans_smoke"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "roasted_cocoa_beans_smoking": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:roasted_cocoa_beans"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "roasted_cocoa_beans_smoking",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:smoking/roasted_cocoa_beans_smoke"
+    ]
+  },
+  "sends_telemetry_event": false
+}

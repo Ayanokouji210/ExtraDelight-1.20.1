@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "forge:block/blood_chocolate"
+    }
+  },
+  "pattern": [
+    "b  ",
+    "bb ",
+    "bbb"
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelight:blood_chocolate_stairs"
+  },
+  "show_notification": true
+}

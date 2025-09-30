@@ -1,0 +1,31 @@
+{
+  "type": "extradelight:vat",
+  "ingredients": [
+    {
+      "tag": "forge:sausage/cooked"
+    },
+    {
+      "tag": "forge:sausage/cooked"
+    },
+    {
+      "tag": "forge:sausage/cooked"
+    },
+    {
+      "tag": "forge:sausage/cooked"
+    }
+  ],
+  "result": {
+    "item": "extradelight:pickled_sausage_block_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": [],
+      "lid": true,
+      "time": 168000
+    }
+  ],
+  "stages": 1,
+  "usedItem": {
+    "item": "minecraft:glass_bottle"
+  }
+}

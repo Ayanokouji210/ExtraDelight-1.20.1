@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": {
+      "item": "extradelight:stripped_fruit_log"
+    }
+  },
+  "pattern": [
+    "ff ",
+    "ff "
+  ],
+  "result": {
+    "count": 3,
+    "item": "extradelight:stripped_fruit_wood"
+  },
+  "show_notification": true
+}

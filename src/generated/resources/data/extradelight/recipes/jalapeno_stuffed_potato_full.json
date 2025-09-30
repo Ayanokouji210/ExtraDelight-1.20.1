@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:baked_potato"
+    },
+    {
+      "item": "minecraft:milk_bucket"
+    },
+    {
+      "tag": "forge:cooked_beef"
+    },
+    {
+      "tag": "extradelight:processed/chili"
+    }
+  ],
+  "result": {
+    "item": "extradelight:jalapeno_stuffed_potato"
+  }
+}

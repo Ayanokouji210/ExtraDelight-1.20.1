@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:hazelnut_from_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "hazelnut": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:hazelnut_sack"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "hazelnut",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:hazelnut_from_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}

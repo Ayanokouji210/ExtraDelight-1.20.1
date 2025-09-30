@@ -1,0 +1,10 @@
+{
+  "parent": "extradelight:block/pie_slice3",
+  "textures": {
+    "bottom": "extradelight:block/mississippi_mud_pie_bottom",
+    "inner": "extradelight:block/grasshopper_pie_inner",
+    "particle": "extradelight:block/grasshopper_pie_top",
+    "side": "extradelight:block/mississippi_mud_pie_side",
+    "top": "extradelight:block/grasshopper_pie_top"
+  }
+}

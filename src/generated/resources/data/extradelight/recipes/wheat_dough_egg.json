@@ -1,0 +1,27 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
+  "ingredients": [
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "forge:eggs"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "farmersdelight:wheat_dough"
+  },
+  "stirs": 8,
+  "usedItem": {
+    "count": 0,
+    "item": "minecraft:air"
+  }
+}

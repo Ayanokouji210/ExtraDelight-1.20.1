@@ -1,0 +1,34 @@
+{
+  "type": "extradelight:vat",
+  "ingredients": [
+    {
+      "tag": "forge:soybeans/cooked"
+    },
+    {
+      "tag": "forge:foods/cooked_wheat_seeds"
+    }
+  ],
+  "result": {
+    "item": "extradelight:soy_sauce_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": {
+        "item": "extradelight:yeast"
+      },
+      "lid": true,
+      "time": 72000
+    },
+    {
+      "ingredient": {
+        "tag": "forge:salt"
+      },
+      "lid": true,
+      "time": 336000
+    }
+  ],
+  "stages": 2,
+  "usedItem": {
+    "item": "minecraft:glass_bottle"
+  }
+}

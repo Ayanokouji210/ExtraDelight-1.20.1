@@ -1,0 +1,33 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:crops/hazelnut/cooked"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "extradelight:processed/potato"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:cooked_bacon"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 2,
+    "item": "extradelight:hazelnut_soup"
+  }
+}

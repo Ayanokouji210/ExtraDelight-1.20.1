@@ -1,0 +1,14 @@
+{
+  "type": "extradelight:mortar",
+  "fluidOut": {
+    "amount": 100,
+    "fluid": "extradelight:oil_fluid"
+  },
+  "grinds": 4,
+  "ingredient": {
+    "tag": "forge:seeds/corn"
+  },
+  "result": {
+    "item": "extradelight:corn_meal"
+  }
+}

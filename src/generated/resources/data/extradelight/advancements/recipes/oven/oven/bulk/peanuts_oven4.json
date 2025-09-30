@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:cooking/oven/oven/bulk/peanuts_oven4"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "peanuts_oven": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:tray"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "peanuts_oven",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:cooking/oven/oven/bulk/peanuts_oven4"
+    ]
+  },
+  "sends_telemetry_event": true
+}

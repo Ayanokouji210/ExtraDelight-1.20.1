@@ -1,0 +1,24 @@
+{
+  "type": "extradelight:vat",
+  "ingredients": [
+    {
+      "tag": "forge:raw_fishes"
+    }
+  ],
+  "result": {
+    "item": "extradelight:fish_sauce_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": {
+        "tag": "forge:salt"
+      },
+      "lid": true,
+      "time": 336000
+    }
+  ],
+  "stages": 1,
+  "usedItem": {
+    "item": "minecraft:glass_bottle"
+  }
+}

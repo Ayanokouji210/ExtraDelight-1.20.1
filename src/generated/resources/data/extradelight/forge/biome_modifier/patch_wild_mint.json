@@ -1,0 +1,33 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_cold",
+  "features": {
+    "feature": {
+      "type": "extradelight:wild_mint",
+      "config": {
+        "max_count": 100,
+        "min_count": 20,
+        "tries": 256,
+        "xz_spread": 10,
+        "y_spread": 5
+      }
+    },
+    "placement": [
+      {
+        "type": "minecraft:rarity_filter",
+        "chance": 20
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "WORLD_SURFACE_WG"
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "step": "vegetal_decoration"
+}

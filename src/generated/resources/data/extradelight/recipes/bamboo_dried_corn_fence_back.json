@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:bamboo_dried_corn_fence"
+    }
+  ],
+  "result": {
+    "item": "minecraft:bamboo_fence"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
+  "ingredients": [
+    {
+      "item": "extradelight:butter"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:dyes/brown"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelight:frosting_brown"
+  },
+  "stirs": 2,
+  "usedItem": {
+    "count": 0,
+    "item": "minecraft:air"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "extradelight:melting_pot",
+  "cooktime": 400,
+  "ingredient": {
+    "item": "extradelight:milk_chocolate_block"
+  },
+  "result": {
+    "amount": 1000,
+    "fluid": "extradelight:milk_chocolate_syrup_fluid"
+  }
+}

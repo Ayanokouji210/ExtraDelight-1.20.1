@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "extradelight:gingham_yellow"
+    }
+  },
+  "pattern": [
+    "cc"
+  ],
+  "result": {
+    "count": 3,
+    "item": "extradelight:gingham_carpet_yellow"
+  },
+  "show_notification": true
+}

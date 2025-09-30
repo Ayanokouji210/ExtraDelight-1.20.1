@@ -1,0 +1,263 @@
+{
+  "parent": "extradelight:food",
+  "criteria": {
+    "frosting_black_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:frosting_black"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "frosting_blue_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:frosting_blue"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "frosting_brown_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:frosting_brown"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "frosting_cyan_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:frosting_cyan"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "frosting_gray_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:frosting_gray"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "frosting_green_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:frosting_green"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "frosting_light_blue_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:frosting_light_blue"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "frosting_light_gray_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:frosting_light_gray"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "frosting_lime_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:frosting_lime"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "frosting_magenta_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:frosting_magenta"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "frosting_orange_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:frosting_orange"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "frosting_pink_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:frosting_pink"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "frosting_purple_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:frosting_purple"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "frosting_red_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:frosting_red"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "frosting_white_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:frosting_white"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "frosting_yellow_frosting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:frosting_yellow"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.frosting.desc"
+    },
+    "frame": "goal",
+    "hidden": true,
+    "icon": {
+      "item": "extradelight:frosting_yellow"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.frosting.name"
+    }
+  },
+  "requirements": [
+    [
+      "frosting_white_frosting"
+    ],
+    [
+      "frosting_light_gray_frosting"
+    ],
+    [
+      "frosting_gray_frosting"
+    ],
+    [
+      "frosting_black_frosting"
+    ],
+    [
+      "frosting_brown_frosting"
+    ],
+    [
+      "frosting_red_frosting"
+    ],
+    [
+      "frosting_orange_frosting"
+    ],
+    [
+      "frosting_yellow_frosting"
+    ],
+    [
+      "frosting_lime_frosting"
+    ],
+    [
+      "frosting_green_frosting"
+    ],
+    [
+      "frosting_cyan_frosting"
+    ],
+    [
+      "frosting_light_blue_frosting"
+    ],
+    [
+      "frosting_blue_frosting"
+    ],
+    [
+      "frosting_purple_frosting"
+    ],
+    [
+      "frosting_magenta_frosting"
+    ],
+    [
+      "frosting_pink_frosting"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

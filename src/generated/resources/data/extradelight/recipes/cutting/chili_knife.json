@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:chili"
+    }
+  ],
+  "result": [
+    {
+      "count": 3,
+      "item": "extradelight:sliced_chili"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

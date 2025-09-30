@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "i": {
+      "item": "minecraft:stick"
+    },
+    "s": {
+      "item": "minecraft:end_stone"
+    }
+  },
+  "pattern": [
+    "s  ",
+    " i "
+  ],
+  "result": {
+    "item": "extradelight:pestle_endstone"
+  },
+  "show_notification": true
+}

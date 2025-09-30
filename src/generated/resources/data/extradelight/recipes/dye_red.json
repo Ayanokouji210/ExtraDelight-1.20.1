@@ -1,0 +1,23 @@
+{
+  "type": "extradelight:mortar",
+  "fluidOut": {
+    "amount": 0,
+    "fluid": "minecraft:air"
+  },
+  "grinds": 4,
+  "ingredient": [
+    {
+      "item": "minecraft:red_tulip"
+    },
+    {
+      "item": "minecraft:beetroot"
+    },
+    {
+      "item": "minecraft:poppy"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "minecraft:red_dye"
+  }
+}

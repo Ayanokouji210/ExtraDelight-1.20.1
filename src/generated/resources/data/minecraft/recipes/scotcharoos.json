@@ -1,0 +1,32 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "extradelight:tray"
+  },
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "forge:puffed_rice"
+    },
+    {
+      "tag": "forge:marshmallow"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:butterscotch"
+    },
+    {
+      "tag": "forge:liquid_chocolate"
+    },
+    {
+      "tag": "forge:nut_butter"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "extradelight:scotcharoo_block"
+  }
+}

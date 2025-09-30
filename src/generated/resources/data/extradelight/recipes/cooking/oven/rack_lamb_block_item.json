@@ -1,0 +1,41 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:tray"
+  },
+  "cookingtime": 1600,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:mutton/ribs"
+    },
+    {
+      "tag": "forge:cooking_oil"
+    },
+    {
+      "tag": "forge:mutton/ribs"
+    },
+    {
+      "tag": "forge:mutton/ribs"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "forge:mutton/ribs"
+    },
+    {
+      "tag": "forge:berries"
+    },
+    {
+      "tag": "forge:bread/crumbs"
+    },
+    {
+      "tag": "forge:berries"
+    }
+  ],
+  "result": {
+    "item": "extradelight:rack_lamb_block_item"
+  }
+}

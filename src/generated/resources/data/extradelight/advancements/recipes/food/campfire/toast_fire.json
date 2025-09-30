@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:campfire/toast_fire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "toast_campfire": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:toast"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "toast_campfire",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:campfire/toast_fire"
+    ]
+  },
+  "sends_telemetry_event": false
+}

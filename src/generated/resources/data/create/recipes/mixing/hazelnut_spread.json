@@ -1,0 +1,26 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "amount": 250,
+      "fluidTag": "forge:chocolate"
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:nut_butter_fluid",
+      "nbt": {}
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:hazelnut_spread_bottle"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:whipped_cream_fluid",
+      "nbt": {}
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "extradelight:butter"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:dyes/green"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelight:frosting_green"
+  },
+  "stirs": 2,
+  "usedItem": {
+    "count": 0,
+    "item": "minecraft:air"
+  }
+}

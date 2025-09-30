@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:dark_oak_counter_cabinet"
+    }
+  ],
+  "result": {
+    "item": "extradelight:dark_oak_half_cabinet"
+  }
+}

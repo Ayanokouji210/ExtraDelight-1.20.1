@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "forge:block/dark_chocolate"
+    },
+    "s": {
+      "tag": "forge:chocolate/dark/bar"
+    }
+  },
+  "pattern": [
+    "bsb",
+    "bsb"
+  ],
+  "result": {
+    "count": 3,
+    "item": "extradelight:dark_chocolate_fence"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,24 @@
+{
+  "type": "extradelight:vat",
+  "ingredients": [
+    {
+      "tag": "forge:soybeans/cooked"
+    }
+  ],
+  "result": {
+    "item": "extradelight:natto_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": {
+        "item": "extradelight:yeast"
+      },
+      "lid": true,
+      "time": 72000
+    }
+  ],
+  "stages": 1,
+  "usedItem": {
+    "item": "minecraft:bowl"
+  }
+}

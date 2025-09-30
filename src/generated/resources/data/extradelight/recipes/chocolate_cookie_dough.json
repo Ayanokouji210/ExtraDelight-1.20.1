@@ -1,0 +1,29 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
+  "ingredients": [
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:eggs"
+    },
+    {
+      "tag": "forge:cocoa/powder"
+    }
+  ],
+  "result": {
+    "item": "extradelight:chocolate_cookie_dough"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "count": 0,
+    "item": "minecraft:air"
+  }
+}

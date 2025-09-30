@@ -1,0 +1,26 @@
+{
+  "type": "extradelight:chiller",
+  "consumeContainer": true,
+  "container": {
+    "count": 4,
+    "item": "minecraft:stick"
+  },
+  "cookingTime": 800,
+  "experience": 0.35,
+  "fluid": {
+    "amount": 0,
+    "fluid": "minecraft:air"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "tag": "forge:ice_cream"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelight:honey_popsicle"
+  }
+}

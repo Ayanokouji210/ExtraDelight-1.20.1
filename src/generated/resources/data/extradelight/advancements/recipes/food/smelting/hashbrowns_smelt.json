@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:smelting/hashbrowns_smelt"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "hashbrowns_smelting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:hashbrowns"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "hashbrowns_smelting",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:smelting/hashbrowns_smelt"
+    ]
+  },
+  "sends_telemetry_event": false
+}

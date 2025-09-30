@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mallow_root_powder_from_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "mallow_root_powder": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:mallow_powder_sack"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "mallow_root_powder",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mallow_root_powder_from_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}

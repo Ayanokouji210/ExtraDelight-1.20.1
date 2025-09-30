@@ -1,0 +1,14 @@
+{
+  "type": "extradelight:mortar",
+  "fluidOut": {
+    "amount": 0,
+    "fluid": "minecraft:air"
+  },
+  "grinds": 8,
+  "ingredient": {
+    "item": "extradelight:agar_sheets"
+  },
+  "result": {
+    "item": "extradelight:agar_agar"
+  }
+}

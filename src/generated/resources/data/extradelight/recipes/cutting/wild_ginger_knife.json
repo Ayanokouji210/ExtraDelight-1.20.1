@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:wild_ginger"
+    }
+  ],
+  "result": [
+    {
+      "item": "extradelight:ginger"
+    },
+    {
+      "chance": 0.5,
+      "count": 2,
+      "item": "minecraft:red_dye"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

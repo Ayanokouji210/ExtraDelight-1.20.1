@@ -1,0 +1,32 @@
+{
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:cooking/oven/pie_crust"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "pie_crust": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:flour"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "pie_crust",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:cooking/oven/pie_crust"
+    ]
+  },
+  "sends_telemetry_event": true
+}

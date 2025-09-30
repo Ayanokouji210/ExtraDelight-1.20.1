@@ -1,0 +1,36 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:muffin_tin"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:corn/meal"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "extradelight:butter"
+    },
+    {
+      "item": "extradelight:egg_mix"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "extradelight:processed/chili"
+    }
+  ],
+  "result": {
+    "count": 6,
+    "item": "extradelight:chili_cheese_cornbread_muffin"
+  }
+}

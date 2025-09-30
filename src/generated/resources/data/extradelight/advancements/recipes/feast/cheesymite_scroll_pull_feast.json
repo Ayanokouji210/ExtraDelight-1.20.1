@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "has_cheesymite_scrolls": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:cheesymite_scroll_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:feast/cheesymite_scroll_pull_feast"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cheesymite_scrolls"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:feast/cheesymite_scroll_pull_feast"
+    ]
+  },
+  "sends_telemetry_event": true
+}

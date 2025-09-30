@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "forge:block/milk_chocolate"
+    },
+    "s": {
+      "tag": "forge:chocolate/milk/bar"
+    }
+  },
+  "pattern": [
+    "bsb",
+    "bsb"
+  ],
+  "result": {
+    "count": 3,
+    "item": "extradelight:milk_chocolate_fence"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:milk_chocolate_trapdoor"
+    }
+  ],
+  "result": [
+    {
+      "item": "extradelight:milk_chocolate_block"
+    }
+  ],
+  "tool": {
+    "type": "farmersdelight:tool_action",
+    "action": "pickaxe_dig"
+  }
+}

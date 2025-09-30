@@ -1,0 +1,26 @@
+{
+  "type": "extradelight:vat",
+  "ingredients": [
+    {
+      "tag": "forge:fruit"
+    }
+  ],
+  "result": {
+    "count": 16,
+    "item": "extradelight:yeast"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": {
+        "item": "extradelight:yeast"
+      },
+      "lid": false,
+      "time": 168000
+    }
+  ],
+  "stages": 1,
+  "usedItem": {
+    "count": 16,
+    "item": "minecraft:glass_bottle"
+  }
+}

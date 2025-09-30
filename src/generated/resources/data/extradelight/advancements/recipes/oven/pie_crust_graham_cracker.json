@@ -1,0 +1,32 @@
+{
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:cooking/oven/pie_crust_graham_cracker"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "pie_crust": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:graham_cracker"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "pie_crust",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:cooking/oven/pie_crust_graham_cracker"
+    ]
+  },
+  "sends_telemetry_event": true
+}

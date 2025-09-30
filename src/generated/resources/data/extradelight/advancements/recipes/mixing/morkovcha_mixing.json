@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/morkovcha_mixing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "morkovcha_mixing": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:morkovcha"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "morkovcha_mixing"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/morkovcha_mixing"
+    ]
+  },
+  "sends_telemetry_event": true
+}

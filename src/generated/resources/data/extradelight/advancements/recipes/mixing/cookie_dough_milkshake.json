@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "cookie_dough_milkshake": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:cookie_dough_milkshake"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/cookie_dough_milkshake"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "cookie_dough_milkshake"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/cookie_dough_milkshake"
+    ]
+  },
+  "sends_telemetry_event": true
+}

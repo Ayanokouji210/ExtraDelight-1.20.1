@@ -1,0 +1,29 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": true,
+  "container": {
+    "item": "farmersdelight:skillet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:corn/meal"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "extradelight:butter"
+    },
+    {
+      "item": "extradelight:egg_mix"
+    }
+  ],
+  "result": {
+    "item": "extradelight:cornbread_feast"
+  }
+}

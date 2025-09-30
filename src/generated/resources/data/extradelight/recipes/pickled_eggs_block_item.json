@@ -1,0 +1,34 @@
+{
+  "type": "extradelight:vat",
+  "ingredients": [
+    {
+      "tag": "forge:eggs/boiled"
+    },
+    {
+      "tag": "forge:eggs/boiled"
+    },
+    {
+      "tag": "forge:eggs/boiled"
+    },
+    {
+      "tag": "forge:eggs/boiled"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "extradelight:pickled_eggs_block_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": [],
+      "lid": true,
+      "time": 168000
+    }
+  ],
+  "stages": 1,
+  "usedItem": {
+    "item": "minecraft:glass_bottle"
+  }
+}

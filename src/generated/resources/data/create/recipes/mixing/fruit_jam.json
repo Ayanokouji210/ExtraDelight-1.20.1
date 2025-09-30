@@ -1,0 +1,75 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:jammable"
+      },
+      "subtracted": [
+        {
+          "item": "minecraft:golden_apple"
+        },
+        {
+          "item": "minecraft:glow_berries"
+        },
+        {
+          "item": "minecraft:enchanted_golden_apple"
+        }
+      ]
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:jammable"
+      },
+      "subtracted": [
+        {
+          "item": "minecraft:golden_apple"
+        },
+        {
+          "item": "minecraft:glow_berries"
+        },
+        {
+          "item": "minecraft:enchanted_golden_apple"
+        }
+      ]
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:jammable"
+      },
+      "subtracted": [
+        {
+          "item": "minecraft:golden_apple"
+        },
+        {
+          "item": "minecraft:glow_berries"
+        },
+        {
+          "item": "minecraft:enchanted_golden_apple"
+        }
+      ]
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:jam"
+    }
+  ]
+}

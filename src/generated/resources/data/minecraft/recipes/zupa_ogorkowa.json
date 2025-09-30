@@ -1,0 +1,33 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "extradelight:processed/carrot"
+    },
+    {
+      "tag": "extradelight:processed/pickled/cucumber"
+    },
+    {
+      "tag": "extradelight:processed/potato"
+    },
+    {
+      "tag": "extradelight:broth"
+    },
+    {
+      "tag": "forge:pickle_juice"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 3,
+    "item": "extradelight:zupa_ogorkowa"
+  }
+}

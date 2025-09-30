@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "minecraft:paper"
+  },
+  "out": {
+    "item": "extradelight:scotcharoo_block"
+  },
+  "result": {
+    "item": "extradelight:scotcharoo"
+  }
+}

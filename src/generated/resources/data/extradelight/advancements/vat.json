@@ -1,0 +1,38 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "vat": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:vat"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.vat.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "extradelight:vat"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.vat.name"
+    }
+  },
+  "requirements": [
+    [
+      "vat"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

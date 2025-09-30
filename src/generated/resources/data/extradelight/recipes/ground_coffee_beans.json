@@ -1,0 +1,14 @@
+{
+  "type": "extradelight:mortar",
+  "fluidOut": {
+    "amount": 0,
+    "fluid": "minecraft:air"
+  },
+  "grinds": 4,
+  "ingredient": {
+    "tag": "forge:crops/coffee/cooked"
+  },
+  "result": {
+    "item": "extradelight:ground_coffee"
+  }
+}

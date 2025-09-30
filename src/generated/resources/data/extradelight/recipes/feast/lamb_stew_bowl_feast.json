@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "out": {
+    "item": "extradelight:lamb_stew_feast"
+  },
+  "result": {
+    "item": "extradelight:lamb_stew"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:roasted_peanut_sack"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "extradelight:roasted_peanuts"
+  }
+}

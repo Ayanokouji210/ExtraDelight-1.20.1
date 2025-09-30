@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "extradelight:item/mississippi_mud_pie_slice"
+  }
+}

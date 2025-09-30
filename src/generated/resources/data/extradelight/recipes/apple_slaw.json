@@ -1,0 +1,30 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:mayo_fluid",
+      "nbt": {}
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:vinegar_fluid",
+      "nbt": {}
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/cabbage"
+    },
+    {
+      "tag": "forge:apple/sliced"
+    }
+  ],
+  "result": {
+    "item": "extradelight:apple_slaw"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "item": "minecraft:bowl"
+  }
+}

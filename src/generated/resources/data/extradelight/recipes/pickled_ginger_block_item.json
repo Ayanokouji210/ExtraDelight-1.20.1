@@ -1,0 +1,38 @@
+{
+  "type": "extradelight:vat",
+  "ingredients": [
+    {
+      "tag": "forge:ginger/sliced"
+    },
+    {
+      "tag": "forge:ginger/sliced"
+    },
+    {
+      "tag": "forge:ginger/sliced"
+    },
+    {
+      "tag": "forge:ginger/sliced"
+    }
+  ],
+  "result": {
+    "item": "extradelight:pickled_ginger_block_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": {
+        "tag": "forge:salt"
+      },
+      "lid": false,
+      "time": 1000
+    },
+    {
+      "ingredient": [],
+      "lid": true,
+      "time": 168000
+    }
+  ],
+  "stages": 2,
+  "usedItem": {
+    "item": "minecraft:glass_bottle"
+  }
+}

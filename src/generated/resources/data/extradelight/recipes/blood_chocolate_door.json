@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "forge:block/blood_chocolate"
+    }
+  },
+  "pattern": [
+    "bb",
+    "bb",
+    "bb"
+  ],
+  "result": {
+    "count": 3,
+    "item": "extradelight:blood_chocolate_door"
+  },
+  "show_notification": true
+}

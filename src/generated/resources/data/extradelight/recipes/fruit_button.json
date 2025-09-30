@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:fruit_planks"
+    }
+  ],
+  "result": {
+    "item": "extradelight:fruit_button"
+  }
+}

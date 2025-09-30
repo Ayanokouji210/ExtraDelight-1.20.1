@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:campfire/omelette_mix_fire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "omelette_mix_campfire": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:omelette"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "omelette_mix_campfire",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:campfire/omelette_mix_fire"
+    ]
+  },
+  "sends_telemetry_event": false
+}

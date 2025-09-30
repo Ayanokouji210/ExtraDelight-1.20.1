@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:smoking/roasted_apple_smoke"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "roasted_apple_smoking": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:roasted_apple"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "roasted_apple_smoking",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:smoking/roasted_apple_smoke"
+    ]
+  },
+  "sends_telemetry_event": false
+}

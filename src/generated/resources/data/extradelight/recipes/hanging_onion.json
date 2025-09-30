@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "farmersdelight:onion"
+    },
+    "r": {
+      "item": "farmersdelight:rope"
+    }
+  },
+  "pattern": [
+    "ccc",
+    "crc",
+    "ccc"
+  ],
+  "result": {
+    "item": "extradelight:hanging_onion"
+  },
+  "show_notification": true
+}

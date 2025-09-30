@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "breadcrumbs": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:breadcrumbs"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:breadcrumbs_to_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "breadcrumbs",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:breadcrumbs_to_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}

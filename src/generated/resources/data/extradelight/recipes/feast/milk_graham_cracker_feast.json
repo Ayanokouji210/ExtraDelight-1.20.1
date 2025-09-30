@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "extradelight:graham_cracker"
+  },
+  "out": {
+    "item": "extradelight:milk_chocolate_fondue_block"
+  },
+  "result": {
+    "item": "extradelight:milk_chocolate_dipped_graham_cracker"
+  }
+}

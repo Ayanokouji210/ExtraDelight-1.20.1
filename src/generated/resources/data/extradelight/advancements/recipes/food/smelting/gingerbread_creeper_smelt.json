@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "gingerbread_creeper_smelting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:gingerbread_creeper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:smelting/gingerbread_creeper_smelt"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "gingerbread_creeper_smelting",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:smelting/gingerbread_creeper_smelt"
+    ]
+  },
+  "sends_telemetry_event": false
+}

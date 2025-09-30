@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "cocoa_nut_butter_spread": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:hazelnut_spread_bottle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:cocoa_nut_butter_spread_to_bucket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "cocoa_nut_butter_spread",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:cocoa_nut_butter_spread_to_bucket"
+    ]
+  },
+  "sends_telemetry_event": false
+}

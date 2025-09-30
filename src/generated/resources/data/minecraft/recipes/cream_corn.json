@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "extradelight:cooked_corn"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "tag": "forge:butter"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "extradelight:cream_corn"
+  }
+}

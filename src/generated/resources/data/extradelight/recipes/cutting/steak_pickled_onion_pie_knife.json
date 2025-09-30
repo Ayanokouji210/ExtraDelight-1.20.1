@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:steak_pickled_onion_pie_item"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "extradelight:steak_pickled_onion_pie_slice"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

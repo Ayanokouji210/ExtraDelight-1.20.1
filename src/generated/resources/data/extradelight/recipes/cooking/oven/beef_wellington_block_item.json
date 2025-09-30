@@ -1,0 +1,41 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:tray"
+  },
+  "cookingtime": 1600,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:mushrooms"
+    },
+    {
+      "tag": "forge:beef/roast"
+    },
+    {
+      "tag": "forge:mushrooms"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:dough"
+    },
+    {
+      "tag": "forge:liver"
+    },
+    {
+      "tag": "forge:cooked_bacon"
+    },
+    {
+      "tag": "forge:eggs"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    }
+  ],
+  "result": {
+    "item": "extradelight:beef_wellington_block_item"
+  }
+}

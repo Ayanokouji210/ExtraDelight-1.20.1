@@ -1,0 +1,18 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:sheet"
+  },
+  "cookingtime": 400,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:nut_butter_cookie_dough"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "extradelight:nut_butter_cookie"
+  }
+}

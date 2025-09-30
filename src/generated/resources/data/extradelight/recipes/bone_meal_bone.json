@@ -1,0 +1,15 @@
+{
+  "type": "extradelight:mortar",
+  "fluidOut": {
+    "amount": 0,
+    "fluid": "minecraft:air"
+  },
+  "grinds": 8,
+  "ingredient": {
+    "item": "minecraft:bone"
+  },
+  "result": {
+    "count": 4,
+    "item": "minecraft:bone_meal"
+  }
+}

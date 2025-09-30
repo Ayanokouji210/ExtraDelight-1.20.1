@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:ribbon"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "forge:chests"
+    },
+    {
+      "tag": "forge:dyes/orange"
+    }
+  ],
+  "result": {
+    "item": "extradelight:orange_chocolate_box"
+  }
+}

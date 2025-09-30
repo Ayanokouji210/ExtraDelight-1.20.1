@@ -1,0 +1,15 @@
+{
+  "type": "extradelight:mortar",
+  "fluidOut": {
+    "amount": 250,
+    "fluid": "extradelight:nut_butter_fluid"
+  },
+  "grinds": 4,
+  "ingredient": {
+    "tag": "forge:nuts/cooked"
+  },
+  "result": {
+    "count": 0,
+    "item": "minecraft:air"
+  }
+}

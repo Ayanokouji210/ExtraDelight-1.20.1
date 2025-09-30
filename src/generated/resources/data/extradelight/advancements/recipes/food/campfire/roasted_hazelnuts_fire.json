@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:campfire/roasted_hazelnuts_fire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "roasted_hazelnuts_campfire": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:roasted_hazelnuts"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "roasted_hazelnuts_campfire",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:campfire/roasted_hazelnuts_fire"
+    ]
+  },
+  "sends_telemetry_event": false
+}

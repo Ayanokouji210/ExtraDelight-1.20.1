@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:sugar_from_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "sugar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:sugar_sack"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "sugar",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:sugar_from_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}

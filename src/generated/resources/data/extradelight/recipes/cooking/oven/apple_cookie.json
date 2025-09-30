@@ -1,0 +1,18 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:sheet"
+  },
+  "cookingtime": 400,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:apple_cookie_dough"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "extradelight:apple_cookie"
+  }
+}

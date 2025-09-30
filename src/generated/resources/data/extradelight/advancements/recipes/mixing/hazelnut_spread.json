@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/hazelnut_spread"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "hazelnut_spread": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:hazelnut_spread_bottle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "hazelnut_spread"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/hazelnut_spread"
+    ]
+  },
+  "sends_telemetry_event": true
+}

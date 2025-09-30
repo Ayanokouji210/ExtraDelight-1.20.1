@@ -1,0 +1,32 @@
+{
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:cooking/oven/hotdish"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "hotdish": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:foods/soup"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "hotdish",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:cooking/oven/hotdish"
+    ]
+  },
+  "sends_telemetry_event": true
+}

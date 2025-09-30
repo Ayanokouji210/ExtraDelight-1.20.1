@@ -1,0 +1,29 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "tag": "extradelight:broth"
+    },
+    {
+      "tag": "forge:cooked_chicken"
+    },
+    {
+      "tag": "extradelight:processed/chili"
+    },
+    {
+      "tag": "extradelight:processed/vegetable"
+    },
+    {
+      "tag": "extradelight:processed/vegetable"
+    }
+  ],
+  "results": [
+    {
+      "item": "extradelight:white_chili_feast"
+    }
+  ]
+}

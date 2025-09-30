@@ -1,0 +1,32 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:square_pan"
+  },
+  "cookingtime": 1600,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/apple"
+    },
+    {
+      "tag": "forge:pork/roast"
+    },
+    {
+      "tag": "extradelight:processed/apple"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "extradelight:broth"
+    },
+    {
+      "tag": "forge:butter"
+    }
+  ],
+  "result": {
+    "item": "extradelight:pork_and_apples_feast"
+  }
+}

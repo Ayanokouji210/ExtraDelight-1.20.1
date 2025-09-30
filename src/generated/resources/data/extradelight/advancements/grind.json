@@ -1,0 +1,50 @@
+{
+  "parent": "extradelight:mortar",
+  "criteria": {
+    "grind": {
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": [
+                  "extradelight:mortar_stone"
+                ]
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "tag": "forge:pestles"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.grind.desc"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "extradelight:pestle_endstone",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.grind.name"
+    }
+  },
+  "requirements": [
+    [
+      "grind"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

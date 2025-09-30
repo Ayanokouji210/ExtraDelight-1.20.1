@@ -1,0 +1,24 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:wild_cucumber_item"
+    }
+  ],
+  "result": [
+    {
+      "item": "extradelight:cucumber_seed"
+    },
+    {
+      "chance": 0.2,
+      "item": "extradelight:cucumber"
+    },
+    {
+      "chance": 0.1,
+      "item": "minecraft:green_dye"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

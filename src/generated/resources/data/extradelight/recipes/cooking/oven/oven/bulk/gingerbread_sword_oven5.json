@@ -1,0 +1,30 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:raw_gingerbread_sword"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_sword"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_sword"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_sword"
+    },
+    {
+      "item": "extradelight:raw_gingerbread_sword"
+    }
+  ],
+  "result": {
+    "count": 5,
+    "item": "extradelight:gingerbread_sword"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "extradelight:sliced_apple"
+  },
+  "out": {
+    "item": "extradelight:blood_chocolate_fondue_block"
+  },
+  "result": {
+    "item": "extradelight:blood_chocolate_dipped_apple_slice"
+  }
+}

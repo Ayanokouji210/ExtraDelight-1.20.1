@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:mallow_powder_sack"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "extradelight:mallow_powder"
+  }
+}

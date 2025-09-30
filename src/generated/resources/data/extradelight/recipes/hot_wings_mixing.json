@@ -1,0 +1,23 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
+  "ingredients": [
+    {
+      "tag": "forge:chicken/wing/cooked"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:condiments/hot_sauce"
+    }
+  ],
+  "result": {
+    "item": "extradelight:hot_wings"
+  },
+  "stirs": 2,
+  "usedItem": {
+    "count": 0,
+    "item": "minecraft:air"
+  }
+}

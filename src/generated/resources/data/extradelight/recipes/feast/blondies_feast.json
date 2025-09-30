@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "minecraft:paper"
+  },
+  "out": {
+    "item": "extradelight:blondies_block"
+  },
+  "result": {
+    "item": "extradelight:blondie"
+  }
+}

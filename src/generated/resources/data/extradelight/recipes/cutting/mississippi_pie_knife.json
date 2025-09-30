@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:mississippi_mud_pie"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "extradelight:mississippi_mud_pie_slice"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

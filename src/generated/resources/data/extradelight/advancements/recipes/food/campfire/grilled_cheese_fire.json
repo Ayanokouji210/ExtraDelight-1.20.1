@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "grilled_cheese_campfire": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:grilled_cheese"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:campfire/grilled_cheese_fire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "grilled_cheese_campfire",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:campfire/grilled_cheese_fire"
+    ]
+  },
+  "sends_telemetry_event": false
+}

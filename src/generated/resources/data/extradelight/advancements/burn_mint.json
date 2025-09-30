@@ -1,0 +1,51 @@
+{
+  "parent": "extradelight:start",
+  "criteria": {
+    "burn_mint": {
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": [
+                  "extradelight:mint_crop"
+                ]
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": [
+                "minecraft:flint_and_steel"
+              ]
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "extradelight.advancement.burn_mint.desc"
+    },
+    "frame": "goal",
+    "hidden": true,
+    "icon": {
+      "item": "extradelight:mint"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "extradelight.advancement.burn_mint.name"
+    }
+  },
+  "requirements": [
+    [
+      "burn_mint"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

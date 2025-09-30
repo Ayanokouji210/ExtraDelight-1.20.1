@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:breadcrumbs"
+    },
+    {
+      "item": "extradelight:breadcrumbs"
+    },
+    {
+      "item": "extradelight:breadcrumbs"
+    },
+    {
+      "item": "extradelight:breadcrumbs"
+    },
+    {
+      "item": "extradelight:breadcrumbs"
+    },
+    {
+      "item": "extradelight:breadcrumbs"
+    },
+    {
+      "item": "extradelight:breadcrumbs"
+    },
+    {
+      "item": "extradelight:breadcrumbs"
+    },
+    {
+      "item": "extradelight:breadcrumbs"
+    }
+  ],
+  "result": {
+    "item": "extradelight:breadcrumb_sack"
+  }
+}

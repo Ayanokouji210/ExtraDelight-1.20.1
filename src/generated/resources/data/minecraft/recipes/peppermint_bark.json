@@ -1,0 +1,28 @@
+{
+  "type": "extradelight:chiller",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:tray"
+  },
+  "cookingTime": 400,
+  "experience": 0.35,
+  "fluid": {
+    "amount": 250,
+    "fluid": "extradelight:white_chocolate_syrup_fluid"
+  },
+  "ingredients": [
+    {
+      "tag": "forge:cooking_oil"
+    },
+    {
+      "tag": "forge:liquid_chocolate"
+    },
+    {
+      "tag": "forge:candy/peppermint"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelight:peppermint_bark"
+  }
+}

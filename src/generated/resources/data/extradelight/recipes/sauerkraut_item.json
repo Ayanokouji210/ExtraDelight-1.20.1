@@ -1,0 +1,34 @@
+{
+  "type": "extradelight:vat",
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/cabbage"
+    },
+    {
+      "tag": "extradelight:processed/cabbage"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "extradelight:sauerkraut_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": {
+        "tag": "forge:salt"
+      },
+      "lid": false,
+      "time": 1000
+    },
+    {
+      "ingredient": [],
+      "lid": true,
+      "time": 168000
+    }
+  ],
+  "stages": 2,
+  "usedItem": {
+    "count": 2,
+    "item": "minecraft:bowl"
+  }
+}

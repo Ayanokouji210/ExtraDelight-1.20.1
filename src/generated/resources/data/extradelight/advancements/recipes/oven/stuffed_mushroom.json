@@ -1,0 +1,32 @@
+{
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:cooking/oven/stuffed_mushroom"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "stuffed_mushroom": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:mushrooms"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "stuffed_mushroom",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:cooking/oven/stuffed_mushroom"
+    ]
+  },
+  "sends_telemetry_event": true
+}

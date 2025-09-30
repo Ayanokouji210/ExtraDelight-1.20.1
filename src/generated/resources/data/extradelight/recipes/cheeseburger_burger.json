@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "farmersdelight:hamburger"
+    },
+    {
+      "tag": "extradelight:processed/pickled/cucumber"
+    },
+    {
+      "tag": "forge:cheese"
+    }
+  ],
+  "result": {
+    "item": "extradelight:cheeseburger"
+  }
+}

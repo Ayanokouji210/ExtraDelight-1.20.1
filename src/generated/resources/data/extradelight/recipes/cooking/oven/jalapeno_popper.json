@@ -1,0 +1,27 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:tray"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:crops/chili"
+    },
+    {
+      "tag": "forge:crops/chili"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:raw_bacon"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "extradelight:jalapeno_popper"
+  }
+}

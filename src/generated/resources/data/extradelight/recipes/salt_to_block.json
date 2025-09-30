@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:salt"
+    },
+    {
+      "item": "extradelight:salt"
+    },
+    {
+      "item": "extradelight:salt"
+    },
+    {
+      "item": "extradelight:salt"
+    },
+    {
+      "item": "extradelight:salt"
+    },
+    {
+      "item": "extradelight:salt"
+    },
+    {
+      "item": "extradelight:salt"
+    },
+    {
+      "item": "extradelight:salt"
+    },
+    {
+      "item": "extradelight:salt"
+    }
+  ],
+  "result": {
+    "item": "extradelight:salt_block_item"
+  }
+}

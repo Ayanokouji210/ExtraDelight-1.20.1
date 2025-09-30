@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:smelting/toast_smelt"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "toast_smelting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:toast"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "toast_smelting",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:smelting/toast_smelt"
+    ]
+  },
+  "sends_telemetry_event": false
+}

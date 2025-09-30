@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:natto_and_rice"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "natto_and_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:natto_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "natto_and_rice",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:natto_and_rice"
+    ]
+  },
+  "sends_telemetry_event": false
+}

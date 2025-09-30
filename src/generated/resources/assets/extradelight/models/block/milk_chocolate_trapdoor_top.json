@@ -1,0 +1,6 @@
+{
+  "parent": "extradelight:block/chocolate_trapdoor_top",
+  "textures": {
+    "texture": "extradelight:block/cosmetics/chocolate/milk_chocolate_trapdoor"
+  }
+}

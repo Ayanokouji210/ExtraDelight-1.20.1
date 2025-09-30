@@ -1,0 +1,33 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_swamp",
+  "features": {
+    "feature": {
+      "type": "extradelight:wild_mallow",
+      "config": {
+        "max_count": 150,
+        "min_count": 70,
+        "tries": 256,
+        "xz_spread": 10,
+        "y_spread": 5
+      }
+    },
+    "placement": [
+      {
+        "type": "minecraft:rarity_filter",
+        "chance": 70
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:heightmap",
+        "heightmap": "WORLD_SURFACE_WG"
+      },
+      {
+        "type": "minecraft:biome"
+      }
+    ]
+  },
+  "step": "vegetal_decoration"
+}

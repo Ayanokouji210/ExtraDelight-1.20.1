@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "gingerbread_creeper_campfire": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:gingerbread_creeper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:campfire/gingerbread_creeper_fire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "gingerbread_creeper_campfire",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:campfire/gingerbread_creeper_fire"
+    ]
+  },
+  "sends_telemetry_event": false
+}

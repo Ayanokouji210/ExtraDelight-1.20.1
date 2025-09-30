@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "extradelight:corn_on_cob"
+    },
+    "r": {
+      "item": "farmersdelight:rope"
+    }
+  },
+  "pattern": [
+    "ccc",
+    "crc",
+    "ccc"
+  ],
+  "result": {
+    "item": "extradelight:hanging_corn"
+  },
+  "show_notification": true
+}

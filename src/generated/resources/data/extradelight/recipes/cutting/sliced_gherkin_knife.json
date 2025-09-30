@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:gherkin_item"
+    }
+  ],
+  "result": [
+    {
+      "count": 3,
+      "item": "extradelight:sliced_gherkin_item"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

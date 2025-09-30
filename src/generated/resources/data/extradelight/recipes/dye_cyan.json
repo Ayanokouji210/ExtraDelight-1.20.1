@@ -1,0 +1,15 @@
+{
+  "type": "extradelight:mortar",
+  "fluidOut": {
+    "amount": 0,
+    "fluid": "minecraft:air"
+  },
+  "grinds": 4,
+  "ingredient": {
+    "item": "minecraft:pitcher_plant"
+  },
+  "result": {
+    "count": 3,
+    "item": "minecraft:cyan_dye"
+  }
+}

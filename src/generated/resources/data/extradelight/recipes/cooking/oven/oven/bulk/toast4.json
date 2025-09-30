@@ -1,0 +1,27 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:bread/sliced"
+    },
+    {
+      "tag": "forge:bread/sliced"
+    },
+    {
+      "tag": "forge:bread/sliced"
+    },
+    {
+      "tag": "forge:bread/sliced"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelight:toast"
+  }
+}

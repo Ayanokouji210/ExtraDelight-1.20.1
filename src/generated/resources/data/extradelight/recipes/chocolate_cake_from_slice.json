@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:chocolate_cake"
+    },
+    {
+      "item": "extradelight:chocolate_cake"
+    },
+    {
+      "item": "extradelight:chocolate_cake"
+    },
+    {
+      "item": "extradelight:chocolate_cake"
+    },
+    {
+      "item": "extradelight:chocolate_cake"
+    },
+    {
+      "item": "extradelight:chocolate_cake"
+    },
+    {
+      "item": "extradelight:chocolate_cake"
+    }
+  ],
+  "result": {
+    "item": "extradelight:chocolate_cake_block"
+  }
+}

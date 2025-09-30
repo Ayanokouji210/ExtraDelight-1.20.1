@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:smelting/popcorn_smelt"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "popcorn_smelting": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:popcorn"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "popcorn_smelting",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:smelting/popcorn_smelt"
+    ]
+  },
+  "sends_telemetry_event": false
+}

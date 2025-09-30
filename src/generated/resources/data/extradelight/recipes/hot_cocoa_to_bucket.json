@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "farmersdelight:hot_cocoa"
+    },
+    {
+      "item": "farmersdelight:hot_cocoa"
+    },
+    {
+      "item": "farmersdelight:hot_cocoa"
+    },
+    {
+      "item": "farmersdelight:hot_cocoa"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "item": "extradelight:hot_cocoa_fluid_bucket"
+  }
+}

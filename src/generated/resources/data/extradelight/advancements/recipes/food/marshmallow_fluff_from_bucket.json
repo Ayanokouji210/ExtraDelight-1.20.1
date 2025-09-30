@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:marshmallow_fluff_from_bucket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "marshmallow_fluff": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:marshmallow_fluff_bottle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "marshmallow_fluff",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:marshmallow_fluff_from_bucket"
+    ]
+  },
+  "sends_telemetry_event": false
+}

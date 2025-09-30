@@ -1,0 +1,11 @@
+{
+  "type": "extradelight:melting_pot",
+  "cooktime": 400,
+  "ingredient": {
+    "item": "extradelight:blood_chocolate_block"
+  },
+  "result": {
+    "amount": 1000,
+    "fluid": "extradelight:blood_chocolate_syrup_fluid"
+  }
+}

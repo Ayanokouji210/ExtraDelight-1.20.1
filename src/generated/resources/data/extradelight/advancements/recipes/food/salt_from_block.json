@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:salt_from_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "salt": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:salt_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "salt",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:salt_from_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}

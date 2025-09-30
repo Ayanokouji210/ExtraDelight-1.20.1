@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:melon_juice_from_bucket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "melon_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "farmersdelight:melon_juice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "melon_juice",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:melon_juice_from_bucket"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "out": {
+    "item": "extradelight:chili_con_carne_feast"
+  },
+  "result": {
+    "item": "extradelight:chili_con_carne"
+  }
+}

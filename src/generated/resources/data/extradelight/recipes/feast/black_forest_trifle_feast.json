@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "out": {
+    "item": "extradelight:black_forest_trifle_block"
+  },
+  "result": {
+    "item": "extradelight:black_forest_trifle"
+  }
+}

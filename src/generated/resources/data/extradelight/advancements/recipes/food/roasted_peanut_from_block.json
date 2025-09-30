@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:roasted_peanut_from_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "roasted_peanut": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:roasted_peanut_sack"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "roasted_peanut",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:roasted_peanut_from_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,41 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:square_pan"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:dough"
+    },
+    {
+      "tag": "forge:yeast_spread"
+    },
+    {
+      "tag": "forge:dough"
+    },
+    {
+      "tag": "forge:dough"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:dough"
+    }
+  ],
+  "result": {
+    "item": "extradelight:cheesymite_scroll_block_item"
+  }
+}

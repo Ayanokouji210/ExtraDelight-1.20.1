@@ -1,0 +1,33 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "forge:crops/hazelnut/cooked"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "extradelight:processed/potato"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:cooked_bacon"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "extradelight:hazelnut_soup"
+    }
+  ]
+}

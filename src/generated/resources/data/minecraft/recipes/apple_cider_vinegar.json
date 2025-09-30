@@ -1,0 +1,31 @@
+{
+  "type": "extradelight:vat",
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelight:vinegar"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": {
+        "item": "extradelight:yeast"
+      },
+      "lid": true,
+      "time": 72000
+    },
+    {
+      "ingredient": [],
+      "lid": false,
+      "time": 168000
+    }
+  ],
+  "stages": 2,
+  "usedItem": {
+    "count": 4,
+    "item": "minecraft:glass_bottle"
+  }
+}

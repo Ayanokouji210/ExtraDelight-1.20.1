@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:fruit_log"
+    }
+  ],
+  "result": [
+    {
+      "item": "extradelight:stripped_fruit_log"
+    },
+    {
+      "item": "farmersdelight:tree_bark"
+    }
+  ],
+  "sound": "net.minecraft.sounds.SoundEvent@2e349cf2",
+  "tool": {
+    "type": "farmersdelight:tool_action",
+    "action": "axe_strip"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:hanging_mint"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "extradelight:mint"
+    },
+    {
+      "chance": 0.5,
+      "item": "farmersdelight:rope"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "values": [
+    "#forge:jam/mundane",
+    "#forge:jam/golden_apple",
+    "#forge:jam/glow_berry",
+    {
+      "id": "#c:jellies",
+      "required": false
+    }
+  ]
+}

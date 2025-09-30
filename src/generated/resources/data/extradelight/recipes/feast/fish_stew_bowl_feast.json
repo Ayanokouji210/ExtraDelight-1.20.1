@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "out": {
+    "item": "extradelight:fish_stew_feast"
+  },
+  "result": {
+    "item": "farmersdelight:fish_stew"
+  }
+}

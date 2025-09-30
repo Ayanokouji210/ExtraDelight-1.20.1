@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:soybean_pod"
+    }
+  ],
+  "result": [
+    {
+      "count": 3,
+      "item": "extradelight:soybeans"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

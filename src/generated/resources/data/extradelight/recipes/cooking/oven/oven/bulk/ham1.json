@@ -1,0 +1,17 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:tray"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "farmersdelight:ham"
+    }
+  ],
+  "result": {
+    "item": "farmersdelight:smoked_ham"
+  }
+}

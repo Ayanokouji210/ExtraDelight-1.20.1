@@ -1,0 +1,8 @@
+{
+  "parent": "extradelight:block/curry_block_stage2",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "1": "extradelight:block/rabbit_stew",
+    "particle": "extradelight:block/rabbit_stew"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "extradelight:block/curry_block_leftover",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "1": "extradelight:block/lamb_stew",
+    "particle": "extradelight:block/pan"
+  }
+}

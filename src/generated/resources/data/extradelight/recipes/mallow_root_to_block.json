@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "forge:crops/mallow_root"
+    },
+    {
+      "tag": "forge:crops/mallow_root"
+    },
+    {
+      "tag": "forge:crops/mallow_root"
+    },
+    {
+      "tag": "forge:crops/mallow_root"
+    },
+    {
+      "tag": "forge:crops/mallow_root"
+    },
+    {
+      "tag": "forge:crops/mallow_root"
+    },
+    {
+      "tag": "forge:crops/mallow_root"
+    },
+    {
+      "tag": "forge:crops/mallow_root"
+    },
+    {
+      "tag": "forge:crops/mallow_root"
+    }
+  ],
+  "result": {
+    "item": "extradelight:mallow_root_crate"
+  }
+}

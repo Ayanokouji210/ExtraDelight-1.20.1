@@ -1,0 +1,38 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:pie_dish"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:fruit/dried"
+    },
+    {
+      "tag": "forge:fruit/dried"
+    },
+    {
+      "tag": "forge:nuts/cooked"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "forge:cinnamon/ground"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "forge:chocolate/chips"
+    }
+  ],
+  "result": {
+    "item": "extradelight:panforte"
+  }
+}

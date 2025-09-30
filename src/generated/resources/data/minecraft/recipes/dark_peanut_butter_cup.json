@@ -1,0 +1,22 @@
+{
+  "type": "extradelight:chiller",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:muffin_tin"
+  },
+  "cookingTime": 400,
+  "experience": 0.35,
+  "fluid": {
+    "amount": 1000,
+    "fluid": "extradelight:dark_chocolate_syrup_fluid"
+  },
+  "ingredients": [
+    {
+      "tag": "forge:nut_butter"
+    }
+  ],
+  "result": {
+    "count": 6,
+    "item": "extradelight:peanut_butter_cup"
+  }
+}

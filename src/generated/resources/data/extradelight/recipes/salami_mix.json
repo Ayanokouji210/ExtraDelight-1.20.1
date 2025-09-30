@@ -1,0 +1,24 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
+  "ingredients": [
+    {
+      "tag": "forge:beef/ground"
+    },
+    {
+      "tag": "butchercraft:fat"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "extradelight:salami_mix"
+  },
+  "stirs": 4,
+  "usedItem": {
+    "count": 0,
+    "item": "minecraft:air"
+  }
+}

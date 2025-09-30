@@ -1,0 +1,21 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:wild_peanut_block"
+    }
+  ],
+  "result": [
+    {
+      "item": "extradelight:peanuts_in_shell"
+    },
+    {
+      "chance": 0.5,
+      "count": 2,
+      "item": "minecraft:yellow_dye"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

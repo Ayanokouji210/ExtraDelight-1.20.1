@@ -1,0 +1,42 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:beef/ground/raw"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:beef/ground/raw"
+    },
+    {
+      "tag": "forge:raw_bacon"
+    },
+    {
+      "tag": "forge:raw_bacon"
+    },
+    {
+      "tag": "forge:raw_bacon"
+    },
+    {
+      "tag": "forge:foods/pickled/vegetables/cucumber"
+    },
+    {
+      "tag": "forge:foods/pickled/vegetables/cucumber"
+    },
+    {
+      "tag": "forge:foods/pickled/vegetables/cucumber"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "extradelight:cheeseburger_pickle"
+  }
+}

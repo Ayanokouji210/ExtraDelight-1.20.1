@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "fruit_spice_rack": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:fruit_slab"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:fruit_spice_rack"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "fruit_spice_rack",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:fruit_spice_rack"
+    ]
+  },
+  "sends_telemetry_event": false
+}

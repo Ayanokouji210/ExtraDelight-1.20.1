@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/potato_salad"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "potato_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:potato_salad"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "potato_salad"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/potato_salad"
+    ]
+  },
+  "sends_telemetry_event": true
+}

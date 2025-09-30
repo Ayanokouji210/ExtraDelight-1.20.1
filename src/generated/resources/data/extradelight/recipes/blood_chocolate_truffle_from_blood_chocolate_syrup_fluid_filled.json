@@ -1,0 +1,22 @@
+{
+  "type": "extradelight:chiller",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:muffin_tin"
+  },
+  "cookingTime": 400,
+  "experience": 0.35,
+  "fluid": {
+    "amount": 250,
+    "fluid": "extradelight:blood_chocolate_syrup_fluid"
+  },
+  "ingredients": [
+    {
+      "tag": "extradelight:chocolate_truffle_filling"
+    }
+  ],
+  "result": {
+    "count": 6,
+    "item": "extradelight:blood_chocolate_truffle"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:sweet_berry_juice_from_bucket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "sweet_berry_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:sweet_berry_juice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "sweet_berry_juice",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:sweet_berry_juice_from_bucket"
+    ]
+  },
+  "sends_telemetry_event": false
+}

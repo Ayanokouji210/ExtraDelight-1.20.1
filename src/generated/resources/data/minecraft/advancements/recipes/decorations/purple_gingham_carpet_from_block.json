@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:purple_gingham_carpet_from_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "purple_gingham_carpet_from_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:white_wool"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "purple_gingham_carpet_from_block",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:purple_gingham_carpet_from_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}

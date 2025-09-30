@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "out": {
+    "item": "extradelight:jelly_white_block_item"
+  },
+  "result": {
+    "item": "extradelight:jelly_white"
+  }
+}

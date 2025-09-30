@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "forge:block/dark_chocolate"
+    }
+  },
+  "pattern": [
+    "b",
+    "b",
+    "b"
+  ],
+  "result": {
+    "count": 3,
+    "item": "extradelight:dark_chocolate_pillar"
+  },
+  "show_notification": true
+}

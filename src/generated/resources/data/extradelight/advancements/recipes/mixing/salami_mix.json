@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:mixing/salami_mix"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "salami_mix": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:salami_mix"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "salami_mix"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:mixing/salami_mix"
+    ]
+  },
+  "sends_telemetry_event": true
+}

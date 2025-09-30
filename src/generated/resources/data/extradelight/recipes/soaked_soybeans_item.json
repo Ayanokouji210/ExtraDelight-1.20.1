@@ -1,0 +1,22 @@
+{
+  "type": "extradelight:vat",
+  "ingredients": [
+    {
+      "tag": "forge:crops/soybean"
+    }
+  ],
+  "result": {
+    "item": "extradelight:soaked_soybeans_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": [],
+      "lid": true,
+      "time": 24000
+    }
+  ],
+  "stages": 1,
+  "usedItem": {
+    "item": "minecraft:bowl"
+  }
+}

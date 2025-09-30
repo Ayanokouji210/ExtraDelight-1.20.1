@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:mint"
+    },
+    {
+      "item": "extradelight:mint"
+    },
+    {
+      "item": "extradelight:mint"
+    },
+    {
+      "item": "extradelight:mint"
+    },
+    {
+      "item": "extradelight:mint"
+    },
+    {
+      "item": "extradelight:mint"
+    },
+    {
+      "item": "extradelight:mint"
+    },
+    {
+      "item": "extradelight:mint"
+    },
+    {
+      "item": "extradelight:mint"
+    }
+  ],
+  "result": {
+    "item": "extradelight:mint_sack"
+  }
+}
