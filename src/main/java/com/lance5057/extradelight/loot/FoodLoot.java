@@ -1,15 +1,11 @@
 package com.lance5057.extradelight.loot;
 
-import java.util.function.Supplier;
-
-import com.google.common.base.Suppliers;
 import com.mojang.serialization.Codec;
-import com.mojang.serialization.MapCodec;
+
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;

@@ -11,7 +11,6 @@ import com.lance5057.extradelight.blocks.jardisplay.JarDisplayRenderer;
 import com.lance5057.extradelight.blocks.keg.KegRenderer;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetScreen;
 import com.lance5057.extradelight.blocks.sink.SinkRenderer;
-import com.lance5057.extradelight.capabilities.Chill;
 import com.lance5057.extradelight.client.BlockStateItemGeometryLoader;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlRenderer;
 import com.lance5057.extradelight.displays.food.FoodDisplayRenderer;
@@ -36,7 +35,6 @@ import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlScreen;
 import com.lance5057.extradelight.workstations.mortar.MortarRenderer;
 import com.lance5057.extradelight.workstations.oven.OvenScreen;
 import com.lance5057.extradelight.workstations.vat.VatScreen;
-import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.RecipeBookCategories;
 import net.minecraft.client.color.block.BlockColor;
@@ -47,21 +45,10 @@ import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
-import net.minecraft.client.resources.model.ModelBaker;
-import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.client.resources.model.UnbakedModel;
-import net.minecraft.core.Direction;
-import net.minecraft.core.NonNullList;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
-import net.minecraft.world.Container;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.LiquidBlock;
@@ -70,16 +57,9 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ModelEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.client.event.RegisterRecipeBookCategoriesEvent;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.event.AttachCapabilitiesEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 //import net.neoforged.api.distmarker.Dist;
 //import net.neoforged.bus.api.SubscribeEvent;
 //import net.neoforged.fml.common.EventBusSubscriber;
@@ -93,12 +73,8 @@ import javax.annotation.Nullable;
 
 //import net.minecraftforge.client.event.Register
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
-import static com.lance5057.extradelight.ExtraDelightClientEvents.chillMap;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = ExtraDelight.MOD_ID, value = Dist.CLIENT)
 public class ExtraDelightClientEvents {
@@ -173,12 +149,29 @@ public class ExtraDelightClientEvents {
 
 			//ModelResourceLocation rl2 = new ModelResourceLocation(new ResourceLocation(rl.getNamespace(), s),"");
 
-			ResourceLocation rl2 = new ResourceLocation(rl.getNamespace(),s);
+			ResourceLocation rl2 = ResourceLocation.fromNamespaceAndPath(rl.getNamespace(),s);
 
 			event.register(rl2);
 		});
 	}
 
+
+	@SubscribeEvent
+	public static void onModelBake(ModelEvent.BakingCompleted event) {
+		CornHuskDollRenderer.bakedModel=event.getModelManager().getModel(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/corn_husk_doll"));
+		if(CornHuskDollRenderer.bakedModel==null){
+			ExtraDelight.logger.warn("CornHuskDollRenderer.bakedModel is null");
+		}
+
+		DynamicToast.model=event.getModelManager().getModel(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/dynamics/toast/toast"));
+		if(DynamicToast.model==null){
+			ExtraDelight.logger.warn("DynamicToast.model is null");
+		}
+
+
+
+
+	}
 
 	@SubscribeEvent
 	public static void registerBlockColourHandlers(final RegisterColorHandlersEvent.Block event) {

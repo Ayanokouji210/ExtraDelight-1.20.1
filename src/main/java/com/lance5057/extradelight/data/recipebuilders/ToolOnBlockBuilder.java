@@ -2,6 +2,7 @@ package com.lance5057.extradelight.data.recipebuilders;
 
 import com.google.gson.JsonObject;
 import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.recipe.ToolOnBlockRecipe;
 import net.minecraft.advancements.*;
 //import net.minecraft.advancements.AdvancementRequirements;
@@ -27,7 +28,7 @@ public class ToolOnBlockBuilder implements RecipeBuilder {
 	private final BlockItem out;
 	private final Advancement.Builder advancement = Advancement.Builder.advancement();
 	@Nullable
-	private String group;
+	private String group="";
 //	private final ToolOnBlockRecipe.Serializer serializer;
 	private final Map<String, Criterion> criteria = new LinkedHashMap<>();
 
@@ -97,7 +98,8 @@ public class ToolOnBlockBuilder implements RecipeBuilder {
 				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(recipeId))
 				.rewards(AdvancementRewards.Builder.recipe(recipeId)).requirements(RequirementsStrategy.OR);
 		this.criteria.forEach(advancementBuilder::addCriterion);
-
+		output.accept(new Result(recipeId,this.group,this.tool,this.in,this.out,advancement,
+				advancement.build(recipeId.withPrefix("recipes/toolonblock/")).getId()));
 //		public OvenRecipe(String group, @Nullable OvenRecipeBookTab tab, NonNullList<Ingredient> inputItems,
 //				ItemStack output, ItemStack container, float experience, int cookTime) {
 //		ToolOnBlockRecipe recipe = new ToolOnBlockRecipe(this.in, this.tool, this.out);
@@ -123,11 +125,9 @@ public class ToolOnBlockBuilder implements RecipeBuilder {
 		private final BlockItem out;
 		private final Advancement.Builder advancement;
 		private final ResourceLocation advancementId;
-		private final ToolOnBlockRecipe.Serializer serializer;
 
 		public Result(ResourceLocation pId, String pGroup, Ingredient pIngredient, BlockItem in, BlockItem out,
-				Advancement.Builder pAdvancement, ResourceLocation pAdvancementId,
-				ToolOnBlockRecipe.Serializer pSerializer) {
+				Advancement.Builder pAdvancement, ResourceLocation pAdvancementId) {
 			this.id = pId;
 			this.group = pGroup;
 			this.tool = pIngredient;
@@ -135,7 +135,6 @@ public class ToolOnBlockBuilder implements RecipeBuilder {
 			this.out = out;
 			this.advancement = pAdvancement;
 			this.advancementId = pAdvancementId;
-			this.serializer = pSerializer;
 		}
 
 		public void serializeRecipeData(JsonObject pJson) {
@@ -150,7 +149,7 @@ public class ToolOnBlockBuilder implements RecipeBuilder {
 		}
 
 		public RecipeSerializer<?> getType() {
-			return this.serializer;
+			return ExtraDelightRecipes.TOOL_ON_BLOCK_SERIALIZER.get();
 		}
 
 

@@ -170,7 +170,7 @@ public class OvenRecipeBuilder implements RecipeBuilder {
 		output.accept(new Result(recipeId, this.group == null ? "" : this.group, this.ingredients,
 				this.resultStack, this.container, this.experience, this.cookingTime,
 				this.consumeContainer, this.advancement,
-				new ResourceLocation(id.getNamespace(), "recipes/oven/" + id.getPath())));
+				ResourceLocation.fromNamespaceAndPath(id.getNamespace(), "recipes/oven/" + id.getPath())));
 	}
 
 

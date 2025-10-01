@@ -1,6 +1,6 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "builtin/entity",
+	"parent": "minecraft:item/handheld",
 	"textures": {
 		"layer0": "extradelight:item/dynamics/toast/toast"
 	},

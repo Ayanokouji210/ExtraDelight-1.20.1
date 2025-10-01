@@ -1,33 +1,30 @@
 package com.lance5057.extradelight.aesthetics.block.cornhuskdoll;
 
-import com.lance5057.extradelight.ExtraDelight;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
-import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 //import net.neoforged.neoforge.client.model.data.ModelData;
 //import net.neoforged.neoforge.client.model.renderable.BakedModelRenderable;
 //import net.neoforged.neoforge.client.model.renderable.IRenderable;
-import net.minecraftforge.client.model.data.ModelData;
-import net.minecraftforge.client.model.renderable.BakedModelRenderable;
-import net.minecraftforge.client.model.renderable.IRenderable;
 import org.joml.Quaternionf;
 
 public class CornHuskDollRenderer implements BlockEntityRenderer<CornHuskDollBlockEntity> {
 
-	final ModelResourceLocation model_down =new ModelResourceLocation
-			(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/corn_husk_doll"),"extra/corn_husk_doll");
-	final ModelResourceLocation model_up =new ModelResourceLocation
-			(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/corn_husk_doll_hang"),"extra/corn_husk_doll_hang");
+	public static BakedModel bakedModel;
+
+//	final ModelResourceLocation model_down =new ModelResourceLocation
+//			(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/corn_husk_doll"),"extra/corn_husk_doll");
+//	final ModelResourceLocation model_up =new ModelResourceLocation
+//			(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/corn_husk_doll_hang"),"extra/corn_husk_doll_hang");
+
 
 	public CornHuskDollRenderer(BlockEntityRendererProvider.Context cxt) {
-
 	}
 
 	@Override
@@ -38,14 +35,12 @@ public class CornHuskDollRenderer implements BlockEntityRenderer<CornHuskDollBlo
 		float f1 = 22.5F * blockstate.getValue(CornHuskDollBlock.FACING);
 		boolean f2 = blockstate.getValue(CornHuskDollBlock.HANGING);
 
-		var test =Minecraft.getInstance().getModelManager().getModel(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "models/extra/corn_husk_doll"));
-
-		IRenderable<ModelData> bm;
-		if (f2) {
-			bm = BakedModelRenderable.of(model_up).withModelDataContext();
-		} else {
-			bm = BakedModelRenderable.of(model_down).withModelDataContext();
-		}
+//		IRenderable<ModelData> bm;
+//		if (f2) {
+//			bm = BakedModelRenderable.of(model_up).withModelDataContext();
+//		} else {
+//			bm = BakedModelRenderable.of(model_down).withModelDataContext();
+//		}
 
 		pPoseStack.pushPose();
 		{
@@ -54,8 +49,11 @@ public class CornHuskDollRenderer implements BlockEntityRenderer<CornHuskDollBlo
 			pPoseStack.translate(-0.5, 0, -0.5);
 			pPoseStack.scale(1, 1, 1);
 
-			bm.render(pPoseStack, pBufferSource, texture -> RenderType.entityTranslucent(texture), pPackedLight,
-					pPackedOverlay, pPartialTick, ModelData.EMPTY);
+//			bm.render(pPoseStack, pBufferSource, texture -> RenderType.entityTranslucent(texture), pPackedLight,
+//					pPackedOverlay, pPartialTick, ModelData.EMPTY);
+
+			Minecraft.getInstance().getBlockRenderer().getModelRenderer()
+					.renderModel(pPoseStack.last(),pBufferSource.getBuffer(RenderType.cutout()),pBlockEntity.getBlockState(),bakedModel,1.0f,1.0f,1.0f,pPackedLight,pPackedOverlay);
 
 		}
 		pPoseStack.popPose();
@@ -64,4 +62,5 @@ public class CornHuskDollRenderer implements BlockEntityRenderer<CornHuskDollBlo
 	public boolean shouldRender(CornHuskDollBlockEntity pBlockEntity, Vec3 pCameraPos) {
 		return Vec3.atCenterOf(pBlockEntity.getBlockPos()).closerThan(pCameraPos, (double) this.getViewDistance());
 	}
+
 }

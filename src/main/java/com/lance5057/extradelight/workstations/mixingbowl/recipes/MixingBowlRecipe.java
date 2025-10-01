@@ -236,8 +236,8 @@ public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 				mixingBowlRecipe.fluids.get(i).write(friendlyByteBuf);
 			}
 			friendlyByteBuf.writeItemStack(mixingBowlRecipe.result,true);
-			friendlyByteBuf.writeInt(mixingBowlRecipe.stirs);
-			friendlyByteBuf.writeItemStack(mixingBowlRecipe.usedItem,true);
+			friendlyByteBuf.writeVarInt(mixingBowlRecipe.stirs);
+			friendlyByteBuf.writeItem(mixingBowlRecipe.usedItem);
 
 
 		}

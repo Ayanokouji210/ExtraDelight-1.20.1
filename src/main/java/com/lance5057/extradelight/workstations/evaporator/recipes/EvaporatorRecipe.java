@@ -193,9 +193,9 @@ public class EvaporatorRecipe implements Recipe<EvaporatorRecipeWrapper> {
 			friendlyByteBuf.writeUtf(evaporatorRecipe.group);
 			evaporatorRecipe.fluid.write(friendlyByteBuf);
 			friendlyByteBuf.writeInt(evaporatorRecipe.cookTime);
-			friendlyByteBuf.writeResourceLocation(evaporatorRecipe.output);
-			friendlyByteBuf.writeResourceLocation(evaporatorRecipe.display);
-			friendlyByteBuf.writeItem(evaporatorRecipe.outItem);
+			friendlyByteBuf.writeResourceLocation(evaporatorRecipe.output);  //lootTable
+			friendlyByteBuf.writeResourceLocation(evaporatorRecipe.display); //displayBlock
+			friendlyByteBuf.writeItem(evaporatorRecipe.outItem);			 //result
 
 		}
 	}

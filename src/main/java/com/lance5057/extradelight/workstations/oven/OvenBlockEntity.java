@@ -1,10 +1,7 @@
 package com.lance5057.extradelight.workstations.oven;
 
 import com.google.common.collect.Lists;
-import com.lance5057.extradelight.ExtraDelightBlockEntities;
-import com.lance5057.extradelight.ExtraDelightItems;
-import com.lance5057.extradelight.ExtraDelightRecipes;
-import com.lance5057.extradelight.TranslatableKeys;
+import com.lance5057.extradelight.*;
 import com.lance5057.extradelight.network.NetworkHandler;
 import com.lance5057.extradelight.network.StyleableMenuSyncPacket;
 import com.lance5057.extradelight.workstations.oven.inventory.OvenItemHandler;

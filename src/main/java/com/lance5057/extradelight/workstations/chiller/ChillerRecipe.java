@@ -241,7 +241,7 @@ public class ChillerRecipe implements Recipe<ChillerRecipeWrapper> {
 		@Override
 		public void toNetwork(FriendlyByteBuf friendlyByteBuf, ChillerRecipe chillerRecipe) {
 			friendlyByteBuf.writeUtf(chillerRecipe.group);
-			friendlyByteBuf.writeInt(chillerRecipe.inputItems.size());
+			friendlyByteBuf.writeVarInt(chillerRecipe.inputItems.size());
 			for(int i=0;i<chillerRecipe.inputItems.size();i++) {
 				chillerRecipe.inputItems.get(i).toNetwork(friendlyByteBuf);
 			}

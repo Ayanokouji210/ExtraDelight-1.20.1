@@ -2,7 +2,9 @@ package com.lance5057.extradelight.blocks.countercabinet;
 
 import com.lance5057.extradelight.ExtraDelightContainers;
 import com.lance5057.extradelight.gui.HideableSlot;
+import com.lance5057.extradelight.network.HideableSlotUpdatePacket;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;

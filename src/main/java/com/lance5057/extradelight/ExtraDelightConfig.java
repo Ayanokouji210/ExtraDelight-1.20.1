@@ -3,7 +3,7 @@ package com.lance5057.extradelight;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(modid = ExtraDelight.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ExtraDelightConfig {
 	public static ForgeConfigSpec spec;
 

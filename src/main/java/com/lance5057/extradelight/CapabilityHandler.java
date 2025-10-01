@@ -20,7 +20,7 @@ import java.util.Map;
 
 import static com.lance5057.extradelight.ExtraDelightClientEvents.chillMap;
 
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(modid = ExtraDelight.MOD_ID)
 public class CapabilityHandler {
     @SubscribeEvent
     public static void attachCapability(AttachCapabilitiesEvent<ItemStack> event) {
@@ -38,7 +38,7 @@ public class CapabilityHandler {
                     return LazyOptional.empty();
                 }
             };
-            event.addCapability(new ResourceLocation(ExtraDelight.MOD_ID, "chill"), chillProvider);
+            event.addCapability(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "chill"), chillProvider);
         }
 
         //dynamicFood
@@ -54,7 +54,7 @@ public class CapabilityHandler {
                     return LazyOptional.empty();
                 }
             };
-            event.addCapability(new ResourceLocation(ExtraDelight.MOD_ID, "dynamic_food"), dynamicFoodProvider);
+            event.addCapability(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "dynamic_food"), dynamicFoodProvider);
         }
 
 

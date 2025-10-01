@@ -8,6 +8,7 @@ import com.lance5057.extradelight.data.recipebuilders.ChillerRecipeBuilder;
 import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.items.dynamicfood.api.IDynamic;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
@@ -40,6 +41,8 @@ import java.util.Collection;
 import java.util.List;
 
 public class DynamicToast extends Item implements IDynamic {
+	public static BakedModel model;
+
 	static final ResourceLocation base_model = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 			"extra/dynamics/toast/toast");
 	static final ResourceLocation missing_model = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
@@ -160,10 +163,10 @@ public class DynamicToast extends Item implements IDynamic {
 		LazyOptional<ExtraDelightComponents.IDynamicFood> capability = itemStack.getCapability(ExtraDelightComponents.DYNAMIC_FOOD);
 		if (capability!=null&&capability.isPresent()&&capability.resolve().isPresent()) {
 			try {
-				ExtraDelightComponents.IDynamicFood comp = capability.resolve().get();
-				if (comp.getDynamicFood().getItems().size() > 1&&!comp.getDynamicFood().getStackInSlot(1).isEmpty()) {
+				DynamicItemComponent dynamicFood = capability.resolve().get().getDynamicFood();
+				if (!dynamicFood.getItems().isEmpty()) {
 					return Component.translatable(this.getDescriptionId(itemStack),
-							Component.translatable(comp.getDynamicFood().getStackInSlot(1).getDescriptionId()));
+							Component.translatable(dynamicFood.getStackInSlot(0).getDescriptionId()));
 				}else {
 					return Component.translatable("dynamic.toast");
 				}
@@ -259,8 +262,8 @@ public class DynamicToast extends Item implements IDynamic {
 			FoodProperties build = this.builder.build();
 			player.getFoodData().eat(build.getNutrition(), build.getSaturationModifier());
 			player.gameEvent(GameEvent.EAT);
-            if (pStack.getTag() != null && pStack.getTag().contains("food_properties")) {
-                CompoundTag food= pStack.getTag().getCompound("food_properties");
+            if (pStack.getTag() != null && pStack.getTag().contains("properties")) {
+                CompoundTag food= pStack.getTag().getCompound("properties");
 				ListTag effects = food.getList("effects", Tag.TAG_COMPOUND);
 				for (int i = 0; i < effects.size(); i++) {
                     CompoundTag compound = effects.getCompound(i);

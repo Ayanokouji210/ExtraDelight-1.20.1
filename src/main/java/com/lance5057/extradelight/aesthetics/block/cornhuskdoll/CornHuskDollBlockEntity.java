@@ -107,15 +107,15 @@ public class CornHuskDollBlockEntity extends BlockEntity {
 		return tag;
 	}
 
+	@Override
+	public void load(@Nonnull CompoundTag nbt) {
+		super.load(nbt);
+		readNBT(nbt);
+	}
 
-//	public void loadAdditional(@Nonnull CompoundTag nbt, HolderLookup.Provider registries) {
-//		super.loadAdditional(nbt, registries);
-//		readNBT(nbt);
-//	}
-//
-//
-//	public void saveAdditional(@Nonnull CompoundTag nbt, HolderLookup.Provider registries) {
-//		super.saveAdditional(nbt, registries);
-//		writeNBT(nbt);
-//	}
+	@Override
+	public void saveAdditional(@Nonnull CompoundTag nbt) {
+		super.saveAdditional(nbt);
+		writeNBT(nbt);
+	}
 }

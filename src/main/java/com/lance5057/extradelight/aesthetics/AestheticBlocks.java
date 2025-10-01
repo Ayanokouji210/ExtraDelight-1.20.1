@@ -405,8 +405,10 @@ public class AestheticBlocks {
 			}
 		}
 
+//		bsp.simpleBlock(CORN_HUSK_DOLL.get(),
+//				bsp.models().getExistingFile(ResourceLocation.fromNamespaceAndPath("minecraft", "block/air")));
 		bsp.simpleBlock(CORN_HUSK_DOLL.get(),
-				bsp.models().getExistingFile(ResourceLocation.fromNamespaceAndPath("minecraft", "block/air")));
+				bsp.models().getExistingFile(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "block/corn_husk_doll")));
 	}
 
 	public static void itemModel(ItemModelProvider tmp) {

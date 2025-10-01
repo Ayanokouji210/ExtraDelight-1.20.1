@@ -10,10 +10,12 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.world.Container;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.LazyOptional;
@@ -27,6 +29,7 @@ import javax.annotation.Nonnull;
 import javax.swing.plaf.basic.BasicComboBoxUI;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class DynamicItem implements ExtraDelightComponents.IDynamicFood , ICapabilityProvider {
 
@@ -91,93 +94,178 @@ public class DynamicItem implements ExtraDelightComponents.IDynamicFood , ICapab
 
     public static void onItemCrafted(PlayerEvent.ItemCraftedEvent event) {
         ItemStack stack = event.getCrafting();
-        Container inventory = event.getInventory();
-        ExtraDelight.logger.info("Crafting:{} " , stack);
-        if (stack.getItem() == ExtraDelightItems.DYNAMIC_TOAST.get()) {
-            DynamicToast toast = (DynamicToast) stack.getItem();
+        Container input = event.getInventory();
+        if (stack.getItem() instanceof DynamicToast) {
+
             int nutrition = 0;
             float saturation = 0;
-            List<Pair<MobEffectInstance,Float>> effects = new ArrayList<>();
+            List<Pair<MobEffectInstance, Float>> effects = new ArrayList<>();
 
-            NonNullList<ItemStack> ingredients = NonNullList.create();
-            for (int i = 0; i < inventory.getContainerSize(); i++) {
-                ItemStack s = inventory.getItem(i);
-
+            NonNullList<ItemStack> l = NonNullList.create();
+            for (int i = 0; i < input.getContainerSize(); i++) {
+                ItemStack s = input.getItem(i);
                 if (s != null && !s.isEmpty()) {
-                    ingredients.add(s);
-                    if (s.getItem().getFoodProperties() != null) {
-                        FoodProperties f = s.getItem().getFoodProperties();
+                    l.add(s);
+//                    if (stack.getCapability(ExtraDelightComponents.DYNAMIC_FOOD).isPresent()) {
+                    FoodProperties f = s.getFoodProperties(null);
+                    if (f != null) {
                         nutrition += f.getNutrition();
                         saturation += f.getSaturationModifier();
-
                         effects.addAll(f.getEffects());
-                    } else
-                        ExtraDelight.logger
-                                .error(" {} doesn't have a food component! How did we get here?!", s.getDescriptionId());
+                    }
+//                    } else
+//                        ExtraDelight.logger
+//                                .error(s.getDescriptionId() + " doesn't have a food component! How did we get here?!");
                 }
             }
 
-            CompoundTag nbt = stack.getOrCreateTag();
-            CompoundTag ingredientsTag = new CompoundTag();
 
-            for (int i = 0; i < ingredients.size(); i++) {
-                CompoundTag itemTag = new CompoundTag();
-                ingredients.get(i).save(itemTag);
-                ingredientsTag.put("ingredient_" + i, itemTag);
+
+
+            FoodProperties.Builder food = new FoodProperties.Builder();
+            food.nutrition(nutrition).saturationMod(saturation / input.getContainerSize()).alwaysEat();
+            for (Pair<MobEffectInstance, Float> pair : effects) {
+                food.effect(pair.getFirst(), pair.getSecond());
             }
+            DynamicToast toast = (DynamicToast) stack.getItem();
+            toast.ModifyBuilder(food);
 
-            nbt.put("ingredients", ingredientsTag);
+            //set NBT
+            CompoundTag tag = new CompoundTag();
 
-            FoodProperties.Builder foodBuilder = new FoodProperties.Builder()
-                    .nutrition(nutrition)
-                    .saturationMod(saturation / ingredients.size());
-
-            for (Pair<MobEffectInstance, Float> effect : effects) {
-                foodBuilder.effect(effect.getFirst(), effect.getSecond());
+            //ingredients
+            CompoundTag ingredients = new CompoundTag();
+            for (int i = 0; i < l.size(); i++) {
+                ItemStack s = l.get(i);
+                CompoundTag itemtag = new CompoundTag();
+                s.save(itemtag);
+                ingredients.put(String.valueOf(i),itemtag);
             }
+            tag.put("ingredients",ingredients);
 
-            FoodProperties food = foodBuilder.build();
-
-            // 在 1.20.1 中，我们需要将食物属性存储在 NBT 中
+            //properties
             CompoundTag foodTag = new CompoundTag();
-            foodTag.putInt("nutrition", food.getNutrition());
-            foodTag.putFloat("saturation", food.getSaturationModifier());
 
-            // 存储效果
+            foodTag.putInt("nutrition", nutrition);
+            foodTag.putFloat("saturation", saturation);
+
             ListTag effectsTag = new ListTag();
-            for (Pair<MobEffectInstance, Float> effect : food.getEffects()) {
+            for (Pair<MobEffectInstance, Float> effect : effects) {
                 CompoundTag effectTag = new CompoundTag();
-                effectTag.put("effect", effect.getFirst().save(new CompoundTag()));
+                effect.getFirst().save(effectTag);
                 effectTag.putFloat("probability", effect.getSecond());
                 effectsTag.add(effectTag);
             }
             foodTag.put("effects", effectsTag);
 
-            nbt.put("food_properties", foodTag);
+            tag.put("properties",foodTag);
 
-            stack.setTag(nbt);
+            CompoundTag nbt = stack.getOrCreateTag();
+            nbt.put("properties",foodTag);
 
-            toast.ModifyBuilder(foodBuilder);
-            if(stack.getCapability(ExtraDelightComponents.DYNAMIC_FOOD).isPresent()
-                    &&stack.getCapability(ExtraDelightComponents.DYNAMIC_FOOD).resolve().isPresent()) {
-                ExtraDelightComponents.IDynamicFood dynamicFood = stack.getCapability(ExtraDelightComponents.DYNAMIC_FOOD).resolve().get();
-                for(int i=0;i< inventory.getContainerSize();i++){
-                    ItemStack item = inventory.getItem(i);
-                    if (!item.isEmpty()) {
-                        dynamicFood.getDynamicFood().addItem(item);
-                    }
+
+            Optional<ExtraDelightComponents.IDynamicFood> resolve = stack.getCapability(ExtraDelightComponents.DYNAMIC_FOOD).resolve();
+            if (resolve.isPresent()&&resolve.get()!=null) {
+                DynamicItemComponent dynamicFood = resolve.get().getDynamicFood();
+                for (ItemStack itemStack : l) {
+                    dynamicFood.addItem(itemStack);
                 }
-                // ExtraDelight.logger.info("Dynamic Food:{} " , stack);
-
+                dynamicFood.serializeNBT();
             }
+
+
+
+        } else {
+            ExtraDelight.logger.error("DynamicToastRecipe result not DynamicToast!");
         }
+
+
+//        ExtraDelight.logger.info("Crafting:{} " , stack);
+//        if (stack.getItem() == ExtraDelightItems.DYNAMIC_TOAST.get()) {
+//            DynamicToast toast = (DynamicToast) stack.getItem();
+//            int nutrition = 0;
+//            float saturation = 0;
+//            List<Pair<MobEffectInstance,Float>> effects = new ArrayList<>();
+//
+//            NonNullList<ItemStack> ingredients = NonNullList.create();
+//            for (int i = 0; i < inventory.getContainerSize(); i++) {
+//                ItemStack s = inventory.getItem(i);
+//
+//                if (s != null && !s.isEmpty()) {
+//                    ingredients.add(s);
+//                    if (s.getItem().getFoodProperties() != null) {
+//                        FoodProperties f = s.getItem().getFoodProperties();
+//                        nutrition += f.getNutrition();
+//                        saturation += f.getSaturationModifier();
+//
+//                        effects.addAll(f.getEffects());
+//                    } else
+//                        ExtraDelight.logger
+//                                .error(" {} doesn't have a food component! How did we get here?!", s.getDescriptionId());
+//                }
+//            }
+//
+//            CompoundTag nbt = stack.getOrCreateTag();
+//            CompoundTag ingredientsTag = new CompoundTag();
+//
+//            for (int i = 0; i < ingredients.size(); i++) {
+//                CompoundTag itemTag = new CompoundTag();
+//                ingredients.get(i).save(itemTag);
+//                ingredientsTag.put(String.valueOf(i), itemTag);
+//            }
+//
+//            nbt.put("ingredients", ingredientsTag);
+//
+//            FoodProperties.Builder foodBuilder = new FoodProperties.Builder()
+//                    .nutrition(nutrition)
+//                    .saturationMod(saturation / ingredients.size());
+//
+//            for (Pair<MobEffectInstance, Float> effect : effects) {
+//                foodBuilder.effect(effect.getFirst(), effect.getSecond());
+//            }
+//
+//            FoodProperties food = foodBuilder.build();
+//
+//            // 在 1.20.1 中，我们需要将食物属性存储在 NBT 中
+//            CompoundTag foodTag = new CompoundTag();
+//            foodTag.putInt("nutrition", food.getNutrition());
+//            foodTag.putFloat("saturation", food.getSaturationModifier());
+//
+//            // 存储效果
+//            ListTag effectsTag = new ListTag();
+//            for (Pair<MobEffectInstance, Float> effect : food.getEffects()) {
+//                CompoundTag effectTag = new CompoundTag();
+//                effectTag.put("effect", effect.getFirst().save(new CompoundTag()));
+//                effectTag.putFloat("probability", effect.getSecond());
+//                effectsTag.add(effectTag);
+//            }
+//            foodTag.put("effects", effectsTag);
+//
+//            nbt.put("food_properties", foodTag);
+//
+//            stack.setTag(nbt);
+//
+//            toast.ModifyBuilder(foodBuilder);
+//            if(stack.getCapability(ExtraDelightComponents.DYNAMIC_FOOD).isPresent()
+//                    &&stack.getCapability(ExtraDelightComponents.DYNAMIC_FOOD).resolve().isPresent()) {
+//                ExtraDelightComponents.IDynamicFood dynamicFood = stack.getCapability(ExtraDelightComponents.DYNAMIC_FOOD).resolve().get();
+//                for(int i=0;i< inventory.getContainerSize();i++){
+//                    ItemStack item = inventory.getItem(i);
+//                    if (!item.isEmpty()) {
+//                        dynamicFood.getDynamicFood().addItem(item);
+//                    }
+//                }
+//                // ExtraDelight.logger.info("Dynamic Food:{} " , stack);
+//
+//            }
+//        }
 
     }
 
     @Override
     public @Nonnull <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable Direction direction) {
         if(capability == ExtraDelightComponents.DYNAMIC_FOOD) {
-
+            return LazyOptional.of(() -> this.component).cast();
         }
         return LazyOptional.empty();
     }

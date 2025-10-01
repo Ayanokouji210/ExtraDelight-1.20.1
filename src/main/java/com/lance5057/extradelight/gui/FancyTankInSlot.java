@@ -1,6 +1,5 @@
 package com.lance5057.extradelight.gui;
 
-import com.blamejared.crafttweaker.api.capability.Capabilities;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.FancyTank;
 import net.minecraft.world.item.ItemStack;

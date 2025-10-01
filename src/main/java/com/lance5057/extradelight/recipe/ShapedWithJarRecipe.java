@@ -34,6 +34,7 @@ import net.minecraftforge.common.capabilities.*;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandlerItem;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -269,7 +270,7 @@ public class ShapedWithJarRecipe extends ShapedRecipe {
 			return stack;
 		}
 		@Override
-		public ShapedWithJarRecipe fromNetwork(ResourceLocation recipeId, FriendlyByteBuf buffer) {
+		public ShapedWithJarRecipe fromNetwork(@NotNull ResourceLocation recipeId, FriendlyByteBuf buffer) {
 			int width = buffer.readVarInt();
 			int height = buffer.readVarInt();
 			String group = buffer.readUtf();
@@ -277,13 +278,13 @@ public class ShapedWithJarRecipe extends ShapedRecipe {
 
 			NonNullList<Ingredient> ingredients = NonNullList.withSize(width * height, Ingredient.EMPTY);
 			for (int i = 0; i < ingredients.size(); ++i) {
-				ingredients.set(i, Ingredient.fromNetwork(buffer));
+				ingredients.add(Ingredient.fromNetwork(buffer));
 			}
 
 			// 读取流体
 			int fluidCount = buffer.readVarInt();
 			List<FluidStack> fluids = new ArrayList<>();
-			for (int i = 0; i < fluidCount; i++) {
+			for (int i = 0; i <= fluidCount; i++) {
 				fluids.add(FluidStack.readFromPacket(buffer));
 			}
 

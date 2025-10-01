@@ -1,7 +1,11 @@
 package com.lance5057.extradelight.recipe;
 
 import com.google.gson.JsonObject;
+import com.lance5057.extradelight.ExtraDelight;
+import com.lance5057.extradelight.ExtraDelightBlocks;
+import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.network.NetworkHandler;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -15,8 +19,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import javax.annotation.Nullable;
 
@@ -80,8 +86,13 @@ public class FeastRecipe implements Recipe<SimpleRecipeWrapper> {
 			String s = pBuffer.readUtf();
 			Ingredient ingredient = Ingredient.fromNetwork(pBuffer);
 			ItemStack itemstack = pBuffer.readItem();
-			BlockItem g = (BlockItem) pBuffer.readItem().getItem();
-			return new FeastRecipe(pRecipeId,s, g, ingredient, itemstack);
+            if (pBuffer.readItem().getItem() instanceof BlockItem bi) {
+				return new FeastRecipe(pRecipeId,s, bi, ingredient, itemstack);
+            }else{
+				ExtraDelight.logger.error("error reading feast recipe,cannot find block item");
+				return new FeastRecipe(pRecipeId,s, (BlockItem) Blocks.AIR.asItem(), ingredient, itemstack);
+			}
+
 		}
 
 		@Override

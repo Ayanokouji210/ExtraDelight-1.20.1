@@ -174,33 +174,6 @@ public class ExtraDelight {
 				ExtraDelightItems.GARLIC.get(), Fermentation.CUCUMBER.get());
 		newWantedItems.addAll(Villager.WANTED_ITEMS);
 		Villager.WANTED_ITEMS = ImmutableSet.copyOf(newWantedItems);
-//		try {
-//
-//			Field wantedItemsField = villagerClass.getDeclaredField("WANTED_ITEMS");
-//			wantedItemsField.setAccessible(true);
-//			Field modifiersField = Field.class.getDeclaredField("modifiers");
-//			modifiersField.setAccessible(true);
-//			int originalModifiers = wantedItemsField.getModifiers();
-//			modifiersField.setInt(wantedItemsField, originalModifiers & ~Modifier.FINAL);
-//
-//			// 5. 获取原始的WANTED_ITEMS集合
-//			@SuppressWarnings("unchecked")
-//			Set<Item> originalWantedItems = (Set<Item>) wantedItemsField.get(null);
-//			//添加原来的物品
-//			newWantedItems.addAll(originalWantedItems);
-//			logger.info("WANTED_ITEMS: " + newWantedItems);
-//			Set<Item> immutableNewSet  = (Set<Item>) ImmutableSet.copyOf(newWantedItems);
-//
-//			wantedItemsField.set(null, immutableNewSet);
-//			logger.info("Successfully modified Villager.WANTED_ITEMS");
-//
-//
-//
-//		} catch (NoSuchFieldException e) {
-//			logger.error("WANTED_ITEMS field not found: " + e.getMessage());
-//		} catch (IllegalAccessException e) {
-//			logger.error("Illegal access to field: " + e.getMessage());
-//		}
 
 	}
 

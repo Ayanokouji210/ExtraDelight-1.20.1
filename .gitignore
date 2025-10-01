@@ -24,4 +24,5 @@ run-data
 
 # Files from Forge MDK
 forge*changelog.txt
-/extradelight_1.7z
+/*.7z
+/src/generated/resources/.cache/

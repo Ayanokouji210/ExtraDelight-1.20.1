@@ -3,6 +3,7 @@ package com.lance5057.extradelight.recipe;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 //import net.minecraft.world.item.crafting.RecipeInput;
 
 import java.util.Arrays;
@@ -46,7 +47,7 @@ public class SimpleRecipeWrapper implements Container {
 	}
 
 	@Override
-	public void setItem(int index, ItemStack stack) {
+	public void setItem(int index, @NotNull ItemStack stack) {
 		items.set(index, stack);
 	}
 

@@ -143,7 +143,7 @@ public class MeltingPotRecipe implements Recipe<Container> {
 		public void toNetwork(FriendlyByteBuf friendlyByteBuf, MeltingPotRecipe meltingPotRecipe) {
 			friendlyByteBuf.writeUtf(meltingPotRecipe.group);
 			meltingPotRecipe.input.toNetwork(friendlyByteBuf);
-			friendlyByteBuf.writeInt(meltingPotRecipe.cooktime);
+			friendlyByteBuf.writeVarInt(meltingPotRecipe.cooktime);
 			meltingPotRecipe.result.writeToPacket(friendlyByteBuf);
 
 		}

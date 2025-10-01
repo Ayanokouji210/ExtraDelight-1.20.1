@@ -246,13 +246,12 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 		@Override
 		public @Nullable OvenRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf buffer) {
 			String groupIn = buffer.readUtf();
-			ResourceLocation id = buffer.readResourceLocation();
 //			OvenRecipeBookTab tabIn = OvenRecipeBookTab.findByName(buffer.readUtf());
 			int i = buffer.readVarInt();
-			NonNullList<Ingredient> inputItemsIn = NonNullList.withSize(i, Ingredient.EMPTY);
+			NonNullList<Ingredient> inputItemsIn = NonNullList.create();
 
-			for (int j = 0; j < inputItemsIn.size(); ++j) {
-				inputItemsIn.set(j, Ingredient.fromNetwork(buffer));
+			for (int j = 0; j < i; ++j) {
+				inputItemsIn.add(Ingredient.fromNetwork(buffer));
 			}
 
 			ItemStack outputIn = buffer.readItem();
@@ -260,7 +259,7 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 			float experienceIn = buffer.readFloat();
 			int cookTimeIn = buffer.readVarInt();
 			boolean consume = buffer.readBoolean();
-			return new OvenRecipe(id,groupIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn, consume);
+			return new OvenRecipe(pRecipeId,groupIn, inputItemsIn, outputIn, container, experienceIn, cookTimeIn, consume);
 		}
 
 		public void toNetwork(FriendlyByteBuf buffer, OvenRecipe recipe) {
