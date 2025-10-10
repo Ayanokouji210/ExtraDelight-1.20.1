@@ -30,7 +30,10 @@ jobs:
       run: chmod +x ./gradlew
       
     - name: Build with Gradle
-      run: ./gradlew build runData clean build
+      run: ./gradlew build 
+            ./gradlew runData 
+            ./gradlew clean 
+            ./gradlew build
 
     - name: Get mod version
       id: get_version
