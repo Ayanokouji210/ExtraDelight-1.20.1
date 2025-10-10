@@ -1,0 +1,51 @@
+name: Gradle Package
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        server-id: github
+        settings-path: ${{ github.workspace }}
+
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582
+
+    - name: Build with Gradle
+      run: ./gradlew build runData clean build
+
+    - name: Get mod version
+      id: get_version
+      run: |
+        MOD_VERSION=$(grep "mod_version" gradle.properties | cut -d'=' -f2)
+        echo "mod_version=${MOD_VERSION}" >> $GITHUB_OUTPUT
+
+    - name: List build artifacts
+      run: ls -la build/libs/
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: v${{ steps.get_version.outputs.mod_version }}
+        name: Release v${{ steps.get_version.outputs.mod_version }}
+        files: build/libs/*.jar
+        generate_release_notes: true
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
