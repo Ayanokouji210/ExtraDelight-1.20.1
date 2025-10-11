@@ -35,14 +35,17 @@ jobs:
             ./gradlew clean 
             ./gradlew build
 
+    - name: List build artifacts
+      run: pwd
+        ls -al
+        ls -la build/libs/
+
+
     - name: Get mod version
       id: get_version
       run: |
         MOD_VERSION=$(grep "mod_version" gradle.properties | cut -d'=' -f2)
         echo "mod_version=${MOD_VERSION}" >> $GITHUB_OUTPUT
-
-    - name: List build artifacts
-      run: ls -la build/libs/
 
     - name: Create Release
       uses: softprops/action-gh-release@v1
