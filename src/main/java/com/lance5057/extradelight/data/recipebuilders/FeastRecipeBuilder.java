@@ -115,7 +115,6 @@ public class FeastRecipeBuilder implements RecipeBuilder {
 
         ResourceLocation advancementId = this.advancement.build(id.withPrefix("recipes/feast/")).getId();
 
-        // 5. 把成品交出去
         output.accept(new Result(
                 recipeId,
                 this.group == null ? "" : this.group,

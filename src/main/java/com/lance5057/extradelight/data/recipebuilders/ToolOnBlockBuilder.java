@@ -30,7 +30,7 @@ public class ToolOnBlockBuilder implements RecipeBuilder {
 	@Nullable
 	private String group="";
 //	private final ToolOnBlockRecipe.Serializer serializer;
-	private final Map<String, Criterion> criteria = new LinkedHashMap<>();
+//	private final Map<String, Criterion> criteria = new LinkedHashMap<>();
 
 	private ToolOnBlockBuilder(BlockItem pResult, BlockItem block, Ingredient pIngredient ) {
 		this.in = pResult;
@@ -59,10 +59,6 @@ public class ToolOnBlockBuilder implements RecipeBuilder {
 		return this;
 	}
 
-	//	public ToolOnBlockBuilder unlockedBy(String criterionName, Criterion criterionTrigger) {
-//		this.criteria.put(criterionName, criterionTrigger);
-//		return this;
-//	}
 
 	public ToolOnBlockBuilder group(@Nullable String pGroupName) {
 		this.group = pGroupName;
@@ -73,11 +69,6 @@ public class ToolOnBlockBuilder implements RecipeBuilder {
 		return this.in;
 	}
 
-//	@Override
-//	public void save(Consumer<FinishedRecipe> pFinishedRecipeConsumer) {
-//		ResourceLocation location = ForgeRegistries.ITEMS.getKey(in);
-//		save(pFinishedRecipeConsumer, ExtraDelight.MOD_ID + ":tool_on_block/" + location.getPath());
-//	}
 
 	@Override
 	public void save(Consumer<FinishedRecipe> output, ResourceLocation id) {
@@ -97,7 +88,7 @@ public class ToolOnBlockBuilder implements RecipeBuilder {
 		Advancement.Builder advancementBuilder = this.advancement
 				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(recipeId))
 				.rewards(AdvancementRewards.Builder.recipe(recipeId)).requirements(RequirementsStrategy.OR);
-		this.criteria.forEach(advancementBuilder::addCriterion);
+//		this.criteria.forEach(advancementBuilder::addCriterion);
 		output.accept(new Result(recipeId,this.group,this.tool,this.in,this.out,advancement,
 				advancement.build(recipeId.withPrefix("recipes/toolonblock/")).getId()));
 //		public OvenRecipe(String group, @Nullable OvenRecipeBookTab tab, NonNullList<Ingredient> inputItems,

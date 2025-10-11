@@ -252,17 +252,4 @@ public class ChillerRecipeBuilder implements RecipeBuilder {
 		}
 	}
 
-//	@Override
-//	public void save(RecipeOutput output, ResourceLocation id) {
-//		ResourceLocation recipeId = id.withPrefix("chilling/");
-//		Advancement.Builder advancementBuilder = output.advancement()
-//				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(recipeId))
-//				.rewards(AdvancementRewards.Builder.recipe(recipeId)).requirements(AdvancementRequirements.Strategy.OR);
-//		this.criteria.forEach(advancementBuilder::addCriterion);
-//
-//		ChillerRecipe recipe = new ChillerRecipe("", this.ingredients, this.fluid, this.resultStack, this.container,
-//				this.experience, this.cookingTime, this.consumeContainer);
-//		output.accept(recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/chilling/")));
-//	}
-
 }

@@ -141,35 +141,4 @@ public class BottleFluidRegistryRecipeBuilder implements RecipeBuilder {
 		}
 	}
 
-//		ResourceLocation recipeId = pRecipeId.withPrefix("bottlefluid/");
-//		BottleFluidRegistryRecipe recipe = new BottleFluidRegistryRecipe(this.group, this.bottle, this.fluid);
-//		FinishedRecipe FR = new FinishedRecipe() {
-//			@Override
-//			public void serializeRecipeData(@Nonnull JsonObject pJson) {
-//
-//			}
-//
-//			@Override
-//			public @Nonnull ResourceLocation getId() {
-//				return recipeId;
-//			}
-//
-//			@Override
-//			public @Nonnull RecipeSerializer<?> getType() {
-//				return recipe;
-//			}
-//
-//			@Override
-//			public @Nullable JsonObject serializeAdvancement() {
-//				return null;
-//			}
-//
-//			@Override
-//			public @Nullable ResourceLocation getAdvancementId() {
-//				return null;
-//			}
-//		};
-//		pFinishedRecipeConsumer.accept(FR);
-		//ResourceLocation location, Recipe<?> recipe, @Nullable AdvancementHolder advancement
-		//recipeId, recipe, null
 }

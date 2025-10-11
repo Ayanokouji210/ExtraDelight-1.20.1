@@ -44,7 +44,7 @@ public class OvenRecipeBuilder implements RecipeBuilder {
 	private final ItemStack container;
 	private final boolean consumeContainer;
 	private final Advancement.Builder advancement = Advancement.Builder.advancement();
-	private final Map<String, Criterion> criteria = new LinkedHashMap<>();
+	//private final Map<String, Criterion> criteria = new LinkedHashMap<>();
 	private String group="";
 
 	private OvenRecipeBuilder(ItemStack resultIn, int cookingTime, float experience, ItemStack container,
@@ -157,10 +157,10 @@ public class OvenRecipeBuilder implements RecipeBuilder {
 	@Override
 	public void save(Consumer<FinishedRecipe> output, ResourceLocation id) {
 		ResourceLocation recipeId = id.withPrefix("cooking/oven/");
-		Advancement.Builder advancementBuilder = this.advancement
+		this.advancement
 				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(recipeId))
 				.rewards(AdvancementRewards.Builder.recipe(recipeId)).requirements(RequirementsStrategy.OR);
-		this.criteria.forEach(advancementBuilder::addCriterion);
+		//this.criteria.forEach(advancementBuilder::addCriterion);
 
 //		public OvenRecipe(String group, @Nullable OvenRecipeBookTab tab, NonNullList<Ingredient> inputItems,
 //				ItemStack output, ItemStack container, float experience, int cookTime) {

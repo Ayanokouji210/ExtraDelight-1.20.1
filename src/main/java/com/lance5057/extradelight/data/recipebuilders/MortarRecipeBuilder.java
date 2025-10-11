@@ -53,11 +53,6 @@ public class MortarRecipeBuilder implements RecipeBuilder {
 		return this;
 	}
 
-//	public MortarRecipeBuilder unlockedBy(String criterionName, Criterion criterionTrigger) {
-//		this.criteria.put(criterionName, criterionTrigger);
-//		return this;
-//	}
-
 	public MortarRecipeBuilder group(@Nullable String pGroupName) {
 		this.group = pGroupName;
 		return this;

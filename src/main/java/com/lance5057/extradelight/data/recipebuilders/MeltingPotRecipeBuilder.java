@@ -51,11 +51,6 @@ public class MeltingPotRecipeBuilder implements RecipeBuilder {
 		return this;
 	}
 
-//	@Override
-//	public RecipeBuilder unlockedBy(String name, Criterion criterion) {
-//		this.criteria.put(name, criterion);
-//		return this;
-//	}
 
 	@Override
 	public RecipeBuilder group(String groupName) {

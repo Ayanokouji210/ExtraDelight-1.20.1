@@ -39,7 +39,7 @@ public class ShapedWithJarRecipeBuilder implements RecipeBuilder {
 	private final Map<String, Criterion> criteria = new LinkedHashMap<>();
 	private final Advancement.Builder advancement = Advancement.Builder.advancement();
 	@Nullable
-	private String group;
+	private String group="";
 	private boolean showNotification = true;
 	private final List<FluidStack> fluids;
 
@@ -55,17 +55,7 @@ public class ShapedWithJarRecipeBuilder implements RecipeBuilder {
 		this.fluids = fluids;
 	}
 
-//	public ShapedWithJarRecipeBuilder(RecipeCategory category, ItemLike result, int count, List<FluidStack> fluids) {
-//		this(category, new ItemStack(result, count), fluids);
-//	}
-//
-//	public ShapedWithJarRecipeBuilder(RecipeCategory p_249996_, ItemStack result, List<FluidStack> fluids) {
-//		this.category = p_249996_;
-//		this.result = result.getItem();
-//		this.count = result.getCount();
-//		this.resultStack = result;
-//		this.fluids = fluids;
-//	}
+
 
 //	/**
 //	 * Creates a new builder for a shaped recipe.
@@ -158,6 +148,13 @@ public class ShapedWithJarRecipeBuilder implements RecipeBuilder {
 	@Override
 	public void save(Consumer<FinishedRecipe> recipeOutput, ResourceLocation id) {
 		this.ensureValid(id);
+		this.advancement
+				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))
+				.rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
+		this.criteria.forEach(this.advancement::addCriterion);
+		recipeOutput.accept(new Result(id,this.group,this.category,this.key,this.rows,this.fluids,
+				this.resultStack,this.showNotification,this.advancement,
+				this.advancement.build(id.withPrefix("recipes/"+this.category.getFolderName()+"/")).getId()));
 //		ShapedRecipePattern shapedrecipepattern = this.ensureValid(id);
 //		Advancement.Builder advancement$builder = recipeOutput.advancement()
 //				.addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))
@@ -170,13 +167,6 @@ public class ShapedWithJarRecipeBuilder implements RecipeBuilder {
 //				advancement$builder.build(id.withPrefix("recipes/" + this.category.getFolderName() + "/")));
 	}
 
-//	private ShapedRecipePattern ensureValid(ResourceLocation loaction) {
-//		if (this.criteria.isEmpty()) {
-//			throw new IllegalStateException("No way of obtaining recipe " + loaction);
-//		} else {
-//			return ShapedRecipePattern.of(this.key, this.rows);
-//		}
-//	}
 
 	private void ensureValid(ResourceLocation location) {
 		if (this.rows.isEmpty()) {
@@ -276,6 +266,10 @@ public class ShapedWithJarRecipeBuilder implements RecipeBuilder {
 		public ResourceLocation getAdvancementId() {
 			return this.advancementId;
 		}
-	}
+
+        public RecipeCategory getCategory() {
+            return category;
+        }
+    }
 
 }

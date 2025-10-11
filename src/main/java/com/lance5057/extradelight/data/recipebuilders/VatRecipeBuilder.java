@@ -104,11 +104,6 @@ public class VatRecipeBuilder implements RecipeBuilder {
 		return this;
 	}
 
-//	@Override
-//	public RecipeBuilder unlockedBy(String criterionName, Criterion criterionTrigger) {
-//		this.criteria.put(criterionName, criterionTrigger);
-//		return this;
-//	}
 
 	@Override
 	public VatRecipeBuilder group(String groupName) {

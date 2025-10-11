@@ -57,11 +57,6 @@ public class DryingRackRecipeBuilder implements RecipeBuilder {
 		return this;
 	}
 
-//	@Override
-//	public DryingRackRecipeBuilder unlockedBy(String criterionName, Criterion<?> criterionTrigger) {
-//		this.criteria.put(criterionName, criterionTrigger);
-//		return this;
-//	}
 
 	public DryingRackRecipeBuilder group(@Nullable String pGroupName) {
 		this.group = pGroupName;
@@ -130,16 +125,6 @@ public class DryingRackRecipeBuilder implements RecipeBuilder {
 			this.serializer = pSerializer;
 		}
 
-//		public void serializeRecipeData(JsonObject pJson) {
-//			if (!this.group.isEmpty()) {
-//				pJson.addProperty("group", this.group);
-//			}
-//
-//			pJson.add("ingredient", this.ingredient.toJson());
-//			pJson.addProperty("result", Registry.ITEM.getKey(this.result).toString());
-//			pJson.addProperty("experience", this.experience);
-//			pJson.addProperty("cookingtime", this.cookingTime);
-//		}
 
 		public RecipeSerializer<?> getType() {
 			return ExtraDelightRecipes.DRYING_RACK_SERIALIZER.get();

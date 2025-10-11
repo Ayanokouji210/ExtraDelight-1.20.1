@@ -109,7 +109,7 @@ public class DynamicToastRecipeBuilder implements RecipeBuilder {
 			throw new IllegalStateException("No way of obtaining recipe " + id);
 	}
 
-	/* ---------- FinishedRecipe ---------- */
+
 	public static class Result implements FinishedRecipe {
 		private final ResourceLocation id;
 		private final String group;
