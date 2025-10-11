@@ -13,7 +13,7 @@
       "item": "extradelight:cinnamon_bark"
     }
   ],
-  "sound": "net.minecraft.sounds.SoundEvent@3dbb3fb7",
+  "sound": "minecraft:item.axe.strip",
   "tool": {
     "type": "farmersdelight:tool_action",
     "action": "axe_strip"

@@ -4587,13 +4587,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.CINNAMON_LOG.get()),
 						new ToolActionIngredient(ToolActions.AXE_STRIP),
 						ExtraDelightItems.STRIPPED_CINNAMON_LOG.get())
-				.addResult(ExtraDelightItems.CINNAMON_BARK.get()).addSound(SoundEvents.AXE_STRIP.toString())
+				.addResult(ExtraDelightItems.CINNAMON_BARK.get()).addSound(SoundEvents.AXE_STRIP.getLocation().toString())
 				.build(consumer, EDLoc("cutting/" + "strip_cinnamon_log"));
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.CINNAMON_WOOD.get()),
 						new ToolActionIngredient(ToolActions.AXE_STRIP),
 						ExtraDelightItems.STRIPPED_CINNAMON_WOOD.get())
-				.addResult(ExtraDelightItems.CINNAMON_BARK.get()).addSound(SoundEvents.AXE_STRIP.toString())
+				.addResult(ExtraDelightItems.CINNAMON_BARK.get()).addSound(SoundEvents.AXE_STRIP.getLocation().toString())
 				.build(consumer, EDLoc("cutting/" + "strip_cinnamon_wood"));
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.CINNAMON_DOOR.get()),
 				new ToolActionIngredient(ToolActions.AXE_DIG), ExtraDelightItems.CINNAMON_PLANKS.get())
@@ -4605,13 +4605,13 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.FRUIT_LOG.get()),
 						new ToolActionIngredient(ToolActions.AXE_STRIP),
 						ExtraDelightItems.STRIPPED_FRUIT_LOG.get())
-				.addResult(ModItems.TREE_BARK.get()).addSound(SoundEvents.AXE_STRIP.toString())
+				.addResult(ModItems.TREE_BARK.get()).addSound(SoundEvents.AXE_STRIP.getLocation().toString())
 				.build(consumer, EDLoc("cutting/" + "strip_fruit_log"));
 		CuttingBoardRecipeBuilder
 				.cuttingRecipe(Ingredient.of(ExtraDelightItems.FRUIT_WOOD.get()),
 						new ToolActionIngredient(ToolActions.AXE_STRIP),
 						ExtraDelightItems.STRIPPED_FRUIT_WOOD.get())
-				.addResult(ModItems.TREE_BARK.get()).addSound(SoundEvents.AXE_STRIP.toString())
+				.addResult(ModItems.TREE_BARK.get()).addSound(SoundEvents.AXE_STRIP.getLocation().toString())
 				.build(consumer, EDLoc("cutting/" + "strip_fruit_wood"));
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ExtraDelightItems.FRUIT_DOOR.get()),
 				new ToolActionIngredient(ToolActions.AXE_DIG), ExtraDelightItems.FRUIT_PLANKS.get())
