@@ -31,6 +31,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;
 
+import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.Lazy;
 import net.minecraftforge.common.util.LazyOptional;
@@ -43,6 +44,9 @@ import net.minecraftforge.fluids.capability.templates.FluidTank;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
 import javax.annotation.Nonnull;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
 
 import javax.annotation.Nonnull;
@@ -486,5 +490,21 @@ public class ChillerBlockEntity extends BlockEntity implements IFancyTankHandler
 //    }
 
 
+    @Override
+    public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
+        //fluid
+        if(cap ==ForgeCapabilities.FLUID_HANDLER){
+            if (side == Direction.UP) {
+                return LazyOptional.of(this::getDripTray).cast();
+            }
+            return LazyOptional.of(this::getFluidTank).cast();
+        }
 
+        //item
+        if(cap==ForgeCapabilities.ITEM_HANDLER){
+            return LazyOptional.of(this::getInventory).cast();
+        }
+
+        return LazyOptional.empty();
+    }
 }

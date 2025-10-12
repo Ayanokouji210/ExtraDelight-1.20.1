@@ -28,25 +28,25 @@
 //	public static final Capability<IItemHandler> ITEM_HANDLER = CapabilityManager.get(new CapabilityToken<>(){});
 //	public static final Capability<IFluidHandler> FLUID_HANDLER = CapabilityManager.get(new CapabilityToken<>(){});
 //
-//	public static void registerCapabilities(RegisterCapabilitiesEvent event) {
+//	public static void registerCapabilities(RegisterCapabilitiesEvent event) {;
 //		event.register(ForgeCapabilities.ITEM_HANDLER, ExtraDelightBlockEntities.CANDY_BOWL.get(),
-//				(o, d) -> o.);
-//		event.register(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.DRYING_RACK.get(),
 //				(o, d) -> o.getItemHandler());
-//		event.register(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.FOOD_DISPLAY.get(),
+//		event.register(ForgeCapabilities.ITEM_HANDLER, ExtraDelightBlockEntities.DRYING_RACK.get(),
 //				(o, d) -> o.getItemHandler());
-//		event.register(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.KNIFE_BLOCK.get(),
+//		event.register(ForgeCapabilities.ITEM_HANDLER, ExtraDelightBlockEntities.FOOD_DISPLAY.get(),
 //				(o, d) -> o.getItemHandler());
-//		event.register(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.MIXING_BOWL.get(),
+//		event.register(ForgeCapabilities.ITEM_HANDLER, ExtraDelightBlockEntities.KNIFE_BLOCK.get(),
+//				(o, d) -> o.getItemHandler());
+//		event.register(ForgeCapabilities.ITEM_HANDLER, ExtraDelightBlockEntities.MIXING_BOWL.get(),
 //				(o, d) -> o.getItemHandler());
 //		event.register(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.MIXING_BOWL.get(),
 //				(o, d) -> o.getFluidTank());
-//		event.register(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.MORTAR.get(),
+//		event.register(ForgeCapabilities.ITEM_HANDLER, ExtraDelightBlockEntities.MORTAR.get(),
 //				(o, d) -> o.getItemHandler());
 //		event.register(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.MORTAR.get(),
 //				(o, d) -> o.getFluidTank());
 //
-//		event.register(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.OVEN.get(),
+//		event.register(ForgeCapabilities.ITEM_HANDLER, ExtraDelightBlockEntities.OVEN.get(),
 //				(be, context) -> {
 //					if (context == Direction.DOWN) {
 //						return be.inputHandler;
@@ -55,14 +55,14 @@
 //					else
 //						return be.getInventory();
 //				});
-//		event.register(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.SPICE_RACK.get(),
+//		event.register(ForgeCapabilities.ITEM_HANDLER, ExtraDelightBlockEntities.SPICE_RACK.get(),
 //				(o, d) -> o.getItemHandler());
-//		event.register(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.WREATH.get(),
+//		event.register(ForgeCapabilities.ITEM_HANDLER, ExtraDelightBlockEntities.WREATH.get(),
 //				(o, d) -> o.getItemHandler());
 //
-//		event.register(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.COUNTER_CABINET_BLOCK.get(),
+//		event.register(ForgeCapabilities.ITEM_HANDLER, ExtraDelightBlockEntities.COUNTER_CABINET_BLOCK.get(),
 //				(o, d) -> o.getItemHandler());
-//		event.register(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.SINK_BLOCK.get(),
+//		event.register(ForgeCapabilities.ITEM_HANDLER, ExtraDelightBlockEntities.SINK_BLOCK.get(),
 //				(o, d) -> o.getItemHandler());
 //
 //		event.register(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.TAP.get(),
@@ -72,7 +72,7 @@
 //
 //		event.register(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.MELTING_POT.get(),
 //				(o, d) -> o.getFluidTank());
-//		event.register(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.MELTING_POT.get(),
+//		event.register(ForgeCapabilities.ITEM_HANDLER, ExtraDelightBlockEntities.MELTING_POT.get(),
 //				(o, d) -> o.getItemHandler());
 //		event.register(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.CHILLER.get(),
 //				(be, context) -> {
@@ -81,7 +81,7 @@
 //					}
 //					return be.getFluidTank();
 //				});
-//		event.register(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.CHILLER.get(),
+//		event.register(ForgeCapabilities.ITEM_HANDLER, ExtraDelightBlockEntities.CHILLER.get(),
 //				(be, context) -> {
 //					return be.getInventory();
 //				});
@@ -105,14 +105,14 @@
 //				ExtraDelightItems.GREEN_CHOCOLATE_BOX.get(), ExtraDelightItems.RED_CHOCOLATE_BOX.get(),
 //				ExtraDelightItems.BLACK_CHOCOLATE_BOX.get(), ExtraDelightItems.PURPLE_CHOCOLATE_BOX.get());
 //
-//		event.register(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.CHOCOLATE_BOX.get(),
+//		event.register(ForgeCapabilities.ITEM_HANDLER, ExtraDelightBlockEntities.CHOCOLATE_BOX.get(),
 //				(be, context) -> be.getItems());
 //
 //		event.register(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.FUNNEL.get(), (o, d) -> {
 //			return o.getFluidTank();
 //		});
 //
-//		event.register(Capabilities.ItemHandler.BLOCK, ExtraDelightBlockEntities.EVAPORATOR.get(),
+//		event.register(ForgeCapabilities.ITEM_HANDLER, ExtraDelightBlockEntities.EVAPORATOR.get(),
 //				(be, context) -> be.getItemHandler());
 //		event.register(Capabilities.FluidHandler.BLOCK, ExtraDelightBlockEntities.EVAPORATOR.get(),
 //				(o, d) -> {
