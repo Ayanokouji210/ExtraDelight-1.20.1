@@ -654,7 +654,7 @@ public class EDItemTags extends ItemTagsProvider {
 				ExtraDelightItems.GOLDEN_APPLE_JAM.get(), ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get(),
 				Fermentation.YEAST_SPREAD.get());
 
-		tag(ExtraDelightTags.DOUGH).addOptionalTag(ForgeTags.DOUGH).addOptionalTag(CompatTags.DOUGHS);
+		//tag(ExtraDelightTags.DOUGH).addOptionalTag(ForgeTags.DOUGH).addOptionalTag(CompatTags.DOUGHS);
 		tag(ExtraDelightTags.BROTH).add(ModItems.BONE_BROTH.get()).addOptionalTag(CompatTags.STOCK);
 
 //		// Dyed Tags
