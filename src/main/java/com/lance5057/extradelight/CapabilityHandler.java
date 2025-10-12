@@ -1,8 +1,12 @@
 package com.lance5057.extradelight;
 
+import com.google.common.collect.Sets;
 import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlock;
+import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlockEntity;
+import com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxItemStackHandler;
 import com.lance5057.extradelight.blocks.countercabinet.CounterCabinetBlockEntity;
 import com.lance5057.extradelight.blocks.entities.TapBlockEntity;
+import com.lance5057.extradelight.blocks.funnel.FunnelBlockEntity;
 import com.lance5057.extradelight.blocks.jar.JarBlockEntity;
 import com.lance5057.extradelight.blocks.keg.KegBlockEntity;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetBlockEntity;
@@ -16,6 +20,7 @@ import com.lance5057.extradelight.displays.wreath.WreathEntity;
 import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.workstations.chiller.ChillerBlockEntity;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlockEntity;
+import com.lance5057.extradelight.workstations.evaporator.EvaporatorBlockEntity;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotBlockEntity;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlockEntity;
 import com.lance5057.extradelight.workstations.mortar.MortarBlockEntity;
@@ -37,14 +42,20 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.templates.FluidHandlerItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.function.Supplier;
 
 import static com.lance5057.extradelight.ExtraDelightClientEvents.chillMap;
+import static com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlockEntity.chocolateBoxItems;
 
 @Mod.EventBusSubscriber(modid = ExtraDelight.MOD_ID)
 public class CapabilityHandler {
@@ -84,6 +95,24 @@ public class CapabilityHandler {
                 }
             };
             event.addCapability(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "dynamic_food"), dynamicFoodProvider);
+        }
+
+        if(chocolateBoxItems.contains(item)){
+            event.addCapability(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "chocolate_box"),
+                    new ICapabilityProvider() {
+                        @Override
+                        public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @org.jetbrains.annotations.Nullable Direction side) {
+                            if(cap == ITEM){
+                                return LazyOptional.of(()->new ItemStackHandler(8){
+                                    @Override
+                                    public int getSlotLimit(int slot) {
+                                        return 1;
+                                    }
+                                }).cast();
+                            }
+                            return LazyOptional.empty();
+                        }
+                    });
         }
 
     }
@@ -143,6 +172,26 @@ public class CapabilityHandler {
         }
 
         if(be instanceof KegBlockEntity cbe){addFluidHandler(event,"keg",cbe::getTank);}
+        if(be instanceof ChocolateBoxBlockEntity cbe){addItemHandler(event,"chocolate_box",cbe::getItems);}
+        if(be instanceof FunnelBlockEntity cbe){addFluidHandler(event,"funnel",cbe::getFluidTank);}
+        if(be instanceof EvaporatorBlockEntity cbe){
+            event.addCapability(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,"evaporator"),
+                    new ICapabilityProvider() {
+                        @Override
+                        public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @org.jetbrains.annotations.Nullable Direction side) {
+                            if(cap == ITEM){
+                                return LazyOptional.of(cbe::getItemHandler).cast();
+                            }
+                            if(cap == FLUID){
+                                if(cbe.isInventoryEmpty()){
+                                    return LazyOptional.of(cbe::getFluidTank).cast();
+                                }
+                            }
+                            return LazyOptional.empty();
+                        }
+                    });
+        }
+//        if(be instanceof JuicerBlockEntity cbe){addItemFluidHandler(event,"keg",cbe::getItemHandler,cbe::getFluidTank);}
         }
 
     private static void addItemHandler(

@@ -34,6 +34,9 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.ItemStackHandler;
 
 import javax.annotation.Nullable;
 import java.util.Collections;
@@ -178,12 +181,18 @@ public class ChocolateBoxBlock extends Block implements EntityBlock {
 
 	@Override
 	public List<ItemStack> getDrops(BlockState pState, LootParams.Builder params) {
-		// 确保有一个BlockEntity
 		if (params.getParameter(LootContextParams.BLOCK_ENTITY) instanceof ChocolateBoxBlockEntity be) {
 			ItemStack stack = new ItemStack(this);
-			CompoundTag nbt = be.getUpdateTag();
-			stack.getOrCreateTag().put("BlockEntityTag", nbt);
-			return Collections.singletonList(stack);
+            if(stack.getCapability(ForgeCapabilities.ITEM_HANDLER).isPresent()) {
+                IItemHandler handler = stack.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve().get();
+                if(handler instanceof ItemStackHandler inventory) {
+                    for(int i = 0; i < inventory.getSlots(); i++) {
+                            inventory.insertItem(i,be.getItems().getStackInSlot(i).copy(),false);
+                    }
+                    stack.setTag(inventory.serializeNBT());
+                }
+            }
+            return Collections.singletonList(stack);
 		}
 		return super.getDrops(pState, params);
 	}
@@ -192,13 +201,18 @@ public class ChocolateBoxBlock extends Block implements EntityBlock {
 	public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @org.jetbrains.annotations.Nullable LivingEntity pPlacer, ItemStack pStack) {
 		super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
 
-		if (pStack.hasTag()&& pStack.getTag().contains("BlockEntityTag")) {
-			Tag nbt = pStack.getTag().get("BlockEntityTag");
-			BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-			if (blockEntity instanceof ChocolateBoxBlockEntity jbe) {
-				jbe.load((CompoundTag) nbt);
-			}
-		}
+        if(pStack.getCapability(ForgeCapabilities.ITEM_HANDLER).isPresent()) {
+            IItemHandler handler = pStack.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve().get();
+            BlockEntity be = pLevel.getBlockEntity(pPos);
+            if (be instanceof ChocolateBoxBlockEntity cbe) {
+                if (handler instanceof ItemStackHandler inventory) {
+                    inventory.deserializeNBT(pStack.getTag());
+                    for(int i = 0; i < handler.getSlots(); i++) {
+                        cbe.getItems().insertItem(i,handler.getStackInSlot(i),false);
+                    }
+                }
+            }
+        }
 
 	}
 

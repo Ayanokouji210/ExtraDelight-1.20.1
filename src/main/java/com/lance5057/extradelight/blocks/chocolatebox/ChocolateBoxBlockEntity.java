@@ -1,6 +1,8 @@
 package com.lance5057.extradelight.blocks.chocolatebox;
 
+import com.google.common.collect.Sets;
 import com.lance5057.extradelight.ExtraDelightBlockEntities;
+import com.lance5057.extradelight.ExtraDelightItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 //import net.minecraft.core.component.DataComponentMap;
@@ -9,6 +11,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 //import net.minecraft.world.item.component.ItemContainerContents;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -18,12 +21,23 @@ import net.minecraftforge.items.IItemHandler;
 //import net.neoforged.neoforge.items.IItemHandler;
 
 import javax.annotation.Nonnull;
+import java.util.Set;
 
 public class ChocolateBoxBlockEntity extends BlockEntity {
 	public static final String TAG = "inv";
 	private final ChocolateBoxItemStackHandler items = createHandler();
 	private final Lazy<IItemHandler> itemHandler = Lazy.of(() -> items);
 	public final static int NUM_SLOTS = 8;
+
+    public static final Set<Item> chocolateBoxItems = Sets.newHashSet(ExtraDelightItems.WHITE_CHOCOLATE_BOX.get(), ExtraDelightItems.ORANGE_CHOCOLATE_BOX.get(),
+            ExtraDelightItems.MAGENTA_CHOCOLATE_BOX.get(), ExtraDelightItems.LIGHT_BLUE_CHOCOLATE_BOX.get(),
+            ExtraDelightItems.YELLOW_CHOCOLATE_BOX.get(), ExtraDelightItems.LIME_CHOCOLATE_BOX.get(),
+            ExtraDelightItems.PINK_CHOCOLATE_BOX.get(), ExtraDelightItems.GRAY_CHOCOLATE_BOX.get(),
+            ExtraDelightItems.LIGHT_GRAY_CHOCOLATE_BOX.get(), ExtraDelightItems.CYAN_CHOCOLATE_BOX.get(),
+            ExtraDelightItems.BLUE_CHOCOLATE_BOX.get(), ExtraDelightItems.BROWN_CHOCOLATE_BOX.get(),
+            ExtraDelightItems.GREEN_CHOCOLATE_BOX.get(), ExtraDelightItems.RED_CHOCOLATE_BOX.get(),
+            ExtraDelightItems.BLACK_CHOCOLATE_BOX.get(), ExtraDelightItems.PURPLE_CHOCOLATE_BOX.get()
+    );
 
 	public ChocolateBoxBlockEntity(BlockPos pos, BlockState blockState) {
 		super(ExtraDelightBlockEntities.CHOCOLATE_BOX.get(), pos, blockState);
