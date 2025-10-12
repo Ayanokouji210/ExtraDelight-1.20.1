@@ -46,6 +46,7 @@ public class ToolOnBlockRecipe implements Recipe<SimpleRecipeWrapper> {
 	protected final BlockItem out;
 
 	public ToolOnBlockRecipe(ResourceLocation id,BlockItem in, Ingredient tool, BlockItem out) {
+        this.id =id;
 		this.tool = tool;
 		this.in = in;
 		this.out = out;
@@ -115,9 +116,9 @@ public class ToolOnBlockRecipe implements Recipe<SimpleRecipeWrapper> {
 		@Override
 		public ToolOnBlockRecipe fromJson(ResourceLocation resourceLocation, JsonObject jsonObject) {
 			Item ItemIn=ForgeRegistries.ITEMS.getValue(
-					new ResourceLocation(GsonHelper.getAsString(jsonObject,"in")));
+					new ResourceLocation(GsonHelper.getAsString(jsonObject,"blockIn")));
 			Item ItemOut=ForgeRegistries.ITEMS.getValue(
-					new ResourceLocation(GsonHelper.getAsString(jsonObject,"out"))
+					new ResourceLocation(GsonHelper.getAsString(jsonObject,"blockOut"))
 			);
 			Ingredient ingredient = Ingredient.fromJson(GsonHelper.getAsJsonObject(jsonObject,"ingredient"));
 			if(ItemIn==null||ItemOut==null){
@@ -125,9 +126,9 @@ public class ToolOnBlockRecipe implements Recipe<SimpleRecipeWrapper> {
 			}else {
 				if(ItemIn instanceof BlockItem && ItemOut instanceof BlockItem){
 					return new ToolOnBlockRecipe(resourceLocation,(BlockItem) ItemIn,ingredient,(BlockItem) ItemOut);
-				}else{
-					return new ToolOnBlockRecipe(resourceLocation,new ItemStack(ItemIn),ingredient,new ItemStack(ItemOut));
-				}
+				}else {
+                    throw new JsonParseException("Recipe ToolOnBlock Item in/out parse error,can not transfer to BlockItem");
+                }
 			}
 
 		}
