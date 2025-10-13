@@ -1,60 +1,173 @@
-name: Gradle Package
+name: Build and Release Forge Mod
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - 'v*'
-  workflow_dispatch: 
+
+env:
+  MOD_NAME: 'Extra Delight'
+  JAVA_VERSION: '17'
+  GRADLE_VERSION: '8.8'
 
 jobs:
-  build-and-release:
+  build:
+    name: Build Mod
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      packages: write
+    outputs:
+      release_created: ${{ steps.create_release.outputs.upload_url != '' }}
+      version: ${{ steps.get_version.outputs.version }}
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        server-id: github
-        settings-path: ${{ github.workspace }}
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-    - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582
-      
-    - name: Grant execute permission for gradlew
-      run: chmod +x ./gradlew
-      
-    - name: Build with Gradle
-      run: ./gradlew build 
-            ./gradlew runData 
-            ./gradlew clean 
-            ./gradlew build
+      - name: Get version from tag
+        id: get_version
+        run: |
+          if [ "${{ github.event_name }}" = "push" ] && [[ "${{ github.ref }}" == refs/tags/v* ]]; then
+            VERSION="${GITHUB_REF#refs/tags/v}"
+            echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          else
+            if [ -f "gradle.properties" ]; then
+              VERSION=$(grep "^mod_version" gradle.properties | cut -d'=' -f2)
+              echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+            else
+              echo "version=manual-build-${{ github.run_number }}" >> "$GITHUB_OUTPUT"
+            fi
+          fi
+          echo "Detected version: $VERSION"
 
-    - name: List build artifacts
-      run: pwd
-        ls -al
-        ls -la build/libs/
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: ${{ env.GRADLE_VERSION }}
+
+      - name: Validate Gradle Wrapper
+        uses: gradle/actions/wrapper-validation@v3
 
 
-    - name: Get mod version
-      id: get_version
-      run: |
-        MOD_VERSION=$(grep "mod_version" gradle.properties | cut -d'=' -f2)
-        echo "mod_version=${MOD_VERSION}" >> $GITHUB_OUTPUT
+      - name: Cache Gradle dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('gradle.properties', 'gradle-wrapper.properties', 'build.gradle', 'settings.gradle') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
 
-    - name: Create Release
-      uses: softprops/action-gh-release@v1
-      with:
-        tag_name: v${{ steps.get_version.outputs.mod_version }}
-        name: Release v${{ steps.get_version.outputs.mod_version }}
-        files: build/libs/*.jar
-        generate_release_notes: true
-        draft: false
-        prerelease: false
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Make Gradle Wrapper Executable
+        run: chmod +x ./gradlew
+
+
+      - name: Build & Generate Data
+        run: |
+          set -e
+          ./gradlew build --no-daemon --stacktrace
+          ./gradlew runData --no-daemon --stacktrace
+          ./gradlew build --no-daemon --stacktrace
+
+      - name: Verify Build Output
+        id: verify_build
+        run: |
+          set -e
+          echo "Verifying build output..."
+          [ -d "build/libs" ] || { echo "❌ build/libs not found"; exit 1; }
+
+          # 排除常见副产物，取第一个主 jar
+          JAR_FILES=$(find build/libs -name "*.jar" ! -name "*-sources.jar" ! -name "*-dev.jar" ! -name "*-slim.jar" | head -n 2)
+          JAR_COUNT=$(echo "$JAR_FILES" | wc -l)
+
+          if [ "$JAR_COUNT" -eq 0 ]; then
+            echo "❌ No jar files found"; ls -la build/libs/; exit 1
+          fi
+
+          MAIN_JAR=$(echo "$JAR_FILES" | head -n1)
+          echo "main_jar=$MAIN_JAR" >> "$GITHUB_OUTPUT"
+          echo "✅ Found main jar: $MAIN_JAR"
+
+          FILE_SIZE=$(stat -c%s "$MAIN_JAR")
+          echo "file_size=$FILE_SIZE" >> "$GITHUB_OUTPUT"
+          echo "📦 File size: $((FILE_SIZE / 1024 / 1024)) MB"
+          [ "$FILE_SIZE" -ge 1024 ] || { echo "❌ Jar too small"; exit 1; }
+
+      - name: Generate Release Notes
+        id: generate_notes
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          if [ -n "$LATEST_TAG" ]; then
+            PREV_TAG=$(git describe --tags --abbrev=0 "${LATEST_TAG}^" 2>/dev/null || echo "")
+            if [ -n "$PREV_TAG" ]; then
+              CHANGES=$(git log --pretty=format:"- %s (%h)" "${PREV_TAG}..${LATEST_TAG}")
+            else
+              CHANGES=$(git log --pretty=format:"- %s (%h)" --reverse)
+            fi
+          else
+            CHANGES=$(git log --pretty=format:"- %s (%h)" --reverse)
+          fi
+          echo "changes<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$CHANGES" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ steps.get_version.outputs.version }}
+          body: |
+            ${{ steps.generate_notes.outputs.changes }}
+
+            ### Build Information
+            - **Build Number**: ${{ github.run_number }}
+            - **Commit**: ${{ github.sha }}
+            - **Built with**: Java ${{ env.JAVA_VERSION }}, Gradle ${{ env.GRADLE_VERSION }}
+          files: |
+            build/libs/*.jar
+            !build/libs/*-sources.jar
+            !build/libs/*-dev.jar
+            !build/libs/*-slim.jar
+          draft: false
+          prerelease: false
+          fail_on_unmatched_files: false
+
+
+      - name: Upload Build Artifact
+        if: steps.create_release.outputs.upload_url == '' || github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.MOD_NAME }}-${{ steps.get_version.outputs.version }}
+          path: "${{ steps.verify_build.outputs.main_jar }}"
+          retention-days: 30
+
+  notify:
+    name: Notify Status
+    needs: build
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - name: Build Status
+        run: |
+          if [ "${{ needs.build.result }}" = "success" ]; then
+            echo "✅ Build completed successfully!"
+            echo "Version: ${{ needs.build.outputs.version }}"
+          else
+            echo "❌ Build failed!"
+            exit 1
+          fi
