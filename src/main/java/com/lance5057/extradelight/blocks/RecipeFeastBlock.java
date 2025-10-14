@@ -123,14 +123,11 @@ public class RecipeFeastBlock extends Block {
 
 	@Override
 	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (pLevel.isClientSide()) {
             if(pPlayer.getMainHandItem().isEmpty()) {
                 return InteractionResult.PASS;
             }else {
                 return useItemOn(pPlayer.getMainHandItem(),pState,pLevel,pPos,pPlayer,pHand,pHit);
-            }
         }
-		return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
     }
 
 	public InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player,
