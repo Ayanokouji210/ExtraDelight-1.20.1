@@ -302,7 +302,7 @@ public class ExtraDelightItems {
 			});
 
 	public static final RegistryObject<Item> VINEGAR = EDItemGenerator
-			.register("vinegar", () -> new BottleFoodItem(foodItem(EDFoods.VINEGAR)))
+			.register("vinegar", () -> new DrinkableItem(foodItem(EDFoods.VINEGAR).craftRemainder(Items.GLASS_BOTTLE)))
 			.advancementIngredients().finish();  //.craftRemainder(Items.GLASS_BOTTLE)))
 	public static final RegistryObject<Item> VINEGAR_POT = ITEMS.register("vinegar_pot",
 			() -> new BlockItem(ExtraDelightBlocks.VINEGAR_POT.get(), new Item.Properties()) {
@@ -384,18 +384,18 @@ public class ExtraDelightItems {
 
 	// Custard
 	public static final RegistryObject<Item> SWEET_BERRY_CUSTARD = EDItemGenerator
-			.register("sweet_berry_custard", () -> new DrinkItem(stack16FoodItem(EDFoods.CUSTARD))).advancementDessert()
+			.register("sweet_berry_custard", () -> new DrinkableItem(stack16FoodItem(EDFoods.CUSTARD))).advancementDessert()
 			.finish();
 	public static final RegistryObject<Item> CHOCOLATE_CUSTARD = EDItemGenerator
-			.register("chocolate_custard", () -> new DrinkItem(stack16FoodItem(EDFoods.CUSTARD))).advancementDessert()
+			.register("chocolate_custard", () -> new DrinkableItem(stack16FoodItem(EDFoods.CUSTARD))).advancementDessert()
 			.finish();
 	public static final RegistryObject<Item> PUMPKIN_CUSTARD = EDItemGenerator
-			.register("pumpkin_custard", () -> new DrinkItem(stack16FoodItem(EDFoods.CUSTARD))).advancementDessert()
+			.register("pumpkin_custard", () -> new DrinkableItem(stack16FoodItem(EDFoods.CUSTARD))).advancementDessert()
 			.finish();
 	public static final RegistryObject<Item> HONEY_CUSTARD = EDItemGenerator
-			.register("honey_custard", () -> new DrinkItem(stack16FoodItem(EDFoods.CUSTARD))).advancementDessert().finish();
+			.register("honey_custard", () -> new DrinkableItem(stack16FoodItem(EDFoods.CUSTARD))).advancementDessert().finish();
 	public static final RegistryObject<Item> APPLE_CUSTARD = EDItemGenerator
-			.register("apple_custard", () -> new DrinkItem(stack16FoodItem(EDFoods.CUSTARD))).advancementDessert().finish();
+			.register("apple_custard", () -> new DrinkableItem(stack16FoodItem(EDFoods.CUSTARD))).advancementDessert().finish();
 
 	// Pie
 	public static final RegistryObject<Item> SWEET_BERRY_PIE_SLICE = EDItemGenerator
@@ -544,7 +544,7 @@ public class ExtraDelightItems {
 
 	// Jams
 	public static final RegistryObject<Item> JAM = EDItemGenerator
-			.register("jam", () -> new Item(foodItem(EDFoods.JAM).craftRemainder(Items.GLASS_BOTTLE)))
+			.register("jam", () -> new DrinkableItem(foodItem(EDFoods.JAM).craftRemainder(Items.GLASS_BOTTLE)))
 			.advancementIngredients().finish();
 	public static final RegistryObject<Item> GLOW_BERRY_JAM = EDItemGenerator.register("glow_berry_jam",
 			() -> new ToolTipConsumableItem(foodItem(EDFoods.GLOW_JAM).craftRemainder(Items.GLASS_BOTTLE), true))
@@ -726,7 +726,7 @@ public class ExtraDelightItems {
 			.register("sausage_roll", () -> new Item(stack16FoodItem(EDFoods.SAUSAGE_ROLL))).advancementButchercraft()
 			.butchercraftToolTip().finish();
 	public static final RegistryObject<Item> SOS = EDItemGenerator
-			.register("sos", () -> new Item(stack16FoodItem(EDFoods.SOS))).advancementButchercraft()
+			.register("sos", () -> new BowlFoodItem(stack16FoodItem(EDFoods.SOS))).advancementButchercraft()
 			.butchercraftToolTip().finish();
 	public static final RegistryObject<Item> LIVER_ONIONS = EDItemGenerator
 			.register("liver_onions", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.LIVERONION), true))
@@ -1096,17 +1096,17 @@ public class ExtraDelightItems {
 			.advancementMeal().finish();
 
 	public static final RegistryObject<Item> FISH_SALAD = EDItemGenerator
-			.register("fish_salad", () -> new Item(foodItem(EDFoods.FISH_SALAD).craftRemainder(Items.BOWL)))
+			.register("fish_salad", () -> new BowlFoodItem(foodItem(EDFoods.FISH_SALAD).craftRemainder(Items.BOWL)))
 			.advancementMeal().finish();
 	public static final RegistryObject<Item> FISH_SALAD_SANDWICH = EDItemGenerator
 			.register("fish_salad_sandwich", () -> new Item(foodItem(EDFoods.FISH_SALAD_SANDWICH))).advancementMeal()
 			.finish();
 
 	public static final RegistryObject<Item> COOKED_PASTA = EDItemGenerator
-			.register("cooked_pasta", () -> new Item(foodItem(Foods.BREAD).craftRemainder(Items.BOWL)))
+			.register("cooked_pasta", () -> new BowlFoodItem(foodItem(EDFoods.COOKED_PASTA).craftRemainder(Items.BOWL)))
 			.advancementIngredients().finish();
 	public static final RegistryObject<Item> BUTTERED_PASTA = EDItemGenerator
-			.register("buttered_pasta", () -> new Item(foodItem(EDFoods.BUTTERED_PASTA))).advancementMeal().finish();
+			.register("buttered_pasta", () -> new BowlFoodItem(foodItem(EDFoods.BUTTERED_PASTA))).advancementMeal().finish();
 	public static final RegistryObject<Item> BAD_FOOD = ITEMS.register("bad_food",
 			() -> new BowlFoodItem(foodItem(EDFoods.BADFOOD)));
 
@@ -1115,7 +1115,7 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> COOKED_CACTUS = EDItemGenerator
 			.register("cooked_cactus", () -> new Item(foodItem(EDFoods.COOKED_CACTUS))).advancementMeal().finish();
 	public static final RegistryObject<Item> CACTUS_EGGS = EDItemGenerator
-			.register("cactus_eggs", () -> new Item(foodItem(EDFoods.CACTUS_EGGS))).advancementMeal().finish();
+			.register("cactus_eggs", () -> new BowlFoodItem(foodItem(EDFoods.CACTUS_EGGS))).advancementMeal().finish();
 	public static final RegistryObject<Item> CACTUS_SOUP = EDItemGenerator
 			.register("cactus_soup", () -> new ToolTipConsumableItem(foodItem(EDFoods.CACTUS_SOUP), true))
 			.advancementMeal().isHotFood().finish();
@@ -1162,7 +1162,7 @@ public class ExtraDelightItems {
 			.register("corn_chowder", () -> new ToolTipConsumableItem(foodItem(EDFoods.CORN_CHOWDER), true))
 			.advancementMeal().isHotFood().finish();
 	public static final RegistryObject<Item> CREAM_CORN = EDItemGenerator
-			.register("cream_corn", () -> new Item(foodItem(EDFoods.CREAMED_CORN))).advancementMeal().finish();
+			.register("cream_corn", () -> new BowlFoodItem(foodItem(EDFoods.CREAMED_CORN))).advancementMeal().finish();
 	public static final RegistryObject<Item> CORN_FRITTERS = EDItemGenerator
 			.register("corn_fritters", () -> new ToolTipConsumableItem(foodItem(EDFoods.CORN_FRITTERS), true))
 			.advancementMeal().finish();
@@ -1187,7 +1187,7 @@ public class ExtraDelightItems {
 			.advancementMeal().finish();
 	public static final RegistryObject<Item> CARAMEL_SAUCE = EDItemGenerator
 			.register("caramel_sauce",
-					() -> new Item(foodItem(EDFoods.CARAMEL_SAUCE).craftRemainder(Items.GLASS_BOTTLE)))
+					() -> new DrinkableItem(foodItem(EDFoods.CARAMEL_SAUCE).craftRemainder(Items.GLASS_BOTTLE)))
 			.advancementIngredients().finish();
 	public static final RegistryObject<Item> CARAMEL_CANDY = EDItemGenerator
 			.register("caramel_candy", () -> new ToolTipConsumableItem(foodItem(EDFoods.CARAMEL_CANDY), true))
@@ -1842,9 +1842,9 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> CINNAMON_POPSICLE = EDItemGenerator
 			.register("cinnamon_popsicle", () -> new Item(foodItem(FoodValues.POPSICLE))).advancementDessert().finish();
 	public static final RegistryObject<Item> BEET_MINT_SALAD = EDItemGenerator
-			.register("beet_mint_salad", () -> new Item(foodItem(EDFoods.BEET_MINT))).advancementMeal().finish();
+			.register("beet_mint_salad", () -> new BowlFoodItem(foodItem(EDFoods.BEET_MINT))).advancementMeal().finish();
 	public static final RegistryObject<Item> MINT_JELLY = EDItemGenerator
-			.register("mint_jelly", () -> new Item(foodItem(EDFoods.JAM))).advancementIngredients().finish();
+			.register("mint_jelly", () -> new DrinkableItem(foodItem(EDFoods.JAM))).advancementIngredients().finish();
 	public static final RegistryObject<Item> CRACKERS = EDItemGenerator
 			.register("crackers", () -> new Item(foodItem(EDFoods.CRACKER))).advancementSnack().finish();
 	public static final RegistryObject<Item> CROQUE_MONSIEUR = EDItemGenerator
@@ -2664,18 +2664,18 @@ public class ExtraDelightItems {
 
 	public static final RegistryObject<Item> PEANUT_BUTTER_BOTTLE = EDItemGenerator
 			.register("peanut_butter_bottle",
-					() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.NUT_BUTTER)))
+					() -> new DrinkableItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.NUT_BUTTER)))
 			.advancementIngredients().finish();
 
 	public static final RegistryObject<Item> MARSHMALLOW_FLUFF_BOTTLE = EDItemGenerator
 			.register("marshmallow_fluff_bottle",
-					() -> new Item(
+					() -> new DrinkableItem(
 							new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.MARSHMALLOW_FLUFF)))
 			.advancementIngredients().finish();
 
 	public static final RegistryObject<Item> HAZELNUT_SPREAD_BOTTLE = EDItemGenerator
 			.register("hazelnut_spread_bottle",
-					() -> new Item(
+					() -> new DrinkableItem(
 							new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.HAZELNUT_SPREAD)))
 			.advancementIngredients().finish();
 
@@ -2688,7 +2688,7 @@ public class ExtraDelightItems {
 			.register("rombosse", () -> new ToolTipConsumableItem(foodItem(EDFoods.ROMBOSSE), true))
 			.advancementDessert().finish();
 	public static final RegistryObject<Item> APPLE_SLAW = EDItemGenerator
-			.register("apple_slaw", () -> new Item(stack16FoodItem(EDFoods.APPLE_SLAW))).advancementMeal().finish();
+			.register("apple_slaw", () -> new BowlFoodItem(stack16FoodItem(EDFoods.APPLE_SLAW))).advancementMeal().finish();
 	public static final RegistryObject<Item> PORK_AND_APPLES_FEAST = EDItemGenerator
 			.register("pork_and_apples_feast",
 					() -> new BlockItem(ExtraDelightBlocks.PORK_AND_APPLES_FEAST.get(), new Item.Properties()))
@@ -2865,7 +2865,7 @@ public class ExtraDelightItems {
 	public static final RegistryObject<Item> COFFEE_BEAN_SACK = ITEMS.register("coffee_bean_sack",
 			() -> new BlockItem(ExtraDelightBlocks.COFFEE_BEAN_SACK.get(), new Item.Properties()));
 	public static final RegistryObject<Item> AFFOGATO = EDItemGenerator
-			.register("affogato", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.AFFOGATO), true))
+			.register("affogato", () -> new ToolTipConsumableItem(stack16FoodItem(EDFoods.AFFOGATO).craftRemainder(Items.GLASS_BOTTLE), true))
 			.advancementDessert().isColdFood().finish();
 
 	public static final RegistryObject<Item> COCOA_BEAN_SACK = ITEMS.register("cocoa_bean_sack",

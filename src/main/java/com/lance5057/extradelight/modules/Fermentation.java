@@ -64,6 +64,7 @@ import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.block.PieBlock;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
+import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.item.MilkBottleItem;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.registry.ModItems;
@@ -237,37 +238,37 @@ public class Fermentation {
 
 	public static final RegistryObject<Item> SOY_SAUCE_ITEM = EDItemGenerator
 			.register("soy_sauce_item",
-					() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.SOY_SAUCE)))
+					() -> new DrinkableItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.SOY_SAUCE)))
 			.advancementIngredients().finish();
 
 	public static final RegistryObject<Item> SAUERKRAUT_ITEM = EDItemGenerator
 			.register("sauerkraut_item",
-					() -> new Item(new Item.Properties().craftRemainder(Items.BOWL).food(EDFoods.SAUERKRAUT)))
+					() -> new BowlFoodItem(new Item.Properties().craftRemainder(Items.BOWL).food(EDFoods.SAUERKRAUT)))
 			.advancementIngredients().finish();
 
 	public static final RegistryObject<Item> KIMCHI_ITEM = EDItemGenerator
 			.register("kimchi_item",
-					() -> new Item(new Item.Properties().craftRemainder(Items.BOWL).food(EDFoods.KIMCHI)))
+					() -> new BowlFoodItem(new Item.Properties().craftRemainder(Items.BOWL).food(EDFoods.KIMCHI)))
 			.advancementIngredients().finish();
 
 	public static final RegistryObject<Item> HOT_SAUCE_ITEM = EDItemGenerator
 			.register("hot_sauce_item",
-					() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.HOT_SAUCE)))
+					() -> new DrinkableItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.HOT_SAUCE)))
 			.advancementIngredients().finish();
 
 	public static final RegistryObject<Item> MISO_PASTE_ITEM = EDItemGenerator
 			.register("miso_paste_item",
-					() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.MISO_PASTE)))
+					() -> new DrinkableItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.MISO_PASTE)))
 			.advancementIngredients().finish();
 
 	public static final RegistryObject<Item> NATTO_ITEM = EDItemGenerator
 			.register("natto_item",
-					() -> new Item(new Item.Properties().craftRemainder(Items.BOWL).food(EDFoods.NATTO)))
+					() -> new BowlFoodItem(new Item.Properties().craftRemainder(Items.BOWL).food(EDFoods.NATTO)))
 			.advancementIngredients().finish();
 
 	public static final RegistryObject<Item> FISH_SAUCE_ITEM = EDItemGenerator
 			.register("fish_sauce_item",
-					() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.FISH_SAUCE)))
+					() -> new DrinkableItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.FISH_SAUCE)))
 			.advancementIngredients().finish();
 
 	public static final RegistryObject<Item> SALAMI_MIX = EDItemGenerator
@@ -292,13 +293,13 @@ public class Fermentation {
 
 	public static final RegistryObject<Item> SOAKED_SOYBEANS_ITEM = EDItemGenerator
 			.register("soaked_soybeans_item",
-					() -> new Item(new Item.Properties().craftRemainder(Items.BOWL).food(EDFoods.COOKED_SOYBEANS)))
+					() -> new BowlFoodItem(new Item.Properties().craftRemainder(Items.BOWL).food(EDFoods.COOKED_SOYBEANS)))
 			.advancementIngredients().finish();
 	public static final RegistryObject<Item> MASHED_SOYBEANS_ITEM = EDItemGenerator
-			.register("mashed_soybeans_item", () -> new Item(new Item.Properties().food(EDFoods.COOKED_SOYBEANS)))
+			.register("mashed_soybeans_item", () -> new BowlFoodItem(new Item.Properties().food(EDFoods.COOKED_SOYBEANS)))
 			.advancementIngredients().finish();
 	public static final RegistryObject<Item> COOKED_SOYBEANS_ITEM = EDItemGenerator
-			.register("cooked_soybeans_item", () -> new Item(new Item.Properties().food(EDFoods.COOKED_SOYBEANS)))
+			.register("cooked_soybeans_item", () -> new BowlFoodItem(new Item.Properties().food(EDFoods.COOKED_SOYBEANS)))
 			.advancementIngredients().finish();
 	public static final RegistryObject<Item> SOY_MILK = EDItemGenerator
 			.register("soy_milk", () -> new MilkBottleItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE)))
@@ -322,19 +323,19 @@ public class Fermentation {
 			.advancementIngredients().finish();
 
 	public static final RegistryObject<Item> GAZPACHO = EDItemGenerator
-			.register("gazpacho", () -> new Item(new Item.Properties().food(EDFoods.GAZPACHO))).advancementMeal()
+			.register("gazpacho", () -> new BowlFoodItem(new Item.Properties().food(EDFoods.GAZPACHO))).advancementMeal()
 			.finish();
 	public static final RegistryObject<Item> EDAMAME = EDItemGenerator
-			.register("edamame", () -> new Item(new Item.Properties().food(EDFoods.EDAMAME))).advancementSnack()
+			.register("edamame", () -> new BowlFoodItem(new Item.Properties().food(EDFoods.EDAMAME))).advancementSnack()
 			.finish();
 	public static final RegistryObject<Item> BEEF_BULGOGI = EDItemGenerator
-			.register("beef_bulgogi", () -> new Item(new Item.Properties().food(EDFoods.BEEF_BULGOGI)))
+			.register("beef_bulgogi", () -> new BowlFoodItem(new Item.Properties().food(EDFoods.BEEF_BULGOGI)))
 			.advancementButchercraft().finish();
 	public static final RegistryObject<Item> HONEY_CHILI_CHICKEN = EDItemGenerator
-			.register("honey_chili_chicken", () -> new Item(new Item.Properties().food(EDFoods.HONEY_CHILI_CHICKEN)))
+			.register("honey_chili_chicken", () -> new BowlFoodItem(new Item.Properties().food(EDFoods.HONEY_CHILI_CHICKEN)))
 			.advancementButchercraft().finish();
 	public static final RegistryObject<Item> CARAMEL_CHICKEN = EDItemGenerator
-			.register("caramel_chicken", () -> new Item(new Item.Properties().food(EDFoods.CARAMEL_CHICKEN)))
+			.register("caramel_chicken", () -> new BowlFoodItem(new Item.Properties().food(EDFoods.CARAMEL_CHICKEN)))
 			.advancementButchercraft().finish();
 	public static final RegistryObject<RecipeFeastBlock> SOY_GLAZED_SALMON_BLOCK = ExtraDelightBlocks.BLOCKS.register(
 			"soy_glazed_salmon_block",
@@ -347,7 +348,7 @@ public class Fermentation {
 					() -> new BlockItem(SOY_GLAZED_SALMON_BLOCK.get(), new Item.Properties()))
 			.advancementFeast().finish();
 	public static final RegistryObject<Item> SOY_GLAZED_SALMON_ITEM = EDItemGenerator
-			.register("soy_glazed_salmon_item", () -> new Item(new Item.Properties().food(EDFoods.SOY_GLAZED_SALMON)))
+			.register("soy_glazed_salmon_item", () -> new BowlFoodItem(new Item.Properties().food(EDFoods.SOY_GLAZED_SALMON)))
 			.advancementMeal().servingToolTip().finish();
 	public static final RegistryObject<Item> STEAK_PICKLED_ONION_PIE_SLICE = EDItemGenerator
 			.register("steak_pickled_onion_pie_slice",
@@ -364,27 +365,27 @@ public class Fermentation {
 			.register("kiwiburger", () -> new Item(new Item.Properties().food(EDFoods.KIWIBURGER))).advancementMeal()
 			.finish();
 	public static final RegistryObject<Item> SHIRAZI_SALAD = EDItemGenerator
-			.register("shirazi_salad", () -> new Item(new Item.Properties().food(EDFoods.SHIRAZI_SALAD)))
+			.register("shirazi_salad", () -> new BowlFoodItem(new Item.Properties().food(EDFoods.SHIRAZI_SALAD)))
 			.advancementMeal().finish();
 	public static final RegistryObject<Item> CUCUMBER_SALAD = EDItemGenerator
-			.register("cucumber_salad", () -> new Item(new Item.Properties().food(EDFoods.CUCUMBER_SALAD)))
+			.register("cucumber_salad", () -> new BowlFoodItem(new Item.Properties().food(EDFoods.CUCUMBER_SALAD)))
 			.advancementMeal().finish();
 	public static final RegistryObject<Item> MISO_SOUP = EDItemGenerator
-			.register("miso_soup", () -> new Item(new Item.Properties().food(EDFoods.MISO_SOUP))).advancementMeal()
+			.register("miso_soup", () -> new BowlFoodItem(new Item.Properties().food(EDFoods.MISO_SOUP))).advancementMeal()
 			.finish();
 	public static final RegistryObject<Item> NATTO_AND_RICE = EDItemGenerator
-			.register("natto_and_rice", () -> new Item(new Item.Properties().food(EDFoods.NATTO_AND_RICE)))
+			.register("natto_and_rice", () -> new BowlFoodItem(new Item.Properties().food(EDFoods.NATTO_AND_RICE)))
 			.advancementMeal().finish();
 	public static final RegistryObject<Item> SAUERKRAUT_SOUP = EDItemGenerator
-			.register("sauerkraut_soup", () -> new Item(new Item.Properties().food(EDFoods.SAUERKRAUT_SOUP)))
+			.register("sauerkraut_soup", () -> new BowlFoodItem(new Item.Properties().food(EDFoods.SAUERKRAUT_SOUP)))
 			.advancementMeal().finish();
 	public static final RegistryObject<Item> SAUERKRAUT_AND_SAUSAGE = EDItemGenerator
 			.register("sauerkraut_and_sausage",
-					() -> new Item(new Item.Properties().food(EDFoods.SAUERKRAUT_AND_SAUSAGE)))
+					() -> new BowlFoodItem(new Item.Properties().food(EDFoods.SAUERKRAUT_AND_SAUSAGE)))
 			.advancementButchercraft().finish();
 	public static final RegistryObject<Item> YEAST_SPREAD = EDItemGenerator
 			.register("yeast_spread",
-					() -> new Item(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.YEAST_SPREAD)))
+					() -> new DrinkableItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).food(EDFoods.YEAST_SPREAD)))
 			.advancementIngredients().finish();
 
 	public static final RegistryObject<RecipeFeastBlock> CHEESYMITE_SCROLL_BLOCK = ExtraDelightBlocks.BLOCKS.register(
@@ -398,26 +399,26 @@ public class Fermentation {
 			.advancementFeast().finish();
 	public static final RegistryObject<Item> CHEESYMITE_SCROLL_SERVING = EDItemGenerator
 			.register("cheesymite_scroll",
-					() -> new Item(new Item.Properties().food(EDFoods.CHEESYMITE_SCROLL_SERVING)))
+					() -> new BowlFoodItem(new Item.Properties().food(EDFoods.CHEESYMITE_SCROLL_SERVING)))
 			.advancementSnack().servingToolTip().finish();
 
 	public static final RegistryObject<Item> MORKOVCHA = EDItemGenerator
-			.register("morkovcha", () -> new Item(new Item.Properties().food(EDFoods.MORKOVCHA))).advancementMeal()
+			.register("morkovcha", () -> new BowlFoodItem(new Item.Properties().food(EDFoods.MORKOVCHA))).advancementMeal()
 			.finish();
 	public static final RegistryObject<Item> ZUPA_OGORKOWA = EDItemGenerator
-			.register("zupa_ogorkowa", () -> new Item(new Item.Properties().food(EDFoods.ZUPA_OGORKOWA)))
+			.register("zupa_ogorkowa", () -> new BowlFoodItem(new Item.Properties().food(EDFoods.ZUPA_OGORKOWA)))
 			.advancementMeal().finish();
 	public static final RegistryObject<Item> KIMCHI_FRIED_RICE = EDItemGenerator
-			.register("kimchi_fried_rice", () -> new Item(new Item.Properties().food(EDFoods.KIMCHI_FRIED_RICE)))
+			.register("kimchi_fried_rice", () -> new BowlFoodItem(new Item.Properties().food(EDFoods.KIMCHI_FRIED_RICE)))
 			.advancementMeal().finish();
 	public static final RegistryObject<Item> KONGJANG = EDItemGenerator
-			.register("kongjang", () -> new Item(new Item.Properties().food(EDFoods.KONGJANG))).advancementMeal()
+			.register("kongjang", () -> new BowlFoodItem(new Item.Properties().food(EDFoods.KONGJANG))).advancementMeal()
 			.finish();
 	public static final RegistryObject<Item> CHEESEBURGER_PICKLE = EDItemGenerator
 			.register("cheeseburger_pickle", () -> new Item(new Item.Properties().food(EDFoods.CHEESEBURGER_PICKLE)))
 			.advancementSnack().finish();
 	public static final RegistryObject<Item> HOT_WINGS = EDItemGenerator
-			.register("hot_wings", () -> new Item(new Item.Properties().food(EDFoods.HOT_WINGS))).advancementMeal()
+			.register("hot_wings", () -> new DrinkableItem(new Item.Properties().food(EDFoods.HOT_WINGS).craftRemainder(Items.GLASS_BOTTLE))).advancementMeal()
 			.finish();
 
 	public static final RegistryObject<Block> JAR_DISPLAY_BLOCK = ExtraDelightBlocks.BLOCKS.register("jar_display_block",

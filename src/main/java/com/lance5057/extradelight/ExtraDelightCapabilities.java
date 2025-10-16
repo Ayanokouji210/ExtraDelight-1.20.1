@@ -1,6 +1,6 @@
 //package com.lance5057.extradelight;
 //
-//import com.blamejared.crafttweaker.api.capability.Capabilities;
+
 //import net.minecraft.core.Direction;
 //
 //import net.minecraft.world.level.block.entity.BlockEntity;
