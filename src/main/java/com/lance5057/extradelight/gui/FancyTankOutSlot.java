@@ -1,18 +1,15 @@
 package com.lance5057.extradelight.gui;
 
-import com.blamejared.crafttweaker.api.capability.Capabilities;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.FancyTank;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
-//import net.neoforged.neoforge.capabilities.Capabilities;
-//import net.neoforged.neoforge.fluids.capability.IFluidHandler;
-//import net.neoforged.neoforge.items.IItemHandler;
-//import net.neoforged.neoforge.items.SlotItemHandler;
+import org.jetbrains.annotations.NotNull;
 
 public class FancyTankOutSlot extends SlotItemHandler {
 	FancyTank tank;
@@ -23,12 +20,12 @@ public class FancyTankOutSlot extends SlotItemHandler {
 	}
 
 	@Override
-	public int getMaxStackSize(ItemStack stack) {
+	public int getMaxStackSize(@NotNull ItemStack stack) {
 		return calcFluidOutSlotSize(stack);
 	}
 
 	private int calcFluidOutSlotSize(ItemStack pSlot) {
-		if (pSlot.getCapability(Capabilities.ITEM) != null && !pSlot.is(Items.BUCKET)
+		if (pSlot.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve().isPresent() && !pSlot.is(Items.BUCKET)
 				&& !pSlot.getCraftingRemainingItem().is(Items.BUCKET))
 			return 1;
 		else {

@@ -1,12 +1,11 @@
 package com.lance5057.extradelight.workstations.chiller;
 
-import com.blamejared.crafttweaker.api.capability.Capabilities;
+
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightContainers;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.gui.FancyTankInSlot;
 import com.lance5057.extradelight.gui.FancyTankOutSlot;
-import com.lance5057.extradelight.integration.patchouli.processors.RecipeHolder;
 import com.lance5057.extradelight.workstations.FancyTank;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -18,20 +17,13 @@ import net.minecraft.world.inventory.RecipeBookMenu;
 import net.minecraft.world.inventory.RecipeBookType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-//import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-//import net.neoforged.neoforge.capabilities.Capabilities;
-//import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
-//import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
-//import net.neoforged.neoforge.items.ItemStackHandler;
-//import net.neoforged.neoforge.items.SlotItemHandler;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.fluids.capability.IFluidHandlerItem;
 import net.minecraftforge.fluids.capability.templates.FluidTank;
-import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import vectorwing.farmersdelight.FarmersDelight;
