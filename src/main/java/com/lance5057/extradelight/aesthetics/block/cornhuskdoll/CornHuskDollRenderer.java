@@ -19,9 +19,9 @@ public class CornHuskDollRenderer implements BlockEntityRenderer<CornHuskDollBlo
 	public static BakedModel bakedModel;
 
 //	final ModelResourceLocation model_down =new ModelResourceLocation
-//			(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/corn_husk_doll"),"extra/corn_husk_doll");
+//			(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/corn_husk_doll"),"standalone");
 //	final ModelResourceLocation model_up =new ModelResourceLocation
-//			(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/corn_husk_doll_hang"),"extra/corn_husk_doll_hang");
+//			(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "extra/corn_husk_doll_hang"),"standalone");
 
 
 	public CornHuskDollRenderer(BlockEntityRendererProvider.Context cxt) {
@@ -53,7 +53,7 @@ public class CornHuskDollRenderer implements BlockEntityRenderer<CornHuskDollBlo
 //					pPackedOverlay, pPartialTick, ModelData.EMPTY);
 
 			Minecraft.getInstance().getBlockRenderer().getModelRenderer()
-					.renderModel(pPoseStack.last(),pBufferSource.getBuffer(RenderType.cutout()),pBlockEntity.getBlockState(),bakedModel,1.0f,1.0f,1.0f,pPackedLight,pPackedOverlay);
+					.renderModel(pPoseStack.last(),pBufferSource.getBuffer(RenderType.entityTranslucent(bakedModel.getParticleIcon().atlasLocation())),pBlockEntity.getBlockState(),bakedModel,1.0f,1.0f,1.0f,pPackedLight,pPackedOverlay);
 
 		}
 		pPoseStack.popPose();

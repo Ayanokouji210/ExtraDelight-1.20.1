@@ -213,9 +213,10 @@ dependencies {
     compileOnly fg.deobf('com.blamejared.crafttweaker:CraftTweaker-forge-1.20.1:14.0.9')
 
 
-
-   compileOnly fg.deobf( "curse.maven:farmersdelight-398521:6917255")
+    compileOnly fg.deobf( "curse.maven:farmersdelight-398521:6917255")
     runtimeOnly fg.deobf( "curse.maven:farmersdelight-398521:6917255")
+
+    runtimeOnly fg.deobf("curse.maven:alwayseat-318749:3930804")
 
 //    compileOnly fg.deobf(name: "FarmersDelight-1.20.1-1.2.9",ext:"jar")
 //    runtimeOnly fg.deobf(name: "FarmersDelight-1.20.1-1.2.9",ext:"jar")
