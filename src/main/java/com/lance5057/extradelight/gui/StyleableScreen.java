@@ -62,21 +62,27 @@ public class StyleableScreen extends AbstractContainerScreen<StyleableMenu> {
 				new PageButton(this.leftPos + 13, this.topPos + 86, false, p_98144_ -> style(1), true));
 	}
 
-	private void renderButtons(GuiGraphics p_282733_, int p_282136_, int p_282147_, int p_281987_, int p_281276_,
+	private void renderButtons(GuiGraphics graphics, int mouseX, int mouseY, int p_281987_, int p_281276_,
 			int p_282688_) {
 		for (int i = this.startIndex; i < p_282688_ && i < style.numStyles(); ++i) {
 			int j = i - this.startIndex;
 			int k = p_281987_ + j % 4 * 16;
 			int l = j / 4;
 			int i1 = p_281276_ + l * 18 + 2;
-			ResourceLocation resourcelocation;
-			if (p_282136_ >= k && p_282147_ >= i1 && p_282136_ < k + 16 && p_282147_ < i1 + 18) {
-				resourcelocation = RECIPE_HIGHLIGHTED_SPRITE;
-			} else {
-				resourcelocation = RECIPE_SPRITE;
-			}
-			p_282733_.blit(resourcelocation,k,i1-1,0,0,16,18);
+//			ResourceLocation resourcelocation;
+//			if (p_282136_ >= k && p_282147_ >= i1 && p_282136_ < k + 16 && p_282147_ < i1 + 18) {
+//				resourcelocation = RECIPE_HIGHLIGHTED_SPRITE;
+//			} else {
+//				resourcelocation = RECIPE_SPRITE;
+//			}
+//			p_282733_.blit(resourcelocation,k,i1-1,0,0,16,18);
 //			p_282733_.blitSprite(resourcelocation, k, i1 - 1, 16, 18);
+
+            if(mouseX >= k && mouseY >= i1 && mouseX < k + 16 && mouseY < i1 + 18){
+                graphics.blit(BG_LOCATION,k,i1-1,0,202,16,18);
+            }else{
+                graphics.blit(BG_LOCATION,k,i1-1,0,166,16,18);
+            }
 		}
 	}
 
@@ -92,7 +98,7 @@ public class StyleableScreen extends AbstractContainerScreen<StyleableMenu> {
 		guiGraphics.pose().translate(0, 0.5, 0);
 		guiGraphics.pose().scale(1f, -1f, 1f);
 
-		Minecraft.getInstance().getBlockRenderer().renderSingleBlock(state, guiGraphics.pose(), buffers, 0xffffff,
+		Minecraft.getInstance().getBlockRenderer().renderSingleBlock(state, guiGraphics.pose(), buffers, 0xF000F0,
 				OverlayTexture.NO_OVERLAY);
 
 		buffers.endBatch();
@@ -108,7 +114,7 @@ public class StyleableScreen extends AbstractContainerScreen<StyleableMenu> {
 	}
 
 	@Override
-	protected void renderBg(GuiGraphics gui, float p_97788_, int p_97789_, int p_97790_) {
+	protected void renderBg(GuiGraphics gui, float pPartialTick, int pMouseX, int pMouseY) {
 		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
 		if (this.minecraft == null)
 			return;
@@ -123,13 +129,19 @@ public class StyleableScreen extends AbstractContainerScreen<StyleableMenu> {
 				gui.blit(BACKGROUND, i, j, 97, 186, 159, 70);
 
 				int k = (int) (41.0F * this.scrollOffs);
-				ResourceLocation resourcelocation = this.isScrollBarActive() ? SCROLLER_SPRITE
-						: SCROLLER_DISABLED_SPRITE;
-				//gui.blitSprite(resourcelocation, i + 138, j + k + 8, 12, 15);
-				gui.blit(resourcelocation, i+138, j+k+8, 8, 8, 12, 15);
+//				ResourceLocation resourcelocation = this.isScrollBarActive() ? SCROLLER_SPRITE
+//						: SCROLLER_DISABLED_SPRITE;
+//				//gui.blitSprite(resourcelocation, i + 138, j + k + 8, 12, 15);
+//				gui.blit(resourcelocation, i+138, j+k+8, 8, 8, 12, 15);
+
+                if(this.isScrollBarActive()) {
+                    gui.blit(BG_LOCATION,i+138,j+k+8,176,0,12,15);
+                }else{
+                    gui.blit(BG_LOCATION,i+138,j+k+8,188,0,12,15);
+                }
 
 				int j1 = this.startIndex + 12;
-				this.renderButtons(gui, p_97789_, p_97790_, i + 71, j + 7, j1);
+				this.renderButtons(gui, pMouseX, pMouseY, i + 71, j + 7, j1);
 
 				RenderSystem.enableBlend();
 				RenderSystem.setShaderColor(1F, 1F, 1F, 1F);

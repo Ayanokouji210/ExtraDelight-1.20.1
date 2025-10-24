@@ -2,9 +2,12 @@ package com.lance5057.extradelight.gui;
 
 import com.lance5057.extradelight.ExtraDelightContainers;
 import com.lance5057.extradelight.blocks.interfaces.IStyleable;
+import com.lance5057.extradelight.network.NetworkHandler;
 import com.lance5057.extradelight.network.StyleableMenuSyncPacket;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.PacketListener;
+import net.minecraft.network.protocol.Packet;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -13,6 +16,8 @@ import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.network.NetworkDirection;
+import net.minecraftforge.network.PacketDistributor;
 
 public class StyleableMenu extends AbstractContainerMenu {
 	private final ContainerLevelAccess access;
@@ -75,8 +80,11 @@ public class StyleableMenu extends AbstractContainerMenu {
 	@Override
 	public void sendAllDataToRemote() {
 		super.sendAllDataToRemote();
-//		if (this.player instanceof ServerPlayer serverPlayer)
-//			serverPlayer.connection.send(new StyleableMenuSyncPacket(this.containerId, this.pos).getThis());
+        if (this.player instanceof ServerPlayer serverPlayer){
+            NetworkHandler.CHANNEL.sendTo(new StyleableMenuSyncPacket(this.containerId, this.pos),
+                    serverPlayer.connection.connection, NetworkDirection.PLAY_TO_CLIENT);
+        }
+            //serverPlayer.connection.send(new StyleableMenuSyncPacket(this.containerId, this.pos));
 	}
 
 }

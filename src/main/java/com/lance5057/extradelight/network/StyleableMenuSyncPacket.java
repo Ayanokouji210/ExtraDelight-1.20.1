@@ -5,12 +5,16 @@ import com.lance5057.extradelight.gui.StyleableScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.network.ICustomPacket;
 import net.minecraftforge.network.NetworkEvent;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Supplier;
 
-public class StyleableMenuSyncPacket {
+public class StyleableMenuSyncPacket implements ICustomPacket {
+    private final ResourceLocation id=ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,"style_packet");
 	private final int containerId;
 	private final BlockPos pos;
 
@@ -43,4 +47,19 @@ public class StyleableMenuSyncPacket {
 	public BlockPos getPos() {
 		return pos;
 	}
+
+    @Override
+    public @Nullable FriendlyByteBuf getInternalData() {
+        return null;
+    }
+
+    @Override
+    public ResourceLocation getName() {
+        return id;
+    }
+
+    @Override
+    public int getIndex() {
+        return 0;
+    }
 }
