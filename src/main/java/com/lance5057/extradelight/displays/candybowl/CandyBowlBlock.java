@@ -43,14 +43,16 @@ public class CandyBowlBlock extends Block implements EntityBlock, SimpleWaterlog
 
 	@Override
 	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (pLevel.isClientSide()) {
-            if(pPlayer.getMainHandItem().isEmpty()){
-                return InteractionResult.PASS;
-            }else {
-                return this.useItemOn(pPlayer.getMainHandItem(),pState,pLevel,pPos,pPlayer,pHand,pHit);
+        if(pPlayer.getMainHandItem().isEmpty()){
+            super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
+            if(!pLevel.isClientSide && pLevel.getBlockEntity(pPos) instanceof CandyBowlEntity ent){
+                ent.extractItem(pPlayer);
+                return InteractionResult.SUCCESS;
             }
+            return InteractionResult.SUCCESS;
+        }else {
+            return this.useItemOn(pPlayer.getMainHandItem(),pState,pLevel,pPos,pPlayer,pHand,pHit);
         }
-		return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
     }
 
 	public InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player,

@@ -205,7 +205,7 @@ public class ChocolateBoxBlock extends Block implements EntityBlock {
             IItemHandler handler = pStack.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve().get();
             BlockEntity be = pLevel.getBlockEntity(pPos);
             if (be instanceof ChocolateBoxBlockEntity cbe) {
-                if (handler instanceof ItemStackHandler inventory) {
+                if (handler instanceof ItemStackHandler inventory && pStack.hasTag()) {
                     inventory.deserializeNBT(pStack.getTag());
                     for(int i = 0; i < handler.getSlots(); i++) {
                         cbe.getItems().insertItem(i,handler.getStackInSlot(i),false);

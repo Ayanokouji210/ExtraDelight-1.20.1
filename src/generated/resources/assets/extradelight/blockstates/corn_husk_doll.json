@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "extradelight:block/corn_husk_doll"
+      "model": "minecraft:block/air"
     }
   }
 }
