@@ -6,6 +6,8 @@ import com.lance5057.extradelight.data.recipebuilders.*;
 import com.lance5057.extradelight.modules.Fermentation;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShapingRecipe;
+import com.simibubi.create.AllFluids;
+import com.simibubi.create.AllItems;
 import com.simibubi.create.Create;
 import com.simibubi.create.foundation.fluid.FluidIngredient;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -38,6 +40,7 @@ import net.minecraftforge.common.crafting.CompoundIngredient;
 import net.minecraftforge.common.crafting.DifferenceIngredient;
 import net.minecraftforge.common.crafting.conditions.FalseCondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import net.minecraftforge.fluids.FluidStack;
 import javax.annotation.Nonnull;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
@@ -119,454 +122,460 @@ public class Recipes extends RecipeProvider implements IConditionBuilder {
 	}
 
 	private void chillingRecipes(Consumer<FinishedRecipe> consumer) {
-		ChillerRecipeBuilder.chill(new ItemStack(ExtraDelightItems.MILK_CHOCOLATE_BAR.get()), FAST_COOKING, SMALL_EXP,
-				new ItemStack(ExtraDelightItems.BAR_MOLD.get()),
-				new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 250)).build(consumer);
-		ChillerRecipeBuilder.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), FAST_COOKING, SMALL_EXP,
-				new ItemStack(ExtraDelightItems.BAR_MOLD.get()),
-				new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), 250)).build(consumer);
-		ChillerRecipeBuilder.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), FAST_COOKING, SMALL_EXP,
-				new ItemStack(ExtraDelightItems.BAR_MOLD.get()),
-				new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 250)).build(consumer);
-		ChillerRecipeBuilder.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), FAST_COOKING, SMALL_EXP,
-				new ItemStack(ExtraDelightItems.BAR_MOLD.get()),
-				new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 250)).build(consumer);
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.BAR_MOLD.get()),
-						new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 250))
-				.addIngredient(Ingredient.of(ExtraDelightTags.CHOCOLATE_BAR_FILLING)).build(consumer);
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.BAR_MOLD.get()),
-						new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), 250))
-				.addIngredient(Ingredient.of(ExtraDelightTags.CHOCOLATE_BAR_FILLING)).build(consumer);
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.BAR_MOLD.get()),
-						new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 250))
-				.addIngredient(Ingredient.of(ExtraDelightTags.CHOCOLATE_BAR_FILLING)).build(consumer);
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.BAR_MOLD.get()),
-						new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 250))
-				.addIngredient(Ingredient.of(ExtraDelightTags.CHOCOLATE_BAR_FILLING)).build(consumer);
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.BLOOD_CHOCOLATE_TRUFFLE.get(),6), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
-						new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 250))
-				.addIngredient(Ingredient.of(ExtraDelightTags.CHOCOLATE_TRUFFLE_FILLING)).build(consumer);
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.DARK_CHOCOLATE_TRUFFLE.get(),6), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
-						new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), 250))
-				.addIngredient(Ingredient.of(ExtraDelightTags.CHOCOLATE_TRUFFLE_FILLING)).build(consumer);
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.MILK_CHOCOLATE_TRUFFLE.get(),6), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
-						new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 250))
-				.addIngredient(Ingredient.of(ExtraDelightTags.CHOCOLATE_TRUFFLE_FILLING)).build(consumer);
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.WHITE_CHOCOLATE_TRUFFLE.get(),6), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
-						new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 250))
-				.addIngredient(Ingredient.of(ExtraDelightTags.CHOCOLATE_TRUFFLE_FILLING)).build(consumer);
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.PEANUT_BUTTER_CUP.get(),6), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
-						new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 1000))
-				.addIngredient(Ingredient.of(ExtraDelightTags.NUT_BUTTER)).build(consumer, "milk_peanut_butter_cup");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.PEANUT_BUTTER_CUP.get(),6), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
-						new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), 1000))
-				.addIngredient(Ingredient.of(ExtraDelightTags.NUT_BUTTER)).build(consumer, "dark_peanut_butter_cup");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.PEANUT_BUTTER_CUP.get(),6), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
-						new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 1000))
-				.addIngredient(Ingredient.of(ExtraDelightTags.NUT_BUTTER)).build(consumer, "white_peanut_butter_cup");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.PEANUT_BUTTER_CUP.get(),6), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
-						new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 1000))
-				.addIngredient(Ingredient.of(ExtraDelightTags.NUT_BUTTER)).build(consumer, "blood_peanut_butter_cup");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.MALLOW_CUP.get(),6), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
-						new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 1000))
-				.addIngredient(Ingredient.of(ExtraDelightTags.MARSHMALLOW_FLUFF)).build(consumer, "milk_mallow_cup");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.MALLOW_CUP.get(),6), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
-						new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), 1000))
-				.addIngredient(Ingredient.of(ExtraDelightTags.MARSHMALLOW_FLUFF)).build(consumer, "dark_mallow_cup");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.MALLOW_CUP.get(),6), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
-						new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 1000))
-				.addIngredient(Ingredient.of(ExtraDelightTags.MARSHMALLOW_FLUFF)).build(consumer, "white_mallow_cup");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.MALLOW_CUP.get(),6), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
-						new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 1000))
-				.addIngredient(Ingredient.of(ExtraDelightTags.MARSHMALLOW_FLUFF)).build(consumer, "blood_mallow_cup");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.TOFFEE.get(),4), FAST_COOKING, SMALL_EXP, new ItemStack(ExtraDelightItems.TRAY.get()),
-						new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 250))
-				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.SWEETENER)
-				.addIngredient(ExtraDelightTags.ROASTED_NUTS).build(consumer, "blood_toffee");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.TOFFEE.get(),4), FAST_COOKING, SMALL_EXP, new ItemStack(ExtraDelightItems.TRAY.get()),
-						new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 250))
-				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.SWEETENER)
-				.addIngredient(ExtraDelightTags.ROASTED_NUTS).build(consumer, "milk_toffee");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.TOFFEE.get(),4), FAST_COOKING, SMALL_EXP, new ItemStack(ExtraDelightItems.TRAY.get()),
-						new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), 250))
-				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.SWEETENER)
-				.addIngredient(ExtraDelightTags.ROASTED_NUTS).build(consumer, "dark_toffee");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.TOFFEE.get(),4), FAST_COOKING, SMALL_EXP, new ItemStack(ExtraDelightItems.TRAY.get()),
-						new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 250))
-				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.SWEETENER)
-				.addIngredient(ExtraDelightTags.ROASTED_NUTS).build(consumer, "white_toffee");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.PEPPERMINT_BARK.get(),4), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()),
-						new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 250))
-				.addIngredient(ExtraDelightTags.COOKING_OIL).addIngredient(ExtraDelightTags.CHOCOLATE_SYRUP)
-				.addIngredient(ExtraDelightTags.PEPPERMINT_CANDY).build(consumer, "peppermint_bark");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.FUDGE_BLOCK.get(),1), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()),
-						new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 250), true)
-				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.MARSHMALLOW_FLUFF)
-				.addIngredient(ForgeTags.MILK).addIngredient(ExtraDelightTags.SWEETENER)
-				.build(consumer, "fudge_white");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.FUDGE_BLOCK.get(),1), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()),
-						new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 250), true)
-				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.MARSHMALLOW_FLUFF)
-				.addIngredient(ForgeTags.MILK).addIngredient(ExtraDelightTags.SWEETENER)
-				.build(consumer, "fudge_blood");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.FUDGE_BLOCK.get(),1), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()),
-						new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), 250), true)
-				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.MARSHMALLOW_FLUFF)
-				.addIngredient(ForgeTags.MILK).addIngredient(ExtraDelightTags.SWEETENER)
-				.build(consumer, "fudge_dark");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.FUDGE_BLOCK.get(),1), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()),
-						new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 250), true)
-				.addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.MARSHMALLOW_FLUFF)
-				.addIngredient(ForgeTags.MILK).addIngredient(ExtraDelightTags.SWEETENER)
-				.build(consumer, "fudge_milk");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.MARSHMALLOW.get(),1), FAST_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
-						new FluidStack(ExtraDelightFluids.MARSHMALLOW_FLUFF.FLUID.get(), 250))
-				.build(consumer, "fluff_to_marshmallow");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.MISSISSIPPI_MUD_PIE.get(),1), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(ModItems.PIE_CRUST.get()),
-						new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), false)
-				.addIngredient(ExtraDelightItems.CHOCOLATE_CUSTARD.get())
-				.addIngredient(ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get())
-				.addIngredient(ExtraDelightTags.ROASTED_NUTS).addIngredient(ExtraDelightTags.CHOCOLATE_CHIPS)
-				.build(consumer, "mississippi_mud_pie");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.GRASSHOPPER_PIE.get(),1), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(ModItems.PIE_CRUST.get()),
-						new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), false)
-				.addIngredient(Tags.Items.DYES_LIME).addIngredient(ExtraDelightTags.MINT)
-				.addIngredient(ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get())
-				.addIngredient(ExtraDelightTags.CHOCOLATE_CHIPS).build(consumer, "grasshopper_pie");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.MARSHMALLOW_SLICE_FEAST.get(),1), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.PIE_DISH.get()),
-						new FluidStack(ExtraDelightFluids.MARSHMALLOW_FLUFF.FLUID.get(), 250), false)
-				.addIngredient(ExtraDelightTags.SUGAR_COOKIE).addIngredient(ExtraDelightTags.JAM)
-				.addIngredient(ExtraDelightTags.SUGAR_COOKIE).build(consumer, "marshmallow_slice");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.ROCKY_ROAD.get(),4), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()),
-						new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 250), false)
-				.addIngredient(ExtraDelightTags.GUMMIES).addIngredient(ExtraDelightTags.COOKIE)
-				.addIngredient(ExtraDelightTags.MARSHMALLOW).addIngredient(ExtraDelightTags.ROASTED_NUTS)
-				.build(consumer, "rocky_road_blood");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.ROCKY_ROAD.get(),4), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()),
-						new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), 250), false)
-				.addIngredient(ExtraDelightTags.GUMMIES).addIngredient(ExtraDelightTags.COOKIE)
-				.addIngredient(ExtraDelightTags.MARSHMALLOW).addIngredient(ExtraDelightTags.ROASTED_NUTS)
-				.build(consumer, "rocky_road_dark");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.ROCKY_ROAD.get(),4), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()),
-						new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 250), false)
-				.addIngredient(ExtraDelightTags.GUMMIES).addIngredient(ExtraDelightTags.COOKIE)
-				.addIngredient(ExtraDelightTags.MARSHMALLOW).addIngredient(ExtraDelightTags.ROASTED_NUTS)
-				.build(consumer, "rocky_road_milk");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.ROCKY_ROAD.get(),4), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(ExtraDelightItems.TRAY.get()),
-						new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 250), false)
-				.addIngredient(ExtraDelightTags.GUMMIES).addIngredient(ExtraDelightTags.COOKIE)
-				.addIngredient(ExtraDelightTags.MARSHMALLOW).addIngredient(ExtraDelightTags.ROASTED_NUTS)
-				.build(consumer, "rocky_road_white");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.APPLE_POPSICLE.get(),4), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.STICK, 4), new FluidStack(ExtraDelightFluids.APPLE_CIDER.FLUID.get(), 250), true)
-				.build(consumer, "apple_popsicle_chiller");
-
-		ChillerRecipeBuilder.chill(new ItemStack(ExtraDelightItems.CARAMEL_POPSICLE.get(),4), NORMAL_COOKING, SMALL_EXP,
-				new ItemStack(Items.STICK, 4), new FluidStack(ExtraDelightFluids.CARAMEL_SAUCE.FLUID.get(), 250), true)
-				.addIngredient(ExtraDelightTags.ICE_CREAM).build(consumer, "caramel_popsicle_chiller");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.CINNAMON_POPSICLE.get(),4), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.STICK, 4), FluidStack.EMPTY, true)
-				.addIngredient(ExtraDelightTags.ICE_CREAM).addIngredient(ExtraDelightTags.GROUND_CINNAMON)
-				.build(consumer, "cinnamon_popsicle_chiller");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.FUDGE_POPSICLE.get(),4), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.STICK, 4), FluidStack.EMPTY, true)
-				.addIngredient(ExtraDelightTags.ICE_CREAM).addIngredient(ExtraDelightTags.COCOA_POWDER)
-				.build(consumer, "fudge_popsicle_chiller");
-
-		ChillerRecipeBuilder.chill(new ItemStack(ExtraDelightItems.GLOW_BERRY_POPSICLE.get(),4), NORMAL_COOKING, SMALL_EXP,
-				new ItemStack(Items.STICK, 4), new FluidStack(ExtraDelightFluids.GLOW_BERRY_JUICE.FLUID.get(), 250), true)
-				.build(consumer, "glow_berry_popsicle_chiller");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.HONEY_POPSICLE.get(),4), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.STICK, 4), FluidStack.EMPTY, true)
-				.addIngredient(Items.HONEY_BOTTLE).addIngredient(ExtraDelightTags.ICE_CREAM)
-				.build(consumer, "honey_popsicle_chiller");
-
-		ChillerRecipeBuilder.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
-				new ItemStack(Items.STICK, 4), new FluidStack(ExtraDelightFluids.SWEET_BERRY_JUICE.FLUID.get(), 250), true)
-				.build(consumer, "sweet_berry_popsicle_chiller");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ModItems.MELON_POPSICLE.get(), 4), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.STICK, 4), new FluidStack(ExtraDelightFluids.MELON_JUICE.FLUID.get(), 250), true)
-				.build(consumer, "melon_popsicle_chiller");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
-				.addIngredient(Tags.Items.DYES_BLACK).addIngredient(ExtraDelightTags.GELATIN)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.build(consumer, "black_jelly_feast");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
-				.addIngredient(Tags.Items.DYES_RED).addIngredient(ExtraDelightTags.GELATIN)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.build(consumer, "red_jelly_feast");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
-				.addIngredient(Tags.Items.DYES_GREEN).addIngredient(ExtraDelightTags.GELATIN)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.build(consumer, "green_jelly_feast");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
-				.addIngredient(Tags.Items.DYES_BROWN).addIngredient(ExtraDelightTags.GELATIN)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.build(consumer, "brown_jelly_feast");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.JELLY_BLUE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
-				.addIngredient(Tags.Items.DYES_BLUE).addIngredient(ExtraDelightTags.GELATIN)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.build(consumer, "blue_jelly_feast");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
-				.addIngredient(Tags.Items.DYES_PURPLE).addIngredient(ExtraDelightTags.GELATIN)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.build(consumer, "purple_jelly_feast");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
-				.addIngredient(Tags.Items.DYES_CYAN).addIngredient(ExtraDelightTags.GELATIN)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.build(consumer, "cyan_jelly_feast");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
-				.addIngredient(Tags.Items.DYES_LIGHT_GRAY).addIngredient(ExtraDelightTags.GELATIN)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.build(consumer, "light_grey_jelly_feast");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
-				.addIngredient(Tags.Items.DYES_GRAY).addIngredient(ExtraDelightTags.GELATIN)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.build(consumer, "grey_jelly_feast");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
-				.addIngredient(Tags.Items.DYES_PINK).addIngredient(ExtraDelightTags.GELATIN)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.build(consumer, "pink_jelly_feast");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
-				.addIngredient(Tags.Items.DYES_LIME).addIngredient(ExtraDelightTags.GELATIN)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.build(consumer, "lime_jelly_feast");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
-				.addIngredient(Tags.Items.DYES_YELLOW).addIngredient(ExtraDelightTags.GELATIN)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.build(consumer, "yellow_jelly_feast");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
-				.addIngredient(Tags.Items.DYES_LIGHT_BLUE).addIngredient(ExtraDelightTags.GELATIN)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.build(consumer, "light_blue_jelly_feast");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
-				.addIngredient(Tags.Items.DYES_MAGENTA).addIngredient(ExtraDelightTags.GELATIN)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.build(consumer, "magenta_jelly_feast");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
-				.addIngredient(Tags.Items.DYES_ORANGE).addIngredient(ExtraDelightTags.GELATIN)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.build(consumer, "orange_jelly_feast");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
-				.addIngredient(Tags.Items.DYES_WHITE).addIngredient(ExtraDelightTags.GELATIN)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.build(consumer, "white_jelly_feast");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ForgeMod.MILK.get(), 250), true)
-				.addIngredient(ExtraDelightTags.SWEETENER).build(consumer, "ice_cream");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.GLOW_BERRY_ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ForgeMod.MILK.get(), 250), true)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.GLOW_BERRIES)
-				.addIngredient(Items.GLOW_BERRIES).addIngredient(Items.GLOW_BERRIES)
-				.build(consumer, "glow_berry_ice_cream");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.CHOCOLATE_ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ForgeMod.MILK.get(), 250), true)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightTags.COCOA_POWDER)
-				.build(consumer, "chocolate_ice_cream");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.SWEET_BERRY_ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ForgeMod.MILK.get(), 250), true)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
-				.addIngredient(Items.SWEET_BERRIES).addIngredient(Items.SWEET_BERRIES)
-				.build(consumer, "sweet_berry_ice_cream");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.PUMPKIN_ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ForgeMod.MILK.get(), 250), true)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ModItems.PUMPKIN_SLICE.get())
-				.addIngredient(ModItems.PUMPKIN_SLICE.get()).addIngredient(ModItems.PUMPKIN_SLICE.get())
-				.build(consumer, "pumpkin_ice_cream");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.HONEY_ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ForgeMod.MILK.get(), 250), true)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.HONEY_BOTTLE)
-				.addIngredient(Items.HONEY_BOTTLE).addIngredient(Items.HONEY_BOTTLE).build(consumer, "honey_ice_cream");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.APPLE_ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ForgeMod.MILK.get(), 250), true)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightTags.PROCESSED_APPLE)
-				.addIngredient(ExtraDelightTags.PROCESSED_APPLE).addIngredient(ExtraDelightTags.PROCESSED_APPLE)
-				.build(consumer, "apple_ice_cream");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.COOKIE_DOUGH_ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ForgeMod.MILK.get(), 250), true)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightTags.COOKIE_DOUGH)
-				.build(consumer, "cookie_dough_ice_cream");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.MINT_CHIP_ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ForgeMod.MILK.get(), 250), true)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightTags.CHOCOLATE_CHIPS)
-				.addIngredient(ExtraDelightTags.MINT).build(consumer, "mint_chip_ice_cream");
-
-		ChillerRecipeBuilder
-				.chill(new ItemStack(ExtraDelightItems.NUT_BUTTER_ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
-						new ItemStack(Items.BOWL), new FluidStack(ForgeMod.MILK.get(), 250), true)
-				.addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightTags.NUT_BUTTER)
-				.build(consumer, "nut_butter_ice_cream");
+        ChillerRecipeBuilder.chill(new ItemStack(ExtraDelightItems.MILK_CHOCOLATE_BAR.get()), FAST_COOKING, SMALL_EXP,
+                new ItemStack(ExtraDelightItems.BAR_MOLD.get()),
+                new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 250)).build(consumer);
+        ChillerRecipeBuilder.chill(new ItemStack(ExtraDelightItems.DARK_CHOCOLATE_BAR.get()), FAST_COOKING, SMALL_EXP,
+                new ItemStack(ExtraDelightItems.BAR_MOLD.get()),
+                new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), 250)).build(consumer);
+        ChillerRecipeBuilder.chill(new ItemStack(ExtraDelightItems.WHITE_CHOCOLATE_BAR.get()), FAST_COOKING, SMALL_EXP,
+                new ItemStack(ExtraDelightItems.BAR_MOLD.get()),
+                new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 250)).build(consumer);
+        ChillerRecipeBuilder.chill(new ItemStack(ExtraDelightItems.BLOOD_CHOCOLATE_BAR.get()), FAST_COOKING, SMALL_EXP,
+                new ItemStack(ExtraDelightItems.BAR_MOLD.get()),
+                new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 250)).build(consumer);
+
+        ChillerRecipeBuilder.chill(AllItems.BAR_OF_CHOCOLATE.asStack(), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.BAR_MOLD.get()), new FluidStack(AllFluids.CHOCOLATE.getSource().getSource(), 250))
+                .build(consumer);//, "milk_chocolate_bar_create";);
+                // .withConditions(new ModLoadedCondition("create")
+
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.BLOOD_CHOCOLATE_FILLED_BAR.get()), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.BAR_MOLD.get()),
+                        new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 250))
+                .addIngredient(Ingredient.of(ExtraDelightTags.CHOCOLATE_BAR_FILLING)).build(consumer);
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.DARK_CHOCOLATE_FILLED_BAR.get()), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.BAR_MOLD.get()),
+                        new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), 250))
+                .addIngredient(Ingredient.of(ExtraDelightTags.CHOCOLATE_BAR_FILLING)).build(consumer);
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.MILK_CHOCOLATE_FILLED_BAR.get()), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.BAR_MOLD.get()),
+                        new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 250))
+                .addIngredient(Ingredient.of(ExtraDelightTags.CHOCOLATE_BAR_FILLING)).build(consumer);
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.WHITE_CHOCOLATE_FILLED_BAR.get()), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.BAR_MOLD.get()),
+                        new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 250))
+                .addIngredient(Ingredient.of(ExtraDelightTags.CHOCOLATE_BAR_FILLING)).build(consumer);
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.BLOOD_CHOCOLATE_TRUFFLE.get(),6), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
+                        new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 250))
+                .addIngredient(Ingredient.of(ExtraDelightTags.CHOCOLATE_TRUFFLE_FILLING)).build(consumer);
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.DARK_CHOCOLATE_TRUFFLE.get(),6), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
+                        new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), 250))
+                .addIngredient(Ingredient.of(ExtraDelightTags.CHOCOLATE_TRUFFLE_FILLING)).build(consumer);
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.MILK_CHOCOLATE_TRUFFLE.get(),6), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
+                        new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 250))
+                .addIngredient(Ingredient.of(ExtraDelightTags.CHOCOLATE_TRUFFLE_FILLING)).build(consumer);
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.WHITE_CHOCOLATE_TRUFFLE.get(),6), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
+                        new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 250))
+                .addIngredient(Ingredient.of(ExtraDelightTags.CHOCOLATE_TRUFFLE_FILLING)).build(consumer);
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.PEANUT_BUTTER_CUP.get(),6), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
+                        new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 1000))
+                .addIngredient(Ingredient.of(ExtraDelightTags.NUT_BUTTER)).build(consumer, "milk_peanut_butter_cup");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.PEANUT_BUTTER_CUP.get(),6), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
+                        new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), 1000))
+                .addIngredient(Ingredient.of(ExtraDelightTags.NUT_BUTTER)).build(consumer, "dark_peanut_butter_cup");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.PEANUT_BUTTER_CUP.get(),6), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
+                        new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 1000))
+                .addIngredient(Ingredient.of(ExtraDelightTags.NUT_BUTTER)).build(consumer, "white_peanut_butter_cup");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.PEANUT_BUTTER_CUP.get(),6), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
+                        new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 1000))
+                .addIngredient(Ingredient.of(ExtraDelightTags.NUT_BUTTER)).build(consumer, "blood_peanut_butter_cup");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.MALLOW_CUP.get(),6), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
+                        new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 1000))
+                .addIngredient(Ingredient.of(ExtraDelightTags.MARSHMALLOW_FLUFF)).build(consumer, "milk_mallow_cup");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.MALLOW_CUP.get(),6), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
+                        new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), 1000))
+                .addIngredient(Ingredient.of(ExtraDelightTags.MARSHMALLOW_FLUFF)).build(consumer, "dark_mallow_cup");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.MALLOW_CUP.get(),6), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
+                        new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 1000))
+                .addIngredient(Ingredient.of(ExtraDelightTags.MARSHMALLOW_FLUFF)).build(consumer, "white_mallow_cup");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.MALLOW_CUP.get(),6), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
+                        new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 1000))
+                .addIngredient(Ingredient.of(ExtraDelightTags.MARSHMALLOW_FLUFF)).build(consumer, "blood_mallow_cup");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.TOFFEE.get(),4), FAST_COOKING, SMALL_EXP, new ItemStack(ExtraDelightItems.TRAY.get()),
+                        new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 250))
+                .addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.SWEETENER)
+                .addIngredient(ExtraDelightTags.ROASTED_NUTS).build(consumer, "blood_toffee");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.TOFFEE.get(),4), FAST_COOKING, SMALL_EXP, new ItemStack(ExtraDelightItems.TRAY.get()),
+                        new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 250))
+                .addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.SWEETENER)
+                .addIngredient(ExtraDelightTags.ROASTED_NUTS).build(consumer, "milk_toffee");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.TOFFEE.get(),4), FAST_COOKING, SMALL_EXP, new ItemStack(ExtraDelightItems.TRAY.get()),
+                        new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), 250))
+                .addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.SWEETENER)
+                .addIngredient(ExtraDelightTags.ROASTED_NUTS).build(consumer, "dark_toffee");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.TOFFEE.get(),4), FAST_COOKING, SMALL_EXP, new ItemStack(ExtraDelightItems.TRAY.get()),
+                        new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 250))
+                .addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.SWEETENER)
+                .addIngredient(ExtraDelightTags.ROASTED_NUTS).build(consumer, "white_toffee");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.PEPPERMINT_BARK.get(),4), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.TRAY.get()),
+                        new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 250))
+                .addIngredient(ExtraDelightTags.COOKING_OIL).addIngredient(ExtraDelightTags.CHOCOLATE_SYRUP)
+                .addIngredient(ExtraDelightTags.PEPPERMINT_CANDY).build(consumer, "peppermint_bark");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.FUDGE_BLOCK.get(),1), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.TRAY.get()),
+                        new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 250), true)
+                .addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.MARSHMALLOW_FLUFF)
+                .addIngredient(ForgeTags.MILK).addIngredient(ExtraDelightTags.SWEETENER)
+                .build(consumer, "fudge_white");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.FUDGE_BLOCK.get(),1), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.TRAY.get()),
+                        new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 250), true)
+                .addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.MARSHMALLOW_FLUFF)
+                .addIngredient(ForgeTags.MILK).addIngredient(ExtraDelightTags.SWEETENER)
+                .build(consumer, "fudge_blood");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.FUDGE_BLOCK.get(),1), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.TRAY.get()),
+                        new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), 250), true)
+                .addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.MARSHMALLOW_FLUFF)
+                .addIngredient(ForgeTags.MILK).addIngredient(ExtraDelightTags.SWEETENER)
+                .build(consumer, "fudge_dark");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.FUDGE_BLOCK.get(),1), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.TRAY.get()),
+                        new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 250), true)
+                .addIngredient(ExtraDelightTags.BUTTER).addIngredient(ExtraDelightTags.MARSHMALLOW_FLUFF)
+                .addIngredient(ForgeTags.MILK).addIngredient(ExtraDelightTags.SWEETENER)
+                .build(consumer, "fudge_milk");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.MARSHMALLOW.get(),1), FAST_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.MUFFIN_TIN.get()),
+                        new FluidStack(ExtraDelightFluids.MARSHMALLOW_FLUFF.FLUID.get(), 250))
+                .build(consumer, "fluff_to_marshmallow");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.MISSISSIPPI_MUD_PIE.get(),1), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(ModItems.PIE_CRUST.get()),
+                        new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
+                .addIngredient(ExtraDelightItems.CHOCOLATE_CUSTARD.get())
+                .addIngredient(ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get())
+                .addIngredient(ExtraDelightTags.ROASTED_NUTS).addIngredient(ExtraDelightTags.CHOCOLATE_CHIPS)
+                .build(consumer, "mississippi_mud_pie");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.GRASSHOPPER_PIE.get(),1), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(ModItems.PIE_CRUST.get()),
+                        new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
+                .addIngredient(Tags.Items.DYES_LIME).addIngredient(ExtraDelightTags.MINT)
+                .addIngredient(ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get())
+                .addIngredient(ExtraDelightTags.CHOCOLATE_CHIPS).build(consumer, "grasshopper_pie");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.MARSHMALLOW_SLICE_FEAST.get()), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.PIE_DISH.get()),
+                        new FluidStack(ExtraDelightFluids.MARSHMALLOW_FLUFF.FLUID.get(), 250), false)
+                .addIngredient(ExtraDelightTags.SUGAR_COOKIE).addIngredient(ExtraDelightTags.JAM)
+                .addIngredient(ExtraDelightTags.SUGAR_COOKIE).build(consumer, "marshmallow_slice");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.ROCKY_ROAD.get(),4), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.TRAY.get()),
+                        new FluidStack(ExtraDelightFluids.BLOOD_CHOCOLATE_SYRUP.FLUID.get(), 250))
+                .addIngredient(ExtraDelightTags.GUMMIES).addIngredient(ExtraDelightTags.COOKIE)
+                .addIngredient(ExtraDelightTags.MARSHMALLOW).addIngredient(ExtraDelightTags.ROASTED_NUTS)
+                .build(consumer, "rocky_road_blood");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.ROCKY_ROAD.get(),4), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.TRAY.get()),
+                        new FluidStack(ExtraDelightFluids.DARK_CHOCOLATE_SYRUP.FLUID.get(), 250))
+                .addIngredient(ExtraDelightTags.GUMMIES).addIngredient(ExtraDelightTags.COOKIE)
+                .addIngredient(ExtraDelightTags.MARSHMALLOW).addIngredient(ExtraDelightTags.ROASTED_NUTS)
+                .build(consumer, "rocky_road_dark");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.ROCKY_ROAD.get(),4), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.TRAY.get()),
+                        new FluidStack(ExtraDelightFluids.MILK_CHOCOLATE_SYRUP.FLUID.get(), 250))
+                .addIngredient(ExtraDelightTags.GUMMIES).addIngredient(ExtraDelightTags.COOKIE)
+                .addIngredient(ExtraDelightTags.MARSHMALLOW).addIngredient(ExtraDelightTags.ROASTED_NUTS)
+                .build(consumer, "rocky_road_milk");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.ROCKY_ROAD.get(),4), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(ExtraDelightItems.TRAY.get()),
+                        new FluidStack(ExtraDelightFluids.WHITE_CHOCOLATE_SYRUP.FLUID.get(), 250))
+                .addIngredient(ExtraDelightTags.GUMMIES).addIngredient(ExtraDelightTags.COOKIE)
+                .addIngredient(ExtraDelightTags.MARSHMALLOW).addIngredient(ExtraDelightTags.ROASTED_NUTS)
+                .build(consumer, "rocky_road_white");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.APPLE_POPSICLE.get(),4), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.STICK, 4), new FluidStack(ExtraDelightFluids.APPLE_CIDER.FLUID.get(), 250), true)
+                .build(consumer, "apple_popsicle_chiller");
+
+        ChillerRecipeBuilder.chill(new ItemStack(ExtraDelightItems.CARAMEL_POPSICLE.get(),4), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.STICK, 4), new FluidStack(ExtraDelightFluids.CARAMEL_SAUCE.FLUID.get(), 250), true)
+                .addIngredient(ExtraDelightTags.ICE_CREAM).build(consumer, "caramel_popsicle_chiller");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.CINNAMON_POPSICLE.get(),4), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.STICK, 4), FluidStack.EMPTY, true)
+                .addIngredient(ExtraDelightTags.ICE_CREAM).addIngredient(ExtraDelightTags.GROUND_CINNAMON)
+                .build(consumer, "cinnamon_popsicle_chiller");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.FUDGE_POPSICLE.get(),4), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.STICK, 4), FluidStack.EMPTY, true)
+                .addIngredient(ExtraDelightTags.ICE_CREAM).addIngredient(ExtraDelightTags.COCOA_POWDER)
+                .build(consumer, "fudge_popsicle_chiller");
+
+        ChillerRecipeBuilder.chill(new ItemStack(ExtraDelightItems.GLOW_BERRY_POPSICLE.get(),4), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.STICK, 4), new FluidStack(ExtraDelightFluids.GLOW_BERRY_JUICE.FLUID.get(), 250), true)
+                .build(consumer, "glow_berry_popsicle_chiller");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.HONEY_POPSICLE.get(),4), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.STICK, 4), FluidStack.EMPTY, true)
+                .addIngredient(Items.HONEY_BOTTLE).addIngredient(ExtraDelightTags.ICE_CREAM)
+                .build(consumer, "honey_popsicle_chiller");
+
+        ChillerRecipeBuilder.chill(new ItemStack(ExtraDelightItems.SWEET_BERRY_POPSICLE.get(),4), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.STICK, 4), new FluidStack(ExtraDelightFluids.SWEET_BERRY_JUICE.FLUID.get(), 250), true)
+                .build(consumer, "sweet_berry_popsicle_chiller");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ModItems.MELON_POPSICLE.get(), 4), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.STICK, 4), new FluidStack(ExtraDelightFluids.MELON_JUICE.FLUID.get(), 250), true)
+                .build(consumer, "melon_popsicle_chiller");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.JELLY_BLACK_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
+                .addIngredient(Tags.Items.DYES_BLACK).addIngredient(ExtraDelightTags.GELATIN)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
+                .build(consumer, "black_jelly_feast");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.JELLY_RED_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
+                .addIngredient(Tags.Items.DYES_RED).addIngredient(ExtraDelightTags.GELATIN)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
+                .build(consumer, "red_jelly_feast");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.JELLY_GREEN_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
+                .addIngredient(Tags.Items.DYES_GREEN).addIngredient(ExtraDelightTags.GELATIN)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
+                .build(consumer, "green_jelly_feast");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.JELLY_BROWN_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
+                .addIngredient(Tags.Items.DYES_BROWN).addIngredient(ExtraDelightTags.GELATIN)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
+                .build(consumer, "brown_jelly_feast");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.JELLY_BLUE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
+                .addIngredient(Tags.Items.DYES_BLUE).addIngredient(ExtraDelightTags.GELATIN)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
+                .build(consumer, "blue_jelly_feast");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.JELLY_PURPLE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
+                .addIngredient(Tags.Items.DYES_PURPLE).addIngredient(ExtraDelightTags.GELATIN)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
+                .build(consumer, "purple_jelly_feast");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.JELLY_CYAN_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
+                .addIngredient(Tags.Items.DYES_CYAN).addIngredient(ExtraDelightTags.GELATIN)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
+                .build(consumer, "cyan_jelly_feast");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.JELLY_LIGHT_GREY_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
+                .addIngredient(Tags.Items.DYES_LIGHT_GRAY).addIngredient(ExtraDelightTags.GELATIN)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
+                .build(consumer, "light_grey_jelly_feast");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.JELLY_GREY_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
+                .addIngredient(Tags.Items.DYES_GRAY).addIngredient(ExtraDelightTags.GELATIN)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
+                .build(consumer, "grey_jelly_feast");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.JELLY_PINK_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
+                .addIngredient(Tags.Items.DYES_PINK).addIngredient(ExtraDelightTags.GELATIN)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
+                .build(consumer, "pink_jelly_feast");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.JELLY_LIME_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
+                .addIngredient(Tags.Items.DYES_LIME).addIngredient(ExtraDelightTags.GELATIN)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
+                .build(consumer, "lime_jelly_feast");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.JELLY_YELLOW_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
+                .addIngredient(Tags.Items.DYES_YELLOW).addIngredient(ExtraDelightTags.GELATIN)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
+                .build(consumer, "yellow_jelly_feast");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.JELLY_LIGHT_BLUE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
+                .addIngredient(Tags.Items.DYES_LIGHT_BLUE).addIngredient(ExtraDelightTags.GELATIN)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
+                .build(consumer, "light_blue_jelly_feast");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.JELLY_MAGENTA_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
+                .addIngredient(Tags.Items.DYES_MAGENTA).addIngredient(ExtraDelightTags.GELATIN)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
+                .build(consumer, "magenta_jelly_feast");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.JELLY_ORANGE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
+                .addIngredient(Tags.Items.DYES_ORANGE).addIngredient(ExtraDelightTags.GELATIN)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
+                .build(consumer, "orange_jelly_feast");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.JELLY_WHITE_FEAST_ITEM.get()), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ExtraDelightFluids.WHIPPED_CREAM.FLUID.get(), 250), true)
+                .addIngredient(Tags.Items.DYES_WHITE).addIngredient(ExtraDelightTags.GELATIN)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
+                .build(consumer, "white_jelly_feast");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ForgeMod.MILK.get(), 250), true)
+                .addIngredient(ExtraDelightTags.SWEETENER).build(consumer, "ice_cream");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.GLOW_BERRY_ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ForgeMod.MILK.get(), 250), true)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.GLOW_BERRIES)
+                .addIngredient(Items.GLOW_BERRIES).addIngredient(Items.GLOW_BERRIES)
+                .build(consumer, "glow_berry_ice_cream");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.CHOCOLATE_ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ForgeMod.MILK.get(), 250), true)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightTags.COCOA_POWDER)
+                .build(consumer, "chocolate_ice_cream");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.SWEET_BERRY_ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ForgeMod.MILK.get(), 250), true)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.SWEET_BERRIES)
+                .addIngredient(Items.SWEET_BERRIES).addIngredient(Items.SWEET_BERRIES)
+                .build(consumer, "sweet_berry_ice_cream");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.PUMPKIN_ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ForgeMod.MILK.get(), 250), true)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ModItems.PUMPKIN_SLICE.get())
+                .addIngredient(ModItems.PUMPKIN_SLICE.get()).addIngredient(ModItems.PUMPKIN_SLICE.get())
+                .build(consumer, "pumpkin_ice_cream");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.HONEY_ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ForgeMod.MILK.get(), 250), true)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(Items.HONEY_BOTTLE)
+                .addIngredient(Items.HONEY_BOTTLE).addIngredient(Items.HONEY_BOTTLE).build(consumer, "honey_ice_cream");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.APPLE_ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ForgeMod.MILK.get(), 250), true)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightTags.PROCESSED_APPLE)
+                .addIngredient(ExtraDelightTags.PROCESSED_APPLE).addIngredient(ExtraDelightTags.PROCESSED_APPLE)
+                .build(consumer, "apple_ice_cream");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.COOKIE_DOUGH_ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ForgeMod.MILK.get(), 250), true)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightTags.COOKIE_DOUGH)
+                .build(consumer, "cookie_dough_ice_cream");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.MINT_CHIP_ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ForgeMod.MILK.get(), 250), true)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightTags.CHOCOLATE_CHIPS)
+                .addIngredient(ExtraDelightTags.MINT).build(consumer, "mint_chip_ice_cream");
+
+        ChillerRecipeBuilder
+                .chill(new ItemStack(ExtraDelightItems.NUT_BUTTER_ICE_CREAM.get(), 1), NORMAL_COOKING, SMALL_EXP,
+                        new ItemStack(Items.BOWL), new FluidStack(ForgeMod.MILK.get(), 250), true)
+                .addIngredient(ExtraDelightTags.SWEETENER).addIngredient(ExtraDelightTags.NUT_BUTTER)
+                .build(consumer, "nut_butter_ice_cream");
 	}
 
 	private void meltingRecipes(Consumer<FinishedRecipe> consumer) {

@@ -2,7 +2,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:chilling/jelly_white_block_item_from_blood_chocolate_syrup_fluid_filled"
+        "recipe": "extradelight:chilling/blood_chocolate_bar_from_blood_chocolate_syrup_fluid"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -14,7 +14,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:chilling/jelly_white_block_item_from_blood_chocolate_syrup_fluid_filled"
+      "extradelight:chilling/blood_chocolate_bar_from_blood_chocolate_syrup_fluid"
     ]
   },
   "sends_telemetry_event": true

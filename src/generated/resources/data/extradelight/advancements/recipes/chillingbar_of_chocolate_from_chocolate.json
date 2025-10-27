@@ -2,7 +2,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelight:chilling/jelly_white_block_item_from_milk_chocolate_syrup_fluid_filled"
+        "recipe": "extradelight:chilling/bar_of_chocolate_from_chocolate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -14,7 +14,7 @@
   ],
   "rewards": {
     "recipes": [
-      "extradelight:chilling/jelly_white_block_item_from_milk_chocolate_syrup_fluid_filled"
+      "extradelight:chilling/bar_of_chocolate_from_chocolate"
     ]
   },
   "sends_telemetry_event": true

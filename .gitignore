@@ -26,3 +26,4 @@ run-data
 forge*changelog.txt
 /*.7z
 /src/generated/resources/.cache/
+*.log

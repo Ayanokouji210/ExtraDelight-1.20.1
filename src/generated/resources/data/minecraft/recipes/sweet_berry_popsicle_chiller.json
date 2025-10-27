@@ -13,6 +13,7 @@
   },
   "ingredients": [],
   "result": {
-    "item": "extradelight:jelly_white_block_item"
+    "count": 4,
+    "item": "extradelight:sweet_berry_popsicle"
   }
 }

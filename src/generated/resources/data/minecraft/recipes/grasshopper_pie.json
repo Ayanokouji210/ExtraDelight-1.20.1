@@ -1,6 +1,6 @@
 {
   "type": "extradelight:chiller",
-  "consumeContainer": false,
+  "consumeContainer": true,
   "container": {
     "item": "farmersdelight:pie_crust"
   },

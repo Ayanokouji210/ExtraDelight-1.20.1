@@ -8,7 +8,7 @@
   "experience": 0.35,
   "fluid": {
     "amount": 250,
-    "fluid": "extradelight:milk_chocolate_syrup_fluid"
+    "fluid": "extradelight:white_chocolate_syrup_fluid"
   },
   "ingredients": [
     {
@@ -16,6 +16,6 @@
     }
   ],
   "result": {
-    "item": "extradelight:jelly_white_block_item"
+    "item": "extradelight:white_chocolate_filled_bar"
   }
 }
