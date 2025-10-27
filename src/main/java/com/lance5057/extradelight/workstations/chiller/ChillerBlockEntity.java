@@ -240,7 +240,7 @@ public class ChillerBlockEntity extends BlockEntity implements IFancyTankHandler
 		}
 
 		Optional<ChillerRecipe> recipeOptional = level.getRecipeManager().getRecipeFor(
-				(RecipeType<ChillerRecipe>) ExtraDelightRecipes.CHILLER.get(),
+                ExtraDelightRecipes.CHILLER.get(),
 				new ChillerRecipeWrapper(chiller.inventory, chiller.fluid.getFluid()),
 				level
 		);
@@ -255,7 +255,7 @@ public class ChillerBlockEntity extends BlockEntity implements IFancyTankHandler
 				ItemStack test = chiller.inventory.insertItem(OUTPUT_SLOT, result, true);
 				if (test.isEmpty()) {
 					dropContainers(state, chiller, level);
-					subtractItems(chiller, true, result.getCount());
+					subtractItems(chiller, ((ChillerRecipe) recipe).shouldConsumeContainer(), result.getCount());
 
 					chiller.fluid.drain(((ChillerRecipe)recipe).getFluid(), IFluidHandler.FluidAction.EXECUTE);
 

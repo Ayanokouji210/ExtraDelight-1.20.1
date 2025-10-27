@@ -28,6 +28,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.crafting.CraftingHelper;
+import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import net.minecraftforge.fluids.FluidStack;
 import javax.annotation.Nullable;
 //import net.neoforged.neoforge.fluids.FluidStack;
@@ -50,7 +51,6 @@ public class ChillerRecipeBuilder implements RecipeBuilder {
 	private final Boolean consumeContainer;
 	private String group ="";
 	private final Advancement.Builder advancement=Advancement.Builder.advancement();
-	private final ChillerRecipe.Serializer serializer;
 	private final Map<String, Criterion> criteria = new LinkedHashMap<>();
 
 	private ChillerRecipeBuilder(ItemStack resultIn, int cookingTime, float experience, ItemStack container,
@@ -63,7 +63,6 @@ public class ChillerRecipeBuilder implements RecipeBuilder {
 //		this.tab = null;
 		this.fluid = fluid;
 		this.consumeContainer = consumeContainer;
-		this.serializer = new ChillerRecipe.Serializer();
 	}
 
 	public static ChillerRecipeBuilder chill(ItemStack mainResult, int cookingTime, float experience,
@@ -151,7 +150,7 @@ public class ChillerRecipeBuilder implements RecipeBuilder {
 		save(consumerIn, ResourceLocation.parse(save));
 	}
 
-	@Override
+    @Override
 	public RecipeBuilder group(String p_176495_) {
 		return this;
 	}
@@ -173,14 +172,14 @@ public class ChillerRecipeBuilder implements RecipeBuilder {
 //				this.experience, this.cookingTime, this.consumeContainer);
 		ResourceLocation advancementId = this.advancement.build(id.withPrefix("recipes/chilling")).getId();
 		output.accept(new Result(id,this.group,this.fluid,this.resultStack,this.container,this.advancement,advancementId,
-				this.consumeContainer,this.cookingTime,this.experience,this.ingredients,this.serializer));
+				this.consumeContainer,this.cookingTime,this.experience,this.ingredients));
 				//recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/chilling/")));
 	}
 
 	public static class Result implements FinishedRecipe {
 		private final ResourceLocation id;
 		private final String group;
-		private NonNullList<Ingredient> inputItems;
+		private final NonNullList<Ingredient> inputItems;
 		private final FluidStack inputFluid;
 		private final ItemStack resultStack;
 		private final ItemStack containerStack;
@@ -190,13 +189,12 @@ public class ChillerRecipeBuilder implements RecipeBuilder {
 		private final int cookingTime;
 		private final float experience;
 
-		private ChillerRecipe.Serializer serializer;
 
 
 		public Result(ResourceLocation id, String group, FluidStack inputFluid,
 					  ItemStack resultStack, ItemStack containerStack, Advancement.Builder advancement,
 					  ResourceLocation advancementId, Boolean consumeContainer, int cookingTime, float experience,
-					  NonNullList<Ingredient> inputItems, ChillerRecipe.Serializer serializer) {
+					  NonNullList<Ingredient> inputItems) {
 			this.id = id;
 			this.group = group;
 			this.inputFluid = inputFluid;
@@ -208,7 +206,6 @@ public class ChillerRecipeBuilder implements RecipeBuilder {
 			this.cookingTime = cookingTime;
 			this.experience = experience;
 			this.inputItems = inputItems;
-			this.serializer = serializer;
 		}
 
 		@Override

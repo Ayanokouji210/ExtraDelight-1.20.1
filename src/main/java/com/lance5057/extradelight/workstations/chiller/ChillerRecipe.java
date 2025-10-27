@@ -106,19 +106,19 @@ public class ChillerRecipe implements Recipe<ChillerRecipeWrapper> {
 		return this.output.copy();
 	}
 
-//	@Override
-//	public ItemStack getResultItem(Provider registries) {
-//		return this.output.copy();
-//	}
+    @Override
+    public ItemStack getResultItem(RegistryAccess registryAccess) {
+        return this.output.copy();
+    }
 
 	public ItemStack getOutputContainer() {
 		return this.container;
 	}
 
-//	@Override
-//	public ItemStack assemble(ChillerRecipeWrapper input, Provider registries) {
-//		return this.output.copy();
-//	}
+    @Override
+    public ItemStack assemble(ChillerRecipeWrapper chillerRecipeWrapper, RegistryAccess registryAccess) {
+        return this.output.copy();
+    }
 
 
 	public float getExperience() {
@@ -153,19 +153,10 @@ public class ChillerRecipe implements Recipe<ChillerRecipeWrapper> {
 	}
 
 	@Override
-	public ItemStack assemble(ChillerRecipeWrapper chillerRecipeWrapper, RegistryAccess registryAccess) {
-		return null;
-	}
-
-	@Override
 	public boolean canCraftInDimensions(int width, int height) {
 		return width * height >= this.inputItems.size();
 	}
 
-	@Override
-	public ItemStack getResultItem(RegistryAccess registryAccess) {
-		return this.output.copy();
-	}
 
 	@Override
 	public RecipeSerializer<?> getSerializer() {
