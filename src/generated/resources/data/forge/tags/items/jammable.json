@@ -1,0 +1,10 @@
+{
+  "values": [
+    "#forge:fruit",
+    {
+      "id": "#forge:berries",
+      "required": false
+    },
+    "#forge:crops/carrot"
+  ]
+}
