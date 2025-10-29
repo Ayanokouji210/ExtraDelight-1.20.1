@@ -20,7 +20,7 @@
       "item": "minecraft:potato"
     },
     {
-      "tag": "butchercraft:fat"
+      "tag": "forge:fat"
     }
   ],
   "result": {

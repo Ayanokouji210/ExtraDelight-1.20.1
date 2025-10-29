@@ -1,6 +1,8 @@
 package com.lance5057.extradelight.data;
 
+import com.blamejared.crafttweaker.api.recipe.handler.IRecipeHandler;
 import com.lance5057.butchercraft.Butchercraft;
+import com.lance5057.butchercraft.ButchercraftItems;
 import com.lance5057.butchercraft.tags.ButchercraftItemTags;
 import com.lance5057.extradelight.CompatTags;
 import com.lance5057.extradelight.ExtraDelightItems;
@@ -492,8 +494,7 @@ public class EDItemTags extends ItemTagsProvider {
 		tag(ExtraDelightTags.CHOCOLATE_TRUFFLE_FILLING).addTag(ExtraDelightTags.FROSTING).addTag(ExtraDelightTags.FUDGE)
 				.addTag(ExtraDelightTags.NOUGAT).addTag(ExtraDelightTags.WHIPPED_CREAM).addTag(ExtraDelightTags.JAM);
 
-		//没有Foods_Fruit
-		//tag(ExtraDelightTags.JAMMABLE).addTag(Tags.Items.FOODS_FRUIT).addTag(Tags.Items.FOODS_BERRY).addTag(Tags.Items.CROPS_CARROT);
+		tag(ExtraDelightTags.JAMMABLE).addTag(ExtraDelightTags.FRUIT).addOptionalTag(ForgeTags.BERRIES).addTag(Tags.Items.CROPS_CARROT);
 
 		tag(ExtraDelightTags.MARSHMALLOW_FLUFF).add(ExtraDelightItems.MARSHMALLOW_FLUFF_BOTTLE.get());
 		tag(ExtraDelightTags.NUT_BUTTER).add(ExtraDelightItems.PEANUT_BUTTER_BOTTLE.get())
@@ -559,7 +560,9 @@ public class EDItemTags extends ItemTagsProvider {
 
 		tag(ExtraDelightTags.COCOA_POWDER).add(ExtraDelightItems.COCOA_POWDER.get());
 
-		//原版没有动物食物tag
+        tag(ExtraDelightTags.FAT).addOptional(ButchercraftItems.FAT.getId());
+
+        //原版没有动物食物tag
 //		tag(ItemTags.CAMEL_FOOD).add(ExtraDelightItems.CACTUS.get());
 //		tag(ItemTags.CHICKEN_FOOD).add(ExtraDelightItems.CORN_SEEDS.get(), ExtraDelightItems.CHILI_SEEDS.get(),
 //				ExtraDelightItems.HAZELNUTS.get(), ExtraDelightItems.PEANUTS.get(),

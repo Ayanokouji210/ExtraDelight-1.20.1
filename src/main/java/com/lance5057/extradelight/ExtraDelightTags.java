@@ -375,7 +375,7 @@ public class ExtraDelightTags {
 	public static final TagKey<Item> GELATIN_PROVIDER = butcherTag("gelatin_provider");
 
 	public static final TagKey<Item> HORN = neoforgeItemTag("horn");
-	public static final TagKey<Item> FAT = butcherTag("fat");
+	public static final TagKey<Item> FAT = neoforgeItemTag("fat");
 	public static final TagKey<Item> LEATHER_SCRAP = neoforgeItemTag("leather_scrap");
 
 	public static final TagKey<Item> GRINDER_ATTACHMENT = butcherTag("grinder_attachment");
