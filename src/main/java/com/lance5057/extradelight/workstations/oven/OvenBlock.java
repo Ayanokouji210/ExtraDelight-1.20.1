@@ -65,11 +65,7 @@ public class OvenBlock extends Block implements EntityBlock, SimpleWaterloggedBl
 
 	@Override
 	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-		if(pPlayer.getMainHandItem().isEmpty()){
-			return this.useWithoutItem(pState,pLevel,pPos,pPlayer,pHit);
-		}else {
-			return InteractionResult.PASS;
-		}
+        return this.useWithoutItem(pState,pLevel,pPos,pPlayer,pHit);
 	}
 
 	public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player,

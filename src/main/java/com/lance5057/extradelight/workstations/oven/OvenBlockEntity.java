@@ -110,16 +110,6 @@ public class OvenBlockEntity extends SyncedBlockEntity
 		return ItemStack.EMPTY;
 	}
 
-//	@SubscribeEvent
-//	public static void registerCapabilities(RegisterCapabilitiesEvent event) {
-//		event.register(ForgeCapabilities.ITEM_HANDLER, ExtraDelightBlockEntities.OVEN.get(),
-//				(be, context) -> {
-//					if (context == Direction.UP) {
-//						return be.inputHandler;
-//					}
-//					return be.outputHandler;
-//				});
-//	}
 
 //	public static void takeServingFromItem(ItemStack OvenStack) {
 //		if (!OvenStack.is(ExtraDelightItems.OVEN.get())) {

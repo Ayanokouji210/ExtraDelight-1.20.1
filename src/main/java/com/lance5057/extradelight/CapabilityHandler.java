@@ -132,15 +132,16 @@ public class CapabilityHandler {
                     new ICapabilityProvider() {
                         @Override
                         public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @org.jetbrains.annotations.Nullable Direction side) {
-                            if (cap ==ForgeCapabilities.FLUID_HANDLER) {
+                            if (cap ==ForgeCapabilities.ITEM_HANDLER) {
                                 if(side == Direction.DOWN) {
                                     return LazyOptional.of(()->cbe.inputHandler).cast();
                                 }
                                 if(side == Direction.UP) {
                                     return LazyOptional.of(()->cbe.outputHandler).cast();
                                 }
+                                return LazyOptional.of(cbe::getInventory).cast();
                             }
-                            return LazyOptional.of(cbe::getInventory).cast();
+                            return LazyOptional.empty();
                         }
                     });
         }
