@@ -28,7 +28,7 @@ public class BlockStateItemUnbakedGeometry implements IUnbakedGeometry<BlockStat
 //		return new BlockStateItemBakedGeometry();
 //	}
 
-	@Override
+    @Override
 	public BakedModel bake(IGeometryBakingContext context, ModelBaker baker, Function<Material, TextureAtlasSprite> spriteGetter, ModelState modelState, ItemOverrides overrides, ResourceLocation modelLocation) {
 		return new BlockStateItemBakedGeometry();
 	}

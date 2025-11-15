@@ -10,6 +10,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 //import net.minecraft.core.component.DataComponents;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.sounds.SoundEvents;
@@ -185,8 +186,14 @@ public class RecipeFeastBlock extends Block {
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+        CompoundTag tag = context.getItemInHand().getOrCreateTag();
+        int servings = tag.contains("servings") ? tag.getInt("servings") : 4;
+        return this.defaultBlockState()
+                .setValue(FACING, context.getHorizontalDirection().getOpposite())
+                .setValue(SERVINGS,servings);
 	}
+
+
 
 	@Override
 	public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor level,
@@ -236,9 +243,8 @@ public class RecipeFeastBlock extends Block {
 	@Override
 	public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter level, BlockPos pos,
 			Player player) {
-		ItemStack stack = new ItemStack(this);
-		stack = ItemNBTUtil.ItemNBTSetInt(stack,"servings",state.getValue(SERVINGS));
-		//stack.set(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY.with(SERVINGS, state.getValue(SERVINGS)));
+        ItemStack stack = this.setBlockStateTag(new ItemStack(this), state);
+        //stack.set(DataComponents.BLOCK_STATE, BlockItemStateProperties.EMPTY.with(SERVINGS, state.getValue(SERVINGS)));
 		return stack;
 	}
 
@@ -246,9 +252,8 @@ public class RecipeFeastBlock extends Block {
 	public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
 		if (!level.isClientSide && !player.isCreative() && level.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS)
 				&& state.getValue(SERVINGS) > 0) {
-			ItemStack itemstack = new ItemStack(this);
-			itemstack=ItemNBTUtil.ItemNBTSetInt(itemstack,"servings",state.getValue(SERVINGS));
-			//itemstack.set(DataComponents.BLOCK_STATE,
+            ItemStack itemstack = this.setBlockStateTag(new ItemStack(this), state);
+            //itemstack.set(DataComponents.BLOCK_STATE,
 			//		BlockItemStateProperties.EMPTY.with(SERVINGS, state.getValue(SERVINGS)));
 			ItemEntity itementity = new ItemEntity(level, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(),
 					itemstack);
@@ -258,4 +263,14 @@ public class RecipeFeastBlock extends Block {
 
 		super.playerWillDestroy(level, pos, state, player);
 	}
+
+    private ItemStack setBlockStateTag(ItemStack stack, BlockState state) {
+        Integer value = state.getValue(SERVINGS);
+        CompoundTag tag = stack.getOrCreateTag();
+        CompoundTag stateTag = new CompoundTag();
+        stateTag.putInt("servings",value);
+        tag.put("BlockState",stateTag);
+        stack.setTag(tag);
+        return stack;
+    }
 }

@@ -50,10 +50,9 @@ public class BlockStateItemOverrides extends ItemOverrides {
 	public BakedModel resolve(BakedModel pModel, ItemStack pStack, @Nullable ClientLevel pLevel,
 							  @Nullable LivingEntity pEntity, int pSeed) {
 		if (pStack.getItem() instanceof BlockItem bi) {
-			// 在 1.20.1 中，我们使用 NBT 数据而不是数据组件
 			CompoundTag tag = pStack.getTag();
-			if (tag != null && tag.contains("BlockStateTag")) {
-				CompoundTag blockStateTag = tag.getCompound("BlockStateTag");
+			if (tag != null && tag.contains("BlockState")) {
+				CompoundTag blockStateTag = tag.getCompound("BlockState");
 				BlockState defaultState = bi.getBlock().defaultBlockState();
 				BlockState customState = getStateFromNBT(defaultState, blockStateTag);
 
@@ -65,21 +64,26 @@ public class BlockStateItemOverrides extends ItemOverrides {
 		return pModel;
 	}
 
-	// 从 NBT 数据中获取方块状态
 	private BlockState getStateFromNBT(BlockState defaultState, CompoundTag nbt) {
 		BlockState state = defaultState;
 
 		for (String key : nbt.getAllKeys()) {
 			Property<?> property = defaultState.getBlock().getStateDefinition().getProperty(key);
 			if (property != null) {
-				state = setValue(state, property, nbt.getString(key));
+                switch (nbt.getTagType(key)){
+                    case 3:
+                        state = setValue(state,property,String.valueOf(nbt.getInt(key)));
+                        break;
+                    case 8:
+                        state = setValue(state,property,nbt.getString(key));
+                }
 			}
 		}
 
 		return state;
 	}
 
-	// 设置方块状态属性值
+
 	private <T extends Comparable<T>> BlockState setValue(BlockState state, Property<T> property, String value) {
 		Optional<T> optional = property.getValue(value);
 		if (optional.isPresent()) {
