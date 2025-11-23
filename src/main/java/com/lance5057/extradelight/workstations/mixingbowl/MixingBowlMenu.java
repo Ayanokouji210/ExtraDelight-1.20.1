@@ -5,21 +5,27 @@ import com.lance5057.extradelight.ExtraDelightContainers;
 import com.lance5057.extradelight.gui.FancyTankInSlot;
 import com.lance5057.extradelight.gui.FancyTankOutSlot;
 import com.lance5057.extradelight.workstations.FancyTank;
+import com.mojang.datafixers.util.Pair;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.SlotItemHandler;
+import vectorwing.farmersdelight.FarmersDelight;
 //import net.neoforged.neoforge.items.SlotItemHandler;
 
 import java.util.Objects;
 
 public class MixingBowlMenu extends AbstractContainerMenu {
+    public static final ResourceLocation EMPTY_CONTAINER_SLOT_BOWL = ResourceLocation
+            .fromNamespaceAndPath(FarmersDelight.MODID, "item/empty_container_slot_bowl");
 
 	public final MixingBowlBlockEntity tileEntity;
 	private final ContainerLevelAccess canInteractWithCallable;
@@ -49,8 +55,12 @@ public class MixingBowlMenu extends AbstractContainerMenu {
 			}
 
 			this.addSlot(
-					new SlotItemHandler(tileEntity.getItemHandler(), MixingBowlBlockEntity.CONTAINER_SLOT, 122, 46));
-			this.addSlot(new FancyTankInSlot(tileEntity.getItemHandler(), tileEntity.getFluidTank(),
+                    new SlotItemHandler(tileEntity.getItemHandler(), MixingBowlBlockEntity.CONTAINER_SLOT, 122, 46) {
+                        public Pair<ResourceLocation, ResourceLocation> getNoItemIcon() {
+                            return Pair.of(InventoryMenu.BLOCK_ATLAS, EMPTY_CONTAINER_SLOT_BOWL);
+                        }
+                    });
+            this.addSlot(new FancyTankInSlot(tileEntity.getItemHandler(), tileEntity.getFluidTank(),
 					MixingBowlBlockEntity.LIQUID_IN_SLOT, 17, -5));
 			this.addSlot(new FancyTankOutSlot(tileEntity.getItemHandler(), tileEntity.getFluidTank(),
 					MixingBowlBlockEntity.LIQUID_OUT_SLOT, 17, 51));
@@ -60,7 +70,23 @@ public class MixingBowlMenu extends AbstractContainerMenu {
 					return false;
 				}
 
-				@Override
+                @Override
+                public ItemStack remove(int amount) {
+                    return ItemStack.EMPTY.copy();
+                }
+
+                @Override
+                public boolean mayPlace(ItemStack stack) {
+                    return false;
+                }
+            });
+            this.addSlot(new SlotItemHandler(tileEntity.getItemHandler(), MixingBowlBlockEntity.GHOST_UTENSIL_SLOT, 118, 5) {
+                @Override
+                public boolean mayPickup(Player playerIn) {
+                    return false;
+                }
+
+                @Override
 				public ItemStack remove(int amount) {
 					return ItemStack.EMPTY.copy();
 				}

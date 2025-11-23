@@ -240,7 +240,6 @@ public class MeltingPotBlockEntity extends BlockEntity implements HeatableBlockE
 
 	public Optional<MeltingPotRecipe> matchRecipe(ItemStack itemstack) {
 		if (this.level != null) {
-			// 在 1.20.1 中手动查找匹配的配方
 			for (MeltingPotRecipe recipe : level.getRecipeManager().getAllRecipesFor(ExtraDelightRecipes.MELTING_POT.get())) {
 				if (recipe.matches(itemstack)) {
 					return Optional.of(recipe);

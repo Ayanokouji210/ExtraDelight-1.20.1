@@ -1,12 +1,16 @@
 package com.lance5057.extradelight.workstations.meltingpot;
 
+import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightContainers;
+import com.mojang.datafixers.util.Pair;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -19,7 +23,10 @@ import net.minecraftforge.items.SlotItemHandler;
 import java.util.Objects;
 
 public class MeltingPotMenu extends AbstractContainerMenu {
-	public final MeltingPotBlockEntity tileEntity;
+    public static final ResourceLocation EMPTY_CONTAINER_SLOT_BUCKET = ResourceLocation
+            .fromNamespaceAndPath(ExtraDelight.MOD_ID, "item/empty_container_slot_bucket");
+
+    public final MeltingPotBlockEntity tileEntity;
 	private final ContainerLevelAccess canInteractWithCallable;
 	protected final Level level;
 
@@ -39,8 +46,12 @@ public class MeltingPotMenu extends AbstractContainerMenu {
 			this.addSlot(
 					new SlotItemHandler(tileEntity.getItemHandler(), MeltingPotBlockEntity.INPUT_SLOT, 46, 23));
 			this.addSlot(
-					new SlotItemHandler(tileEntity.getItemHandler(), MeltingPotBlockEntity.BUCKET_SLOT, 114, 26));
-			this.addSlot(
+                    new SlotItemHandler(tileEntity.getItemHandler(), MeltingPotBlockEntity.BUCKET_SLOT, 114, 26) {
+                        public Pair<ResourceLocation, ResourceLocation> getNoItemIcon() {
+                            return Pair.of(InventoryMenu.BLOCK_ATLAS, EMPTY_CONTAINER_SLOT_BUCKET);
+                        }
+                    });
+            this.addSlot(
 					new SlotItemHandler(tileEntity.getItemHandler(), MeltingPotBlockEntity.BUCKET_SLOT_OUT, 114, 50));
 			
 			// Main Player Inventory

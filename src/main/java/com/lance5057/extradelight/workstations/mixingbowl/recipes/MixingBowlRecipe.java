@@ -39,7 +39,8 @@ import java.util.List;
 public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 	final ResourceLocation id;
 	protected final int stirs;
-	final ItemStack usedItem;
+    final ItemStack container;
+    final Ingredient utensil;
 
 	final String group;
 	final ItemStack result;
@@ -48,10 +49,11 @@ public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 //	private final boolean isSimple;
 
 	public MixingBowlRecipe(ResourceLocation id,String pGroup, NonNullList<Ingredient> pIngredients, List<FluidIngredient> pFluids,
-			ItemStack pResult, int stirs, ItemStack usedItem) {
+			ItemStack pResult, int stirs, ItemStack container,Ingredient utensil) {
 		this.id = id;
 		this.stirs = stirs;
-		this.usedItem = usedItem;
+        this.container = container;
+        this.utensil = utensil;
 		this.group = pGroup;
 		this.result = pResult;
 
@@ -97,8 +99,8 @@ public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 				i == 0 
 				: i == this.ingredients.size() && RecipeMatcher.findMatches(inputs, this.ingredients) != null;
 		return itemMatchFlag
-				&& matchFluids(input.getTank().getAsList()) && ItemStack.isSameItem(usedItem, input.getItem(9))
-				&& input.getItem(9).getCount() >= usedItem.getCount();
+				&& matchFluids(input.getTank().getAsList()) && ItemStack.isSameItem(container, input.getItem(9))
+				&& input.getItem(9).getCount() >= container.getCount();
 	}
 
 	boolean matchFluids(List<FluidStack> f) {
@@ -144,9 +146,13 @@ public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 		return stirs;
 	}
 
-	public ItemStack getUsedItem() {
-		return this.usedItem;
-	}
+    public ItemStack getContainer() {
+        return this.container;
+    }
+
+    public Ingredient getUtensil() {
+        return this.utensil;
+    }
 
 	@Override
 	public ItemStack assemble(MixingBowlRecipeWrapper pContainer, RegistryAccess pRegistryAccess) {
@@ -197,10 +203,12 @@ public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 
 			int stirs=GsonHelper.getAsInt(jsonObject, "stirs", 4);
 
-			ItemStack usedItem = StackUtil.ItemStackfromJson(
-					GsonHelper.getAsJsonObject(jsonObject,"usedItem"));
+			ItemStack container = StackUtil.ItemStackfromJson(
+					GsonHelper.getAsJsonObject(jsonObject,"container"));
 
-			return new MixingBowlRecipe(resourceLocation,s,pIngredients,pFluids,result,stirs,usedItem);
+            Ingredient utensil = Ingredient.fromJson(GsonHelper.getAsJsonObject(jsonObject, "utensil"));
+
+            return new MixingBowlRecipe(resourceLocation,s,pIngredients,pFluids,result,stirs,container,utensil);
 		}
 
 		@Override
@@ -218,10 +226,11 @@ public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 			}
 			ItemStack result = friendlyByteBuf.readItem();
 			int stirs=friendlyByteBuf.readVarInt();
-			ItemStack usedItem = friendlyByteBuf.readItem();
+			ItemStack container = friendlyByteBuf.readItem();
 
+            Ingredient utensil = Ingredient.fromNetwork(friendlyByteBuf);
 
-			return new MixingBowlRecipe(resourceLocation,s,pIngredients,pFluids,result,stirs,usedItem);
+            return new MixingBowlRecipe(resourceLocation,s,pIngredients,pFluids,result,stirs,container,utensil);
 		}
 
 		@Override
@@ -237,7 +246,8 @@ public class MixingBowlRecipe implements Recipe<MixingBowlRecipeWrapper> {
 			}
 			friendlyByteBuf.writeItemStack(mixingBowlRecipe.result,true);
 			friendlyByteBuf.writeVarInt(mixingBowlRecipe.stirs);
-			friendlyByteBuf.writeItem(mixingBowlRecipe.usedItem);
+			friendlyByteBuf.writeItem(mixingBowlRecipe.container);
+            mixingBowlRecipe.utensil.toNetwork(friendlyByteBuf);
 
 
 		}

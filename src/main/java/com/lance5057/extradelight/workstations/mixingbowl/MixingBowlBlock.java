@@ -42,6 +42,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.network.NetworkHooks;
 import javax.annotation.Nullable;
@@ -54,15 +55,15 @@ public class MixingBowlBlock extends Block implements EntityBlock, IStyleable {
 	public static final IntegerProperty STYLE = IntegerProperty.create("style", 0, Styles.values().length - 1);
 
 	public static enum Styles {
-		OAK_PLANKS, SPRUCE_PLANKS, BIRCH_PLANKS, DARK_OAK_PLANKS, ACACIA_PLANKS, MANGROVE_PLANKS, BAMBOO_PLANKS,
-		CHERRY_PLANKS, JUNGLE_PLANKS, WARPED_PLANKS, CRIMSON_PLANKS, GLASS, STONE, IRON_BLOCK, GOLD_BLOCK, TERRACOTTA,
-		WHITE_TERRACOTTA, LIGHT_GRAY_TERRACOTTA, GRAY_TERRACOTTA, BLACK_TERRACOTTA, BROWN_TERRACOTTA, RED_TERRACOTTA,
-		ORANGE_TERRACOTTA, YELLOW_TERRACOTTA, LIME_TERRACOTTA, GREEN_TERRACOTTA, CYAN_TERRACOTTA, LIGHT_BLUE_TERRACOTTA,
-		BLUE_TERRACOTTA, MAGENTA_TERRACOTTA, PINK_TERRACOTTA, PURPLE_TERRACOTTA, WHITE_GLAZED_TERRACOTTA,
-		LIGHT_GRAY_GLAZED_TERRACOTTA, GRAY_GLAZED_TERRACOTTA, BLACK_GLAZED_TERRACOTTA, BROWN_GLAZED_TERRACOTTA,
-		RED_GLAZED_TERRACOTTA, ORANGE_GLAZED_TERRACOTTA, YELLOW_GLAZED_TERRACOTTA, LIME_GLAZED_TERRACOTTA,
-		GREEN_GLAZED_TERRACOTTA, CYAN_GLAZED_TERRACOTTA, LIGHT_BLUE_GLAZED_TERRACOTTA, BLUE_GLAZED_TERRACOTTA,
-		MAGENTA_GLAZED_TERRACOTTA, PINK_GLAZED_TERRACOTTA, PURPLE_GLAZED_TERRACOTTA
+        OAK_PLANKS, SPRUCE_PLANKS, BIRCH_PLANKS, DARK_OAK_PLANKS, ACACIA_PLANKS, MANGROVE_PLANKS, BAMBOO_PLANKS,
+        CHERRY_PLANKS, JUNGLE_PLANKS, WARPED_PLANKS, CRIMSON_PLANKS, CINNAMON_PLANKS, FRUIT_PLANKS, GLASS, STONE,
+        IRON_BLOCK, GOLD_BLOCK, TERRACOTTA, WHITE_TERRACOTTA, LIGHT_GRAY_TERRACOTTA, GRAY_TERRACOTTA, BLACK_TERRACOTTA,
+        BROWN_TERRACOTTA, RED_TERRACOTTA, ORANGE_TERRACOTTA, YELLOW_TERRACOTTA, LIME_TERRACOTTA, GREEN_TERRACOTTA,
+        CYAN_TERRACOTTA, LIGHT_BLUE_TERRACOTTA, BLUE_TERRACOTTA, MAGENTA_TERRACOTTA, PINK_TERRACOTTA, PURPLE_TERRACOTTA,
+        WHITE_GLAZED_TERRACOTTA, LIGHT_GRAY_GLAZED_TERRACOTTA, GRAY_GLAZED_TERRACOTTA, BLACK_GLAZED_TERRACOTTA,
+        BROWN_GLAZED_TERRACOTTA, RED_GLAZED_TERRACOTTA, ORANGE_GLAZED_TERRACOTTA, YELLOW_GLAZED_TERRACOTTA,
+        LIME_GLAZED_TERRACOTTA, GREEN_GLAZED_TERRACOTTA, CYAN_GLAZED_TERRACOTTA, LIGHT_BLUE_GLAZED_TERRACOTTA,
+        BLUE_GLAZED_TERRACOTTA, MAGENTA_GLAZED_TERRACOTTA, PINK_GLAZED_TERRACOTTA, PURPLE_GLAZED_TERRACOTTA
 	};
 
 	public MixingBowlBlock() {
@@ -125,38 +126,35 @@ public class MixingBowlBlock extends Block implements EntityBlock, IStyleable {
 
 	public InteractionResult useItemOn(ItemStack stack, BlockState pState, Level pLevel, BlockPos pPos,
 									   Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-		if (pLevel.isClientSide) {
-			return InteractionResult.SUCCESS;
-		} else if (stack.is(ExtraDelightTags.SPOONS)) {
-			BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
-			if (tileEntity instanceof MixingBowlBlockEntity mbe) {
-				mbe.mix(pPlayer);
-			}
-			return InteractionResult.SUCCESS;
-		} else {
-			BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
-			if (tileEntity instanceof MixingBowlBlockEntity mbe) {
-				MenuProvider containerProvider = new MenuProvider() {
-					@Override
-					public Component getDisplayName() {
-						return Component.translatable("screen.mixing_bowl.name");
-					}
 
-					@Override
-					public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory,
-							Player playerEntity) {
-						return new MixingBowlMenu(windowId, playerInventory, mbe);
-					}
-				};
-				//pPlayer.openMenu(containerProvider);
-				NetworkHooks.openScreen((ServerPlayer) pPlayer, containerProvider, pPos);
+        BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
+        if (tileEntity instanceof MixingBowlBlockEntity mbe) {
+            if (stack.is(Tags.Items.EGGS)) {
+                return mbe.handleEgg(pPlayer, stack);
+            } else {
+                InteractionResult result = mbe.mix(pPlayer, stack);
+                if (result == InteractionResult.SUCCESS) {
+                    return InteractionResult.SUCCESS;
+                } else {
+                    MenuProvider containerProvider = new MenuProvider() {
+                        @Override
+                        public Component getDisplayName() {
+                            return Component.translatable("screen.mixing_bowl.name");
+                        }
 
-			}
-			return InteractionResult.CONSUME;
+                        @Override
+                        public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory,
+                                                                Player playerEntity) {
+                            return new MixingBowlMenu(windowId, playerInventory, mbe);
+                        }
+                    };
+                    NetworkHooks.openScreen((ServerPlayer) pPlayer, containerProvider,pPos);
+                }
+            }
+        }
+        return InteractionResult.CONSUME;
 
-		}
-
-	}
+    }
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
@@ -242,7 +240,7 @@ public class MixingBowlBlock extends Block implements EntityBlock, IStyleable {
 			if (tileEntity instanceof MixingBowlBlockEntity te) {
 				IItemHandler items = te.getItemHandler();
 				for (int i = 0; i < te.getItemHandler().getSlots(); i++) {
-					if (i != MixingBowlBlockEntity.GHOST_SLOT)
+					if (i != MixingBowlBlockEntity.GHOST_SLOT && i != MixingBowlBlockEntity.GHOST_UTENSIL_SLOT)
 						level.addFreshEntity(
 								new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), items.getStackInSlot(i)));
 				}
