@@ -1668,6 +1668,18 @@ public class EDAdvancementGenerator implements ForgeAdvancementProvider.Advancem
 						InventoryChangeTrigger.TriggerInstance.hasItems(
 								ItemPredicate.Builder.item().of(AestheticBlocks.COUNTER_CABINET_ITEMS.get(0).get()).build()))
 				.save(consumer, ExtraDelight.MOD_ID + ":counter");
+
+
+        Advancement juicer = Advancement.Builder.advancement()
+                .display(AestheticBlocks.COUNTER_CABINET_ITEMS.get(0).get(),
+                        Component.translatable(ExtraDelight.MOD_ID + ".advancement.juicer.name"),
+                        Component.translatable(ExtraDelight.MOD_ID + ".advancement.juicer.desc"), null,
+                        FrameType.TASK, true, true, false)
+                .parent(start)
+                .addCriterion("juicer",
+                        InventoryChangeTrigger.TriggerInstance
+                                .hasItems(ItemPredicate.Builder.item().of(ExtraDelightItems.JUICER.get()).build()))
+                .save(consumer, ExtraDelight.MOD_ID + ":juicer");
 	}
 
 }
