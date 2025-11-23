@@ -20,7 +20,7 @@ license="CC BY-NC-SA 4.0 Deed"
 # The modid of the mod
 modId="extradelight" #mandatory
 # The version number of the mod
-version="2.5.10" #mandatory
+version="2.6.1" #mandatory
 # A display name for the mod
 displayName="Extra Delight" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://docs.minecraftforge.net/en/latest/misc/updatechecker/
