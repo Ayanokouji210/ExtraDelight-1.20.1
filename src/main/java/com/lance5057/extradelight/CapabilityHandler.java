@@ -12,6 +12,8 @@ import com.lance5057.extradelight.blocks.keg.KegBlockEntity;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetBlockEntity;
 import com.lance5057.extradelight.capabilities.Chill;
 import com.lance5057.extradelight.capabilities.DynamicItem;
+import com.lance5057.extradelight.capabilities.FoodComponent;
+import com.lance5057.extradelight.capabilities.ItemHandler;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlEntity;
 import com.lance5057.extradelight.displays.food.FoodDisplayEntity;
 import com.lance5057.extradelight.displays.knife.KnifeBlockEntity;
@@ -21,6 +23,7 @@ import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.workstations.chiller.ChillerBlockEntity;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlockEntity;
 import com.lance5057.extradelight.workstations.evaporator.EvaporatorBlockEntity;
+import com.lance5057.extradelight.workstations.juicer.JuicerBlockEntity;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotBlockEntity;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlockEntity;
 import com.lance5057.extradelight.workstations.mortar.MortarBlockEntity;
@@ -67,8 +70,8 @@ public class CapabilityHandler {
         ItemStack stack = event.getObject();
         Item item = stack.getItem();
         //chill
-        if (chillMap.containsKey(item)) {
-            ExtraDelightComponents.IChillComponent chillComponent = new Chill(chillMap.get(item));
+        if (chillMap.containsKey(item.getDefaultInstance().getItemHolder())) {
+            ExtraDelightComponents.IChillComponent chillComponent = new Chill(chillMap.get(item.getDefaultInstance().getItemHolder()));
             ICapabilityProvider chillProvider = new ICapabilityProvider() {
                 @Override
                 public @Nonnull <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable Direction direction) {
@@ -83,20 +86,11 @@ public class CapabilityHandler {
 
         //dynamicFood
         if(item.equals(ExtraDelightItems.DYNAMIC_TOAST.get())){
-            ExtraDelightComponents.IDynamicFood dynamicFood = new DynamicItem(new DynamicItemComponent());
-            ICapabilityProvider dynamicFoodProvider = new ICapabilityProvider() {
-
-                @Override
-                public @Nonnull <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable Direction direction) {
-                    if(capability == ExtraDelightComponents.DYNAMIC_FOOD){
-                        return LazyOptional.of(() -> dynamicFood).cast();
-                    }
-                    return LazyOptional.empty();
-                }
-            };
+            ICapabilityProvider dynamicFoodProvider = new DynamicItem(new ArrayList<>());
             event.addCapability(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "dynamic_food"), dynamicFoodProvider);
         }
 
+        //chocolateBoxItems
         if(chocolateBoxItems.contains(item)){
             event.addCapability(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "chocolate_box"),
                     new ICapabilityProvider() {
@@ -110,6 +104,26 @@ public class CapabilityHandler {
                                     }
                                 }).cast();
                             }
+                            return LazyOptional.empty();
+                        }
+                    });
+        }
+
+        if(item.equals(ExtraDelightItems.DYNAMIC_JAM.get())){
+            event.addCapability(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,"dynamic_jar"),
+                    new ICapabilityProvider() {
+                        @Override
+                        public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @org.jetbrains.annotations.Nullable Direction side) {
+                            if(cap == ExtraDelightComponents.ITEMSTACK_HANDLER){
+                                return LazyOptional.of(() -> new ItemHandler()).cast();
+                            }
+                            if(cap == ExtraDelightComponents.DYNAMIC_FOOD){
+                                return LazyOptional.of(() -> new DynamicItemComponent(new ArrayList<String>())).cast();
+                            }
+                            if(cap == ExtraDelightComponents.IFOOD){
+                                return LazyOptional.of(() -> new FoodComponent(1,0.5f, new ArrayList<>())).cast();
+                            }
+
                             return LazyOptional.empty();
                         }
                     });
@@ -192,8 +206,10 @@ public class CapabilityHandler {
                         }
                     });
         }
+        if(be instanceof JuicerBlockEntity cbe){addItemFluidHandler(event,"juicer",cbe::getItemHandler,cbe::getFluidTank);}
 //        if(be instanceof JuicerBlockEntity cbe){addItemFluidHandler(event,"keg",cbe::getItemHandler,cbe::getFluidTank);}
-        }
+
+    }
 
     private static void addItemHandler(
             AttachCapabilitiesEvent<BlockEntity> event,String path,
