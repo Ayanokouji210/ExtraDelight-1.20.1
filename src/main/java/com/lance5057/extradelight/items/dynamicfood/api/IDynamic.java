@@ -4,7 +4,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.Collection;
+import java.util.List;
 
 public interface IDynamic {
-	Collection<ResourceLocation> getPieces(ItemStack itemStack);
+	List<ResourceLocation> getPieces(ItemStack itemStack);
 }

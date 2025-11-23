@@ -14,6 +14,7 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.items.dynamicfood.DynamicJam;
 import com.lance5057.extradelight.items.dynamicfood.api.IDynamic;
 
 import com.lance5057.extradelight.util.EDModelManager;
@@ -42,10 +43,19 @@ public class DynamicFoodItemOverrides extends ItemOverrides {
 			Collection<ResourceLocation> resources = customizable.getPieces(pStack);
 			List<BakedModel> pieces = new ArrayList<BakedModel>();
 
-			for (ResourceLocation rc : resources) {
-				//pieces.add(Minecraft.getInstance().getModelManager().getModel(new ModelResourceLocation(rc,"standalone")));
-				pieces.add(EDModelManager.getBakedModel(rc).orElse(Minecraft.getInstance().getModelManager().getMissingModel()));
-			}
+//			for (ResourceLocation rc : resources) {
+//				//pieces.add(Minecraft.getInstance().getModelManager().getModel(new ModelResourceLocation(rc,"standalone")));
+//				pieces.add(EDModelManager.getBakedModel(rc).orElse(Minecraft.getInstance().getModelManager().getMissingModel()));
+//			}
+
+            for (ResourceLocation rc : resources) {
+                BakedModel bm = Minecraft.getInstance().getModelManager()
+                        .getModel(rc);
+                if (bm == Minecraft.getInstance().getModelManager().getMissingModel())
+                    bm = Minecraft.getInstance().getModelManager()
+                            .getModel(new ModelResourceLocation(DynamicJam.missing_model,"standalone"));
+                pieces.add(bm);
+            }
 
 			try {
 				return cache.get(pieces.size(), () -> {
