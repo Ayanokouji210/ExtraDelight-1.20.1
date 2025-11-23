@@ -192,7 +192,7 @@ public class TapBlock extends Block implements EntityBlock {
 				return InteractionResult.SUCCESS;
 			}
 		}
-		return InteractionResult.PASS;
+		return InteractionResult.CONSUME;
 
 	}
 
