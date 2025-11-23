@@ -2,15 +2,18 @@ package com.lance5057.extradelight;
 
 import com.lance5057.butchercraft.Butchercraft;
 import com.mojang.blaze3d.shaders.FogShape;
+import com.simibubi.create.foundation.item.TooltipHelper;
 import com.simibubi.create.foundation.item.TooltipModifier;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.item.Item;
 //import net.minecraft.world.item.Item.TooltipContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.ComputeFovModifierEvent;
 import net.minecraftforge.client.event.ViewportEvent;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
@@ -54,60 +57,22 @@ public class ExtraDelightNeoForgeClientEvents {
 		}
 	}
 
-//	@SubscribeEvent
-//	public static void registerComponentToolTips(ItemTooltipEvent event) {
-//		ItemStack stack = event.getItemStack();
-//		var ctx = event.getFlags();
-//		List<Component> tooltip = event.getToolTip();
-//		TooltipFlag flag = event.getFlags();
-//
-//		TooltipModifier tooltipProvider = stack.get(ExtraDelightComponents.CHILL.get());
-//
-//		if (tooltipProvider != null) {
-//
-//			tooltipProvider.addToTooltip(ctx, i -> {
-//				tooltip.add(i);
-//			}, flag);
-//		}
-//
-//		TooltipProvider tooltipProvider1 = stack.get(ExtraDelightComponents.DYNAMIC_FOOD.get());
-//
-//		if (tooltipProvider1 != null) {
-//			tooltipProvider1.addToTooltip(ctx, i -> {
-//				tooltip.add(i);
-//			}, flag);
-//		}
-//	}
+    @SubscribeEvent
+    public static void registerComponentToolTips(ItemTooltipEvent event) {
+        ItemStack stack = event.getItemStack();
+        TooltipFlag flags = event.getFlags();
+        List<Component> toolTip = event.getToolTip();
 
-
-
-//	@SubscribeEvent
-//	public static void registerComponentToolTips(ItemTooltipEvent event) {
-//		ItemStack stack = event.getItemStack();
-//		// 在 1.20.1 Forge 中，event.getFlags() 返回的是 TooltipFlag，而不是上下文（ctx）
-//		// Flag 通常用于判断是高级模式还是普通模式（如在创意模式悬停查看）
-//		var tooltipFlag = event.getFlags();
-//		List<Component> tooltip = event.getToolTip();
-
-		// 关键修改 1: 组件获取方式
-		// 在 1.20.1 Forge 中，通常使用 Capability 系统而不是直接的组件获取
-		// 假设 ExtraDelightComponents.CHILL 是一个 Capability
-//		LazyOptional<ExtraDelightComponents.IChillComponent> chillCap = stack.getCapability(ExtraDelightComponents.CHILL);
-//		// 使用 ifPresent 来处理可能存在的 Capability
-//		chillCap.ifPresent(provider -> {
-//			// 假设你的 TooltipModifier 有一个方法可以添加提示
-//			// 你可能需要调整 addToTooltip 方法的参数来适应 Forge 的 TooltipFlag
-//			provider.addToTooltip(tooltip, tooltipFlag);
-//		});
-
-//		// 同样处理 DYNAMIC_FOOD Capability
-//		LazyOptional<DynamicFoodCapability> foodCap = stack.getCapability(ExtraDelightComponents.DYNAMIC_FOOD);
-//		foodCap.ifPresent(provider -> {
-//			provider.addToTooltip(tooltip, tooltipFlag);
-//		});
-
-		// 注意: 上面的 LazyOptional.ifPresent 是异步的，但工具提示事件是即时处理的，所以通常没问题。
-//	}
+        if(stack.getCapability(ExtraDelightComponents.CHILL).isPresent() &&
+        stack.getCapability(ExtraDelightComponents.CHILL).resolve().isPresent()){
+            ExtraDelightComponents.IChillComponent chillComponent =
+                    stack.getCapability(ExtraDelightComponents.CHILL).resolve().get();
+            MutableComponent component = Component.literal("chill time:" + chillComponent.getChill());
+            if(toolTip!=null) {
+                toolTip.add(component);
+            }
+        }
+    }
 
 	@SubscribeEvent
 	public static void addToolTip(ItemTooltipEvent event) {
@@ -137,4 +102,13 @@ public class ExtraDelightNeoForgeClientEvents {
 
 	public static Set<RegistryObject<Item>> butchercraft = new HashSet<RegistryObject<Item>>();
 
+    @SubscribeEvent
+    public static void puckerEffect(ComputeFovModifierEvent event) {
+        if (event.getPlayer().hasEffect(ExtraDelightMobEffects.SOUR_PUCKER.get())) {
+            int i = event.getPlayer().getEffect(ExtraDelightMobEffects.SOUR_PUCKER.get()).getAmplifier() + 1;
+            float s = i * 0.25f;
+
+            event.setNewFovModifier(event.getFovModifier() - s);
+        }
+    }
 }

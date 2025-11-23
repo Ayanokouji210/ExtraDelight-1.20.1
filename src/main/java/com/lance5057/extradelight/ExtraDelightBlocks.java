@@ -15,10 +15,13 @@ import com.lance5057.extradelight.blocks.keg.KegBlock;
 import com.lance5057.extradelight.blocks.lid.LidBlock;
 import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlBlock;
+import com.lance5057.extradelight.displays.fruitbowl.FruitBowlBlock;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.workstations.chiller.ChillerBlock;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingBlock;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackBlock;
 import com.lance5057.extradelight.workstations.evaporator.EvaporatorBlock;
+import com.lance5057.extradelight.workstations.juicer.JuicerBlock;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotBlock;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlBlock;
 import com.lance5057.extradelight.workstations.mortar.MortarBlock;
@@ -117,8 +120,13 @@ public class ExtraDelightBlocks {
 
 		fire.setFlammable(ExtraDelightBlocks.APPLE_LEAVES.get(), 30, 60);
 
+        fire.setFlammable(SummerCitrus.LEMON_LEAVES.get(), 30, 60);
+        fire.setFlammable(SummerCitrus.LIME_LEAVES.get(), 30, 60);
+        fire.setFlammable(SummerCitrus.ORANGE_LEAVES.get(), 30, 60);
+        fire.setFlammable(SummerCitrus.GRAPEFRUIT_LEAVES.get(), 30, 60);
 
-	}
+
+    }
 
 	public static final RegistryObject<OvenBlock> OVEN = BLOCKS.register("oven", OvenBlock::new);
 	public static final RegistryObject<DryingRackBlock> DRYING_RACK = BLOCKS.register("drying_rack",
@@ -138,7 +146,14 @@ public class ExtraDelightBlocks {
 	public static final RegistryObject<Block> EVAPORATOR = BLOCKS.register("evaporator", EvaporatorBlock::new);
 	public static final RegistryObject<LidBlock> LID = BLOCKS.register("lid", LidBlock::new);
 
-	public static final RegistryObject<Block> FLOUR = BLOCKS.register("flour", () -> new CarpetBlock(
+    public static final RegistryObject<JuicerBlock> JUICER = BLOCKS.register("juicer",
+            () -> new JuicerBlock(Properties.copy(Blocks.BARREL).noOcclusion()));
+
+    public static final RegistryObject<Block> FRUIT_BOWL = BLOCKS.register("fruit_bowl",
+            () -> new FruitBowlBlock(Properties.copy(Blocks.ACACIA_PLANKS)));
+
+
+    public static final RegistryObject<Block> FLOUR = BLOCKS.register("flour", () -> new CarpetBlock(
 			Properties.copy(Blocks.MOSS_BLOCK).strength(0.1F, 0.0F).sound(SoundType.WOOL).noOcclusion()));
 //	public static final RegistryObject<Block> COOKING_OIL = BLOCKS.register("cooking_oil",
 //			() -> new CarpetBlock(Properties.copy(Blocks.YELLOW_CARPET).strength(0.1F, 0.0F)
@@ -180,7 +195,7 @@ public class ExtraDelightBlocks {
 
 	public static final RegistryObject<RecipeFeastBlock> HASH_FEAST = BLOCKS.register("hash_block",
 			() -> new RecipeFeastBlock(Properties.copy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
-					true, bowl));
+					true, pan));
 	public static final RegistryObject<RecipeFeastBlock> POT_ROAST_FEAST = BLOCKS.register("potroast_block",
 			() -> new RecipeFeastBlock(Properties.copy(Blocks.WHITE_WOOL).mapColor(MapColor.COLOR_BROWN),
 					true, plate, Block.box(5.0D, 2.0D, 2.0D, 11.0D, 8.0D, 14.0D),
@@ -584,30 +599,30 @@ public class ExtraDelightBlocks {
 			() -> new TapBlock(Properties.copy(Blocks.STONE)));
 
 	public static final RegistryObject<HorizontalPanBlock> SHEET_BLOCK = BLOCKS.register("sheet",
-			() -> new HorizontalPanBlock(Properties.copy(Blocks.IRON_BLOCK),
+			() -> new HorizontalPanBlock(Properties.copy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(1.0D, 0.0D, 0.0D, 15.0D, 1.0D, 16.0D), Block.box(0.0D, 0.0D, 1.0D, 16.0D, 1.0D, 15.0D)));
 	public static final RegistryObject<HorizontalPanBlock> TRAY_BLOCK = BLOCKS.register("tray",
-			() -> new HorizontalPanBlock(Properties.copy(Blocks.IRON_BLOCK),
+			() -> new HorizontalPanBlock(Properties.copy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(1.0D, 0.0D, 0.0D, 15.0D, 2.0D, 16.0D), Block.box(0.0D, 0.0D, 1.0D, 16.0D, 2.0D, 15.0D)));
 	public static final RegistryObject<HorizontalPanBlock> LOAF_PAN_BLOCK = BLOCKS.register("loaf_pan",
-			() -> new HorizontalPanBlock(Properties.copy(Blocks.IRON_BLOCK),
+			() -> new HorizontalPanBlock(Properties.copy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(4.0D, 0.0D, 2.0D, 12.0D, 4.0D, 14.0D), Block.box(2.0D, 0.0D, 4.0D, 14.0D, 4.0D, 12.0D)));
 	public static final RegistryObject<HorizontalPanBlock> PIE_DISH_BLOCK = BLOCKS.register("pie_dish",
-			() -> new HorizontalPanBlock(Properties.copy(Blocks.IRON_BLOCK),
+			() -> new HorizontalPanBlock(Properties.copy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(2.0D, 0.0D, 2.0D, 14.0D, 4.0D, 14.0D), Block.box(2.0D, 0.0D, 2.0D, 14.0D, 4.0D, 14.0D)));
 	public static final RegistryObject<HorizontalPanBlock> SQUARE_PAN_BLOCK = BLOCKS.register("square_pan",
-			() -> new HorizontalPanBlock(Properties.copy(Blocks.IRON_BLOCK),
+			() -> new HorizontalPanBlock(Properties.copy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(1.0D, 0.0D, 1.0D, 15.0D, 4.0D, 15.0D), Block.box(1.0D, 0.0D, 1.0D, 15.0D, 4.0D, 15.0D)));
 	public static final RegistryObject<BakingStoneBlock> BAKING_STONE_BLOCK = BLOCKS.register("baking_stone",
-			() -> new BakingStoneBlock(Properties.copy(Blocks.IRON_BLOCK)));
+			() -> new BakingStoneBlock(Properties.copy(Blocks.DIRT).sound(SoundType.STONE)));
 	public static final RegistryObject<HorizontalPanBlock> MUFFIN_TIN_BLOCK = BLOCKS.register("muffin_tray",
-			() -> new HorizontalPanBlock(Properties.copy(Blocks.STONE),
+			() -> new HorizontalPanBlock(Properties.copy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(3.5D, 0.0D, 1.5D, 12.5D, 2.0D, 14.5D), Block.box(1.5D, 0.0D, 3.5D, 14.5D, 2.0D, 12.5D)));
 	public static final RegistryObject<HorizontalPanBlock> SERVING_POT_BLOCK = BLOCKS.register("serving_pot",
-			() -> new HorizontalPanBlock(Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.LANTERN),
+			() -> new HorizontalPanBlock(Properties.copy(Blocks.DIRT).sound(SoundType.LANTERN),
 					Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D), Block.box(3.0D, 0.0D, 3.0D, 13.0D, 6.0D, 13.0D)));
 	public static final RegistryObject<HorizontalPanBlock> BAR_MOLD = BLOCKS.register("bar_mold",
-			() -> new HorizontalPanBlock(Properties.copy(Blocks.IRON_BLOCK),
+			() -> new HorizontalPanBlock(Properties.copy(Blocks.DIRT).sound(SoundType.METAL),
 					Block.box(1.0D, 0.0D, 0.0D, 15.0D, 2.0D, 16.0D), Block.box(0.0D, 0.0D, 1.0D, 16.0D, 2.0D, 15.0D)));
 
 	public static final RegistryObject<BushStageFour> COFFEE_BUSH = ExtraDelightBlocks.BLOCKS.register("coffee_bush",
@@ -792,9 +807,13 @@ public class ExtraDelightBlocks {
 	public static final RegistryObject<WallSignBlock> FRUIT_WALL_SIGN = BLOCKS.register("fruit_wall_sign",
 			() -> new WallSignBlock(Properties.copy(Blocks.ACACIA_PLANKS), WoodType.OAK));
 
+    public static final RegistryObject<Block> HAZELNUT_PETAL_LITTER = ExtraDelightBlocks.BLOCKS.register(
+            "hazelnut_petal_litter", () -> new CarpetBlock(Block.Properties.copy(Blocks.ACACIA_LEAVES)));
+
 	public static final RegistryObject<FruitLeafBlock> HAZELNUT_LEAVES = BLOCKS.register("hazelnut_leaves",
 			() -> new FruitLeafBlock(Properties.copy(Blocks.ACACIA_LEAVES),
-					ExtraDelightItems.HAZELNUTS_IN_SHELL));
+					ExtraDelightItems.HAZELNUTS_IN_SHELL, ExtraDelightBlocks.HAZELNUT_PETAL_LITTER,
+                    ExtraDelightParticles.HAZELNUT_PETALS));
 	public static final RegistryObject<SaplingBlock> HAZELNUT_SAPLING = BLOCKS.register("hazelnut_sapling",
 			() -> new SaplingBlock(ExtraDelightTreeGrowers.HAZELNUT,
 					Properties.copy(Blocks.DARK_OAK_SAPLING)));
@@ -1009,8 +1028,12 @@ public class ExtraDelightBlocks {
 			() -> new Block(
 					Properties.copy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.TERRACOTTA_YELLOW)));
 
-	public static final RegistryObject<VanillaFruitLeafBlock> APPLE_LEAVES = BLOCKS.register("apple_leaves",
-			() -> new VanillaFruitLeafBlock(Properties.copy(Blocks.ACACIA_LEAVES), Items.APPLE));
+    public static final RegistryObject<Block> APPLE_PETAL_LITTER = ExtraDelightBlocks.BLOCKS
+            .register("apple_petal_litter", () -> new CarpetBlock(Block.Properties.copy(Blocks.ACACIA_LEAVES)));
+
+    public static final RegistryObject<VanillaFruitLeafBlock> APPLE_LEAVES = BLOCKS.register("apple_leaves",
+			() -> new VanillaFruitLeafBlock(Properties.copy(Blocks.ACACIA_LEAVES), Items.APPLE,
+                    APPLE_PETAL_LITTER));
 	public static final RegistryObject<SaplingBlock> APPLE_SAPLING = BLOCKS.register("apple_sapling",
 			() -> new SaplingBlock(ExtraDelightTreeGrowers.APPLE,
 					Properties.copy(Blocks.DARK_OAK_SAPLING)));
@@ -1136,10 +1159,14 @@ public class ExtraDelightBlocks {
 	public static final RegistryObject<Block> GARLIC_CRATE = BLOCKS.register("garlic_crate", () -> new Block(
 			Properties.copy(ModBlocks.BEETROOT_CRATE.get()).mapColor(MapColor.TERRACOTTA_WHITE)));
 
-	public static final RegistryObject<Block> POTTED_CINNAMON_SAPLING = BLOCKS.register("potted_cinnamon_sapling",
-			() -> new Block(Properties.copy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
-	public static final RegistryObject<Block> POTTED_HAZELNUT_SAPLING = BLOCKS.register("potted_hazelnut_sapling",
-			() -> new Block(Properties.copy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
-	public static final RegistryObject<Block> POTTED_APPLE_SAPLING = BLOCKS.register("potted_apple_sapling",
-			() -> new Block(Properties.copy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
+    public static final RegistryObject<Block> POTTED_CINNAMON_SAPLING = BLOCKS.register("potted_cinnamon_sapling",
+            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, CINNAMON_SAPLING,
+                    Block.Properties.copy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
+    public static final RegistryObject<Block> POTTED_HAZELNUT_SAPLING = BLOCKS.register("potted_hazelnut_sapling",
+            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, HAZELNUT_SAPLING,
+                    Block.Properties.copy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
+    public static final RegistryObject<Block> POTTED_APPLE_SAPLING = BLOCKS.register("potted_apple_sapling",
+            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, APPLE_SAPLING,
+                    Block.Properties.copy(Blocks.POTTED_ACACIA_SAPLING).mapColor(MapColor.PLANT)));
+
 }

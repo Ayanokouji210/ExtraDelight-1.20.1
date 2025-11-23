@@ -19,6 +19,7 @@ import static com.lance5057.extradelight.ExtraDelightConfig.*;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = ExtraDelight.MOD_ID)
 public class ExtraDelightEvents {
+
 //    @SubscribeEvent
 //    public static void onConfigReloading(ModConfigEvent.Reloading event) {
 //        if (event.getConfig().getSpec() == ExtraDelightConfig.spec) {

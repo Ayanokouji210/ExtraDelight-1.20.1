@@ -9,12 +9,16 @@ import com.lance5057.extradelight.blocks.funnel.FunnelRenderer;
 import com.lance5057.extradelight.blocks.jar.JarRenderer;
 import com.lance5057.extradelight.blocks.jardisplay.JarDisplayRenderer;
 import com.lance5057.extradelight.blocks.keg.KegRenderer;
+import com.lance5057.extradelight.blocks.picnicbasket.PicnicBasketMenu;
+import com.lance5057.extradelight.blocks.picnicbasket.PicnicBasketRenderer;
+import com.lance5057.extradelight.blocks.picnicbasket.PicnicBasketScreen;
 import com.lance5057.extradelight.blocks.sink.SinkCabinetScreen;
 import com.lance5057.extradelight.blocks.sink.SinkRenderer;
 import com.lance5057.extradelight.client.BlockStateItemGeometryLoader;
 import com.lance5057.extradelight.displays.candybowl.CandyBowlRenderer;
 import com.lance5057.extradelight.displays.food.FoodDisplayRenderer;
 import com.lance5057.extradelight.displays.food.FoodDisplayScreen;
+import com.lance5057.extradelight.displays.fruitbowl.FruitBowlRenderer;
 import com.lance5057.extradelight.displays.knife.KnifeBlockRenderer;
 import com.lance5057.extradelight.displays.knife.KnifeBlockScreen;
 import com.lance5057.extradelight.displays.spice.SpiceRackRenderer;
@@ -25,10 +29,13 @@ import com.lance5057.extradelight.gui.StyleableScreen;
 import com.lance5057.extradelight.items.dynamicfood.DynamicToast;
 import com.lance5057.extradelight.items.dynamicfood.client.DynamicFoodGeometryLoader;
 import com.lance5057.extradelight.modules.Fermentation;
+import com.lance5057.extradelight.modules.SummerCitrus;
+import com.lance5057.extradelight.particles.PetalParticle;
 import com.lance5057.extradelight.workstations.chiller.ChillerScreen;
 import com.lance5057.extradelight.workstations.doughshaping.DoughShapingScreen;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackRenderer;
 import com.lance5057.extradelight.workstations.evaporator.EvaporatorRenderer;
+import com.lance5057.extradelight.workstations.juicer.JuicerRenderer;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotScreen;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlRenderer;
 import com.lance5057.extradelight.workstations.mixingbowl.MixingBowlScreen;
@@ -45,6 +52,7 @@ import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.world.item.BlockItem;
@@ -56,7 +64,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ModelEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.client.event.RegisterRecipeBookCategoriesEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -78,17 +88,17 @@ import java.util.Map;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = ExtraDelight.MOD_ID, value = Dist.CLIENT)
 public class ExtraDelightClientEvents {
-	static Map<Item,Integer> chillMap =new HashMap<>();
+	static Map<Holder<Item>,Integer> chillMap =new HashMap<>();
 
-	static {
-		//chill
-		chillMap.put(Items.ICE,200);
-		chillMap.put(Items.PACKED_ICE,400);
-		chillMap.put(Items.BLUE_ICE,800);
-		chillMap.put(Items.SNOWBALL,100);
-		chillMap.put(Items.SNOW_BLOCK,400);
-
-	}
+    public static void setupChillMap() {
+            //chill
+            chillMap.put(Items.ICE.getDefaultInstance().getItemHolder(), 100);
+            chillMap.put(Items.PACKED_ICE.getDefaultInstance().getItemHolder(), 1000);
+            chillMap.put(Items.BLUE_ICE.getDefaultInstance().getItemHolder(), 10000);
+            chillMap.put(Items.SNOWBALL.getDefaultInstance().getItemHolder(), 50);
+            chillMap.put(Items.SNOW_BLOCK.getDefaultInstance().getItemHolder(), 250);
+            chillMap.put(SummerCitrus.ICE_CUBES.getHolder().orElse(Items.BARREL.getDefaultInstance().getItemHolder()), 25);
+    }
 
 
 	@SubscribeEvent
@@ -107,6 +117,8 @@ public class ExtraDelightClientEvents {
 			MenuScreens.register(ExtraDelightContainers.MELTING_POT_MENU.get(), MeltingPotScreen::new);
 			MenuScreens.register(ExtraDelightContainers.CHILLER_MENU.get(), ChillerScreen::new);
 			MenuScreens.register(ExtraDelightContainers.VAT_MENU.get(), VatScreen::new);
+            MenuScreens.register(ExtraDelightContainers.PICNIC_BASKET_MENU.get(), PicnicBasketScreen::new);
+            setupChillMap();
 				}
 		);
 
@@ -131,7 +143,54 @@ public class ExtraDelightClientEvents {
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.JAR.get(), JarRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.EVAPORATOR.get(), EvaporatorRenderer::new);
 		BlockEntityRenderers.register(ExtraDelightBlockEntities.JAR_DISPLAY.get(), JarDisplayRenderer::new);
-	}
+        BlockEntityRenderers.register(ExtraDelightBlockEntities.JUICER.get(), JuicerRenderer::new);
+        BlockEntityRenderers.register(ExtraDelightBlockEntities.PICNIC_BASKET.get(), PicnicBasketRenderer::new);
+        BlockEntityRenderers.register(ExtraDelightBlockEntities.FRUIT_BOWL.get(), FruitBowlRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
+        event.register(
+                (state, getter, pos, tintIndex) -> getter != null && pos != null
+                        ? BiomeColors.getAverageFoliageColor(getter, pos)
+                        : FoliageColor.getDefaultColor(),
+                ExtraDelightBlocks.APPLE_LEAVES.get(), ExtraDelightBlocks.CINNAMON_LEAVES.get(),
+                ExtraDelightBlocks.HAZELNUT_LEAVES.get(), SummerCitrus.GRAPEFRUIT_LEAVES.get(),
+                SummerCitrus.LEMON_LEAVES.get(), SummerCitrus.LIME_LEAVES.get(), SummerCitrus.ORANGE_LEAVES.get());
+        event.register(
+                (state, getter, pos, tintIndex) -> getter != null && pos != null
+                        ? BiomeColors.getAverageFoliageColor(getter, pos)
+                        : FoliageColor.getDefaultColor(),
+                AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.WREATHS.stream()
+                        .filter(i -> !i.getId().toString().contains("cherry")
+                                && !i.getId().toString().contains("warped") && !i.getId().toString().contains("crimson")
+                                && !i.getId().toString().contains("azalea")
+                                && !i.getId().toString().contains("cinnamon"))
+                        .toList()));
+    }
+
+    @SubscribeEvent
+    public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
+        event.register((state, tintIndex) -> FoliageColor.getDefaultColor(), ExtraDelightItems.APPLE_LEAVES.get(),
+                ExtraDelightItems.HAZELNUT_LEAVES.get(), SummerCitrus.GRAPEFRUIT_LEAVES_ITEM.get(),
+                SummerCitrus.LEMON_LEAVES_ITEM.get(), SummerCitrus.LIME_LEAVES_ITEM.get(),
+                SummerCitrus.ORANGE_LEAVES_ITEM.get());
+
+//		event.register((state, tintIndex) -> FoliageColor.getDefaultColor(),
+//				AestheticBlocks.getRegistryListAsBlocks(AestheticBlocks.WREATHS.stream()
+//						.filter(i -> !i.getId().toString().contains("cherry")
+//								&& !i.getId().toString().contains("warped") && !i.getId().toString().contains("crimson")
+//								&& !i.getId().toString().contains("azalea")
+//								&& !i.getId().toString().contains("cinnamon"))
+//						.toList()));
+    }
+
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public static void registerParticles(RegisterParticleProvidersEvent event) {
+        Minecraft.getInstance().particleEngine.register(ExtraDelightParticles.CITRUS_PETALS.get(), PetalParticle.Factory::new);
+        Minecraft.getInstance().particleEngine.register(ExtraDelightParticles.HAZELNUT_PETALS.get(), PetalParticle.Factory::new);
+
+    }
 
 	@SubscribeEvent
 	public static void RegisterExtraModels(ModelEvent.RegisterAdditional event) {
@@ -145,7 +204,7 @@ public class ExtraDelightClientEvents {
 
 			s = s.substring(s.indexOf('/') + 1, s.indexOf('.'));
 
-			ExtraDelight.logger.debug(s);
+			ExtraDelight.logger.debug("Loaded Extra Model: {}",s);
 
 			//ModelResourceLocation rl2 = new ModelResourceLocation(new ResourceLocation(rl.getNamespace(), s),"");
 
@@ -153,6 +212,7 @@ public class ExtraDelightClientEvents {
 
 			event.register(rl2);
 		});
+
 	}
 
 

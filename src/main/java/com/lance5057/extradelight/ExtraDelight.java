@@ -4,7 +4,9 @@ import java.util.Set;
 
 import com.lance5057.extradelight.capabilities.DynamicItem;
 import com.lance5057.extradelight.items.dynamicfood.client.DynamicFoodItemOverrides;
+import com.lance5057.extradelight.modules.SummerCitrus;
 import com.lance5057.extradelight.recipe.DynamicToastRecipe;
+//import com.lance5057.extradelight.util.DataComponentIngredient;
 import com.lance5057.extradelight.util.RenderUtil;
 import com.mojang.blaze3d.vertex.*;
 import com.mojang.logging.LogUtils;
@@ -19,6 +21,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.client.event.RenderLevelStageEvent;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -54,7 +57,7 @@ import vectorwing.farmersdelight.common.registry.ModItems;
 @Mod(ExtraDelight.MOD_ID)
 public class ExtraDelight {
 	public final static String MOD_ID = "extradelight";
-	public static final String VERSION = "2.5.10";
+	public static final String VERSION = "2.6.1";
 
 	public static ResourceLocation modLoc(String s) {
 		return ResourceLocation.fromNamespaceAndPath(MOD_ID, s);
@@ -65,6 +68,7 @@ public class ExtraDelight {
 	public ExtraDelight() {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		ForgeMod.enableMilkFluid();
+        //CraftingHelper.register(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,"capability_ingredient"), DataComponentIngredient.Serializer.INSTANCE);
 		//modContainer.addConfig(ModConfig.Type.COMMON,ExtraDelightConfig.spec);
 		//modContainer.addConfig(new ModConfig(ModConfig.Type.COMMON,ExtraDelightConfig.spec,modContainer));
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON,ExtraDelightConfig.spec,"extradelight-common.toml");
@@ -78,6 +82,7 @@ public class ExtraDelight {
 		NetworkHandler.register();
 
 		Fermentation f = new Fermentation();
+        SummerCitrus s = new SummerCitrus();
 
 		AestheticBlocks.setup();
 		AestheticBlocks.BLOCKS.register(modEventBus);
@@ -92,7 +97,10 @@ public class ExtraDelight {
 		ExtraDelightItems.ITEMS.register(modEventBus);
 		ExtraDelightTabs.TABS.register(modEventBus);
 
-		ExtraDelightBlockEntities.TILES.register(modEventBus);
+        ExtraDelightPaintings.PAINTING_VARIANTS.register(modEventBus);
+        ExtraDelightBanners.BANNER_PATTERNS.register(modEventBus);
+
+        ExtraDelightBlockEntities.TILES.register(modEventBus);
 		ExtraDelightRecipes.RECIPE_TYPES.register(modEventBus);
 		ExtraDelightRecipes.RECIPE_SERIALIZERS.register(modEventBus);
 		ExtraDelightContainers.register(modEventBus);
@@ -106,9 +114,9 @@ public class ExtraDelight {
 		ExtraDelightMobEffects.register(modEventBus);
 
 		modEventBus.addListener(ExtraDelightComponents::registerCapabilities);
-		MinecraftForge.EVENT_BUS.addListener(DynamicItem::onItemCrafted);
 
 
+        ExtraDelightParticles.PARTICLE_TYPES.register(modEventBus);
 	}
 
 //	public ExtraDelight(IEventBus modEventBus, ModContainer modContainer) {

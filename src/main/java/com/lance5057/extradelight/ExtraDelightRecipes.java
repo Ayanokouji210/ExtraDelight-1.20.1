@@ -6,6 +6,7 @@ import com.lance5057.extradelight.workstations.doughshaping.recipes.DoughShaping
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackRecipe;
 import com.lance5057.extradelight.workstations.dryingrack.DryingRackSerializer;
 import com.lance5057.extradelight.workstations.evaporator.recipes.EvaporatorRecipe;
+import com.lance5057.extradelight.workstations.juicer.JuicerRecipe;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotRecipe;
 import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
 import com.lance5057.extradelight.workstations.mortar.recipes.MortarRecipe;
@@ -15,6 +16,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 //import net.neoforged.neoforge.registries.DeferredRegister;
@@ -45,8 +47,8 @@ public class ExtraDelightRecipes {
 			() -> registerRecipeType("chiller"));
 	public static final Supplier<RecipeType<ShapedWithJarRecipe>> SHAPED_JAR = RECIPE_TYPES.register("shaped_jar",
 			() -> registerRecipeType("shaped_jar"));
-//	public static final Supplier<RecipeType<DynamicJamRecipe>> DYNAMIC_JAM = RECIPE_TYPES.register("dynamic_jam",
-//			() -> registerRecipeType("dynamic_jam"));
+	public static final Supplier<RecipeType<DynamicJamRecipe>> DYNAMIC_JAM = RECIPE_TYPES.register("dynamic_jam",
+			() -> registerRecipeType("dynamic_jam"));
 //	public static final Supplier<RecipeType<DynamicSandwichRecipe>> DYNAMIC_SANDWICH = RECIPE_TYPES
 //			.register("dynamic_sandwich", () -> registerRecipeType("dynamic_sandwich"));
 	public static final Supplier<RecipeType<DynamicToastRecipe>> DYNAMIC_TOAST = RECIPE_TYPES.register("dynamic_toast",
@@ -57,6 +59,8 @@ public class ExtraDelightRecipes {
 			() -> registerRecipeType("evaporator"));
 	public static final Supplier<RecipeType<BottleFluidRegistryRecipe>> BOTTLE_FLUID_REGISTRY = RECIPE_TYPES
 			.register("fluid_registry", () -> registerRecipeType("fluid_registry"));
+    public static final Supplier<RecipeType<JuicerRecipe>> JUICER = RECIPE_TYPES.register("juicer",
+            () -> registerRecipeType("juicer"));
 
 	// Dynamic Names
 //	public static final DeferredHolder<RecipeType<?>, RecipeType<Recipe<?>>> DYNAMIC_SMELT = RECIPE_TYPES
@@ -107,8 +111,8 @@ public class ExtraDelightRecipes {
 			ChillerRecipe.Serializer::new);
 	public static final Supplier<RecipeSerializer<?>> SHAPED_JAR_SERIALIZER = RECIPE_SERIALIZERS.register("shaped_jar",
 			ShapedWithJarRecipe.Serializer::new);
-//	public static final Supplier<RecipeSerializer<?>> DYNAMIC_JAM_SERIALIZER = RECIPE_SERIALIZERS
-//			.register("dynamic_jam", DynamicJamRecipe.Serializer::new);
+	public static final Supplier<RecipeSerializer<?>> DYNAMIC_JAM_SERIALIZER = RECIPE_SERIALIZERS
+			.register("dynamic_jam", DynamicJamRecipe.Serializer::new);
 //	public static final Supplier<RecipeSerializer<?>> DYNAMIC_SANDWICH_SERIALIZER = RECIPE_SERIALIZERS
 //			.register("dynamic_sandwich", DynamicSandwichRecipe.Serializer::new);
 	public static final Supplier<RecipeSerializer<?>> DYNAMIC_TOAST_SERIALIZER = RECIPE_SERIALIZERS
@@ -119,4 +123,10 @@ public class ExtraDelightRecipes {
 			EvaporatorRecipe.Serializer::new);
 	public static final Supplier<RecipeSerializer<?>> BOTTLE_FLUID_SERIALIZER = RECIPE_SERIALIZERS
 			.register("bottle_fluid", BottleFluidRegistryRecipe.Serializer::new);
+    public static final Supplier<RecipeSerializer<?>> JUICER_SERIALIZER = RECIPE_SERIALIZERS.register("juicer",
+            JuicerRecipe.Serializer::new);
+
+    public static final Supplier<SimpleCraftingRecipeSerializer<?>> DOUGH =
+            RECIPE_SERIALIZERS.register("flour_dough", () -> new SimpleCraftingRecipeSerializer<>(FlourDoughRecipe::new));
+
 }
