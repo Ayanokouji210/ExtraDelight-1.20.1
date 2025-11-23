@@ -182,6 +182,7 @@ dependencies {
 
     compileOnly fg.deobf( "curse.maven:butchercraft-265715:6058842")
     runtimeOnly fg.deobf( "curse.maven:butchercraft-265715:6058842")
+    runtimeOnly fg.deobf("curse.maven:nbteditor-678133:5984630")
     //implementation fg.deobf("curse.maven:butchercraft-265715:6058842")
 
     // compile against the JEI API but do not include it at runtime
