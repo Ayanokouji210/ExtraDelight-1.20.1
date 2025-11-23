@@ -58,6 +58,19 @@ public class ExtraDelightFeatures {
     public static final RegistryObject<CinnamonTreeFeature> PATCH_APPLE_TREE =
             FEATURES.register("apple_tree", CinnamonTreeFeature::new);
 
+    public static final RegistryObject<CinnamonTreeFeature> PATCH_LEMON_TREE = FEATURES
+            .register("lemon_tree", CinnamonTreeFeature::new);
+
+    public static final RegistryObject<CinnamonTreeFeature> PATCH_LIME_TREE = FEATURES
+            .register("lime_tree", CinnamonTreeFeature::new);
+
+    public static final RegistryObject<CinnamonTreeFeature> PATCH_ORANGE_TREE = FEATURES
+            .register("orange_tree", CinnamonTreeFeature::new);
+
+    public static final RegistryObject<CinnamonTreeFeature> PATCH_GRAPEFRUIT_TREE = FEATURES
+            .register("grapefruit_tree", CinnamonTreeFeature::new);
+
+
     // ---------- 结构 ----------
     public static final RegistryObject<CornMazeFeature> CORN_MAZE_FEATURE =
             FEATURES.register("corn_maze_feature", CornMazeFeature::new);

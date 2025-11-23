@@ -49,4 +49,32 @@ public class ExtraDelightTreeGrowers {
 		}
 	};
 
+    public static final AbstractTreeGrower LEMON = new AbstractTreeGrower() {
+        @Override
+        protected @org.jetbrains.annotations.Nullable ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource pRandom, boolean pHasFlowers) {
+            return ExtraDelightTreeFeatures.LEMON;
+        }
+    };
+
+    public static final AbstractTreeGrower LIME = new AbstractTreeGrower() {
+        @Override
+        protected @org.jetbrains.annotations.Nullable ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource pRandom, boolean pHasFlowers) {
+            return ExtraDelightTreeFeatures.LIME;
+        }
+    };
+
+    public static final AbstractTreeGrower ORANGE = new AbstractTreeGrower() {
+        @Override
+        protected @org.jetbrains.annotations.Nullable ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource pRandom, boolean pHasFlowers) {
+            return ExtraDelightTreeFeatures.ORANGE;
+        }
+    };
+
+    public static final AbstractTreeGrower GRAPEFRUIT = new AbstractTreeGrower() {
+        @Override
+        protected @org.jetbrains.annotations.Nullable ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource pRandom, boolean pHasFlowers) {
+            return ExtraDelightTreeFeatures.GRAPEFRUIT;
+        }
+    };
+
 }
