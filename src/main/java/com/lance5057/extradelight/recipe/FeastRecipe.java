@@ -73,7 +73,7 @@ public class FeastRecipe implements Recipe<SimpleRecipeWrapper> {
 		@Override
 		public FeastRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
 			String s = GsonHelper.getAsString(pJson, "group", "");
-			Ingredient ingredient = Ingredient.fromJson(GsonHelper.getAsJsonObject(pJson, "container"));
+			Ingredient ingredient = Ingredient.fromJson(pJson.get("container"),true);
 			ItemStack result = CraftingHelper.getItemStack(GsonHelper.getAsJsonObject(pJson, "result"), false);
 			//ItemStack result = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "result"));
 			ItemStack feast = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "out"));
