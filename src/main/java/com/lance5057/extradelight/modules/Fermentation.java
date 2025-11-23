@@ -17,6 +17,7 @@ import com.lance5057.extradelight.data.MiscLootTables;
 import com.lance5057.extradelight.data.Recipes;
 import com.lance5057.extradelight.data.recipebuilders.*;
 import com.lance5057.extradelight.food.EDFoods;
+import com.lance5057.extradelight.items.ShuckableCorn;
 import com.lance5057.extradelight.items.ToolTipConsumableItem;
 import com.lance5057.extradelight.util.EDItemGenerator;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe.StageIngredient;
@@ -29,6 +30,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 //import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
@@ -75,6 +77,9 @@ import vectorwing.farmersdelight.data.recipe.CookingRecipes;
 
 import java.util.function.Consumer;
 
+import static com.lance5057.extradelight.ExtraDelightItems.stack1Item;
+import static vectorwing.farmersdelight.common.registry.ModItems.foodItem;
+
 public class Fermentation {
 	public static final RegistryObject<CucumberCrop> CUCUMBER_CROP = ExtraDelightBlocks.BLOCKS.register("cucumber_crop",
 			() -> new CucumberCrop(Block.Properties.copy(Blocks.WHEAT)));
@@ -95,15 +100,16 @@ public class Fermentation {
 			.register("cucumber", () -> new Item(new Item.Properties().food(EDFoods.CUCUMBER))).advancementIngredients()
 			.finish();
 	public static final RegistryObject<Item> SOYBEAN_POD = EDItemGenerator
-			.register("soybean_pod", () -> new Item(new Item.Properties())).advancementIngredients().finish();
+			.register("soybean_pod", () -> new ShuckableCorn(MiscLootTables.SOYBEANS, new Item.Properties()))
+            .advancementIngredients().finish();
 
 	public static final RegistryObject<Item> CUCUMBER_SEED = ExtraDelightItems.ITEMS.register("cucumber_seed",
 			() -> new ItemNameBlockItem(CUCUMBER_CROP.get(), new Item.Properties()));
 	public static final RegistryObject<Item> SOYBEANS = ExtraDelightItems.ITEMS.register("soybeans",
 			() -> new ItemNameBlockItem(SOYBEAN_CROP.get(), new Item.Properties()));
 
-	public static final RegistryObject<Item> SALT = EDItemGenerator.register("salt",
-			() -> new Item(new Item.Properties())).advancementIngredients().finish();
+    public static final RegistryObject<Item> SALT = EDItemGenerator
+            .register("salt", () -> new Item(new Item.Properties())).advancementIngredients().finish();
 	public static final RegistryObject<Block> SALT_BLOCK = ExtraDelightBlocks.BLOCKS.register("salt_block",
 			() -> new Block(Block.Properties.copy(Blocks.REDSTONE_BLOCK).mapColor(MapColor.TERRACOTTA_WHITE)));
 	public static final RegistryObject<Item> SALT_BLOCK_ITEM = ExtraDelightItems.ITEMS.register("salt_block_item",
@@ -122,15 +128,15 @@ public class Fermentation {
 	public static final RegistryObject<JarSingularBlock> GHERKINS_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("gherkins_block", () -> new JarSingularBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)
 					.strength(0.8F).sound(SoundType.GLASS).mapColor(MapColor.COLOR_BROWN)));
-	public static final RegistryObject<Item> GHERKINS_BLOCK_ITEM = EDItemGenerator
-			.register("gherkins_block_item",
-					() -> new JarSingularItem(GHERKINS_BLOCK.get(),new Item.Properties()))
-//							new Item.Properties().component(DataComponents.BLOCK_STATE,
-//									BlockItemStateProperties.EMPTY.with(RecipeFeastBlock.SERVINGS, 4))))
-			.advancementFeast().finish();
-	public static final RegistryObject<Item> GHERKIN_ITEM = EDItemGenerator
-			.register("gherkin_item", () -> new Item(new Item.Properties().food(EDFoods.GHERKINS)))
-			.advancementIngredients().servingToolTip().finish();
+    public static final RegistryObject<Item> GHERKINS_BLOCK_ITEM = EDItemGenerator
+            .register("gherkins_block_item",
+                    () -> new JarSingularItem(GHERKINS_BLOCK.get(),
+                            stack1Item(),new CompoundTag(){{this.putInt("servings",4);}}))
+            .advancementFeast().finish();
+    public static final RegistryObject<Item> GHERKIN_ITEM = EDItemGenerator
+            .register("gherkin_item",
+                    () -> new ToolTipConsumableItem(new Item.Properties().food(EDFoods.GHERKINS), true))
+            .advancementIngredients().servingToolTip().finish();
 
 	public static final RegistryObject<JarSingularBlock> PICKLED_BEETS_BLOCK = ExtraDelightBlocks.BLOCKS
 			.register("pickled_beets_block", () -> new JarSingularBlock(BlockBehaviour.Properties
@@ -351,9 +357,9 @@ public class Fermentation {
 			.register("soy_glazed_salmon_item", () -> new BowlFoodItem(new Item.Properties().food(EDFoods.SOY_GLAZED_SALMON)))
 			.advancementMeal().servingToolTip().finish();
 	public static final RegistryObject<Item> STEAK_PICKLED_ONION_PIE_SLICE = EDItemGenerator
-			.register("steak_pickled_onion_pie_slice",
-					() -> new ToolTipConsumableItem(ExtraDelightItems.stack16FoodItem(EDFoods.BACON_EGG_PIE), true))
-			.advancementButchercraft().servingToolTip().finish();
+            .register("steak_pickled_onion_pie_slice",
+                    () -> new ToolTipConsumableItem(foodItem(EDFoods.STEAK_PICKLED_ONION_PIE_SLICE), true))
+            .advancementButchercraft().servingToolTip().finish();
 	public static final RegistryObject<Block> STEAK_PICKLED_ONION_PIE = ExtraDelightBlocks.BLOCKS.register(
 			"steak_pickled_onion_pie",
 			() -> new PieBlock(Block.Properties.copy(Blocks.CAKE), STEAK_PICKLED_ONION_PIE_SLICE));
