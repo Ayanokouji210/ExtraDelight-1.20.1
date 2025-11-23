@@ -3,6 +3,7 @@ package com.lance5057.extradelight.data.recipebuilders;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.lance5057.extradelight.ExtraDelightRecipes;
+import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.util.StackUtil;
 import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
 import com.simibubi.create.foundation.fluid.FluidIngredient;
@@ -37,19 +38,25 @@ public class MixingBowlRecipeBuilder implements RecipeBuilder {
     @Nullable
     private String group;
     final int stirs;
-    final ItemStack usedItem;
+    final ItemStack container;
+    final Ingredient utensil;
     private final Map<String, Criterion> criteria = new LinkedHashMap<>();
     private final Advancement.Builder advancement$builder;
 
-    public MixingBowlRecipeBuilder(ItemStack pResult, int stirs, ItemStack usedItem) {
+    public MixingBowlRecipeBuilder(ItemStack pResult, int stirs, ItemStack container,Ingredient utensil) {
         this.stirs = stirs;
-        this.usedItem = usedItem;
+        this.container = container;
+        this.utensil = utensil;
         this.result = pResult;
         this.advancement$builder = Advancement.Builder.advancement();
     }
 
-    public static MixingBowlRecipeBuilder stir(ItemStack pResult, int grinds, ItemStack usedItem) {
-        return new MixingBowlRecipeBuilder(pResult, grinds, usedItem);
+    public static MixingBowlRecipeBuilder stir(ItemStack pResult, int grinds, ItemStack container) {
+        return new MixingBowlRecipeBuilder(pResult, grinds, container, Ingredient.of(ExtraDelightTags.SPOONS));
+    }
+
+    public static MixingBowlRecipeBuilder stir(ItemStack pResult, int grinds, ItemStack container, Ingredient utensil) {
+        return new MixingBowlRecipeBuilder(pResult, grinds, container, utensil);
     }
 
     @Override
@@ -118,8 +125,8 @@ public class MixingBowlRecipeBuilder implements RecipeBuilder {
 //		MixingBowlRecipe recipe = new MixingBowlRecipe("", this.ingredients, this.fluids, this.result, this.stirs,
 //				this.usedItem);
         ResourceLocation advancementId = advancement$builder.build(id.withPrefix("recipes/mixing/")).getId();
-        output.accept(new Result(id, this.group == null ? "" : this.group, this.ingredients, this.fluids, this.result, this.stirs, this.usedItem,
-                advancement$builder, advancementId));
+        output.accept(new Result(id, this.group == null ? "" : this.group, this.ingredients, this.fluids, this.result, this.stirs, this.container,
+                this.utensil,advancement$builder, advancementId));
         //recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/mixing/")));
     }
 
@@ -130,49 +137,59 @@ public class MixingBowlRecipeBuilder implements RecipeBuilder {
         private final List<FluidIngredient> fluids;
         private final ItemStack result;
         private final int stirs;
-        private final ItemStack usedItem;
+        private final ItemStack container;
+        private final Ingredient utensil;
         private final Advancement.Builder advancement$builder;
         private final ResourceLocation advancementId;
 
 
         public Result(ResourceLocation id, String group, NonNullList<Ingredient> ingredients,
-                      List<FluidIngredient> fluids, ItemStack result, int stirs, ItemStack usedItem,
-                      Advancement.Builder advancement$builder, ResourceLocation advancementId) {
+                      List<FluidIngredient> fluids, ItemStack result, int stirs, ItemStack container,
+                      Ingredient utensil,Advancement.Builder advancement$builder, ResourceLocation advancementId) {
             this.id = id;
             this.group = group;
             this.ingredients = ingredients;
             this.fluids = fluids;
             this.result = result;
             this.stirs = stirs;
-            this.usedItem = usedItem;
+            this.container = container;
+            this.utensil = utensil;
             this.advancement$builder = advancement$builder;
             this.advancementId = advancementId;
         }
 
         @Override
         public void serializeRecipeData(JsonObject jsonObject) {
+            //Group
             if (!this.group.isEmpty()) {
                 jsonObject.addProperty("group", this.group);
             }
 
+            //Container
+            jsonObject.add("container",StackUtil.ItemStacktoJson(this.container));
+
+            //FluidStack
             JsonArray fluidsArray = new JsonArray();
             for (FluidIngredient fluid : this.fluids) {
                 fluidsArray.add(fluid.serialize());
             }
             jsonObject.add("fluids", fluidsArray);
 
+            //Ingredients
             JsonArray ingredientsArray = new JsonArray();
             for (Ingredient ingredient : this.ingredients) {
                 ingredientsArray.add(ingredient.toJson());
             }
             jsonObject.add("ingredients", ingredientsArray);
 
+            //Result
             jsonObject.add("result", StackUtil.ItemStacktoJson(this.result));
+
+            //stirs
             jsonObject.addProperty("stirs", this.stirs);
-            if (this.usedItem != null) {
-                //jsonObject.addProperty("usedItem", this.usedItem.toString());
-                jsonObject.add("usedItem", StackUtil.ItemStacktoJson(this.usedItem));
-            }
+
+            //utensil
+            jsonObject.add("utensil", this.utensil.toJson());
 
 
         }
