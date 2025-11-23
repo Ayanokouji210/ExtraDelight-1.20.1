@@ -2,9 +2,11 @@ package com.lance5057.extradelight.integration.jei.categories;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.meltingpot.MeltingPotRecipe;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
+import mezz.jei.api.gui.builder.IRecipeSlotBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.forge.ForgeTypes;
@@ -28,7 +30,7 @@ public class MeltingPotRecipeCategory implements IRecipeCategory<MeltingPotRecip
 
 	public MeltingPotRecipeCategory(IGuiHelper guiHelper) {
 		background = guiHelper.createDrawable(
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 204, 74, 52, 42);
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei.png"), 203, 107, 53, 47);
 		localizedName = Component.translatable("extradelight.jei.meltingpot");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,
 				new ItemStack(ExtraDelightItems.MELTING_POT.get()));
@@ -58,10 +60,14 @@ public class MeltingPotRecipeCategory implements IRecipeCategory<MeltingPotRecip
 	public void setRecipe(IRecipeLayoutBuilder builder, MeltingPotRecipe recipe, IFocusGroup focuses) {
 		Ingredient input = recipe.input;
 
-		builder.addSlot(RecipeIngredientRole.INPUT, 6, 7).addIngredients(input);
+		builder.addSlot(RecipeIngredientRole.INPUT, 7, 7).addIngredients(input);
 
-		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 +3, 7)
+		builder.addSlot(RecipeIngredientRole.OUTPUT, this.getWidth() / 2 +4, 7)
 				.addIngredients(ForgeTypes.FLUID_STACK, List.of(recipe.result))
 				.setFluidRenderer(recipe.result.getAmount(), false, 16, 16);
+
+        IRecipeSlotBuilder slot = builder.addSlot(RecipeIngredientRole.CATALYST, this.getWidth() / 2 + 4, 30);
+        slot.addIngredients(Ingredient.of(BottleFluidRegistry.getBottleFromFluidWithoutSize(recipe.result.getFluid()),
+                new ItemStack(recipe.result.getFluid().getBucket())));
 	}
 }

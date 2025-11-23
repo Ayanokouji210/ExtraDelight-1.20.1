@@ -2,6 +2,7 @@ package com.lance5057.extradelight.integration.jei.categories;
 
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightItems;
+import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.chiller.ChillerRecipe;
 import mezz.jei.api.constants.VanillaTypes;
@@ -78,11 +79,11 @@ public class ChillerRecipeCategory implements IRecipeCategory<ChillerRecipe> {
 		builder.addSlot(RecipeIngredientRole.OUTPUT, 107, 30).addIngredients(Ingredient.of(recipe.output));
 
 		builder.addSlot(RecipeIngredientRole.CATALYST, 1, 1)
-				.addIngredients(Ingredient.of(BottleFluidRegistry.getBottleFromFluid(recipe.getFluid()),
+				.addIngredients(Ingredient.of(BottleFluidRegistry.getBottleFromFluidWithoutSize(recipe.getFluid().getFluid()),
 						new ItemStack(recipe.getFluid().getFluid().getBucket())));
 
-		builder.addSlot(RecipeIngredientRole.CATALYST, 107, 10)
-				.addIngredients(Ingredient.of(Items.ICE, Items.SNOWBALL, Items.BLUE_ICE, Items.PACKED_ICE));
+		builder.addSlot(RecipeIngredientRole.CATALYST, 107, 9)
+				.addIngredients(Ingredient.of(ExtraDelightTags.CHILLING_ITEMS));
 	}
 
 }

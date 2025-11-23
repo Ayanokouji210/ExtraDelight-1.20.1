@@ -38,7 +38,7 @@ public class EvaporatorRecipeCategory implements IRecipeCategory<EvaporatorRecip
 
 	public EvaporatorRecipeCategory(IGuiHelper guiHelper) {
 		background = guiHelper.createDrawable(
-				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei3.png"), 101, 0, 62, 73);
+				ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "textures/gui/jei3.png"), 0, 183, 84, 73);
 		localizedName = Component.translatable("extradelight.jei.evaporator");
 		icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK,
 				new ItemStack(ExtraDelightItems.EVAPORATOR.get()));
@@ -72,9 +72,9 @@ public class EvaporatorRecipeCategory implements IRecipeCategory<EvaporatorRecip
 				.addIngredients(ForgeTypes.FLUID_STACK, fluids)
 				.setFluidRenderer(1000, false, 16, 71);
 		
-		builder.addSlot(RecipeIngredientRole.CATALYST, 65, 30).addIngredients(Ingredient.of(ItemTags.SHOVELS));
+		builder.addSlot(RecipeIngredientRole.CATALYST, 67, 30).addIngredients(Ingredient.of(ItemTags.SHOVELS));
 
-		builder.addSlot(RecipeIngredientRole.OUTPUT, 45, 30).addIngredients(Ingredient.of(recipe.getResultItem(null)));
+		builder.addSlot(RecipeIngredientRole.OUTPUT, 44, 30).addIngredients(Ingredient.of(recipe.getResultItem(null)));
 	}
 
 	@Override
