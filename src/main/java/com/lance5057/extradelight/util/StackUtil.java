@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.lance5057.extradelight.workstations.chiller.ChillerRecipe;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.item.BlockItem;
@@ -17,6 +18,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import javax.annotation.Nonnull;
 
 import java.util.Objects;
+import java.util.Set;
 
 public class StackUtil {
 
@@ -34,6 +36,28 @@ public class StackUtil {
         }
         return json;
 
+    }
+
+    public static JsonObject ItemStacktoJson(ItemStack itemStack, boolean hasTag) {
+        JsonObject  json = ItemStacktoJson(itemStack);
+
+        JsonObject nbt = new JsonObject();
+        if (hasTag) {
+            CompoundTag tag = itemStack.getTag();
+            if (tag!=null) {
+                for(String key:tag.getAllKeys()){
+                    try {
+                        nbt.addProperty(key,tag.get(key).toString());
+                    } catch (Exception e) {
+                        throw new RuntimeException(e+"can't add tag to stack,tag serialize error");
+                    }
+                }
+            }
+            json.add("tag",nbt);
+
+        }
+
+        return json;
     }
 
 

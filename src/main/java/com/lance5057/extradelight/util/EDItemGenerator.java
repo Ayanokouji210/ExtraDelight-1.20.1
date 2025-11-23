@@ -106,6 +106,7 @@ public class EDItemGenerator {
 		public int hydration;
 		public int poison;
 		public boolean isHot;
+        public boolean isCold;
 
 		public Drink(RegistryObject<Item> item2) {
 			this.item = item2;
@@ -131,7 +132,12 @@ public class EDItemGenerator {
 			return this;
 		}
 
-		public RegistryObject<Item> finish() {
+        public Drink isCold(boolean cold) {
+            isCold = cold;
+            return this;
+        }
+
+        public RegistryObject<Item> finish() {
 			EDItemGenerator.drinks.add(this);
 			return item;
 		}
