@@ -22,9 +22,9 @@ import java.util.concurrent.CompletableFuture;
 
 @Mod.EventBusSubscriber(modid = ExtraDelight.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGen {
-	private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
-			.add(Registries.CONFIGURED_FEATURE,bootstrapContext -> {})
-			.add(Registries.PLACED_FEATURE,ExtraDelightTreePlacement::bootstrap);
+//	private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
+//			.add(Registries.CONFIGURED_FEATURE,bootstrapContext -> {})
+//			.add(Registries.PLACED_FEATURE,ExtraDelightTreePlacement::bootstrap);
 
 	@SubscribeEvent
 	public static void gatherData(GatherDataEvent event) {
@@ -65,5 +65,6 @@ public class DataGen {
 //				new PatchouliGen(output, ExtraDelight.MOD_ID, "en_us", lookupProvider));
 
 		generator.addProvider(event.includeClient(), new CreateMixingRecipes(output , "create"));
+
 	}
 }

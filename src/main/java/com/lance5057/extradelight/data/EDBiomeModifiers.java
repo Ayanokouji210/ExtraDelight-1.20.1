@@ -46,7 +46,8 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 				HolderSet.Named<Biome> swamp = context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_SWAMP);
 				HolderSet.Named<Biome> cold = context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_COLD);
 				HolderSet.Named<Biome> hill = context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_MOUNTAIN);
-				HolderSet.Named<Biome> slope = context.lookup(Registries.BIOME)
+                HolderSet.Named<Biome> wet = context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_WET);
+                HolderSet.Named<Biome> slope = context.lookup(Registries.BIOME)
 						.getOrThrow(Tags.Biomes.IS_SLOPE);
 				//HolderSet.Named<Biome> temperate = context.lookup(Registries.BIOME).getOrThrow(Tags.Biomes.IS_TEMPERATE);
 				List<HolderSet<Biome>> list =new ArrayList<>();
@@ -222,6 +223,64 @@ public class EDBiomeModifiers extends BaseDatapackRegistryProvider {
 						List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
 								HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
 								BiomeFilter.biome()))));
+
+
+                // Lemon
+
+                HolderSet.Direct<PlacedFeature> lemonTreeHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
+                        Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_LEMON_TREE.get(),
+                                ExtraDelightTreeFeatures.createLemonTree().build())),
+                        List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
+                                HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                                BiomeFilter.biome()))));
+
+                context.register(
+                        biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "lemon_tree")),
+                        new ForgeBiomeModifiers.AddFeaturesBiomeModifier(hill, lemonTreeHolderSet,
+                                GenerationStep.Decoration.VEGETAL_DECORATION));
+
+                // Lime
+
+                HolderSet.Direct<PlacedFeature> limeTreeHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
+                        Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_LIME_TREE.get(),
+                                ExtraDelightTreeFeatures.createLimeTree().build())),
+                        List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
+                                HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                                BiomeFilter.biome()))));
+
+                context.register(
+                        biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "lime_tree")),
+                        new ForgeBiomeModifiers.AddFeaturesBiomeModifier(hot, limeTreeHolderSet,
+                                GenerationStep.Decoration.VEGETAL_DECORATION));
+
+                // Orange
+
+                HolderSet.Direct<PlacedFeature> orangeTreeHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
+                        Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_ORANGE_TREE.get(),
+                                ExtraDelightTreeFeatures.createOrangeTree().build())),
+                        List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
+                                HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                                BiomeFilter.biome()))));
+
+                context.register(
+                        biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "orange_tree")),
+                        new ForgeBiomeModifiers.AddFeaturesBiomeModifier(wet, orangeTreeHolderSet,
+                                GenerationStep.Decoration.VEGETAL_DECORATION));
+
+                // Grapefruit
+
+                HolderSet.Direct<PlacedFeature> grapefruitTreeHolderSet = HolderSet.direct(Holder.direct(new PlacedFeature(
+                        Holder.direct(new ConfiguredFeature<>(ExtraDelightFeatures.PATCH_GRAPEFRUIT_TREE.get(),
+                                ExtraDelightTreeFeatures.createGrapefruitTree().build())),
+                        List.of(RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
+                                HeightmapPlacement.onHeightmap(Heightmap.Types.WORLD_SURFACE_WG),
+                                BiomeFilter.biome()))));
+
+                context.register(
+                        biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "grapefruit_tree")),
+                        new ForgeBiomeModifiers.AddFeaturesBiomeModifier(jungle, grapefruitTreeHolderSet,
+                                GenerationStep.Decoration.VEGETAL_DECORATION));
+
 
 //				context.register(
 //						biomeModifier(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID, "apple_tree")),
