@@ -1,0 +1,16 @@
+{
+  "type": "extradelight:dynamic_toast",
+  "category": "food",
+  "graphic": "hazelnut_spread",
+  "ingredients": [
+    {
+      "tag": "forge:toast"
+    },
+    {
+      "item": "extradelight:hazelnut_spread_bottle"
+    }
+  ],
+  "result": {
+    "item": "extradelight:dynamic_toast"
+  }
+}

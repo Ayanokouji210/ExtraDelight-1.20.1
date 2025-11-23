@@ -1,0 +1,39 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "item": "minecraft:melon"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "fluidTag": "extradelight:lemon_or_lime_juice"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/apple"
+    },
+    {
+      "tag": "extradelight:processed/melon"
+    },
+    {
+      "tag": "extradelight:processed/orange"
+    },
+    {
+      "tag": "forge:berries"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "tag": "forge:mint"
+    }
+  ],
+  "result": {
+    "item": "extradelight:melon_fruit_salad_item"
+  },
+  "stirs": 2,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

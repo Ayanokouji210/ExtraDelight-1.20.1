@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:lime_juice_from_bucket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "lime_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lime_juice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "lime_juice",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:lime_juice_from_bucket"
+    ]
+  },
+  "sends_telemetry_event": false
+}

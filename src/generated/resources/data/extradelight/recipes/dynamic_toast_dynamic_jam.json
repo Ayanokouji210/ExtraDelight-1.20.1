@@ -1,0 +1,75 @@
+{
+  "type": "extradelight:dynamic_toast",
+  "category": "food",
+  "graphic": "dynamic",
+  "ingredients": [
+    {
+      "tag": "forge:toast"
+    },
+    [
+      {
+        "type": "forge:partial_nbt",
+        "item": "extradelight:dynamic_jam",
+        "nbt": "{dynamic_food:{graphics:[\"orange\"]}}"
+      },
+      {
+        "type": "forge:partial_nbt",
+        "item": "extradelight:dynamic_jam",
+        "nbt": "{dynamic_food:{graphics:[\"lime\"]}}"
+      },
+      {
+        "type": "forge:partial_nbt",
+        "item": "extradelight:dynamic_jam",
+        "nbt": "{dynamic_food:{graphics:[\"lemon\"]}}"
+      },
+      {
+        "type": "forge:partial_nbt",
+        "item": "extradelight:dynamic_jam",
+        "nbt": "{dynamic_food:{graphics:[\"grapefruit\"]}}"
+      },
+      {
+        "type": "forge:partial_nbt",
+        "item": "extradelight:dynamic_jam",
+        "nbt": "{dynamic_food:{graphics:[\"sweet_berries\"]}}"
+      },
+      {
+        "type": "forge:partial_nbt",
+        "item": "extradelight:dynamic_jam",
+        "nbt": "{dynamic_food:{graphics:[\"glow_berries\"]}}"
+      },
+      {
+        "type": "forge:partial_nbt",
+        "item": "extradelight:dynamic_jam",
+        "nbt": "{dynamic_food:{graphics:[\"apple\"]}}"
+      },
+      {
+        "type": "forge:partial_nbt",
+        "item": "extradelight:dynamic_jam",
+        "nbt": "{dynamic_food:{graphics:[\"golden_apple\"]}}"
+      },
+      {
+        "type": "forge:partial_nbt",
+        "item": "extradelight:dynamic_jam",
+        "nbt": "{dynamic_food:{graphics:[\"chorus_fruit\"]}}"
+      },
+      {
+        "type": "forge:partial_nbt",
+        "item": "extradelight:dynamic_jam",
+        "nbt": "{dynamic_food:{graphics:[\"melon\"]}}"
+      },
+      {
+        "type": "forge:partial_nbt",
+        "item": "extradelight:dynamic_jam",
+        "nbt": "{dynamic_food:{graphics:[\"carrot\"]}}"
+      },
+      {
+        "type": "forge:partial_nbt",
+        "item": "extradelight:dynamic_jam",
+        "nbt": "{dynamic_food:{graphics:[\"mint\"]}}"
+      }
+    ]
+  ],
+  "result": {
+    "item": "extradelight:dynamic_toast"
+  }
+}

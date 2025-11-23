@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:orangeade"
+    },
+    {
+      "item": "extradelight:orangeade"
+    },
+    {
+      "item": "extradelight:orangeade"
+    },
+    {
+      "item": "extradelight:orangeade"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    }
+  ],
+  "result": {
+    "item": "extradelight:orangeade_tray_item"
+  }
+}

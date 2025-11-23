@@ -1,0 +1,41 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:square_pan"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/cucumber"
+    },
+    {
+      "item": "extradelight:lemon_zest"
+    },
+    {
+      "item": "extradelight:lemon_juice"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:eggs"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:frosting/white"
+    },
+    {
+      "tag": "extradelight:processed/lemon"
+    }
+  ],
+  "result": {
+    "item": "extradelight:lemon_cucumber_cake_item"
+  }
+}

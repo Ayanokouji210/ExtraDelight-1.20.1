@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "tag": "forge:foods/cake/slice"
+    },
+    "i": {
+      "tag": "forge:ice_cream"
+    },
+    "p": {
+      "item": "extradelight:stiff_peaks"
+    },
+    "s": {
+      "tag": "extradelight:sweetener"
+    }
+  },
+  "pattern": [
+    "sps",
+    "pip",
+    "ccc"
+  ],
+  "result": {
+    "item": "extradelight:raw_baked_alaska_item"
+  },
+  "show_notification": true
+}

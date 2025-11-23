@@ -3,6 +3,11 @@
     "#forge:fruit/apple",
     "#forge:fruit/glow_berry",
     "#forge:fruit/sweet_berry",
-    "#forge:fruit/melon"
+    "#forge:fruit/melon",
+    "minecraft:chorus_fruit",
+    "extradelight:lemon",
+    "extradelight:lime",
+    "extradelight:orange",
+    "extradelight:grapefruit"
   ]
 }

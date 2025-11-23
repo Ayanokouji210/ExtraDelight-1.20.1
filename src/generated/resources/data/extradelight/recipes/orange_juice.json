@@ -1,0 +1,14 @@
+{
+  "type": "extradelight:juicer",
+  "chance": 25,
+  "fluidOut": {
+    "amount": 250,
+    "fluid": "extradelight:orange_juice_fluid"
+  },
+  "ingredient": {
+    "tag": "forge:crops/orange"
+  },
+  "result": {
+    "item": "minecraft:orange_dye"
+  }
+}

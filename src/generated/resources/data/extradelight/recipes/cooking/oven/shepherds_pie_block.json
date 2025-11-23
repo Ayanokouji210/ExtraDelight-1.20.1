@@ -10,29 +10,44 @@
     {
       "item": "minecraft:baked_potato"
     },
-    {
-      "tag": "forge:milk"
-    },
+    [
+      {
+        "tag": "forge:milk"
+      },
+      {
+        "tag": "extradelight:broth"
+      }
+    ],
     {
       "item": "minecraft:baked_potato"
     },
+    [
+      {
+        "tag": "forge:cooked_mutton"
+      },
+      {
+        "tag": "forge:mutton/cooked"
+      }
+    ],
     {
-      "tag": "forge:cooked_mutton"
+      "item": "farmersdelight:tomato_sauce"
+    },
+    [
+      {
+        "tag": "forge:cooked_mutton"
+      },
+      {
+        "tag": "forge:mutton/cooked"
+      }
+    ],
+    {
+      "tag": "extradelight:processed/carrot"
     },
     {
-      "tag": "forge:flour"
+      "tag": "extradelight:processed/onion"
     },
     {
-      "tag": "forge:cooked_mutton"
-    },
-    {
-      "tag": "extradelight:processed/vegetable"
-    },
-    {
-      "tag": "extradelight:processed/vegetable"
-    },
-    {
-      "tag": "extradelight:processed/vegetable"
+      "tag": "extradelight:processed/cabbage"
     }
   ],
   "result": {

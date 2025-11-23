@@ -313,6 +313,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.melon_lime_glazed_chicken": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:melon_lime_glazed_chicken"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.mint_lamb": {
       "conditions": {
         "items": [
@@ -331,6 +343,18 @@
           {
             "items": [
               "extradelight:mint_lamb_feast"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.orange_chicken": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:orange_chicken"
             ]
           }
         ]
@@ -589,6 +613,9 @@
       "extradelight.blood_chocolate_filled_bar"
     ],
     [
+      "extradelight.orange_chicken"
+    ],
+    [
       "extradelight.beef_bulgogi"
     ],
     [
@@ -614,6 +641,9 @@
     ],
     [
       "extradelight.bbq_ribs"
+    ],
+    [
+      "extradelight.melon_lime_glazed_chicken"
     ],
     [
       "extradelight.bbq_ribs_block_item"

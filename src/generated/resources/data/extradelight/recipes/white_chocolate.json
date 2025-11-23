@@ -1,5 +1,8 @@
 {
   "type": "extradelight:mixing_bowl",
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
   "fluids": [
     {
       "amount": 100,
@@ -21,7 +24,7 @@
     "item": "extradelight:white_chocolate_syrup_bottle"
   },
   "stirs": 4,
-  "usedItem": {
-    "item": "minecraft:glass_bottle"
+  "utensil": {
+    "tag": "forge:spoons"
   }
 }

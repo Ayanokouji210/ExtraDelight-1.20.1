@@ -205,6 +205,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.pickled_rind_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:pickled_rind_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.popcorn": {
       "conditions": {
         "items": [
@@ -223,6 +235,18 @@
           {
             "items": [
               "extradelight:potato_chips"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.preserved_lemon_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:preserved_lemon_item"
             ]
           }
         ]
@@ -337,6 +361,9 @@
       "extradelight.garlic_bread"
     ],
     [
+      "extradelight.pickled_rind_item"
+    ],
+    [
       "extradelight.toast"
     ],
     [
@@ -371,6 +398,9 @@
     ],
     [
       "extradelight.salami_item"
+    ],
+    [
+      "extradelight.preserved_lemon_item"
     ],
     [
       "extradelight.boiled_egg"

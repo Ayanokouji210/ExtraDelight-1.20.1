@@ -1,5 +1,8 @@
 {
   "type": "extradelight:mixing_bowl",
+  "container": {
+    "item": "minecraft:bowl"
+  },
   "fluids": [
     {
       "amount": 250,
@@ -12,7 +15,7 @@
     "item": "extradelight:whipped_cream"
   },
   "stirs": 8,
-  "usedItem": {
-    "item": "minecraft:bowl"
+  "utensil": {
+    "item": "extradelight:whisk"
   }
 }

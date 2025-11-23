@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "out": {
+    "item": "extradelight:melon_fruit_salad_item"
+  },
+  "result": {
+    "item": "extradelight:melon_fruit_salad_serving"
+  }
+}

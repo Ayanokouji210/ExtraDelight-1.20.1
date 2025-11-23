@@ -1,5 +1,9 @@
 {
   "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 0,
+    "item": "minecraft:air"
+  },
   "fluids": [],
   "ingredients": [
     {
@@ -20,8 +24,7 @@
     "item": "farmersdelight:wheat_dough"
   },
   "stirs": 8,
-  "usedItem": {
-    "count": 0,
-    "item": "minecraft:air"
+  "utensil": {
+    "tag": "forge:spoons"
   }
 }

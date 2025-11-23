@@ -1,0 +1,16 @@
+{
+  "type": "extradelight:dynamic_toast",
+  "category": "food",
+  "graphic": "yeast_spread",
+  "ingredients": [
+    {
+      "tag": "forge:toast"
+    },
+    {
+      "item": "extradelight:yeast_spread"
+    }
+  ],
+  "result": {
+    "item": "extradelight:dynamic_toast"
+  }
+}

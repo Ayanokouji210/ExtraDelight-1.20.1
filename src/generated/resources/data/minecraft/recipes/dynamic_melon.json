@@ -1,0 +1,35 @@
+{
+  "type": "extradelight:dynamic_jam",
+  "category": "meals",
+  "container": {
+    "item": "minecraft:glass_bottle",
+    "tag": {}
+  },
+  "cooking_time": 200.0,
+  "experience": 1.0,
+  "graphic": "melon",
+  "ingredients": [
+    {
+      "tag": "extradelight:processed/melon"
+    },
+    {
+      "tag": "extradelight:processed/melon"
+    },
+    {
+      "tag": "extradelight:processed/melon"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "Count": 1,
+    "id": "extradelight:dynamic_jam"
+  }
+}

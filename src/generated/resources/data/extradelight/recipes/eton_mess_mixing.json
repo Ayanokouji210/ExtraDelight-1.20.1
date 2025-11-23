@@ -1,0 +1,46 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:whipped_cream_fluid",
+      "nbt": {}
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "extradelight:meringue"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "extradelight:meringue"
+    },
+    {
+      "type": "forge:difference",
+      "base": {
+        "tag": "forge:berries"
+      },
+      "subtracted": {
+        "item": "minecraft:glow_berries"
+      }
+    },
+    {
+      "item": "extradelight:lemon_zest"
+    },
+    {
+      "tag": "extradelight:processed/orange"
+    }
+  ],
+  "result": {
+    "item": "extradelight:eton_mess"
+  },
+  "stirs": 8,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

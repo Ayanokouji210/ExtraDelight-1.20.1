@@ -13,6 +13,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.candied_citrus_zest": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:candied_citrus_zest"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.candied_ginger": {
       "conditions": {
         "items": [
@@ -259,6 +271,18 @@
           {
             "items": [
               "extradelight:caramel_candy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.chocolate_orange": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:chocolate_orange"
             ]
           }
         ]
@@ -859,6 +883,9 @@
       "extradelight.candy_cane_green"
     ],
     [
+      "extradelight.chocolate_orange"
+    ],
+    [
       "extradelight.candy_brown"
     ],
     [
@@ -887,6 +914,9 @@
     ],
     [
       "extradelight.candy_cane_red"
+    ],
+    [
+      "extradelight.candied_citrus_zest"
     ],
     [
       "extradelight.candy_gray"

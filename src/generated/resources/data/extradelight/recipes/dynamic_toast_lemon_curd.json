@@ -1,0 +1,16 @@
+{
+  "type": "extradelight:dynamic_toast",
+  "category": "food",
+  "graphic": "lemon_curd",
+  "ingredients": [
+    {
+      "tag": "forge:toast"
+    },
+    {
+      "item": "extradelight:lemon_curd"
+    }
+  ],
+  "result": {
+    "item": "extradelight:dynamic_toast"
+  }
+}

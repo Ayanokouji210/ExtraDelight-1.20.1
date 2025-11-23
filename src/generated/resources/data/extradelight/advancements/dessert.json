@@ -73,6 +73,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.baked_alaska_serving": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:baked_alaska_serving"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.black_forest_trifle": {
       "conditions": {
         "items": [
@@ -277,6 +289,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.chocolate_mousse": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:chocolate_mousse"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.christmas_pudding": {
       "conditions": {
         "items": [
@@ -373,6 +397,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.eton_mess": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:eton_mess"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.french_toast": {
       "conditions": {
         "items": [
@@ -457,12 +493,36 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.grapefruit_sorbet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:grapefruit_sorbet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.grasshopper_pie_slice": {
       "conditions": {
         "items": [
           {
             "items": [
               "extradelight:grasshopper_pie_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.grilled_grapefruit": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:grilled_grapefruit"
             ]
           }
         ]
@@ -535,6 +595,18 @@
           {
             "items": [
               "extradelight:ice_cream_sundae"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.jaffa_cake": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:jaffa_cake"
             ]
           }
         ]
@@ -733,6 +805,30 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.key_lime_pie_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:key_lime_pie_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.kyiv_cake_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:kyiv_cake_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.lava_cake": {
       "conditions": {
         "items": [
@@ -745,12 +841,96 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.lemon_cucumber_cake_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lemon_cucumber_cake_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.lemon_delicious": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lemon_delicious"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.lemon_meringue_pie_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lemon_meringue_pie_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.lemon_posset": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lemon_posset"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.lime_souffle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lime_souffle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.marshmallow_slice": {
       "conditions": {
         "items": [
           {
             "items": [
               "extradelight:marshmallow_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.melon_fruit_salad_serving": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:melon_fruit_salad_serving"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.melon_layer_cake_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:melon_layer_cake_slice"
             ]
           }
         ]
@@ -883,6 +1063,18 @@
           {
             "items": [
               "extradelight:panforte_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.pavlova_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:pavlova_slice"
             ]
           }
         ]
@@ -1126,9 +1318,6 @@
       "extradelight.honey_popsicle"
     ],
     [
-      "extradelight.sweet_berry_ice_cream"
-    ],
-    [
       "extradelight.stuffed_apple_ice_cream"
     ],
     [
@@ -1138,31 +1327,184 @@
       "extradelight.tarte_tatin_slice"
     ],
     [
-      "extradelight.chocolate_cake"
-    ],
-    [
-      "extradelight.ice_cream"
-    ],
-    [
       "extradelight.pumpkin_cheesecake_slice"
     ],
     [
       "extradelight.monkey_bread"
     ],
     [
-      "extradelight.jelly_yellow"
+      "extradelight.lemon_delicious"
     ],
     [
-      "extradelight.muffin_ginger"
+      "extradelight.jelly_yellow"
     ],
     [
       "extradelight.jelly_magenta"
     ],
     [
-      "extradelight.jelly_pink"
+      "extradelight.caramel_custard"
     ],
     [
-      "extradelight.caramel_custard"
+      "extradelight.caramel_golden_apple"
+    ],
+    [
+      "extradelight.cinnamon_rolls"
+    ],
+    [
+      "extradelight.panforte_slice"
+    ],
+    [
+      "extradelight.pumpkin_ice_cream"
+    ],
+    [
+      "extradelight.grapefruit_sorbet"
+    ],
+    [
+      "extradelight.jelly_black"
+    ],
+    [
+      "extradelight.rombosse"
+    ],
+    [
+      "extradelight.cookie_dough_ice_cream"
+    ],
+    [
+      "extradelight.lemon_cucumber_cake_slice"
+    ],
+    [
+      "extradelight.chocolate_cheesecake_slice"
+    ],
+    [
+      "extradelight.apple_crisp"
+    ],
+    [
+      "extradelight.jaffa_cake"
+    ],
+    [
+      "extradelight.jelly_grey"
+    ],
+    [
+      "extradelight.nut_butter_ice_cream"
+    ],
+    [
+      "extradelight.melon_layer_cake_slice"
+    ],
+    [
+      "extradelight.lime_souffle"
+    ],
+    [
+      "extradelight.sweet_berry_custard"
+    ],
+    [
+      "extradelight.sweet_berry_popsicle"
+    ],
+    [
+      "extradelight.honey_cheesecake_slice"
+    ],
+    [
+      "extradelight.jelly_light_blue"
+    ],
+    [
+      "extradelight.muffin_cinnamon"
+    ],
+    [
+      "extradelight.blondie"
+    ],
+    [
+      "extradelight.key_lime_pie_slice"
+    ],
+    [
+      "extradelight.lemon_meringue_pie_slice"
+    ],
+    [
+      "extradelight.caramel_cheescake_slice"
+    ],
+    [
+      "extradelight.rocky_road"
+    ],
+    [
+      "extradelight.eton_mess"
+    ],
+    [
+      "extradelight.pumpkin_custard"
+    ],
+    [
+      "extradelight.caramel_popsicle"
+    ],
+    [
+      "extradelight.jelly_white"
+    ],
+    [
+      "extradelight.grasshopper_pie_slice"
+    ],
+    [
+      "extradelight.glow_berry_pie_slice"
+    ],
+    [
+      "extradelight.dirt_cake"
+    ],
+    [
+      "extradelight.muffin_sweet_berry"
+    ],
+    [
+      "extradelight.coffee_cake_slice"
+    ],
+    [
+      "extradelight.apple_cheesecake_slice"
+    ],
+    [
+      "extradelight.fruit_bread"
+    ],
+    [
+      "extradelight.brownie"
+    ],
+    [
+      "extradelight.jelly_orange"
+    ],
+    [
+      "extradelight.jelly_brown"
+    ],
+    [
+      "extradelight.pumpkin_pie_slice"
+    ],
+    [
+      "extradelight.pumpkin_roll"
+    ],
+    [
+      "extradelight.christmas_pudding"
+    ],
+    [
+      "extradelight.jelly_cyan"
+    ],
+    [
+      "extradelight.rice_pudding"
+    ],
+    [
+      "extradelight.stuffed_apple"
+    ],
+    [
+      "extradelight.smore"
+    ],
+    [
+      "extradelight.sweet_berry_ice_cream"
+    ],
+    [
+      "extradelight.lemon_posset"
+    ],
+    [
+      "extradelight.grilled_grapefruit"
+    ],
+    [
+      "extradelight.chocolate_cake"
+    ],
+    [
+      "extradelight.ice_cream"
+    ],
+    [
+      "extradelight.muffin_ginger"
+    ],
+    [
+      "extradelight.jelly_pink"
     ],
     [
       "extradelight.chocolate_custard"
@@ -1175,15 +1517,6 @@
     ],
     [
       "extradelight.jelly_green"
-    ],
-    [
-      "extradelight.caramel_golden_apple"
-    ],
-    [
-      "extradelight.cinnamon_rolls"
-    ],
-    [
-      "extradelight.panforte_slice"
     ],
     [
       "extradelight.apple_popsicle"
@@ -1204,31 +1537,22 @@
       "extradelight.candy_golden_apple"
     ],
     [
-      "extradelight.pumpkin_ice_cream"
+      "extradelight.coffee_jelly"
     ],
     [
-      "extradelight.coffee_jelly"
+      "extradelight.baked_alaska_serving"
     ],
     [
       "extradelight.chocolate_cookie"
     ],
     [
-      "extradelight.jelly_black"
+      "extradelight.kyiv_cake_slice"
     ],
     [
-      "extradelight.rombosse"
-    ],
-    [
-      "extradelight.cookie_dough_ice_cream"
-    ],
-    [
-      "extradelight.chocolate_cheesecake_slice"
+      "extradelight.pavlova_slice"
     ],
     [
       "extradelight.jelly_blue"
-    ],
-    [
-      "extradelight.apple_crisp"
     ],
     [
       "extradelight.cinnamon_popsicle"
@@ -1237,25 +1561,13 @@
       "extradelight.muffin_apple"
     ],
     [
-      "extradelight.jelly_grey"
-    ],
-    [
       "extradelight.sticky_toffee_pudding_slice"
-    ],
-    [
-      "extradelight.nut_butter_ice_cream"
     ],
     [
       "extradelight.honey_custard"
     ],
     [
       "extradelight.cheesecake_slice"
-    ],
-    [
-      "extradelight.sweet_berry_custard"
-    ],
-    [
-      "extradelight.sweet_berry_popsicle"
     ],
     [
       "extradelight.jelly_lime"
@@ -1267,19 +1579,7 @@
       "extradelight.sweet_berry_pie_slice"
     ],
     [
-      "extradelight.honey_cheesecake_slice"
-    ],
-    [
-      "extradelight.jelly_light_blue"
-    ],
-    [
       "extradelight.caramel_apple"
-    ],
-    [
-      "extradelight.muffin_cinnamon"
-    ],
-    [
-      "extradelight.blondie"
     ],
     [
       "extradelight.milk_tart_slice"
@@ -1291,28 +1591,16 @@
       "extradelight.black_forest_trifle"
     ],
     [
-      "extradelight.caramel_cheescake_slice"
-    ],
-    [
-      "extradelight.rocky_road"
-    ],
-    [
       "extradelight.jelly_light_grey"
     ],
     [
       "extradelight.affogato"
     ],
     [
-      "extradelight.pumpkin_custard"
+      "extradelight.melon_fruit_salad_serving"
     ],
     [
       "extradelight.mint_chip_ice_cream"
-    ],
-    [
-      "extradelight.caramel_popsicle"
-    ],
-    [
-      "extradelight.jelly_white"
     ],
     [
       "extradelight.honey_ice_cream"
@@ -1327,49 +1615,16 @@
       "extradelight.glow_berry_popsicle"
     ],
     [
-      "extradelight.grasshopper_pie_slice"
-    ],
-    [
-      "extradelight.glow_berry_pie_slice"
-    ],
-    [
-      "extradelight.dirt_cake"
-    ],
-    [
       "extradelight.glow_berry_cheesecake_slice"
-    ],
-    [
-      "extradelight.muffin_sweet_berry"
-    ],
-    [
-      "extradelight.coffee_cake_slice"
-    ],
-    [
-      "extradelight.apple_cheesecake_slice"
-    ],
-    [
-      "extradelight.fruit_bread"
-    ],
-    [
-      "extradelight.brownie"
     ],
     [
       "extradelight.candy_apple"
     ],
     [
+      "extradelight.chocolate_mousse"
+    ],
+    [
       "extradelight.french_toast"
-    ],
-    [
-      "extradelight.jelly_orange"
-    ],
-    [
-      "extradelight.jelly_brown"
-    ],
-    [
-      "extradelight.pumpkin_pie_slice"
-    ],
-    [
-      "extradelight.pumpkin_roll"
     ],
     [
       "extradelight.marshmallow_slice"
@@ -1378,25 +1633,10 @@
       "extradelight.jelly_purple"
     ],
     [
-      "extradelight.christmas_pudding"
-    ],
-    [
       "extradelight.lava_cake"
     ],
     [
-      "extradelight.jelly_cyan"
-    ],
-    [
-      "extradelight.rice_pudding"
-    ],
-    [
       "extradelight.ice_cream_sundae"
-    ],
-    [
-      "extradelight.stuffed_apple"
-    ],
-    [
-      "extradelight.smore"
     ]
   ],
   "sends_telemetry_event": true

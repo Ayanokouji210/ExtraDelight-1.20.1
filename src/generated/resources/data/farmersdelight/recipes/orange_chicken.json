@@ -1,0 +1,37 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:chicken/cubed/raw"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    [
+      {
+        "item": "extradelight:orange_juice"
+      },
+      {
+        "item": "extradelight:orange_zest"
+      }
+    ],
+    {
+      "item": "extradelight:breading_misanplas"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    },
+    {
+      "tag": "extradelight:processed/ginger"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "extradelight:orange_chicken"
+  }
+}

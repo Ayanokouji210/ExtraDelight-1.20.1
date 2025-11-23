@@ -5,9 +5,17 @@
     "fluid": "minecraft:air"
   },
   "grinds": 4,
-  "ingredient": {
-    "item": "minecraft:pink_tulip"
-  },
+  "ingredient": [
+    {
+      "item": "minecraft:pink_tulip"
+    },
+    {
+      "item": "minecraft:pink_petals"
+    },
+    {
+      "item": "extradelight:grapefruit_petal_litter_item"
+    }
+  ],
   "result": {
     "count": 2,
     "item": "minecraft:pink_dye"

@@ -5,12 +5,22 @@
     {
       "item": "extradelight:egg_mix"
     },
-    {
-      "tag": "extradelight:processed/vegetable"
-    },
-    {
-      "tag": "extradelight:processed/vegetable"
-    }
+    [
+      {
+        "tag": "forge:vegetables"
+      },
+      {
+        "tag": "extradelight:processed/vegetable"
+      }
+    ],
+    [
+      {
+        "tag": "forge:vegetables"
+      },
+      {
+        "tag": "extradelight:processed/vegetable"
+      }
+    ]
   ],
   "result": {
     "item": "extradelight:omelette_mix"

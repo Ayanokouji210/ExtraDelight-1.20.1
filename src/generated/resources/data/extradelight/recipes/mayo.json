@@ -1,5 +1,8 @@
 {
   "type": "extradelight:mixing_bowl",
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
   "fluids": [
     {
       "amount": 250,
@@ -14,17 +17,17 @@
   ],
   "ingredients": [
     {
-      "tag": "forge:eggs"
+      "tag": "extradelight:egg_or_yolk"
     },
     {
-      "tag": "forge:eggs"
+      "tag": "extradelight:egg_or_yolk"
     }
   ],
   "result": {
     "item": "extradelight:mayo_jar_item"
   },
   "stirs": 8,
-  "usedItem": {
-    "item": "minecraft:glass_bottle"
+  "utensil": {
+    "item": "extradelight:whisk"
   }
 }

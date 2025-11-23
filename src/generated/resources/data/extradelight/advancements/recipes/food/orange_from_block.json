@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:orange_from_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "orange": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:orange_crate_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "orange",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:orange_from_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}

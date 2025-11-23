@@ -1,5 +1,8 @@
 {
   "type": "extradelight:mixing_bowl",
+  "container": {
+    "item": "minecraft:bowl"
+  },
   "fluids": [],
   "ingredients": [
     {
@@ -16,7 +19,7 @@
     "item": "extradelight:chicken_alfredo"
   },
   "stirs": 2,
-  "usedItem": {
-    "item": "minecraft:bowl"
+  "utensil": {
+    "tag": "forge:spoons"
   }
 }

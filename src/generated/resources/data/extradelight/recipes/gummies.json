@@ -1,5 +1,9 @@
 {
   "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 0,
+    "item": "minecraft:air"
+  },
   "fluids": [
     {
       "amount": 100,
@@ -32,8 +36,7 @@
     "item": "extradelight:gummies"
   },
   "stirs": 4,
-  "usedItem": {
-    "count": 0,
-    "item": "minecraft:air"
+  "utensil": {
+    "tag": "forge:spoons"
   }
 }

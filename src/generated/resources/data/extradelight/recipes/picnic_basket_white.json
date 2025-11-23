@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "farmersdelight:basket"
+    },
+    "g": {
+      "item": "extradelight:gingham_carpet_white"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "s",
+    "g",
+    "b"
+  ],
+  "result": {
+    "item": "extradelight:white_picnic_basket"
+  },
+  "show_notification": true
+}

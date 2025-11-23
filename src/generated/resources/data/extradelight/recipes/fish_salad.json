@@ -1,5 +1,8 @@
 {
   "type": "extradelight:mixing_bowl",
+  "container": {
+    "item": "minecraft:bowl"
+  },
   "fluids": [
     {
       "amount": 250,
@@ -20,7 +23,7 @@
     "item": "extradelight:fish_salad"
   },
   "stirs": 8,
-  "usedItem": {
-    "item": "minecraft:bowl"
+  "utensil": {
+    "tag": "forge:spoons"
   }
 }

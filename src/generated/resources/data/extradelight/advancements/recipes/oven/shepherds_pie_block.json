@@ -6,7 +6,7 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "shepard_pie": {
+    "shepherds_pie": {
       "conditions": {
         "items": [
           {
@@ -19,7 +19,7 @@
   },
   "requirements": [
     [
-      "shepard_pie",
+      "shepherds_pie",
       "has_the_recipe"
     ]
   ],

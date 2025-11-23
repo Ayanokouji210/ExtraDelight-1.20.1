@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:lime_from_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "lime": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lime_crate_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "lime",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:lime_from_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}

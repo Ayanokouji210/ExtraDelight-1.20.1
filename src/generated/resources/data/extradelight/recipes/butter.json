@@ -1,5 +1,9 @@
 {
   "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 0,
+    "item": "minecraft:air"
+  },
   "fluids": [
     {
       "amount": 250,
@@ -12,8 +16,7 @@
     "item": "extradelight:butter"
   },
   "stirs": 8,
-  "usedItem": {
-    "count": 0,
-    "item": "minecraft:air"
+  "utensil": {
+    "item": "extradelight:whisk"
   }
 }

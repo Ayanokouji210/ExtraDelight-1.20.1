@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "tag": "forge:crops/grapefruit"
+    }
+  ],
+  "result": [
+    {
+      "count": 3,
+      "item": "extradelight:sliced_grapefruit"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

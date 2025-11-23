@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "minecraft:barrel"
+    },
+    "c": {
+      "tag": "forge:ingots/copper"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " s ",
+    " b ",
+    "ccc"
+  ],
+  "result": {
+    "item": "extradelight:juicer"
+  },
+  "show_notification": true
+}

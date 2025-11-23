@@ -1,0 +1,32 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:pie_dish"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "extradelight:stiff_peaks"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "extradelight:stiff_peaks"
+    },
+    {
+      "item": "extradelight:lemon_curd"
+    },
+    {
+      "item": "farmersdelight:pie_crust"
+    },
+    {
+      "item": "extradelight:lemon_curd"
+    }
+  ],
+  "result": {
+    "item": "extradelight:lemon_meringue_pie_item"
+  }
+}

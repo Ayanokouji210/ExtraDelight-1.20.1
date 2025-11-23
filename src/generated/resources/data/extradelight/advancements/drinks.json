@@ -73,6 +73,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.dalgona_coffee": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:dalgona_coffee"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.eggnog": {
       "conditions": {
         "items": [
@@ -157,6 +169,30 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.lemonade": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lemonade"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.limeade": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:limeade"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.milkshake": {
       "conditions": {
         "items": [
@@ -187,6 +223,18 @@
           {
             "items": [
               "extradelight:nut_butter_milkshake"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.orangeade": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:orangeade"
             ]
           }
         ]
@@ -298,16 +346,34 @@
       "extradelight.horchata"
     ],
     [
-      "extradelight.sweet_berry_milkshake"
+      "extradelight.limeade"
     ],
     [
-      "extradelight.apple_milkshake"
+      "extradelight.sweet_berry_milkshake"
     ],
     [
       "extradelight.mint_chip_milkshake"
     ],
     [
       "extradelight.gourmet_hot_chocolate"
+    ],
+    [
+      "extradelight.dalgona_coffee"
+    ],
+    [
+      "extradelight.lemonade"
+    ],
+    [
+      "extradelight.coffee"
+    ],
+    [
+      "extradelight.milkshake"
+    ],
+    [
+      "extradelight.xocolati"
+    ],
+    [
+      "extradelight.apple_milkshake"
     ],
     [
       "extradelight.glow_berry_milkshake"
@@ -325,13 +391,7 @@
       "extradelight.tea"
     ],
     [
-      "extradelight.coffee"
-    ],
-    [
       "extradelight.pumpkin_milkshake"
-    ],
-    [
-      "extradelight.milkshake"
     ],
     [
       "extradelight.sweet_berry_juice"
@@ -352,10 +412,10 @@
       "extradelight.cactus_juice"
     ],
     [
-      "extradelight.xocolati"
+      "extradelight.eggnog"
     ],
     [
-      "extradelight.eggnog"
+      "extradelight.orangeade"
     ],
     [
       "extradelight.tomato_juice"

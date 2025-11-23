@@ -7,9 +7,14 @@
   "cookingtime": 800,
   "experience": 1.0,
   "ingredients": [
-    {
-      "tag": "extradelight:processed/fruit"
-    },
+    [
+      {
+        "tag": "extradelight:processed/fruit"
+      },
+      {
+        "tag": "forge:fruit/dried"
+      }
+    ],
     {
       "tag": "forge:dough"
     }

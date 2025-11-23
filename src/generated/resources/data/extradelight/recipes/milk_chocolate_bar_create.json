@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "create"
+        }
+      ],
+      "recipe": {
+        "type": "extradelight:chiller",
+        "consumeContainer": false,
+        "container": {
+          "item": "extradelight:bar_mold"
+        },
+        "cookingTime": 400,
+        "experience": 0.35,
+        "fluid": {
+          "amount": 250,
+          "fluid": "create:chocolate"
+        },
+        "ingredients": [],
+        "result": {
+          "item": "create:bar_of_chocolate"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:melon_layer_cake_slice"
+    },
+    {
+      "item": "extradelight:melon_layer_cake_slice"
+    },
+    {
+      "item": "extradelight:melon_layer_cake_slice"
+    },
+    {
+      "item": "extradelight:melon_layer_cake_slice"
+    },
+    {
+      "item": "extradelight:melon_layer_cake_slice"
+    },
+    {
+      "item": "extradelight:melon_layer_cake_slice"
+    },
+    {
+      "item": "extradelight:melon_layer_cake_slice"
+    }
+  ],
+  "result": {
+    "item": "extradelight:melon_layer_cake_item"
+  }
+}

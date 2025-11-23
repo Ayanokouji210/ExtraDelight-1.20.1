@@ -1,7 +1,9 @@
 {
   "type": "extradelight:bottle_fluid",
   "bottle": {
-    "item": "extradelight:jam"
+    "type": "forge:partial_nbt",
+    "item": "extradelight:dynamic_jam",
+    "nbt": "{graphics:[\"sweet_berries\"]}"
   },
   "fluid": {
     "amount": 250,

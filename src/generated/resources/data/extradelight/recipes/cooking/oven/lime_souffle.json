@@ -1,0 +1,38 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": true,
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "extradelight:egg_or_yolk"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "item": "extradelight:lime_zest"
+    },
+    {
+      "item": "extradelight:lime_juice"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "item": "extradelight:stiff_peaks"
+    },
+    {
+      "item": "extradelight:stiff_peaks"
+    }
+  ],
+  "result": {
+    "item": "extradelight:lime_souffle"
+  }
+}

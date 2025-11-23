@@ -1,0 +1,10 @@
+{
+  "type": "extradelight:feast",
+  "container": [],
+  "out": {
+    "item": "extradelight:limeade_tray_item"
+  },
+  "result": {
+    "item": "extradelight:limeade"
+  }
+}

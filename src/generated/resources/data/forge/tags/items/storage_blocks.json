@@ -1,5 +1,7 @@
 {
   "values": [
+    "#forge:storage_blocks_cheese",
+    "#forge:storage_blocks_butter",
     "#forge:storage_blocks_flour",
     "#forge:storage_blocks_corn_meal",
     "#forge:storage_blocks_sugar",
@@ -49,6 +51,10 @@
     "#forge:storage_blocks_garlic",
     "#forge:storage_blocks_cucumber",
     "#forge:storage_blocks_soybeans",
-    "#forge:storage_blocks_salt"
+    "#forge:storage_blocks_salt",
+    "#forge:storage_blocks_lemon",
+    "#forge:storage_blocks_lime",
+    "#forge:storage_blocks_orange",
+    "#forge:storage_blocks_grapefruit"
   ]
 }

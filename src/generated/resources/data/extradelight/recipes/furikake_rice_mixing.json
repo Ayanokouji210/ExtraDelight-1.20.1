@@ -1,5 +1,8 @@
 {
   "type": "extradelight:mixing_bowl",
+  "container": {
+    "item": "minecraft:bowl"
+  },
   "fluids": [],
   "ingredients": [
     {
@@ -20,7 +23,7 @@
     "item": "extradelight:furikake"
   },
   "stirs": 4,
-  "usedItem": {
-    "item": "minecraft:bowl"
+  "utensil": {
+    "tag": "forge:spoons"
   }
 }

@@ -1,0 +1,16 @@
+{
+  "type": "extradelight:dynamic_toast",
+  "category": "food",
+  "graphic": "butter",
+  "ingredients": [
+    {
+      "tag": "forge:toast"
+    },
+    {
+      "tag": "forge:butter"
+    }
+  ],
+  "result": {
+    "item": "extradelight:dynamic_toast"
+  }
+}

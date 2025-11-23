@@ -1,0 +1,30 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:tray"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:crops/grapefruit"
+    },
+    {
+      "tag": "forge:crops/grapefruit"
+    },
+    {
+      "tag": "forge:crops/grapefruit"
+    },
+    {
+      "tag": "forge:crops/grapefruit"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "extradelight:grilled_grapefruit"
+  }
+}

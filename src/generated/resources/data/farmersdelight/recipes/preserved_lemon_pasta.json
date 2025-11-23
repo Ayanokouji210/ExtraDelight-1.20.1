@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:pasta"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "item": "extradelight:preserved_lemon_item"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "extradelight:processed/garlic"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "extradelight:preserved_lemon_pasta"
+  }
+}

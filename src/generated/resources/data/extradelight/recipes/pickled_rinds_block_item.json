@@ -1,0 +1,41 @@
+{
+  "type": "extradelight:vat",
+  "ingredients": [
+    {
+      "item": "extradelight:melon_rind"
+    },
+    {
+      "item": "extradelight:melon_rind"
+    },
+    {
+      "item": "extradelight:melon_rind"
+    },
+    {
+      "item": "extradelight:melon_rind"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    }
+  ],
+  "result": {
+    "item": "extradelight:pickled_rinds_block_item"
+  },
+  "stage_ingredients": [
+    {
+      "ingredient": {
+        "tag": "forge:salt"
+      },
+      "lid": false,
+      "time": 12000
+    },
+    {
+      "ingredient": [],
+      "lid": true,
+      "time": 168000
+    }
+  ],
+  "stages": 2,
+  "usedItem": {
+    "item": "minecraft:glass_bottle"
+  }
+}

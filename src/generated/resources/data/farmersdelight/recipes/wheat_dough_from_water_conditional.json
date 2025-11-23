@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:false"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [],
+        "result": {
+          "count": 3,
+          "item": "farmersdelight:wheat_dough"
+        }
+      }
+    }
+  ]
+}

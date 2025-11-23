@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:melon_slice"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "extradelight:melon_chunks"
+    },
+    {
+      "item": "extradelight:melon_rind"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

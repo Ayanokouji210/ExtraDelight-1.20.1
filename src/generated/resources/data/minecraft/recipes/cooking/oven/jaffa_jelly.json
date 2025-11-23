@@ -1,0 +1,36 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:muffin_tin"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:eggs"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "item": "extradelight:dark_chocolate_syrup_bottle"
+    },
+    {
+      "item": "extradelight:jelly_orange"
+    },
+    {
+      "item": "extradelight:orange_zest"
+    }
+  ],
+  "result": {
+    "count": 6,
+    "item": "extradelight:jaffa_cake"
+  }
+}

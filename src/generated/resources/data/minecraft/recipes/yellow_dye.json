@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:lemon_petal_litter_item"
+    }
+  ],
+  "result": {
+    "item": "minecraft:yellow_dye"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:key_lime_pie_item"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "extradelight:key_lime_pie_slice"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

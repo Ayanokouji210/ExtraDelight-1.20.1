@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "extradelight:lime_petal_litter_item"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "minecraft:lime_dye"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

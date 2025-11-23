@@ -5,9 +5,14 @@
     {
       "item": "extradelight:egg_mix"
     },
-    {
-      "tag": "extradelight:processed/vegetable"
-    },
+    [
+      {
+        "tag": "forge:vegetables"
+      },
+      {
+        "tag": "extradelight:processed/vegetable"
+      }
+    ],
     {
       "tag": "forge:meat"
     }

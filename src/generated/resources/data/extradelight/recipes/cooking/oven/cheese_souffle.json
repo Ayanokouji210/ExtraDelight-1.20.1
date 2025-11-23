@@ -1,0 +1,46 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": true,
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "extradelight:egg_or_yolk"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:cheese"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    [
+      {
+        "tag": "forge:chili/powder"
+      },
+      {
+        "item": "extradelight:curry_powder"
+      }
+    ],
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "item": "extradelight:stiff_peaks"
+    },
+    {
+      "item": "extradelight:stiff_peaks"
+    }
+  ],
+  "result": {
+    "item": "extradelight:cheese_souffle"
+  }
+}

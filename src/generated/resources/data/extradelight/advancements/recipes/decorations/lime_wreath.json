@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelight:lime_wreath"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "lime_wreath": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lime_leaves"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "lime_wreath",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelight:lime_wreath"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,21 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:egg_white_fluid",
+      "nbt": {}
+    }
+  ],
+  "ingredients": [],
+  "result": {
+    "item": "extradelight:stiff_peaks"
+  },
+  "stirs": 8,
+  "utensil": {
+    "item": "extradelight:whisk"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:egg_white"
+    },
+    {
+      "item": "extradelight:egg_white"
+    },
+    {
+      "item": "extradelight:egg_white"
+    },
+    {
+      "item": "extradelight:egg_white"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "item": "extradelight:egg_white_fluid_bucket"
+  }
+}

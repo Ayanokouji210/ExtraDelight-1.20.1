@@ -13,9 +13,14 @@
     {
       "tag": "forge:gravy"
     },
-    {
-      "tag": "forge:bread"
-    },
+    [
+      {
+        "tag": "forge:bread"
+      },
+      {
+        "tag": "forge:bread/crumbs"
+      }
+    ],
     {
       "tag": "extradelight:processed/carrot"
     },

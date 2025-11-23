@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:lemon_juice"
+    },
+    {
+      "item": "extradelight:lemon_juice"
+    },
+    {
+      "item": "extradelight:lemon_juice"
+    },
+    {
+      "item": "extradelight:lemon_juice"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "item": "extradelight:lemon_juice_fluid_bucket"
+  }
+}

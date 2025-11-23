@@ -1,0 +1,12 @@
+{
+  "type": "extradelight:feast",
+  "container": {
+    "tag": "farmersdelight:tools/knives"
+  },
+  "out": {
+    "item": "extradelight:baked_alaska_item"
+  },
+  "result": {
+    "item": "extradelight:baked_alaska_serving"
+  }
+}

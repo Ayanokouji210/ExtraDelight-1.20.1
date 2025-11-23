@@ -37,6 +37,30 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.baked_alaska_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:baked_alaska_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.baked_cod_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:baked_cod_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.beef_stew_feast": {
       "conditions": {
         "items": [
@@ -589,6 +613,30 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.key_lime_pie_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:key_lime_pie_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.kyiv_cake_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:kyiv_cake_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.lamb_stew_feast": {
       "conditions": {
         "items": [
@@ -607,6 +655,54 @@
           {
             "items": [
               "extradelight:lasanga_feast"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.lemon_cucumber_cake_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lemon_cucumber_cake_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.lemon_meringue_pie_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lemon_meringue_pie_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.lemonade_tray_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lemonade_tray_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.limeade_tray_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:limeade_tray_item"
             ]
           }
         ]
@@ -673,6 +769,30 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.melon_fruit_salad_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:melon_fruit_salad_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.melon_layer_cake_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:melon_layer_cake_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.milk_chocolate_fondue_block": {
       "conditions": {
         "items": [
@@ -721,12 +841,36 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.orangeade_tray_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:orangeade_tray_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.panforte": {
       "conditions": {
         "items": [
           {
             "items": [
               "extradelight:panforte"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.pavlova_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:pavlova_item"
             ]
           }
         ]
@@ -805,6 +949,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.pickled_rinds_block_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:pickled_rinds_block_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.pork_stew_feast": {
       "conditions": {
         "items": [
@@ -823,6 +979,18 @@
           {
             "items": [
               "extradelight:potato_au_gratin_feast"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.preserved_lemons_block_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:preserved_lemons_block_item"
             ]
           }
         ]
@@ -1063,18 +1231,6 @@
   },
   "requirements": [
     [
-      "extradelight.marshmallow_slice_feast"
-    ],
-    [
-      "extradelight.pumpkin_cheesecake"
-    ],
-    [
-      "extradelight.christmas_pudding_feast"
-    ],
-    [
-      "extradelight.chili_con_carne_feast"
-    ],
-    [
       "extradelight.jelly_grey_block_item"
     ],
     [
@@ -1087,22 +1243,16 @@
       "extradelight.honey_cheesecake"
     ],
     [
-      "extradelight.white_chili_feast"
-    ],
-    [
       "extradelight.jelly_magenta_block_item"
     ],
     [
       "extradelight.gherkins_block_item"
     ],
     [
-      "extradelight.chocolate_cake_block"
-    ],
-    [
       "extradelight.stuffing_feast"
     ],
     [
-      "extradelight.beef_stew_feast"
+      "extradelight.pickled_rinds_block_item"
     ],
     [
       "extradelight.jelly_brown_block_item"
@@ -1111,28 +1261,13 @@
       "extradelight.pickled_fish_block_item"
     ],
     [
-      "extradelight.meatloaf_feast"
-    ],
-    [
       "extradelight.caramel_cheesecake_item"
     ],
     [
       "extradelight.potato_au_gratin_feast"
     ],
     [
-      "extradelight.fudge_block"
-    ],
-    [
-      "extradelight.glow_berry_pie"
-    ],
-    [
       "extradelight.jelly_green_block_item"
-    ],
-    [
-      "extradelight.pumpkin_pie_item"
-    ],
-    [
-      "extradelight.sticky_toffee_pudding_block"
     ],
     [
       "extradelight.pork_stew_feast"
@@ -1141,19 +1276,154 @@
       "extradelight.glow_berry_cheesecake"
     ],
     [
-      "extradelight.crisp_rice_treats_block"
+      "extradelight.baked_cod_item"
     ],
     [
-      "extradelight.grasshopper_pie"
+      "extradelight.crisp_rice_treats_block"
     ],
     [
       "extradelight.jelly_light_blue_block_item"
     ],
     [
+      "extradelight.jelly_white_block_item"
+    ],
+    [
+      "extradelight.baked_alaska_item"
+    ],
+    [
+      "extradelight.chicken_stew_feast"
+    ],
+    [
+      "extradelight.pickled_beets_block_item"
+    ],
+    [
+      "extradelight.charcuterie_board_feast"
+    ],
+    [
+      "extradelight.stuffed_apples_feast"
+    ],
+    [
+      "extradelight.pickled_ginger_block_item"
+    ],
+    [
+      "extradelight.jelly_orange_block_item"
+    ],
+    [
+      "extradelight.white_chocolate_fondue_block"
+    ],
+    [
+      "extradelight.quiche"
+    ],
+    [
+      "extradelight.fish_stew_feast"
+    ],
+    [
+      "extradelight.coffe_cake_feast"
+    ],
+    [
+      "extradelight.lasanga_feast"
+    ],
+    [
+      "extradelight.bruschetta_feast"
+    ],
+    [
+      "extradelight.cheesecake"
+    ],
+    [
+      "extradelight.kyiv_cake_item"
+    ],
+    [
+      "extradelight.melon_layer_cake_item"
+    ],
+    [
+      "extradelight.hash_block_item"
+    ],
+    [
+      "extradelight.jelly_black_block_item"
+    ],
+    [
+      "extradelight.pickled_eggs_block_item"
+    ],
+    [
+      "extradelight.meat_pie_block_item"
+    ],
+    [
+      "extradelight.jelly_blue_block_item"
+    ],
+    [
+      "extradelight.lemon_cucumber_cake_item"
+    ],
+    [
+      "extradelight.macaroni_cheese_feast"
+    ],
+    [
+      "extradelight.cinnamon_rolls_feast"
+    ],
+    [
+      "extradelight.pickled_onions_block_item"
+    ],
+    [
+      "extradelight.cheesymite_scroll_block_item"
+    ],
+    [
+      "extradelight.key_lime_pie_item"
+    ],
+    [
+      "extradelight.punch_feast"
+    ],
+    [
+      "extradelight.pavlova_item"
+    ],
+    [
+      "extradelight.marshmallow_slice_feast"
+    ],
+    [
+      "extradelight.pumpkin_cheesecake"
+    ],
+    [
+      "extradelight.christmas_pudding_feast"
+    ],
+    [
+      "extradelight.chili_con_carne_feast"
+    ],
+    [
+      "extradelight.melon_fruit_salad_item"
+    ],
+    [
+      "extradelight.white_chili_feast"
+    ],
+    [
+      "extradelight.chocolate_cake_block"
+    ],
+    [
+      "extradelight.beef_stew_feast"
+    ],
+    [
+      "extradelight.preserved_lemons_block_item"
+    ],
+    [
+      "extradelight.meatloaf_feast"
+    ],
+    [
+      "extradelight.fudge_block"
+    ],
+    [
+      "extradelight.glow_berry_pie"
+    ],
+    [
+      "extradelight.pumpkin_pie_item"
+    ],
+    [
+      "extradelight.sticky_toffee_pudding_block"
+    ],
+    [
+      "extradelight.grasshopper_pie"
+    ],
+    [
       "extradelight.scotcharoo_block"
     ],
     [
-      "extradelight.jelly_white_block_item"
+      "extradelight.orangeade_tray_item"
     ],
     [
       "extradelight.chocolate_cheesecake"
@@ -1162,13 +1432,7 @@
       "extradelight.milk_chocolate_fondue_block"
     ],
     [
-      "extradelight.chicken_stew_feast"
-    ],
-    [
       "extradelight.jelly_light_grey_block_item"
-    ],
-    [
-      "extradelight.pickled_beets_block_item"
     ],
     [
       "extradelight.jelly_purple_block_item"
@@ -1186,7 +1450,7 @@
       "extradelight.salad_block_item"
     ],
     [
-      "extradelight.charcuterie_board_feast"
+      "extradelight.lemon_meringue_pie_item"
     ],
     [
       "extradelight.jelly_pink_block_item"
@@ -1195,22 +1459,7 @@
       "extradelight.brownies_block"
     ],
     [
-      "extradelight.stuffed_apples_feast"
-    ],
-    [
       "extradelight.curry_feast"
-    ],
-    [
-      "extradelight.pickled_ginger_block_item"
-    ],
-    [
-      "extradelight.jelly_orange_block_item"
-    ],
-    [
-      "extradelight.white_chocolate_fondue_block"
-    ],
-    [
-      "extradelight.quiche"
     ],
     [
       "extradelight.mashed_potato_gravy_block_item"
@@ -1219,28 +1468,10 @@
       "extradelight.rabbit_stew_feast"
     ],
     [
-      "extradelight.fish_stew_feast"
-    ],
-    [
       "extradelight.monkey_bread_feast"
     ],
     [
-      "extradelight.coffe_cake_feast"
-    ],
-    [
-      "extradelight.lasanga_feast"
-    ],
-    [
       "extradelight.cornbread_feast"
-    ],
-    [
-      "extradelight.bruschetta_feast"
-    ],
-    [
-      "extradelight.cheesecake"
-    ],
-    [
-      "extradelight.hash_block_item"
     ],
     [
       "extradelight.sweet_berry_pie"
@@ -1255,19 +1486,10 @@
       "extradelight.bacon_egg_pie"
     ],
     [
-      "extradelight.jelly_black_block_item"
-    ],
-    [
-      "extradelight.pickled_eggs_block_item"
+      "extradelight.lemonade_tray_item"
     ],
     [
       "extradelight.apple_crisp_feast"
-    ],
-    [
-      "extradelight.meat_pie_block_item"
-    ],
-    [
-      "extradelight.jelly_blue_block_item"
     ],
     [
       "extradelight.stirfry_block_item"
@@ -1279,13 +1501,7 @@
       "extradelight.jelly_lime_block_item"
     ],
     [
-      "extradelight.macaroni_cheese_feast"
-    ],
-    [
-      "extradelight.cinnamon_rolls_feast"
-    ],
-    [
-      "extradelight.pickled_onions_block_item"
+      "extradelight.limeade_tray_item"
     ],
     [
       "extradelight.pickled_carrots_block_item"
@@ -1309,13 +1525,7 @@
       "extradelight.milk_tart_feast"
     ],
     [
-      "extradelight.cheesymite_scroll_block_item"
-    ],
-    [
       "extradelight.pumpkin_roll_feast"
-    ],
-    [
-      "extradelight.punch_feast"
     ],
     [
       "extradelight.dark_chocolate_fondue_block"

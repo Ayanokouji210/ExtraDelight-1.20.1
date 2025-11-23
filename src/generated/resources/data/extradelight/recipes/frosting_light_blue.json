@@ -1,5 +1,9 @@
 {
   "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 0,
+    "item": "minecraft:air"
+  },
   "fluids": [
     {
       "amount": 250,
@@ -23,8 +27,7 @@
     "item": "extradelight:frosting_light_blue"
   },
   "stirs": 2,
-  "usedItem": {
-    "count": 0,
-    "item": "minecraft:air"
+  "utensil": {
+    "tag": "forge:spoons"
   }
 }

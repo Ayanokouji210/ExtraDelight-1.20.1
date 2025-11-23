@@ -97,6 +97,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.baked_cod_serving": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:baked_cod_serving"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.beef_stew_rice": {
       "conditions": {
         "items": [
@@ -229,6 +241,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.cheese_souffle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:cheese_souffle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.cheeseburger": {
       "conditions": {
         "items": [
@@ -319,6 +343,18 @@
           {
             "items": [
               "extradelight:chili_con_carne"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.citrus_onion_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:citrus_onion_salad"
             ]
           }
         ]
@@ -721,6 +757,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.grapefruit_beetroot_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:grapefruit_beetroot_salad"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.grilled_cheese": {
       "conditions": {
         "items": [
@@ -967,6 +1015,30 @@
           {
             "items": [
               "extradelight:meatloaf_sandwich"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.melon_gazpacho": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:melon_gazpacho"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.melon_rind_stirfry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:melon_rind_stirfry"
             ]
           }
         ]
@@ -1225,6 +1297,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.preserved_lemon_pasta": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:preserved_lemon_pasta"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.quiche_slice": {
       "conditions": {
         "items": [
@@ -1453,6 +1537,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.thai_melon_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:thai_melon_salad"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.tomato_soup": {
       "conditions": {
         "items": [
@@ -1538,6 +1634,9 @@
     ],
     [
       "extradelight.cooked_cactus"
+    ],
+    [
+      "extradelight.baked_cod_serving"
     ],
     [
       "extradelight.buttered_pasta"
@@ -1636,7 +1735,13 @@
       "extradelight.bacon_egg_sandwich"
     ],
     [
+      "extradelight.preserved_lemon_pasta"
+    ],
+    [
       "extradelight.fried_mushrooms"
+    ],
+    [
+      "extradelight.cheese_souffle"
     ],
     [
       "extradelight.potato_soup"
@@ -1708,6 +1813,9 @@
       "extradelight.roasted_carrot"
     ],
     [
+      "extradelight.melon_rind_stirfry"
+    ],
+    [
       "extradelight.seaweed_crisps"
     ],
     [
@@ -1741,16 +1849,28 @@
       "extradelight.cream_corn"
     ],
     [
+      "extradelight.thai_melon_salad"
+    ],
+    [
+      "extradelight.grapefruit_beetroot_salad"
+    ],
+    [
       "extradelight.carrot_soup"
     ],
     [
       "extradelight.lamb_stew_rice"
     ],
     [
+      "extradelight.melon_gazpacho"
+    ],
+    [
       "extradelight.kimchi_fried_rice"
     ],
     [
       "extradelight.shirazi_salad"
+    ],
+    [
+      "extradelight.citrus_onion_salad"
     ],
     [
       "extradelight.fat_potatoes"

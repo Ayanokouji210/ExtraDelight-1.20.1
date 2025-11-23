@@ -457,6 +457,30 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.egg_white": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:egg_white"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.egg_yolk": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:egg_yolk"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.fish_flakes": {
       "conditions": {
         "items": [
@@ -745,24 +769,24 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight.glow_berry_jam": {
+    "extradelight.grapefruit": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:glow_berry_jam"
+              "extradelight:grapefruit"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight.golden_apple_jam": {
+    "extradelight.grapefruit_juice": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:golden_apple_jam"
+              "extradelight:grapefruit_juice"
             ]
           }
         ]
@@ -913,12 +937,12 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "extradelight.jam": {
+    "extradelight.ice_cubes": {
       "conditions": {
         "items": [
           {
             "items": [
-              "extradelight:jam"
+              "extradelight:ice_cubes"
             ]
           }
         ]
@@ -955,6 +979,90 @@
           {
             "items": [
               "extradelight:lasagna_noodles"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.lemon": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lemon"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.lemon_curd": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lemon_curd"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.lemon_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lemon_juice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.lemon_zest": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lemon_zest"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.lime": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lime"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.lime_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lime_juice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.lime_zest": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:lime_zest"
             ]
           }
         ]
@@ -1021,6 +1129,42 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.melon_chunks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:melon_chunks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.melon_rind": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:melon_rind"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.meringue": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:meringue"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.milk_chocolate_chips": {
       "conditions": {
         "items": [
@@ -1051,18 +1195,6 @@
           {
             "items": [
               "extradelight:mint"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "extradelight.mint_jelly": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "extradelight:mint_jelly"
             ]
           }
         ]
@@ -1111,6 +1243,42 @@
           {
             "items": [
               "extradelight:omelette_mix"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.orange": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:orange"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.orange_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:orange_juice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.orange_zest": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:orange_zest"
             ]
           }
         ]
@@ -1393,12 +1561,60 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "extradelight.sliced_grapefruit": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:sliced_grapefruit"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.sliced_lemon": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:sliced_lemon"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.sliced_lime": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:sliced_lime"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "extradelight.sliced_onion": {
       "conditions": {
         "items": [
           {
             "items": [
               "extradelight:sliced_onion"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.sliced_orange": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:sliced_orange"
             ]
           }
         ]
@@ -1471,6 +1687,18 @@
           {
             "items": [
               "extradelight:soybean_pod"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "extradelight.stiff_peaks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "extradelight:stiff_peaks"
             ]
           }
         ]
@@ -1654,6 +1882,9 @@
       "extradelight.aioli_jar_item"
     ],
     [
+      "extradelight.grapefruit"
+    ],
+    [
       "extradelight.marshmallow_fluff_bottle"
     ],
     [
@@ -1661,9 +1892,6 @@
     ],
     [
       "extradelight.frosting_black"
-    ],
-    [
-      "extradelight.glow_berry_jam"
     ],
     [
       "extradelight.frosting_red"
@@ -1699,6 +1927,9 @@
       "extradelight.mashed_soybeans_item"
     ],
     [
+      "extradelight.lemon"
+    ],
+    [
       "extradelight.gravy_boat_item"
     ],
     [
@@ -1726,6 +1957,9 @@
       "extradelight.dried_fruit"
     ],
     [
+      "extradelight.melon_chunks"
+    ],
+    [
       "extradelight.breading_misanplas"
     ],
     [
@@ -1733,6 +1967,9 @@
     ],
     [
       "extradelight.mint"
+    ],
+    [
+      "extradelight.stiff_peaks"
     ],
     [
       "extradelight.apple_sauce"
@@ -1747,7 +1984,16 @@
       "extradelight.salami_mix"
     ],
     [
+      "extradelight.lime_zest"
+    ],
+    [
       "extradelight.omelette_mix"
+    ],
+    [
+      "extradelight.lime"
+    ],
+    [
+      "extradelight.orange"
     ],
     [
       "extradelight.gingerbread_cookie_dough"
@@ -1771,16 +2017,10 @@
       "extradelight.pickled_beet_item"
     ],
     [
-      "extradelight.golden_apple_jam"
-    ],
-    [
       "extradelight.cooking_oil"
     ],
     [
       "extradelight.cucumber"
-    ],
-    [
-      "extradelight.jam"
     ],
     [
       "extradelight.hazelnuts"
@@ -1789,7 +2029,13 @@
       "extradelight.soybean_pod"
     ],
     [
+      "extradelight.sliced_lime"
+    ],
+    [
       "extradelight.frosting_purple"
+    ],
+    [
+      "extradelight.lime_juice"
     ],
     [
       "extradelight.frosting_green"
@@ -1813,6 +2059,9 @@
       "extradelight.macaroni"
     ],
     [
+      "extradelight.ice_cubes"
+    ],
+    [
       "extradelight.sliced_tomato"
     ],
     [
@@ -1823,9 +2072,6 @@
     ],
     [
       "extradelight.frosting_magenta"
-    ],
-    [
-      "extradelight.mint_jelly"
     ],
     [
       "extradelight.yeast"
@@ -1849,6 +2095,12 @@
       "extradelight.caramel_sauce"
     ],
     [
+      "extradelight.sliced_lemon"
+    ],
+    [
+      "extradelight.egg_yolk"
+    ],
+    [
       "extradelight.fish_sauce_item"
     ],
     [
@@ -1865,6 +2117,9 @@
     ],
     [
       "extradelight.frosting_pink"
+    ],
+    [
+      "extradelight.grapefruit_juice"
     ],
     [
       "extradelight.white_chocolate_chips"
@@ -1894,10 +2149,16 @@
       "extradelight.breadcrumbs"
     ],
     [
+      "extradelight.lemon_zest"
+    ],
+    [
       "extradelight.frosting_gray"
     ],
     [
       "extradelight.unripe_salami_item"
+    ],
+    [
+      "extradelight.melon_rind"
     ],
     [
       "extradelight.corn_meal"
@@ -1927,7 +2188,19 @@
       "extradelight.roasted_hazelnuts"
     ],
     [
+      "extradelight.lemon_juice"
+    ],
+    [
       "extradelight.soaked_soybeans_item"
+    ],
+    [
+      "extradelight.sliced_orange"
+    ],
+    [
+      "extradelight.orange_juice"
+    ],
+    [
+      "extradelight.meringue"
     ],
     [
       "extradelight.salt"
@@ -1939,7 +2212,16 @@
       "extradelight.peanuts"
     ],
     [
+      "extradelight.lemon_curd"
+    ],
+    [
+      "extradelight.egg_white"
+    ],
+    [
       "extradelight.grated_carrot"
+    ],
+    [
+      "extradelight.orange_zest"
     ],
     [
       "extradelight.vinegar"
@@ -1985,6 +2267,9 @@
     ],
     [
       "extradelight.pickled_ginger"
+    ],
+    [
+      "extradelight.sliced_grapefruit"
     ],
     [
       "extradelight.grated_ginger"

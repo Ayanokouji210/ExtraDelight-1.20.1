@@ -1,8 +1,8 @@
 {
   "type": "extradelight:chiller",
-  "consumeContainer": false,
+  "consumeContainer": true,
   "container": {
-    "item": "extradelight:pie_dish"
+    "item": "extradelight:square_pan"
   },
   "cookingTime": 800,
   "experience": 0.35,
@@ -14,9 +14,73 @@
     {
       "tag": "forge:foods/cookie/sugar"
     },
-    {
-      "tag": "forge:jams"
-    },
+    [
+      [
+        {
+          "type": "forge:partial_nbt",
+          "item": "extradelight:dynamic_jam",
+          "nbt": "{dynamic_food:{graphics:[\"orange\"]}}"
+        },
+        {
+          "type": "forge:partial_nbt",
+          "item": "extradelight:dynamic_jam",
+          "nbt": "{dynamic_food:{graphics:[\"lime\"]}}"
+        },
+        {
+          "type": "forge:partial_nbt",
+          "item": "extradelight:dynamic_jam",
+          "nbt": "{dynamic_food:{graphics:[\"lemon\"]}}"
+        },
+        {
+          "type": "forge:partial_nbt",
+          "item": "extradelight:dynamic_jam",
+          "nbt": "{dynamic_food:{graphics:[\"grapefruit\"]}}"
+        },
+        {
+          "type": "forge:partial_nbt",
+          "item": "extradelight:dynamic_jam",
+          "nbt": "{dynamic_food:{graphics:[\"sweet_berries\"]}}"
+        },
+        {
+          "type": "forge:partial_nbt",
+          "item": "extradelight:dynamic_jam",
+          "nbt": "{dynamic_food:{graphics:[\"glow_berries\"]}}"
+        },
+        {
+          "type": "forge:partial_nbt",
+          "item": "extradelight:dynamic_jam",
+          "nbt": "{dynamic_food:{graphics:[\"apple\"]}}"
+        },
+        {
+          "type": "forge:partial_nbt",
+          "item": "extradelight:dynamic_jam",
+          "nbt": "{dynamic_food:{graphics:[\"golden_apple\"]}}"
+        },
+        {
+          "type": "forge:partial_nbt",
+          "item": "extradelight:dynamic_jam",
+          "nbt": "{dynamic_food:{graphics:[\"chorus_fruit\"]}}"
+        },
+        {
+          "type": "forge:partial_nbt",
+          "item": "extradelight:dynamic_jam",
+          "nbt": "{dynamic_food:{graphics:[\"melon\"]}}"
+        },
+        {
+          "type": "forge:partial_nbt",
+          "item": "extradelight:dynamic_jam",
+          "nbt": "{dynamic_food:{graphics:[\"carrot\"]}}"
+        },
+        {
+          "type": "forge:partial_nbt",
+          "item": "extradelight:dynamic_jam",
+          "nbt": "{dynamic_food:{graphics:[\"mint\"]}}"
+        }
+      ],
+      {
+        "tag": "forge:jams"
+      }
+    ],
     {
       "tag": "forge:foods/cookie/sugar"
     }

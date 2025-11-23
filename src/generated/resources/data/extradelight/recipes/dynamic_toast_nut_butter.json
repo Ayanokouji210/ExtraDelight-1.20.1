@@ -1,0 +1,16 @@
+{
+  "type": "extradelight:dynamic_toast",
+  "category": "food",
+  "graphic": "nut_butter",
+  "ingredients": [
+    {
+      "tag": "forge:toast"
+    },
+    {
+      "item": "extradelight:peanut_butter_bottle"
+    }
+  ],
+  "result": {
+    "item": "extradelight:dynamic_toast"
+  }
+}

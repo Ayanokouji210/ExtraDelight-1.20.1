@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extradelight:lemon_cucumber_cake_slice"
+    },
+    {
+      "item": "extradelight:lemon_cucumber_cake_slice"
+    },
+    {
+      "item": "extradelight:lemon_cucumber_cake_slice"
+    },
+    {
+      "item": "extradelight:lemon_cucumber_cake_slice"
+    },
+    {
+      "item": "extradelight:lemon_cucumber_cake_slice"
+    },
+    {
+      "item": "extradelight:lemon_cucumber_cake_slice"
+    },
+    {
+      "item": "extradelight:lemon_cucumber_cake_slice"
+    }
+  ],
+  "result": {
+    "item": "extradelight:lemon_cucumber_cake_item"
+  }
+}

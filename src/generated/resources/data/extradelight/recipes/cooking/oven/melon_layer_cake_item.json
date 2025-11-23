@@ -1,0 +1,46 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "item": "extradelight:square_pan"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "farmersdelight:melon_juice"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "tag": "extradelight:sweetener"
+    },
+    {
+      "tag": "forge:eggs"
+    },
+    {
+      "tag": "forge:flour"
+    },
+    {
+      "tag": "forge:butter"
+    },
+    {
+      "tag": "forge:frosting/pink"
+    },
+    [
+      {
+        "tag": "forge:frosting/green"
+      },
+      {
+        "tag": "forge:frosting/lime"
+      }
+    ],
+    {
+      "tag": "forge:chocolate/chips"
+    }
+  ],
+  "result": {
+    "item": "extradelight:melon_layer_cake_item"
+  }
+}

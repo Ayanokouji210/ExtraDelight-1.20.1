@@ -1,0 +1,14 @@
+{
+  "type": "extradelight:juicer",
+  "chance": 25,
+  "fluidOut": {
+    "amount": 250,
+    "fluid": "extradelight:apple_cider_fluid"
+  },
+  "ingredient": {
+    "tag": "extradelight:processed/apple"
+  },
+  "result": {
+    "item": "minecraft:red_dye"
+  }
+}
