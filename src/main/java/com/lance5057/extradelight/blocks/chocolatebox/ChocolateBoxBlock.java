@@ -3,6 +3,7 @@ package com.lance5057.extradelight.blocks.chocolatebox;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.blocks.jar.JarBlockEntity;
+import com.lance5057.extradelight.blocks.picnicbasket.PicnicBasketBlockEntity;
 import com.lance5057.extradelight.util.BlockEntityUtils;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -178,42 +179,68 @@ public class ChocolateBoxBlock extends Block implements EntityBlock {
 		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
 	}
 
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+        if (!state.is(newState.getBlock())) {
+            BlockEntity blockEntity = level.getBlockEntity(pos);
+            if (blockEntity instanceof ChocolateBoxBlockEntity be && !level.isClientSide) {
 
-	@Override
-	public List<ItemStack> getDrops(BlockState pState, LootParams.Builder params) {
-		if (params.getParameter(LootContextParams.BLOCK_ENTITY) instanceof ChocolateBoxBlockEntity be) {
-			ItemStack stack = new ItemStack(this);
-            if(stack.getCapability(ForgeCapabilities.ITEM_HANDLER).isPresent()) {
-                IItemHandler handler = stack.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve().get();
-                if(handler instanceof ItemStackHandler inventory) {
-                    for(int i = 0; i < inventory.getSlots(); i++) {
-                            inventory.insertItem(i,be.getItems().getStackInSlot(i).copy(),false);
-                    }
-                    stack.setTag(inventory.serializeNBT());
-                }
-            }
-            return Collections.singletonList(stack);
-		}
-		return super.getDrops(pState, params);
-	}
+                ItemStack itemStack = new ItemStack(this);
+                be.saveToItem(itemStack);
 
-	@Override
-	public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @org.jetbrains.annotations.Nullable LivingEntity pPlacer, ItemStack pStack) {
-		super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
-
-        if(pStack.getCapability(ForgeCapabilities.ITEM_HANDLER).isPresent()) {
-            IItemHandler handler = pStack.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve().get();
-            BlockEntity be = pLevel.getBlockEntity(pPos);
-            if (be instanceof ChocolateBoxBlockEntity cbe) {
-                if (handler instanceof ItemStackHandler inventory && pStack.hasTag()) {
-                    inventory.deserializeNBT(pStack.getTag());
-                    for(int i = 0; i < handler.getSlots(); i++) {
-                        cbe.getItems().insertItem(i,handler.getStackInSlot(i),false);
-                    }
-                }
+                popResource(level, pos, itemStack);
             }
         }
+        super.onRemove(state, level, pos, newState, isMoving);
+    }
 
-	}
+    @Override
+    public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
+        ItemStack itemStack = super.getCloneItemStack(level, pos, state);
+        BlockEntity blockEntity = level.getBlockEntity(pos);
+
+        if (blockEntity instanceof ChocolateBoxBlockEntity be) {
+            be.saveToItem(itemStack);
+        }
+
+        return itemStack;
+    }
+
+    //	@Override
+//	public List<ItemStack> getDrops(BlockState pState, LootParams.Builder params) {
+//		if (params.getParameter(LootContextParams.BLOCK_ENTITY) instanceof ChocolateBoxBlockEntity be) {
+//			ItemStack stack = new ItemStack(this);
+//            if(stack.getCapability(ForgeCapabilities.ITEM_HANDLER).isPresent()) {
+//                IItemHandler handler = stack.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve().get();
+//                if(handler instanceof ItemStackHandler inventory) {
+//                    for(int i = 0; i < inventory.getSlots(); i++) {
+//                            inventory.insertItem(i,be.getItems().getStackInSlot(i).copy(),false);
+//                    }
+//                    stack.setTag(inventory.serializeNBT());
+//                }
+//            }
+//            return Collections.singletonList(stack);
+//		}
+//		return super.getDrops(pState, params);
+//	}
+//
+//	@Override
+//	public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @org.jetbrains.annotations.Nullable LivingEntity pPlacer, ItemStack pStack) {
+//		super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
+//
+//        if(pStack.getCapability(ForgeCapabilities.ITEM_HANDLER).isPresent()) {
+//            IItemHandler handler = pStack.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve().get();
+//            BlockEntity be = pLevel.getBlockEntity(pPos);
+//            if (be instanceof ChocolateBoxBlockEntity cbe) {
+//                if (handler instanceof ItemStackHandler inventory && pStack.hasTag()) {
+//                    inventory.deserializeNBT(pStack.getTag());
+//                    for(int i = 0; i < handler.getSlots(); i++) {
+//                        cbe.getItems().insertItem(i,handler.getStackInSlot(i),false);
+//                    }
+//                }
+//            }
+//        }
+//
+//	}
 
 }
