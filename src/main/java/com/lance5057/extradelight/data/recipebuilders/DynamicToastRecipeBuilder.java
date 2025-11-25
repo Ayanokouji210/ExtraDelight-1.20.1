@@ -12,6 +12,7 @@ import net.minecraft.advancements.*;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.data.recipes.CraftingRecipeBuilder;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -34,7 +35,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
-public class DynamicToastRecipeBuilder implements RecipeBuilder {
+public class DynamicToastRecipeBuilder extends CraftingRecipeBuilder implements RecipeBuilder {
 	private final RecipeCategory category;
 	private final ItemStack result;
     private final NonNullList<Ingredient> ingredients = NonNullList.create();
@@ -160,7 +161,7 @@ public class DynamicToastRecipeBuilder implements RecipeBuilder {
 		@Override
 		public void serializeRecipeData(JsonObject json) {
 			if (!this.group.isEmpty()) json.addProperty("group", this.group);
-            json.addProperty("category",this.category.getFolderName());
+            json.addProperty("category", CraftingRecipeBuilder.determineBookCategory(this.category).getSerializedName());
             json.addProperty("graphic",this.graphic);
             JsonArray ingredientsJson = new JsonArray();
             this.ingredients.forEach(ingredient -> {

@@ -3,7 +3,7 @@
   "bottle": {
     "type": "forge:partial_nbt",
     "item": "extradelight:dynamic_jam",
-    "nbt": "{graphics:[\"sweet_berries\"]}"
+    "nbt": "{dynamic_food:{graphics:[\"sweet_berries\"]}}"
   },
   "fluid": {
     "amount": 250,

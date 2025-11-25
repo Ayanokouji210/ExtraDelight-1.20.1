@@ -35,6 +35,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -176,10 +177,10 @@ public class DynamicJamRecipe extends CookingPotRecipe {
         return ExtraDelightRecipes.DYNAMIC_JAM_SERIALIZER.get();
     }
 
-//	@Override
-//	public RecipeType<?> getType() {
-//		return ExtraDelightRecipes.DYNAMIC_JAM.get();
-//	}
+    @Override
+    public RecipeType<?> getType() {
+        return ExtraDelightRecipes.DYNAMIC_JAM.get();
+    }
 
     public static class Serializer implements RecipeSerializer<DynamicJamRecipe> {
 

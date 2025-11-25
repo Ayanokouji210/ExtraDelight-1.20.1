@@ -1,61 +1,32 @@
 package com.lance5057.extradelight.recipe;
 
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.lance5057.extradelight.ExtraDelight;
 import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightRecipes;
-import com.lance5057.extradelight.capabilities.FoodComponent;
 import com.lance5057.extradelight.items.dynamicfood.DynamicToast;
-import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
-import com.mojang.datafixers.util.Pair;
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.JsonOps;
-import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
+import com.mojang.serialization.DynamicOps;
 
-import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
-//import net.minecraft.core.component.DataComponents;
-//import net.minecraft.network.RegistryFriendlyByteBuf;
-//import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.StringTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
-import net.minecraft.world.Container;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.Attribute;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.inventory.CraftingContainer;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-//import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.crafting.*;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.common.crafting.CraftingHelper;
-import net.minecraftforge.common.crafting.conditions.ICondition;
-import net.minecraftforge.event.ItemAttributeModifierEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.items.ItemStackHandler;
+import org.checkerframework.checker.units.qual.C;
 
 import javax.annotation.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.function.Supplier;
 
-import static vectorwing.farmersdelight.common.registry.ModItems.foodItem;
+import java.util.List;
 
 public class DynamicToastRecipe extends ShapelessRecipe {
     private final String graphic;
@@ -72,51 +43,58 @@ public class DynamicToastRecipe extends ShapelessRecipe {
     }
 
     @Override
-    public boolean matches(CraftingContainer pInv, Level pLevel) {
-        return super.matches(pInv, pLevel);
+    public CraftingBookCategory category() {
+        return CraftingBookCategory.MISC;
     }
 
     @Override
     public ItemStack assemble(CraftingContainer input, RegistryAccess registries) {
-        return super.assemble(input, registries);
+        ItemStack assemble = super.assemble(input, registries).copy();
+        NonNullList<ItemStack> stacks = NonNullList.withSize(this.getIngredients().size(), ItemStack.EMPTY);
+        for (int i = 0; i < this.getIngredients().size(); ++i) {
+            stacks.set(i, this.getIngredients().get(i).getItems()[0].copy());
+        }
+        CompoundTag write = ExtraDelightComponents.EDItemStackHandler.write(stacks);
+        if(this.graphic.equals("dynamic")){
+            CompoundTag nbt = new CompoundTag();
+            CompoundTag tag = new CompoundTag();
+            List<ItemStack> jams = input.getItems().stream().filter(i -> i.is(ExtraDelightItems.DYNAMIC_JAM.get())).toList();
+            if(!jams.isEmpty()){
+                ListTag listTag = new ListTag();
+                listTag.add(StringTag.valueOf("dynamic_jam"));
+                tag.put("graphics", listTag);
+                nbt.put(ExtraDelightComponents.IDynamicFood.TAG, tag);
+                nbt.putString("dynamic",ExtraDelightComponents.IDynamicFood.read(jams.get(0)).get(0));
+            }else {
+                ExtraDelight.logger.warn("Unknown dynamic jam {} ");
+                nbt.put(ExtraDelightComponents.IDynamicFood.TAG, tag);
+            }
+
+            write.merge(nbt);
+        }else {
+            write.merge(ExtraDelightComponents.IDynamicFood.write(List.of(this.graphic)));
+        }
+        assemble.setTag(write);
+        return assemble;
     }
 
-    @SubscribeEvent
-    public void onCrafting(PlayerEvent.ItemCraftedEvent event) {
-        ItemStack stack = event.getCrafting();
-        Container inventory = event.getInventory();
+    @Override
+    public boolean canCraftInDimensions(int width, int height) {return width*height >= 2;}
 
-        if (stack.getItem() instanceof DynamicToast) {
 
-            int nutrition = 0;
-            float saturation = 0;
-            List<Pair<MobEffectInstance, Float>> effects = new ArrayList<>();
-
-            NonNullList<ItemStack> l = NonNullList.create();
-            for (int i = 0; i < inventory.getContainerSize(); i++) {
-                ItemStack s = inventory.getItem(i);
-                if (s != null && !s.isEmpty()) {
-                    l.add(s);
-                    if (s.getFoodProperties(null) != null) {
-                        FoodProperties f = s.getFoodProperties(null);
-                        nutrition += f.getNutrition();
-                        saturation += f.getSaturationModifier();
-                        effects.addAll(f.getEffects());
-                    }
-                }
+    @Override
+    public ItemStack getResultItem(RegistryAccess pRegistryAccess) {
+        ItemStack resultItem = super.getResultItem(pRegistryAccess).copy();
+        if(resultItem.getItem() instanceof DynamicToast) {
+            CompoundTag tag = resultItem.getOrCreateTag();
+            if(this.graphic.equals("dynamic")){
+                tag.putString(ExtraDelightComponents.IDynamicFood.TAG,"dynamic_jam/sweet_berries");
+            }else {
+                tag.merge(ExtraDelightComponents.IDynamicFood.write(List.of(this.graphic)));
             }
-
-            FoodProperties.Builder food = new FoodProperties.Builder();
-            if (stack.getCapability(ExtraDelightComponents.IFOOD).isPresent()) {
-                ExtraDelightComponents.IFood iFood = stack.getCapability(ExtraDelightComponents.IFOOD).resolve().get();
-                FoodComponent food1 = iFood.getFood();
-                food1.set(nutrition, saturation, effects.stream().map(
-                        pair -> new Pair<Supplier<MobEffectInstance>, Float>(() -> new MobEffectInstance(pair.getFirst().getEffect()), pair.getSecond())).toList());
-            } else {
-                ExtraDelight.logger.error("Can not Modify ifood capability!");
-
-            }
+            resultItem.setTag(tag);
         }
+        return resultItem;
     }
 
     @Override
@@ -126,15 +104,19 @@ public class DynamicToastRecipe extends ShapelessRecipe {
 
     @Override
     public RecipeType<?> getType() {
-        return ExtraDelightRecipes.DYNAMIC_TOAST.get();
+        return RecipeType.CRAFTING;
     }
 
 	public static class Serializer implements RecipeSerializer<DynamicToastRecipe> {
 		@Override
 		public DynamicToastRecipe fromJson(ResourceLocation resourceLocation, JsonObject json) {
 			String group = GsonHelper.getAsString(json, "group", "");
-            Pair<CraftingBookCategory, JsonElement> pair = CraftingBookCategory.CODEC.decode(JsonOps.INSTANCE, json.get("category")).result().orElse(null);
-            CraftingBookCategory category = pair != null ? pair.getFirst() : CraftingBookCategory.MISC;
+            CraftingBookCategory category = CraftingBookCategory.MISC;
+            try {
+                category = CraftingBookCategory.valueOf(json.get("category").getAsString().toLowerCase());
+            }catch (Exception e){
+                ExtraDelight.logger.warn("Error parsing crafting book category: {},using default MISC " , json.get("category").getAsString());
+            }
 
             NonNullList<Ingredient> ingredients = NonNullList.create();
 

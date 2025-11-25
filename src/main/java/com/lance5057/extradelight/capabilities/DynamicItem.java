@@ -62,20 +62,21 @@ public class DynamicItem implements ExtraDelightComponents.IDynamicFood , ICapab
         }
         tag.put("graphics", listTag);
 
-        nbt.put("dynamic",tag);
+        nbt.put("dynamic_food",tag);
         return nbt;
     }
 
     @Override
     public void deserializeNBT(CompoundTag compoundTag) {
         this.graphics=new ArrayList<>();
-        if(compoundTag.contains("dynamic")) {
-            CompoundTag nbt = compoundTag.getCompound("dynamic");
+        if(compoundTag.contains("dynamic_food")) {
+            CompoundTag nbt = compoundTag.getCompound("dynamic_food");
                  if(nbt.contains("graphics")) {
                      ListTag listTag = nbt.getList("graphics",Tag.TAG_STRING);
                      for (int i = 0; i < listTag.size(); i++) {
                          this.graphics.add(listTag.getString(i));
                      }
+                     return ;
                  }
             ExtraDelight.logger.error("Broken DynamicItem Tag! {}",compoundTag.toString());
         }

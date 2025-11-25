@@ -28,6 +28,7 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.common.capabilities.Capability;
@@ -85,24 +86,37 @@ public class DynamicToast extends Item implements IDynamic {
 		i.add(base_model);
 
 		//ItemContainerContents comp = itemStack.getComponents().get(ExtraDelightComponents.ITEMSTACK_HANDLER.get());
-		LazyOptional<ExtraDelightComponents.IDynamicFood> capability = itemStack.getCapability(ExtraDelightComponents.DYNAMIC_FOOD);
-		if (capability.isPresent()) {
+//		LazyOptional<ExtraDelightComponents.IDynamicFood> capability = itemStack.getCapability(ExtraDelightComponents.DYNAMIC_FOOD);
+//		if (capability.isPresent()) {
+//
+//
+//			ExtraDelightComponents.IDynamicFood comp = capability.orElseThrow(NullPointerException::new);
+//			if (comp.graphics().size() > 1) {
+//				ItemStack s = new ItemStack(CraftingHelper.getItem(comp.graphics().get(0),true));
+//				String str = s.getItem().getDescriptionId();
+//				str = str.substring(str.lastIndexOf('.') + 1);
+//				ResourceLocation rc = ExtraDelight.modLoc( str);
+//				i.add(rc);
+//			} else
+//                i.add(missing_model);
+//
+//        } else
+//			i.add(missing_model);
 
-
-			ExtraDelightComponents.IDynamicFood comp = capability.orElseThrow(NullPointerException::new);
-			if (comp.graphics().size() > 1) {
-				ItemStack s = new ItemStack(CraftingHelper.getItem(comp.graphics().get(0),true));
-				String str = s.getItem().getDescriptionId();
-				str = str.substring(str.lastIndexOf('.') + 1);
-				ResourceLocation rc = ExtraDelight.modLoc( str);
-				i.add(rc);
-			} else
-				i.add(base_model);
-			//i.add(missing_model);
-
-        } else
-			i.add(missing_model);
-
+        List<String> read = ExtraDelightComponents.IDynamicFood.read(itemStack);
+        if(!read.isEmpty()){
+            if (!itemStack.getOrCreateTag().contains(ExtraDelightComponents.IDynamicFood.TAG)) {
+                String str = "extra/dynamics/toast/";
+                ResourceLocation rc = ExtraDelight.modLoc(str + read.get(0));
+                i.add(rc);
+            }
+            if(itemStack.getOrCreateTag().contains("dynamic")){
+                String str = "extra/dynamics/toast/dynamic_jam/";
+                ResourceLocation rc = ExtraDelight.modLoc(str + itemStack.getOrCreateTag().getString("dynamic"));
+                i.add(rc);
+            }
+        }else
+            i.add(missing_model);
 //		i.add(bm);
 		return i;
 	}
@@ -129,19 +143,14 @@ public class DynamicToast extends Item implements IDynamic {
 
 	@Override
 	public Component getName(ItemStack itemStack) {
-        LazyOptional<ExtraDelightComponents.EDItemStackHandler> capability = itemStack.getCapability(ExtraDelightComponents.ITEMSTACK_HANDLER);
-        if(capability.resolve().isPresent()) {
-            ExtraDelightComponents.EDItemStackHandler comp = capability.resolve().get();
-            if(comp.getSlots()>1){
-                for(ItemStack stack:comp.nonEmptyItems()){
-                    if(!stack.is(ExtraDelightItems.TOAST.get())){
-                        return Component.translatable(this.getDescriptionId(itemStack),
-                                stack.getItem().getName(stack));
-                    }
-                }
+        NonNullList<ItemStack> read = ExtraDelightComponents.EDItemStackHandler.read(itemStack);
+        for(ItemStack s : read.stream().filter(i->!i.isEmpty()).toList()) {
+            if(!s.is(ExtraDelightItems.TOAST.get())){
+                return Component.translatable(this.getDescriptionId(itemStack),
+                                    s.getItem().getName(s));
             }
         }
-		return Component.translatable("dynamic.toast");
+        return Component.translatable("dynamic.toast");
 
 	}
 
@@ -224,7 +233,7 @@ public class DynamicToast extends Item implements IDynamic {
 	@Override
 	public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
 		if(!pLevel.isClientSide()&&pLivingEntity instanceof Player player) {
-			FoodProperties build = this.builder.build();
+            FoodProperties build = this.builder.build();
 			player.getFoodData().eat(build.getNutrition(), build.getSaturationModifier());
 			player.gameEvent(GameEvent.EAT);
             if (pStack.getTag() != null && pStack.getTag().contains("properties")) {
