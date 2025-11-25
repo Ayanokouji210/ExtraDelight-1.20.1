@@ -1,18 +1,15 @@
 package com.lance5057.extradelight.data.recipebuilders;
 
-//import com.lance5057.extradelight.workstations.evaporator.recipes.EvaporatorRecipe;
 import com.google.gson.JsonObject;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.util.StackUtil;
 import com.lance5057.extradelight.workstations.evaporator.recipes.EvaporatorRecipe;
-import com.simibubi.create.foundation.fluid.FluidIngredient;
+import com.lance5057.extradelight.fluids.FluidIngredient;
 import net.minecraft.advancements.*;
-//import net.minecraft.advancements.AdvancementRequirements;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeBuilder;
-//import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -20,7 +17,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
-//import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 import javax.annotation.Nullable;
 import java.util.LinkedHashMap;

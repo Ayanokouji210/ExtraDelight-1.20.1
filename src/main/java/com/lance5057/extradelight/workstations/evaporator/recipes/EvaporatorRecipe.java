@@ -1,27 +1,16 @@
 package com.lance5057.extradelight.workstations.evaporator.recipes;
 
 import com.google.gson.JsonObject;
-import com.lance5057.extradelight.ExtraDelightBlocks;
 import com.lance5057.extradelight.ExtraDelightRecipes;
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
-//import com.simibubi.create.foundation.fluid.FluidIngredient;
-import net.minecraft.core.HolderLookup.Provider;
-import com.simibubi.create.foundation.fluid.FluidIngredient;
+import com.lance5057.extradelight.fluids.FluidIngredient;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
-//import net.minecraft.network.RegistryFriendlyByteBuf;
-//import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.fluids.FluidStack;
 import javax.annotation.Nullable;
-//import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 public class EvaporatorRecipe implements Recipe<EvaporatorRecipeWrapper> {
 	final String group;

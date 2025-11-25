@@ -1,17 +1,12 @@
 package com.lance5057.extradelight.workstations;
 
 import com.lance5057.extradelight.fluids.FluidKey;
-import com.simibubi.create.foundation.fluid.FluidIngredient;
+import com.lance5057.extradelight.fluids.FluidIngredient;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.IFluidTank;
 import net.minecraftforge.fluids.capability.IFluidHandler;
-import org.checkerframework.checker.units.qual.K;
-//import net.neoforged.neoforge.fluids.FluidStack;
-//import net.neoforged.neoforge.fluids.IFluidTank;
-//import net.neoforged.neoforge.fluids.capability.IFluidHandler;
-//import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 import java.util.ArrayList;
 import java.util.Iterator;

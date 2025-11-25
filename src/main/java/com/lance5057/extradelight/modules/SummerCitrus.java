@@ -19,13 +19,10 @@ import com.lance5057.extradelight.items.GourmetHotCocoa;
 import com.lance5057.extradelight.items.SourJuiceItem;
 import com.lance5057.extradelight.items.ToolTipConsumableItem;
 import com.lance5057.extradelight.items.XAdeDrink;
-import com.lance5057.extradelight.items.components.ChillComponent;
-import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
-//import com.lance5057.extradelight.util.DataComponentIngredient;
 import com.lance5057.extradelight.util.EDItemGenerator;
 import com.lance5057.extradelight.workstations.vat.recipes.VatRecipe;
 import com.lance5057.extradelight.worldgen.features.trees.ExtraDelightTreeGrowers;
-import com.simibubi.create.foundation.fluid.FluidIngredient;
+import com.lance5057.extradelight.fluids.FluidIngredient;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.BlockPos;
@@ -73,7 +70,6 @@ import vectorwing.farmersdelight.data.recipe.CookingRecipes;
 import vectorwing.farmersdelight.common.crafting.ingredient.ToolActionIngredient;
 
 import java.util.List;
-import java.util.Properties;
 import java.util.function.Consumer;
 
 import static com.lance5057.extradelight.ExtraDelightBlocks.bowl;

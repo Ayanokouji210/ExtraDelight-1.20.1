@@ -6,7 +6,7 @@ import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.util.BottleFluidRegistry;
 import com.lance5057.extradelight.workstations.mixingbowl.recipes.MixingBowlRecipe;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.simibubi.create.foundation.fluid.FluidIngredient;
+import com.lance5057.extradelight.fluids.FluidIngredient;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.builder.IRecipeSlotBuilder;
@@ -27,7 +27,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.phys.Vec2;
 import net.minecraftforge.fluids.FluidStack;
-//import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 import java.util.Arrays;
 import java.util.List;

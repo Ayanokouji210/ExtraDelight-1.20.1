@@ -11,7 +11,6 @@ import com.lance5057.extradelight.ExtraDelightTags;
 import com.lance5057.extradelight.aesthetics.AestheticBlocks;
 import com.lance5057.extradelight.modules.Fermentation;
 
-import com.simibubi.create.foundation.advancement.AdvancementBehaviour;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.Advancement.Builder;
 

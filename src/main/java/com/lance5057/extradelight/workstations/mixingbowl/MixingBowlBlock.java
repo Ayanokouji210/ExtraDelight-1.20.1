@@ -136,19 +136,21 @@ public class MixingBowlBlock extends Block implements EntityBlock, IStyleable {
                 if (result == InteractionResult.SUCCESS) {
                     return InteractionResult.SUCCESS;
                 } else {
-                    MenuProvider containerProvider = new MenuProvider() {
-                        @Override
-                        public Component getDisplayName() {
-                            return Component.translatable("screen.mixing_bowl.name");
-                        }
+                    if (pPlayer instanceof ServerPlayer) {
+                        MenuProvider containerProvider = new MenuProvider() {
+                            @Override
+                            public Component getDisplayName() {
+                                return Component.translatable("screen.mixing_bowl.name");
+                            }
 
-                        @Override
-                        public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory,
-                                                                Player playerEntity) {
-                            return new MixingBowlMenu(windowId, playerInventory, mbe);
-                        }
-                    };
-                    NetworkHooks.openScreen((ServerPlayer) pPlayer, containerProvider,pPos);
+                            @Override
+                            public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory,
+                                                                    Player playerEntity) {
+                                return new MixingBowlMenu(windowId, playerInventory, mbe);
+                            }
+                        };
+                        NetworkHooks.openScreen((ServerPlayer) pPlayer, containerProvider,pPos);
+                    }
                 }
             }
         }

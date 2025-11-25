@@ -88,7 +88,7 @@ import java.util.Map;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = ExtraDelight.MOD_ID, value = Dist.CLIENT)
 public class ExtraDelightClientEvents {
-	static Map<Holder<Item>,Integer> chillMap =new HashMap<>();
+	public static Map<Holder<Item>,Integer> chillMap =new HashMap<>();
 
     public static void setupChillMap() {
             //chill

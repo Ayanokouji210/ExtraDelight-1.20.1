@@ -4,7 +4,7 @@ import com.google.gson.JsonObject;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.recipe.BottleFluidRegistryRecipe;
 import com.lance5057.extradelight.util.StackUtil;
-import com.simibubi.create.foundation.fluid.FluidIngredient;
+import com.lance5057.extradelight.fluids.FluidIngredient;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
@@ -12,7 +12,6 @@ import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeBuilder;
-//import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -23,7 +22,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import java.util.function.Consumer;
-//import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 public class BottleFluidRegistryRecipeBuilder implements RecipeBuilder {
 
