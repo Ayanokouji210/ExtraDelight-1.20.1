@@ -120,7 +120,7 @@ public class BottleFluidRegistry {
 				FluidIngredient.fromFluid(ExtraDelightFluids.COCOA_NUT_BUTTER_SPREAD.FLUID.get(), bottleMB));
 		register(Ingredient.of(ModItems.HOT_COCOA.get()),
 				FluidIngredient.fromFluid(ExtraDelightFluids.HOT_COCOA.FLUID.get(), bottleMB));
-		register(PartialNBTIngredient.of(new DynamicItemComponent(List.of("sweet_berries")).serializeNBT(),ExtraDelightItems.DYNAMIC_JAM.get()),
+		register(PartialNBTIngredient.of(ExtraDelightComponents.IDynamicFood.write(List.of("sweet_berries")),ExtraDelightItems.DYNAMIC_JAM.get()),
 //                DataComponentIngredient.of(false, ExtraDelightComponents.DYNAMIC_FOOD,
 //                        new DynamicItemComponent(List.of("sweet_berries")), ExtraDelightItems.DYNAMIC_JAM.get()),
                 FluidIngredient.fromFluid(ExtraDelightFluids.JAM.FLUID.get(), bottleMB));
