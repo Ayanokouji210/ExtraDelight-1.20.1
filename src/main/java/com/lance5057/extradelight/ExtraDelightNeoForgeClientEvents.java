@@ -75,7 +75,7 @@ public class ExtraDelightNeoForgeClientEvents {
 		}
 
 		if (!ModList.get().isLoaded("butchercraft")) {
-			ExtraDelight.logger.warn("{} is not installed", Butchercraft.MOD_ID);
+			//ExtraDelight.logger.warn("{} is not installed", Butchercraft.MOD_ID);
 
 			if (butchercraft.stream().anyMatch(s -> event.getItemStack().is(s.get()))) {
 				event.getToolTip().add(Component.translatable(ExtraDelight.MOD_ID + ".tooltip.butchercraft")
