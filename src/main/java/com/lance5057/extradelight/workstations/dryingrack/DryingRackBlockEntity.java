@@ -49,6 +49,13 @@ public class DryingRackBlockEntity extends BlockEntity {
 			results[i] = ItemStack.EMPTY;
 	}
 
+    public int[] getCookingProgress() {
+        return cookingProgress;
+    }
+
+    public int[] getCookingTime() {
+        return cookingTime;
+    }
 //	@Nonnull
 //	@Override
 //	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {

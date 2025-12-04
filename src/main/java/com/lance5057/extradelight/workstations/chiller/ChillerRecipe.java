@@ -76,7 +76,24 @@ public class ChillerRecipe implements Recipe<ChillerRecipeWrapper> {
 		return this.container;
 	}
 
-	@Override
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj) return true;
+        if(obj == null || this.getClass() != obj.getClass()) return false;
+
+        ChillerRecipe that = (ChillerRecipe) obj;
+        if(!this.group.equals(that.group)) return false;
+        if(!this.fluid.equals(that.fluid)) return false;
+        if(!this.inputItems.equals(that.inputItems)) return false;
+        if(!this.output.equals(that.output)) return false;
+        if(!this.container.equals(that.container)) return false;
+        if(this.experience != that.experience) return false;
+        if(this.cookTime != that.cookTime) return false;
+        return this.consumeContainer == that.consumeContainer;
+
+    }
+
+    @Override
 	public String getGroup() {
 		return this.group;
 	}

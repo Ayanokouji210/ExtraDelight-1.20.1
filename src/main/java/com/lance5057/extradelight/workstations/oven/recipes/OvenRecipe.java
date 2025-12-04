@@ -183,7 +183,7 @@ public class OvenRecipe implements Recipe<RecipeWrapper> {
 				throw new JsonParseException("Too many ingredients for oven recipe. The maximum is " + OvenRecipe.INPUT_SLOTS);
 			}
 
-			final ItemStack output = CraftingHelper.getItemStack(GsonHelper.getAsJsonObject(json, "result"), true);
+			final ItemStack output = CraftingHelper.getItemStack(GsonHelper.getAsJsonObject(json, "result"),false);
 			final ItemStack container = json.has("container") ?
 					CraftingHelper.getItemStack(GsonHelper.getAsJsonObject(json, "container"), true) :
 					ItemStack.EMPTY;
