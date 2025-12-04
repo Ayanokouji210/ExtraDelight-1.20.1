@@ -3,7 +3,7 @@
   "consumeContainer": false,
   "container": {
     "count": 1,
-    "id": "extradelight:pie_dish"
+    "item": "extradelight:pie_dish"
   },
   "cookingtime": 800,
   "experience": 1.0,
@@ -29,6 +29,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "farmersdelight:apple_pie"
+    "item": "farmersdelight:apple_pie"
   }
 }

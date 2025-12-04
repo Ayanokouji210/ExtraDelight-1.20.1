@@ -7,6 +7,7 @@ import com.lance5057.extradelight.capabilities.DynamicItem;
 import com.lance5057.extradelight.data.recipebuilders.ChillerRecipeBuilder;
 import com.lance5057.extradelight.items.dynamicfood.api.DynamicItemComponent;
 import com.lance5057.extradelight.items.dynamicfood.api.IDynamic;
+import com.lance5057.extradelight.util.NBTUtil;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.core.Direction;
@@ -42,10 +43,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 //import net.minecraft.world.item.component.ItemContainerContents;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class DynamicToast extends Item implements IDynamic {
 	public static BakedModel model;
@@ -54,7 +52,7 @@ public class DynamicToast extends Item implements IDynamic {
 			"extra/dynamics/toast/toast");
 	static final ResourceLocation missing_model = ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,
 			"extra/dynamics/toast/empty_toast");
-	private FoodProperties.Builder builder;
+	private final FoodProperties.Builder builder;
 
 
     @Override
@@ -154,7 +152,14 @@ public class DynamicToast extends Item implements IDynamic {
 
 	}
 
-	@Override
+    @Override
+    public @org.jetbrains.annotations.Nullable FoodProperties getFoodProperties(ItemStack stack, @org.jetbrains.annotations.Nullable LivingEntity entity) {
+        NBTUtil.IFood iFood = new NBTUtil.IFood();
+        iFood.deserializeNBT(stack.getOrCreateTag());
+        return iFood.getFoodProperties();
+    }
+
+    @Override
 	public @Nullable ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
 		return new ICapabilityProvider() {
 			private final LazyOptional<ExtraDelightComponents.IDynamicFood> capability =
@@ -216,43 +221,35 @@ public class DynamicToast extends Item implements IDynamic {
 		return finalNbt;
 	}
 
-	public void ModifyBuilder(FoodProperties.Builder pBuilder) {
-		this.builder=pBuilder;
-	}
-
 	@Override
 	public boolean isEdible() {
 		return true;
 	}
 
 	@Override
-	public FoodProperties getFoodProperties() {
-		return this.builder.build();
-	}
-
-	@Override
 	public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
-		if(!pLevel.isClientSide()&&pLivingEntity instanceof Player player) {
-            FoodProperties build = this.builder.build();
-			player.getFoodData().eat(build.getNutrition(), build.getSaturationModifier());
-			player.gameEvent(GameEvent.EAT);
-            if (pStack.getTag() != null && pStack.getTag().contains("properties")) {
-                CompoundTag food= pStack.getTag().getCompound("properties");
-				ListTag effects = food.getList("effects", Tag.TAG_COMPOUND);
-				for (int i = 0; i < effects.size(); i++) {
-                    CompoundTag compound = effects.getCompound(i);
-                    MobEffectInstance load = MobEffectInstance.load(compound);
-                    if (load != null) {
-                        player.addEffect(load);
-                    }
-                }
-            }
-
-        }
-		if (!(pLivingEntity instanceof Player) || !((Player) pLivingEntity).getAbilities().instabuild) {
-			pStack.shrink(1);
-		}
-		return pStack;
+//		if(!pLevel.isClientSide()&&pLivingEntity instanceof Player player) {
+//            FoodProperties build = this.builder.build();
+//			player.getFoodData().eat(build.getNutrition(), build.getSaturationModifier());
+//			player.gameEvent(GameEvent.EAT);
+//            if (pStack.getTag() != null && pStack.getTag().contains("properties")) {
+//                CompoundTag food= pStack.getTag().getCompound("properties");
+//				ListTag effects = food.getList("effects", Tag.TAG_COMPOUND);
+//				for (int i = 0; i < effects.size(); i++) {
+//                    CompoundTag compound = effects.getCompound(i);
+//                    MobEffectInstance load = MobEffectInstance.load(compound);
+//                    if (load != null) {
+//                        player.addEffect(load);
+//                    }
+//                }
+//            }
+//
+//        }
+//		if (!(pLivingEntity instanceof Player) || !((Player) pLivingEntity).getAbilities().instabuild) {
+//			pStack.shrink(1);
+//		}
+//		return pStack;
+        return super.finishUsingItem(pStack, pLevel, pLivingEntity);
 	}
 
 	@Override

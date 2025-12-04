@@ -7,16 +7,21 @@ import com.lance5057.extradelight.ExtraDelightComponents;
 import com.lance5057.extradelight.ExtraDelightItems;
 import com.lance5057.extradelight.ExtraDelightRecipes;
 import com.lance5057.extradelight.items.dynamicfood.DynamicToast;
+import com.lance5057.extradelight.util.NBTUtil;
+import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.DynamicOps;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.NbtUtils;
 import net.minecraft.nbt.StringTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
@@ -26,6 +31,7 @@ import org.checkerframework.checker.units.qual.C;
 import javax.annotation.Nullable;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DynamicToastRecipe extends ShapelessRecipe {
@@ -50,11 +56,15 @@ public class DynamicToastRecipe extends ShapelessRecipe {
     @Override
     public ItemStack assemble(CraftingContainer input, RegistryAccess registries) {
         ItemStack assemble = super.assemble(input, registries).copy();
+
+        //EDItemStackHandler
         NonNullList<ItemStack> stacks = NonNullList.withSize(this.getIngredients().size(), ItemStack.EMPTY);
         for (int i = 0; i < this.getIngredients().size(); ++i) {
             stacks.set(i, this.getIngredients().get(i).getItems()[0].copy());
         }
         CompoundTag write = ExtraDelightComponents.EDItemStackHandler.write(stacks);
+
+        //IDynamicFood
         if(this.graphic.equals("dynamic")){
             CompoundTag nbt = new CompoundTag();
             CompoundTag tag = new CompoundTag();
@@ -74,6 +84,22 @@ public class DynamicToastRecipe extends ShapelessRecipe {
         }else {
             write.merge(ExtraDelightComponents.IDynamicFood.write(List.of(this.graphic)));
         }
+
+        //IFood
+        int nutrition = 0;
+        float saturation = 0.0f;
+        List<Pair<MobEffectInstance, Float>> effects = new ArrayList<>();
+        for(ItemStack stack :input.getItems()) {
+            if(stack.isEdible()){
+                FoodProperties foodProperties = stack.getFoodProperties(null);
+                nutrition += foodProperties.getNutrition();
+                saturation += foodProperties.getSaturationModifier();
+                effects.addAll(foodProperties.getEffects());
+            }
+        }
+        NBTUtil.IFood iFood = new NBTUtil.IFood(nutrition,saturation,effects);
+        write.merge(iFood.serializeNBT());
+
         assemble.setTag(write);
         return assemble;
     }
@@ -92,8 +118,29 @@ public class DynamicToastRecipe extends ShapelessRecipe {
             }else {
                 tag.merge(ExtraDelightComponents.IDynamicFood.write(List.of(this.graphic)));
             }
+
+            //IFood
+            int nutrition = 0;
+            float saturation = 0.0f;
+            List<Pair<MobEffectInstance, Float>> effects = new ArrayList<>();
+            for(Ingredient ingredient :getIngredients()) {
+                if (!ingredient.isEmpty()) {
+                    if(ingredient.getItems()[0].isEdible()){
+                        FoodProperties foodProperties = ingredient.getItems()[0].getFoodProperties(null);
+                        nutrition += foodProperties.getNutrition();
+                        saturation += foodProperties.getSaturationModifier();
+                        effects.addAll(foodProperties.getEffects());
+                    }
+                }
+            }
+            NBTUtil.IFood iFood = new NBTUtil.IFood(nutrition,saturation,effects);
+            tag.merge(iFood.serializeNBT());
+
             resultItem.setTag(tag);
         }
+
+
+
         return resultItem;
     }
 
@@ -111,12 +158,7 @@ public class DynamicToastRecipe extends ShapelessRecipe {
 		@Override
 		public DynamicToastRecipe fromJson(ResourceLocation resourceLocation, JsonObject json) {
 			String group = GsonHelper.getAsString(json, "group", "");
-            CraftingBookCategory category = CraftingBookCategory.MISC;
-            try {
-                category = CraftingBookCategory.valueOf(json.get("category").getAsString().toLowerCase());
-            }catch (Exception e){
-                ExtraDelight.logger.warn("Error parsing crafting book category: {},using default MISC " , json.get("category").getAsString());
-            }
+            CraftingBookCategory category = CraftingBookCategory.CODEC.byName(json.get("category").getAsString(),CraftingBookCategory.MISC);
 
             NonNullList<Ingredient> ingredients = NonNullList.create();
 
