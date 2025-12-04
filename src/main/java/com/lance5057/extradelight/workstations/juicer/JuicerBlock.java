@@ -36,26 +36,24 @@ import net.minecraftforge.fluids.capability.IFluidHandlerItem;
 import net.minecraftforge.items.IItemHandler;
 
 public class JuicerBlock extends Block implements EntityBlock/* , IStyleable */ {
-	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-	public static final IntegerProperty STYLE = IntegerProperty.create("style", 0, Styles.values().length - 1);
-	protected static final VoxelShape SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 16.0D, 15.0D);
+    public static final IntegerProperty STYLE = IntegerProperty.create("style", 0, Styles.values().length - 1);
+    protected static final VoxelShape SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 16.0D, 15.0D);
 
-	public static enum Styles {
-		OAK, SPRUCE
-	};
+    public JuicerBlock(Properties p_49795_) {
+        super(p_49795_);
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH)
+                .setValue(WATERLOGGED, false).setValue(STYLE, 0));
+    }
 
-	public JuicerBlock(Properties p_49795_) {
-		super(p_49795_);
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH)
-				.setValue(WATERLOGGED, false).setValue(STYLE, 0));
-	}
+    ;
 
-	@Override
-	public boolean useShapeForLightOcclusion(BlockState pState) {
-		return true;
-	}
+    @Override
+    public boolean useShapeForLightOcclusion(BlockState pState) {
+        return true;
+    }
 
     @Override
     public boolean isPathfindable(BlockState pState, BlockGetter pLevel, BlockPos pPos, PathComputationType pType) {
@@ -63,130 +61,131 @@ public class JuicerBlock extends Block implements EntityBlock/* , IStyleable */ 
     }
 
     @Override
-	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-		return SHAPE;
-	}
+    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+        return SHAPE;
+    }
 
-	@Override
-	public RenderShape getRenderShape(BlockState pState) {
-		return RenderShape.MODEL;
-	}
+    @Override
+    public RenderShape getRenderShape(BlockState pState) {
+        return RenderShape.MODEL;
+    }
 
-	@Override
-	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		Level level = context.getLevel();
-		FluidState fluid = level.getFluidState(context.getClickedPos());
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        Level level = context.getLevel();
+        FluidState fluid = level.getFluidState(context.getClickedPos());
 
-		BlockState state = this.defaultBlockState().setValue(FACING, context.getHorizontalDirection())
-				.setValue(WATERLOGGED, fluid.getType() == Fluids.WATER);
+        BlockState state = this.defaultBlockState().setValue(FACING, context.getHorizontalDirection())
+                .setValue(WATERLOGGED, fluid.getType() == Fluids.WATER);
 
-		return state;
-	}
+        return state;
+    }
 
-	@Override
-	public BlockEntity newBlockEntity(BlockPos p_153215_, BlockState p_153216_) {
-		return new JuicerBlockEntity(p_153215_, p_153216_);
-	}
-
+    @Override
+    public BlockEntity newBlockEntity(BlockPos p_153215_, BlockState p_153216_) {
+        return new JuicerBlockEntity(p_153215_, p_153216_);
+    }
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if(pPlayer.getMainHandItem().isEmpty()){
-            return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
-        }else {
-            return this.useItemOn(pPlayer.getMainHandItem(), pState, pLevel, pPos, pPlayer, pHand, pHit);
-        }
+        return this.useItemOn(pPlayer.getMainHandItem(), pState, pLevel, pPos, pPlayer, pHand, pHit);
     }
 
     public InteractionResult useItemOn(ItemStack stack, BlockState pState, Level pLevel, BlockPos pPos,
                                        Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
 //		if (pLevel.isClientSide) {
-//			return ItemInteractionResult.SUCCESS;
+//			return InteractionResult.SUCCESS;
 //		} else {
-		BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
-		if (tileEntity instanceof JuicerBlockEntity mbe) {
-			ItemStack i = BottleFluidRegistry.getBottleFromFluid(mbe.getFluidTank().getFluid());
-			ItemStack offhandStack = pPlayer.getOffhandItem();
+        BlockEntity tileEntity = pLevel.getBlockEntity(pPos);
+        if (tileEntity instanceof JuicerBlockEntity mbe) {
+            ItemStack i = BottleFluidRegistry.getBottleFromFluid(mbe.getFluidTank().getFluid());
+            ItemStack offhandStack = pPlayer.getOffhandItem();
 
-			if (stack.getCapability(ForgeCapabilities.FLUID_HANDLER_ITEM) != null) {
-				IFluidHandlerItem f = stack.getCapability(ForgeCapabilities.FLUID_HANDLER_ITEM).orElse(null);
-				if (f != null) {
-					FluidUtil.interactWithFluidHandler(pPlayer, pHand, mbe.getFluidTank());
-					return InteractionResult.SUCCESS;
-				}
-			} else if (!i.isEmpty() && (ItemStack.isSameItem(i.getCraftingRemainingItem(), stack)
-					|| ItemStack.isSameItem(i.getCraftingRemainingItem(), offhandStack))) {
+            if (stack.getCapability(ForgeCapabilities.FLUID_HANDLER_ITEM) != null) {
+                IFluidHandlerItem f = stack.getCapability(ForgeCapabilities.FLUID_HANDLER_ITEM).orElse(null);
+                if (f != null) {
+                    FluidUtil.interactWithFluidHandler(pPlayer, pHand, mbe.getFluidTank());
+                    return InteractionResult.SUCCESS;
+                }
+            }
+            if (!i.isEmpty() && (ItemStack.isSameItem(i.getCraftingRemainingItem(), stack)
+                    || ItemStack.isSameItem(i.getCraftingRemainingItem(), offhandStack))) {
 
 //				if (!i.isEmpty()) {
-				if (mbe.getFluidTank().drain(250, IFluidHandler.FluidAction.SIMULATE).getAmount() == 250) {
-					mbe.getFluidTank().drain(250, IFluidHandler.FluidAction.EXECUTE);
+                if (mbe.getFluidTank().drain(250, IFluidHandler.FluidAction.SIMULATE).getAmount() == 250) {
+                    mbe.getFluidTank().drain(250, IFluidHandler.FluidAction.EXECUTE);
 
-					BlockEntityUtils.Inventory.givePlayerItemStack(i, pPlayer, pLevel, pPos);
-					pPlayer.getItemInHand(pHand).shrink(1);
-					return InteractionResult.SUCCESS;
+                    BlockEntityUtils.Inventory.givePlayerItemStack(i, pPlayer, pLevel, pPos);
+                    pPlayer.getItemInHand(pHand).shrink(1);
+                    return InteractionResult.SUCCESS;
 //					}
-				}
-			} else if (pPlayer.isCrouching()) {
-				mbe.extractItem(pPlayer);
-				return InteractionResult.SUCCESS;
-			} else if (mbe.getInsertedItem().isEmpty()) {
+                }
+            }
+            if (pPlayer.isCrouching()) {
+                mbe.extractItem(pPlayer);
+                return InteractionResult.SUCCESS;
+            }
+            if (mbe.getInsertedItem().isEmpty()) {
 
-				if (offhandStack.isEmpty())
-					if (!stack.isEmpty())
-						mbe.insertItem(stack);
-					else
-						return InteractionResult.PASS;
+                if (offhandStack.isEmpty())
+                    if (!stack.isEmpty())
+                        mbe.insertItem(stack);
+                    else
+                        return InteractionResult.PASS;
 //				if (pHand.equals(InteractionHand.MAIN_HAND))
-//					return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+//					return InteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 
-				mbe.insertItem(offhandStack);
-				return InteractionResult.SUCCESS;
-			}
+                mbe.insertItem(offhandStack);
+                return InteractionResult.SUCCESS;
+            }
+            if (stack.isEmpty() || offhandStack.isEmpty()) {
+                mbe.grind(pPlayer);
+                return InteractionResult.SUCCESS;
+            }
+        }
+        return InteractionResult.PASS;
+    }
 
-			else if (stack.isEmpty() || offhandStack.isEmpty()) {
-				mbe.grind(pPlayer);
-				return InteractionResult.SUCCESS;
-			}
-		}
-		return InteractionResult.PASS;
-	}
+    @Override
+    public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level,
+                                  BlockPos currentPos, BlockPos facingPos) {
+        if (state.getValue(WATERLOGGED)) {
+            level.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+        }
+        return state;
+    }
 
-	@Override
-	public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level,
-			BlockPos currentPos, BlockPos facingPos) {
-		if (state.getValue(WATERLOGGED)) {
-			level.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
-		}
-		return state;
-	}
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        super.createBlockStateDefinition(builder);
+        builder.add(FACING, WATERLOGGED, STYLE);
+    }
 
-	@Override
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		super.createBlockStateDefinition(builder);
-		builder.add(FACING, WATERLOGGED, STYLE);
-	}
+    @Override
+    public FluidState getFluidState(BlockState state) {
+        return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+    }
 
-	@Override
-	public FluidState getFluidState(BlockState state) {
-		return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
-	}
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+        if (state.getBlock() != newState.getBlock()) {
+            BlockEntity tileEntity = level.getBlockEntity(pos);
+            if (tileEntity instanceof JuicerBlockEntity te) {
+                IItemHandler items = te.getItemHandler();
+                for (int i = 0; i < te.getItemHandler().getSlots(); i++) {
+                    level.addFreshEntity(
+                            new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), items.getStackInSlot(i)));
+                }
+                level.updateNeighbourForOutputSignal(pos, this);
+            }
 
-	@Override
-	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-		if (state.getBlock() != newState.getBlock()) {
-			BlockEntity tileEntity = level.getBlockEntity(pos);
-			if (tileEntity instanceof JuicerBlockEntity te) {
-				IItemHandler items = te.getItemHandler();
-				for (int i = 0; i < te.getItemHandler().getSlots(); i++) {
-					level.addFreshEntity(
-							new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), items.getStackInSlot(i)));
-				}
-				level.updateNeighbourForOutputSignal(pos, this);
-			}
+            super.onRemove(state, level, pos, newState, isMoving);
+        }
+    }
 
-			super.onRemove(state, level, pos, newState, isMoving);
-		}
-	}
+    public static enum Styles {
+        OAK, SPRUCE
+    }
 
 //	@Override
 //	public int numStyles() {
