@@ -147,7 +147,7 @@ repositories {
     maven { url "https://modmaven.k-4u.nl" }
     maven { url "https://maven.tterrag.com/" }
     maven { url 'https://www.jitpack.io' }
-    maven { url "https://maven.ryanliptak.com/" }
+    maven { url "https://maven.ryanliptak.com/" } //apple skin
     maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
     maven { url = "https://mvn.devos.one/snapshots" } // Registrate
     maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven" } // ForgeConfigAPIPort
@@ -183,7 +183,8 @@ dependencies {
     compileOnly fg.deobf( "curse.maven:butchercraft-265715:6058842")
     runtimeOnly fg.deobf( "curse.maven:butchercraft-265715:6058842")
     runtimeOnly fg.deobf("curse.maven:nbteditor-678133:5984630")
-    runtimeOnly fg.deobf("curse.maven:appleskin-248787:4770828")
+    runtimeOnly fg.deobf("squeek.appleskin:appleskin-forge:mc1.20.1-2.5.1")
+    implementation fg.deobf("curse.maven:jade-324717:6855440")
     //implementation fg.deobf("curse.maven:butchercraft-265715:6058842")
 
     // compile against the JEI API but do not include it at runtime
