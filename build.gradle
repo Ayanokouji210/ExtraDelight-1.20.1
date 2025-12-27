@@ -30,7 +30,7 @@ base {
 }
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
-//java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
@@ -186,6 +186,9 @@ dependencies {
     runtimeOnly fg.deobf("squeek.appleskin:appleskin-forge:mc1.20.1-2.5.1")
     implementation fg.deobf("curse.maven:jade-324717:6855440")
     //implementation fg.deobf("curse.maven:butchercraft-265715:6058842")
+
+    compileOnly fg.deobf("curse.maven:slashblade-1022428:7363505")
+    runtimeOnly fg.deobf("curse.maven:slashblade-1022428:7363505")
 
     // compile against the JEI API but do not include it at runtime
     compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"))
