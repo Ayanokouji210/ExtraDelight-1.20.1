@@ -57,7 +57,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Supplier;
 
-import static com.lance5057.extradelight.ExtraDelightClientEvents.chillMap;
+import static com.lance5057.extradelight.ExtraDelight.chillMap;
 import static com.lance5057.extradelight.blocks.chocolatebox.ChocolateBoxBlockEntity.chocolateBoxItems;
 
 @Mod.EventBusSubscriber(modid = ExtraDelight.MOD_ID)
@@ -70,8 +70,8 @@ public class CapabilityHandler {
         ItemStack stack = event.getObject();
         Item item = stack.getItem();
         //chill
-        if (chillMap.containsKey(item.getDefaultInstance().getItemHolder())) {
-            ExtraDelightComponents.IChillComponent chillComponent = new Chill(chillMap.get(item.getDefaultInstance().getItemHolder()));
+        if (chillMap.containsKey(item)) {
+            ExtraDelightComponents.IChillComponent chillComponent = new Chill(chillMap.get(item));
             ICapabilityProvider chillProvider = new ICapabilityProvider() {
                 @Override
                 public @Nonnull <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable Direction direction) {
@@ -137,7 +137,7 @@ public class CapabilityHandler {
         if(be instanceof CandyBowlEntity cbe){addItemHandler(event,"candy_bowl",cbe::getItemHandler);}
         if(be instanceof DryingRackBlockEntity cbe){addItemHandler(event,"drying_rack",cbe::getItemHandler);}
         if(be instanceof FoodDisplayEntity cbe){addItemHandler(event,"food_display",cbe::getItemHandler);}
-        if(be instanceof KnifeBlockEntity cbe){addItemHandler(event,"Knife_block",cbe::getItemHandler);}
+        if(be instanceof KnifeBlockEntity cbe){addItemHandler(event,"knife_block",cbe::getItemHandler);}
         if(be instanceof MixingBowlBlockEntity cbe){addItemFluidHandler(event,"mixing_bowl",cbe::getItemHandler,cbe::getFluidTank);}
         if(be instanceof MortarBlockEntity cbe){addItemFluidHandler(event,"mortar",cbe::getItemHandler,cbe::getFluidTank);}
 

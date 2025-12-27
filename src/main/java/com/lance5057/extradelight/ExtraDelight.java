@@ -1,5 +1,7 @@
 package com.lance5057.extradelight;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 import com.lance5057.extradelight.capabilities.DynamicItem;
@@ -16,6 +18,7 @@ import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.client.event.RenderLevelStageEvent;
@@ -64,6 +67,8 @@ public class ExtraDelight {
 	}
 
 	public static Logger logger = LogManager.getLogger();
+
+	public static Map<Item,Integer> chillMap =new HashMap<>();
 
 	public ExtraDelight() {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -174,7 +179,18 @@ public class ExtraDelight {
 			ExtraDelightItems.setup();
 		//	PottedPlants.setup();
 			registerItemSetAdditions();
+			setupChillMap();
 		});
+	}
+
+	public static void setupChillMap() {
+		//chill
+		chillMap.put(Items.ICE, 100);
+		chillMap.put(Items.PACKED_ICE, 1000);
+		chillMap.put(Items.BLUE_ICE, 10000);
+		chillMap.put(Items.SNOWBALL, 50);
+		chillMap.put(Items.SNOW_BLOCK, 250);
+		chillMap.put(SummerCitrus.ICE_CUBES.get(), 25);
 	}
 
 	public static void registerItemSetAdditions() {

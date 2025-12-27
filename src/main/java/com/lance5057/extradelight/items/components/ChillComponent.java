@@ -13,7 +13,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
-import static com.lance5057.extradelight.ExtraDelightClientEvents.chillMap;
+import static com.lance5057.extradelight.ExtraDelight.chillMap;
+
 
 public record ChillComponent(int time) {
 
@@ -38,8 +39,8 @@ public record ChillComponent(int time) {
     @SubscribeEvent
     public static void ItemTooltipEvent(ItemTooltipEvent event) {
         ItemStack stack = event.getItemStack();
-        if(chillMap.containsKey(stack.getItemHolder())){
-            Integer i = chillMap.get(stack.getItemHolder());
+        if(chillMap.containsKey(stack)){
+            Integer i = chillMap.get(stack);
             event.getToolTip().add(Component.translatable(
                     ExtraDelight.MOD_ID + ".tooltip.chill", i).withStyle(ChatFormatting.AQUA));
         }

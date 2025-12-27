@@ -88,18 +88,6 @@ import java.util.Map;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = ExtraDelight.MOD_ID, value = Dist.CLIENT)
 public class ExtraDelightClientEvents {
-	public static Map<Holder<Item>,Integer> chillMap =new HashMap<>();
-
-    public static void setupChillMap() {
-            //chill
-            chillMap.put(Items.ICE.getDefaultInstance().getItemHolder(), 100);
-            chillMap.put(Items.PACKED_ICE.getDefaultInstance().getItemHolder(), 1000);
-            chillMap.put(Items.BLUE_ICE.getDefaultInstance().getItemHolder(), 10000);
-            chillMap.put(Items.SNOWBALL.getDefaultInstance().getItemHolder(), 50);
-            chillMap.put(Items.SNOW_BLOCK.getDefaultInstance().getItemHolder(), 250);
-            chillMap.put(SummerCitrus.ICE_CUBES.getHolder().orElse(Items.BARREL.getDefaultInstance().getItemHolder()), 25);
-    }
-
 
 	@SubscribeEvent
 	public static void registerClient(FMLClientSetupEvent event) {
@@ -118,7 +106,7 @@ public class ExtraDelightClientEvents {
 			MenuScreens.register(ExtraDelightContainers.CHILLER_MENU.get(), ChillerScreen::new);
 			MenuScreens.register(ExtraDelightContainers.VAT_MENU.get(), VatScreen::new);
             MenuScreens.register(ExtraDelightContainers.PICNIC_BASKET_MENU.get(), PicnicBasketScreen::new);
-            setupChillMap();
+
 				}
 		);
 
