@@ -187,8 +187,19 @@ dependencies {
     implementation fg.deobf("curse.maven:jade-324717:6855440")
     //implementation fg.deobf("curse.maven:butchercraft-265715:6058842")
 
+
+    //For compat
     compileOnly fg.deobf("curse.maven:slashblade-1022428:7363505")
     runtimeOnly fg.deobf("curse.maven:slashblade-1022428:7363505")
+    compileOnly fg.deobf("curse.maven:caupona-656147:7112017")
+    runtimeOnly fg.deobf("curse.maven:caupona-656147:7112017")
+
+    runtimeOnly fg.deobf("curse.maven:ferritecore-429235:4810975")
+    runtimeOnly fg.deobf("curse.maven:embeddium-908741:5681725")
+    runtimeOnly fg.deobf("curse.maven:modernfix-790626:7306749")
+
+    runtimeOnly fg.deobf("curse.maven:sfm-306935:7254795")
+
 
     // compile against the JEI API but do not include it at runtime
     compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"))
