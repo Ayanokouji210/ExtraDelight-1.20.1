@@ -49,7 +49,7 @@ public class ToolTipConsumableItem extends Item {
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
         ItemStack itemstack = super.finishUsingItem(pStack, pLevel, pLivingEntity);
         if(pLivingEntity instanceof Player player) {
-            if (this.finishUsingItem.equals(Items.AIR)) {
+            if (!this.finishUsingItem.equals(Items.AIR)) {
                 if (!getCraftingRemainingItem(pStack).isEmpty()) {
                     if (!player.getAbilities().instabuild && !player.getInventory().add(getCraftingRemainingItem(pStack))) {
                         player.drop(getCraftingRemainingItem(pStack), false);
