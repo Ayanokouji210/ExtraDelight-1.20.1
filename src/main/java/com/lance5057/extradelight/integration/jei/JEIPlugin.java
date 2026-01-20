@@ -221,7 +221,7 @@ public class JEIPlugin implements IModPlugin {
 	@Override
 	public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
 		registration.addRecipeTransferHandler(OvenMenu.class, ExtraDelightContainers.OVEN_MENU.get(),
-				OvenRecipeCategory.TYPE, 0, 6, 9, 36);
+				OvenRecipeCategory.TYPE, 0, 9, 9, 36);
 		registration.addRecipeTransferHandler(VatMenu.class, ExtraDelightContainers.VAT_MENU.get(),
 				VatRecipeCategory.TYPE, 0, 6, 9, 36);
 		registration.addRecipeTransferHandler(ChillerMenu.class, ExtraDelightContainers.CHILLER_MENU.get(),
