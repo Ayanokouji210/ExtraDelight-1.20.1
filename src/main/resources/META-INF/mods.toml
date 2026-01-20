@@ -20,7 +20,7 @@ license="CC BY-NC-SA 4.0 Deed"
 # The modid of the mod
 modId="extradelight" #mandatory
 # The version number of the mod
-version="2.6.1" #mandatory
+version= '${mod_version}' #mandatory
 # A display name for the mod
 displayName="Extra Delight" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://docs.minecraftforge.net/en/latest/misc/updatechecker/
@@ -32,7 +32,7 @@ displayName="Extra Delight" #mandatory
 # A text field displayed in the mod UI
 #credits="" #optional
 # A text field displayed in the mod UI
-authors="Lance5057, Alan199921, DivineAspect, Skysom, FreneticScribbler, Lanse505, Belathus, RoyalJelly, ParadigmOne, Robynster" #optional
+authors="Lance5057, Alan199921, DivineAspect, Skysom, FreneticScribbler, Lanse505, Belathus, RoyalJelly, ParadigmOne, Robynster, Ayanokouji210" #optional
 # Display Test controls the display for your mod in the server connection screen
 # MATCH_VERSION means that your mod will cause a red X if the versions on client and server differ. This is the default behaviour and should be what you choose if you have server and client elements to your mod.
 # IGNORE_SERVER_VERSION means that your mod will not cause a red X if it's present on the server but not on the client. This is what you should use if you're a server only mod.
@@ -76,7 +76,7 @@ description='''${mod_description}'''
 [[dependencies.${mod_id}]]
     modId = "farmersdelight"
     mandatory = true
-    versionRange = "[1.2,)"
+    versionRange = "[1,)"
     ordering = "NONE"
     side = "BOTH"
 
