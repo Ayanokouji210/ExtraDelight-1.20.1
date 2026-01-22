@@ -296,7 +296,6 @@ public class CornBottom extends CropBlock {
 		return InteractionResult.PASS;
 	}
 
-	@Nullable
 	public static void placeAt(LevelAccessor pLevel, BlockState pState, BlockPos pPos, int pFlags) {
 		pLevel.setBlock(pPos.above(), ExtraDelightBlocks.CORN_TOP.get().defaultBlockState().setValue(AGE, 3)
 				.setValue(CornProperties.DIMENSION, true), Block.UPDATE_ALL);
