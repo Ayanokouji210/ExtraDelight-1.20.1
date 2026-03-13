@@ -24,7 +24,7 @@ plugins {
 apply plugin: 'org.spongepowered.mixin'
 
 def detail = versionDetails()
-def rawTag=detail.lastTag ?: '2.6.1.999'
+def rawTag=detail.lastTag ? detail.lastTag : '2.6.1.999'
 
 
 version = rawTag.replaceFirst('v', '')
@@ -187,23 +187,23 @@ dependencies {
 
     compileOnly fg.deobf( "curse.maven:butchercraft-265715:6058842")
     runtimeOnly fg.deobf( "curse.maven:butchercraft-265715:6058842")
-    runtimeOnly fg.deobf("curse.maven:nbteditor-678133:5984630")
+    //runtimeOnly fg.deobf("curse.maven:nbteditor-678133:5984630")
     runtimeOnly fg.deobf("squeek.appleskin:appleskin-forge:mc1.20.1-2.5.1")
     implementation fg.deobf("curse.maven:jade-324717:6855440")
     //implementation fg.deobf("curse.maven:butchercraft-265715:6058842")
 
 
     //For compat
-    compileOnly fg.deobf("curse.maven:slashblade-1022428:7363505")
-    runtimeOnly fg.deobf("curse.maven:slashblade-1022428:7363505")
-    compileOnly fg.deobf("curse.maven:caupona-656147:7112017")
-    runtimeOnly fg.deobf("curse.maven:caupona-656147:7112017")
+    //compileOnly fg.deobf("curse.maven:slashblade-1022428:7363505")
+    //runtimeOnly fg.deobf("curse.maven:slashblade-1022428:7363505")
+    //compileOnly fg.deobf("curse.maven:caupona-656147:7112017")
+    //runtimeOnly fg.deobf("curse.maven:caupona-656147:7112017")
 
-    runtimeOnly fg.deobf("curse.maven:ferritecore-429235:4810975")
-    runtimeOnly fg.deobf("curse.maven:embeddium-908741:5681725")
-    runtimeOnly fg.deobf("curse.maven:modernfix-790626:7306749")
+    //runtimeOnly fg.deobf("curse.maven:ferritecore-429235:4810975")
+    //runtimeOnly fg.deobf("curse.maven:embeddium-908741:5681725")
+    //runtimeOnly fg.deobf("curse.maven:modernfix-790626:7306749")
 
-    runtimeOnly fg.deobf("curse.maven:sfm-306935:7254795")
+    //runtimeOnly fg.deobf("curse.maven:sfm-306935:7254795")
 
 
     // compile against the JEI API but do not include it at runtime

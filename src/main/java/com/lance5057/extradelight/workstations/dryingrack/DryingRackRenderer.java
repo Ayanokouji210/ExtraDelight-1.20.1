@@ -32,16 +32,6 @@ public class DryingRackRenderer implements BlockEntityRenderer<DryingRackBlockEn
 				BakedModel bakedmodel = itemRenderer.getModel(item, pBlockEntity.getLevel(), null, 0);
 				pPoseStack.pushPose();
 
-//				pPoseStack.translate(0.5f, 0.45f + (i > 3 ? 0.5f : 0), 0.5f);
-//
-//				pPoseStack.mulPose(new Quaternionf().rotateXYZ(0, (float) Math.toRadians(135), 0));
-//				pPoseStack.mulPose(new Quaternionf().rotateXYZ(0, (float) Math.toRadians(90 * (i % 4)), 0));
-//				pPoseStack.mulPose(new Quaternionf().rotateXYZ((float) Math.toRadians(90), 0, 0));
-//				pPoseStack.translate(0.25f, 0, 0);
-//
-//				float uniscale = 0.65f;
-//				pPoseStack.scale(uniscale, uniscale, uniscale);
-
 				// 确定物品在哪个层（上层或下层）
 				boolean isUpperLevel = i >= 4;
 

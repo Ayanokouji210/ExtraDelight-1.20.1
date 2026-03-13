@@ -272,17 +272,10 @@ private final ItemStackHandler items = createHandler();
 //
 //		}
 		if (evaporator.level != null && !evaporator.level.isClientSide()) {
-			// 创建 LootParams
 			LootParams.Builder paramsBuilder = new LootParams.Builder((ServerLevel) evaporator.level)
 					.withParameter(LootContextParams.ORIGIN, evaporator.getBlockPos().getCenter());
-			// 如果需要，可以添加更多参数，例如工具（tool）
-			// .withParameter(LootContextParams.TOOL, new ItemStack(Items.STICK)); // 示例
-
-			LootParams params = paramsBuilder.create(LootContextParamSets.ARCHAEOLOGY); // 根据你的战利品表类型选择合适的参数集
-
-			// 获取战利品表
+			LootParams params = paramsBuilder.create(LootContextParamSets.ARCHAEOLOGY);
 			LootTable lootTable = evaporator.level.getServer().getLootData().getLootTable(rc);
-			// 生成战利品
 			lootTable.getRandomItems(params).forEach(itemStack -> {
 				evaporator.insertItem(itemStack.copy());
 			});

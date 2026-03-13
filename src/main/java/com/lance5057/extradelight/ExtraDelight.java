@@ -73,16 +73,11 @@ public class ExtraDelight {
 	public ExtraDelight() {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		ForgeMod.enableMilkFluid();
-        //CraftingHelper.register(ResourceLocation.fromNamespaceAndPath(ExtraDelight.MOD_ID,"capability_ingredient"), DataComponentIngredient.Serializer.INSTANCE);
-		//modContainer.addConfig(ModConfig.Type.COMMON,ExtraDelightConfig.spec);
-		//modContainer.addConfig(new ModConfig(ModConfig.Type.COMMON,ExtraDelightConfig.spec,modContainer));
+
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON,ExtraDelightConfig.spec,"extradelight-common.toml");
 
-//		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		modEventBus.addListener(this::setupClient);
 		modEventBus.addListener(this::setupCommon);
-		//modEventBus.addListener(ExtraDelightCapabilities::registerCapabilities);
-		//modEventBus.addListener(NetworkHandler.setupPackets());
 		modEventBus.addListener(ExtraDelightBlockEntities::addCabinets);
 		NetworkHandler.register();
 
@@ -123,47 +118,6 @@ public class ExtraDelight {
 
         ExtraDelightParticles.PARTICLE_TYPES.register(modEventBus);
 	}
-
-//	public ExtraDelight(IEventBus modEventBus, ModContainer modContainer) {
-//		ForgeMod.enableMilkFluid();
-//		//modContainer.addConfig(ModConfig.Type.COMMON,ExtraDelightConfig.spec);
-//		modContainer.addConfig(new ModConfig(ModConfig.Type.COMMON,ExtraDelightConfig.spec,modContainer));
-//
-////		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-//		modEventBus.addListener(this::setupClient);
-//		modEventBus.addListener(this::setupCommon);
-//		//modEventBus.addListener(ExtraDelightCapabilities::registerCapabilities);
-//		//modEventBus.addListener(NetworkHandler.setupPackets());
-//		modEventBus.addListener(ExtraDelightBlockEntities::addCabinets);
-//
-//		Fermentation f = new Fermentation();
-//
-//		AestheticBlocks.setup();
-//		AestheticBlocks.BLOCKS.register(modEventBus);
-//		AestheticBlocks.ITEMS.register(modEventBus);
-//
-////		ExtraDelightComponents.COMPONENTS.register(modEventBus);
-//		ExtraDelightBlocks.register(modEventBus);
-//		ExtraDelightFluids.register(modEventBus);
-//
-////		PieceTypes.PIECES.register(modEventBus);
-//
-//		ExtraDelightItems.ITEMS.register(modEventBus);
-//		ExtraDelightTabs.TABS.register(modEventBus);
-//
-//		ExtraDelightBlockEntities.TILES.register(modEventBus);
-//		ExtraDelightRecipes.RECIPE_TYPES.register(modEventBus);
-//		ExtraDelightRecipes.RECIPE_SERIALIZERS.register(modEventBus);
-//		ExtraDelightContainers.MENU_TYPES.register(modEventBus);
-//		//ExtraDelightLootModifiers.LOOT_MODIFIERS.register(modEventBus);
-//
-//		FoliagePlacerRegistry.PLACER.register(modEventBus);
-//		ExtraDelightWorldGen.FEATURES.register(modEventBus);
-//
-//		ExtraDelightFeatures.FEATURES.register(modEventBus);
-//
-//		ExtraDelightMobEffects.register(modEventBus);
-//	}
 
 	public void setupClient(FMLClientSetupEvent event) {
 

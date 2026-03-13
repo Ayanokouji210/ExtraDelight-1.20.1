@@ -89,7 +89,7 @@ public class StackUtil {
 
     public static BlockItem BlockItemfromJson(JsonObject jsonObject) {
         if(jsonObject.has("item")) {
-            Item item=ForgeRegistries.ITEMS.getValue(new ResourceLocation(GsonHelper.getAsString(jsonObject,"item")));
+            Item item=ForgeRegistries.ITEMS.getValue(ResourceLocation.parse(GsonHelper.getAsString(jsonObject,"item")));
             if(item==null) {
                 throw new JsonParseException("Item" + GsonHelper.getAsString(jsonObject, "item") + "not found");
             }
@@ -130,7 +130,7 @@ public class StackUtil {
             return FluidStack.EMPTY;
         }
 
-        Fluid fluid =ForgeRegistries.FLUIDS.getValue( new ResourceLocation(GsonHelper.getAsString(jsonObject,"fluid")));
+        Fluid fluid =ForgeRegistries.FLUIDS.getValue(ResourceLocation.parse(GsonHelper.getAsString(jsonObject,"fluid")));
         if (fluid==null) {
             throw new JsonParseException("Could not find fluid for " + GsonHelper.getAsString(jsonObject,"fluid"));
         }

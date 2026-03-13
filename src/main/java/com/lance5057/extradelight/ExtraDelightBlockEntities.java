@@ -175,7 +175,6 @@ public class ExtraDelightBlockEntities {
 	}
 
 	private static void modifyBlockEntityTypeBlocks(BlockEntityType<?> type, Block[] additionalBlocks) {
-		// 直接访问 validBlocks（AT 已公开）
 		Set<Block> validBlocks = type.validBlocks;
 
 		if (!(validBlocks instanceof HashSet)) {

@@ -116,9 +116,9 @@ public class ToolOnBlockRecipe implements Recipe<SimpleRecipeWrapper> {
 		@Override
 		public ToolOnBlockRecipe fromJson(ResourceLocation resourceLocation, JsonObject jsonObject) {
 			Item ItemIn=ForgeRegistries.ITEMS.getValue(
-					new ResourceLocation(GsonHelper.getAsString(jsonObject,"blockIn")));
+					ResourceLocation.parse(GsonHelper.getAsString(jsonObject,"blockIn")));
 			Item ItemOut=ForgeRegistries.ITEMS.getValue(
-					new ResourceLocation(GsonHelper.getAsString(jsonObject,"blockOut"))
+					ResourceLocation.parse(GsonHelper.getAsString(jsonObject,"blockOut"))
 			);
 			Ingredient ingredient = Ingredient.fromJson(GsonHelper.getAsJsonObject(jsonObject,"ingredient"));
 			if(ItemIn==null||ItemOut==null){

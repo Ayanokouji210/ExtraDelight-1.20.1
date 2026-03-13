@@ -239,7 +239,7 @@ public abstract class FluidIngredient implements Predicate<FluidStack> {
 
         @Override
         protected void readInternal(JsonObject json) {
-            ResourceLocation name = new ResourceLocation(GsonHelper.getAsString(json, "fluidTag"));
+            ResourceLocation name = ResourceLocation.parse(GsonHelper.getAsString(json, "fluidTag"));
             tag = FluidTags.create(name);
         }
 
@@ -283,7 +283,7 @@ public abstract class FluidIngredient implements Predicate<FluidStack> {
         }
 
         public static FluidStack deserializeFluidStack(JsonObject json) {
-            ResourceLocation id = new ResourceLocation(GsonHelper.getAsString(json, "fluid"));
+            ResourceLocation id = ResourceLocation.parse(GsonHelper.getAsString(json, "fluid"));
             Fluid fluid = ForgeRegistries.FLUIDS.getValue(id);
             if (fluid == null)
                 throw new JsonSyntaxException("Unknown fluid '" + id + "'");

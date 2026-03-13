@@ -43,7 +43,7 @@ import java.util.function.BiConsumer;
 public class MiscLootTables implements LootTableSubProvider {
 
 	private static <T> ResourceKey<Registry<T>> createRegistryKey(String pName) {
-		return ResourceKey.createRegistryKey(new ResourceLocation(pName));
+		return ResourceKey.createRegistryKey(ResourceLocation.parse(pName));
 	}
 
 	public static final ResourceKey<Registry<LootTable>> LOOT_TABLE = createRegistryKey("loot_table");

@@ -68,16 +68,4 @@ public class SimpleRecipeWrapper implements Container {
 		}
 	}
 
-//	@Override
-//	public ItemStack getItem(int index) {
-//		return items.get(index);
-//	}
-//
-//
-//
-//	@Override
-//	public int size() {
-//		return items.size();
-//	}
-
 }

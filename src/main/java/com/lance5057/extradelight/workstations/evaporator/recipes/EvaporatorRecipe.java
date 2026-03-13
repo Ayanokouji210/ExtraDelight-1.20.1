@@ -61,10 +61,6 @@ public class EvaporatorRecipe implements Recipe<EvaporatorRecipeWrapper> {
 		return this.getResultItem().copy();
 	}
 
-//	@Override
-//	public ItemStack assemble(EvaporatorRecipeWrapper input, Provider registries) {
-//		return this.getResultItem(registries).copy();
-//	}
 
 	@Override
 	public boolean canCraftInDimensions(int width, int height) {
@@ -76,15 +72,9 @@ public class EvaporatorRecipe implements Recipe<EvaporatorRecipeWrapper> {
 		return outItem;
 	}
 
-
-//	@Override
-//	public ItemStack getResultItem(Provider registries) {
-//		return outItem;
-//	}
-
-	public ItemStack getResultItem() {
-		return outItem;
-	}
+    public ItemStack getResultItem() {
+        return outItem;
+    }
 
 	@Override
 	public RecipeSerializer<?> getSerializer() {
@@ -95,7 +85,7 @@ public class EvaporatorRecipe implements Recipe<EvaporatorRecipeWrapper> {
 	public RecipeType<?> getType() {
 		return ExtraDelightRecipes.EVAPORATOR.get();
 	}
-	
+
 	@Override
 	public String getGroup() {
 		return this.group;
@@ -109,58 +99,15 @@ public class EvaporatorRecipe implements Recipe<EvaporatorRecipeWrapper> {
 
 
     public static class Serializer implements RecipeSerializer<EvaporatorRecipe> {
-//		private static final MapCodec<EvaporatorRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst
-//				.group(Codec.STRING.optionalFieldOf("group", "").forGetter(EvaporatorRecipe::getGroup),
-//						SizedFluidIngredient.FLAT_CODEC.fieldOf("fluid").forGetter(EvaporatorRecipe::getFluid),
-//						Codec.INT.fieldOf("time").forGetter(EvaporatorRecipe::getCookTime),
-//						ResourceLocation.CODEC.fieldOf("loottable").forGetter(EvaporatorRecipe::getOutput),
-//						ResourceLocation.CODEC.fieldOf("display_block").forGetter(EvaporatorRecipe::getDisplay),
-//						ItemStack.CODEC.fieldOf("outItem").forGetter(EvaporatorRecipe::getResultItem))
-//				.apply(inst, EvaporatorRecipe::new));
-//
-//		public static EvaporatorRecipe fromNetwork(RegistryFriendlyByteBuf pBuffer) {
-//			String s = pBuffer.readUtf();
-//			SizedFluidIngredient fluid = SizedFluidIngredient.STREAM_CODEC.decode(pBuffer);
-//			int g = pBuffer.readVarInt();
-//			ResourceLocation r = ResourceLocation.STREAM_CODEC.decode(pBuffer);
-//			ResourceLocation d = ResourceLocation.STREAM_CODEC.decode(pBuffer);
-//
-//			ItemStack stack = ItemStack.STREAM_CODEC.decode(pBuffer);
-//
-//			return new EvaporatorRecipe(s, fluid, g, r, d, stack);
-//		}
-//
-//		public static void toNetwork(RegistryFriendlyByteBuf pBuffer, EvaporatorRecipe pRecipe) {
-//			pBuffer.writeUtf(pRecipe.group);
-//			SizedFluidIngredient.STREAM_CODEC.encode(pBuffer, pRecipe.fluid);
-//			pBuffer.writeVarInt(pRecipe.cookTime);
-//			ResourceLocation.STREAM_CODEC.encode(pBuffer, pRecipe.output);
-//			ResourceLocation.STREAM_CODEC.encode(pBuffer, pRecipe.display);
-//
-//			ItemStack.STREAM_CODEC.encode(pBuffer, pRecipe.outItem);
-//		}
-//
-//		@Override
-//		public MapCodec<EvaporatorRecipe> codec() {
-//			return CODEC;
-//		}
-//
-//		public static final StreamCodec<RegistryFriendlyByteBuf, EvaporatorRecipe> STREAM_CODEC = StreamCodec
-//				.of(Serializer::toNetwork, Serializer::fromNetwork);
-//
-//		@Override
-//		public StreamCodec<FriendlyByteBuf, EvaporatorRecipe> streamCodec() {
-//			return STREAM_CODEC;
-//		}
 
-		@Override
-		public EvaporatorRecipe fromJson(ResourceLocation resourceLocation, JsonObject jsonObject) {
-			String s= GsonHelper.getAsString(jsonObject, "group", "");
-			ResourceLocation displayBlock =new ResourceLocation(GsonHelper.getAsString(jsonObject, "display_block"));
-			FluidIngredient fliud = FluidIngredient.deserialize(GsonHelper.getAsJsonObject(jsonObject, "fluid"));
-			ResourceLocation lootTable=new ResourceLocation(GsonHelper.getAsString(jsonObject, "loottable"));
-			ItemStack result = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(jsonObject, "outItem"));
-			int time = GsonHelper.getAsInt(jsonObject, "time", 200);
+        @Override
+        public EvaporatorRecipe fromJson(ResourceLocation resourceLocation, JsonObject jsonObject) {
+            String s = GsonHelper.getAsString(jsonObject, "group", "");
+            ResourceLocation displayBlock = ResourceLocation.parse(GsonHelper.getAsString(jsonObject, "display_block"));
+            FluidIngredient fliud = FluidIngredient.deserialize(GsonHelper.getAsJsonObject(jsonObject, "fluid"));
+            ResourceLocation lootTable = ResourceLocation.parse(GsonHelper.getAsString(jsonObject, "loottable"));
+            ItemStack result = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(jsonObject, "outItem"));
+            int time = GsonHelper.getAsInt(jsonObject, "time", 200);
 
 			return new EvaporatorRecipe(resourceLocation,s,fliud,time,lootTable,displayBlock,result);
 		}

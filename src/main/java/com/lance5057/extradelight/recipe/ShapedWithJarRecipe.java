@@ -245,14 +245,14 @@ public class ShapedWithJarRecipe extends ShapedRecipe {
 			int amount = GsonHelper.getAsInt(json, "amount", 1000); // 默认 1000mb (1 bucket)
 
 			// 从 Forge 注册表获取流体
-			ResourceLocation fluidId = new ResourceLocation(fluidName);
+			ResourceLocation fluidId = ResourceLocation.parse(fluidName);
 			Fluid fluid = ForgeRegistries.FLUIDS.getValue(fluidId);
 
 			if (fluid == null) {
 				throw new JsonSyntaxException("Unknown fluid: " + fluidName);
 			}
 
-			// 可选：读取 NBT 数据
+			// 读取 NBT 数据
 			CompoundTag nbt = null;
 			if (json.has("nbt")) {
 				try {
@@ -315,7 +315,6 @@ public class ShapedWithJarRecipe extends ShapedRecipe {
 			buffer.writeBoolean(recipe.showNotification());
 		}
 
-		// 以下是从ShapedRecipe复制的辅助方法
 		private static String[] patternFromJson(JsonArray pPatternArray) {
 			String[] astring = new String[pPatternArray.size()];
 			if (astring.length > MAX_HEIGHT) {

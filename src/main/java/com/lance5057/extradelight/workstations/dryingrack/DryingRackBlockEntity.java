@@ -294,12 +294,9 @@ public class DryingRackBlockEntity extends BlockEntity {
 
 	public Optional<DryingRackRecipe> matchRecipe(ItemStack itemstack) {
 		if (this.level != null) {
-			// 使用更通用的配方匹配方法
-			// 创建一个临时的 ItemStackHandler 来包装要检查的物品
-			ItemStackHandler tempHandler = new ItemStackHandler(1);
+			final ItemStackHandler tempHandler = new ItemStackHandler(1);
 			tempHandler.setStackInSlot(0, itemstack);
 
-			// 创建配方包装器
 			DryingRackRecipeWrapper wrapper = new DryingRackRecipeWrapper(tempHandler);
 			return level.getRecipeManager().getRecipeFor(ExtraDelightRecipes.DRYING_RACK.get(), wrapper, level);
 		}

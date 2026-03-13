@@ -44,7 +44,6 @@ public interface IFancyTankHandler<T extends BlockEntity> {
 		if (!inputItem.isEmpty()) {
 			// 处理桶物品
 			if (inputItem.getItem() instanceof BucketItem filledBucket) {
-				// 确保桶不是空的
 				if (filledBucket.getFluid() != null && !filledBucket.getFluid().isSame(Fluids.EMPTY)) {
 					int filled = getFluidTank().fill(new FluidStack(filledBucket.getFluid(), FluidType.BUCKET_VOLUME),
 							IFluidHandler.FluidAction.SIMULATE);
@@ -59,7 +58,6 @@ public interface IFancyTankHandler<T extends BlockEntity> {
 					}
 				}
 			}
-			// 处理有流体能力的物品 - 修正capability获取方式
 			else if (inputItem.getCapability(ForgeCapabilities.FLUID_HANDLER_ITEM).isPresent()) {
 				IFluidHandlerItem fluidHandlerItem = inputItem.getCapability(ForgeCapabilities.FLUID_HANDLER_ITEM)
 						.orElse(null);
@@ -117,25 +115,6 @@ public interface IFancyTankHandler<T extends BlockEntity> {
 					inputItem.shrink(1);
 					stack = getFluidTank().drain(FluidType.BUCKET_VOLUME, IFluidHandler.FluidAction.SIMULATE);
 				}
-//				int diff = oitr - itr;
-////				int szDiff = sz - oitr;
-////				var origin = inputItem.copy();
-//////				boolean movedBack = true;
-//				ItemStack bucket = getItemHandler().getStackInSlot(getFluidOutSlot());
-//				bucket.shrink(diff);
-//				var stackInMouse = bowl.menu.getCarried();
-//				if(ItemStack.isSameItemSameComponents(stackInMouse, inputItem)) {
-//					stackInMouse.grow(itr + szDiff);
-//				} else if (stackInMouse.isEmpty()) {
-//					// not sure if this condition will ever be satisfied
-//					stackInMouse.applyComponentsAndValidate(origin.copyWithCount(itr + szDiff).getComponentsPatch());
-//				} else {
-//					movedBack = false;
-//				}
-
-//				if (movedBack) {
-//					getItemHandler().getStackInSlot(getFluidOutSlot()).shrink(itr + szDiff);
-//				}
 				updateInventory();
 			} else if (inputItem.getCapability(ForgeCapabilities.FLUID_HANDLER_ITEM).isPresent()) {
 				IFluidHandlerItem fluidHandlerItem = inputItem.copyWithCount(1)
@@ -167,7 +146,7 @@ public interface IFancyTankHandler<T extends BlockEntity> {
 //				}else {
 //					movedBack = false;
 //				}
-//				
+//
 //				if (movedBack) {
 //					getItemHandler().getStackInSlot(getFluidOutSlot()).shrink(sz - diff);
 //				}

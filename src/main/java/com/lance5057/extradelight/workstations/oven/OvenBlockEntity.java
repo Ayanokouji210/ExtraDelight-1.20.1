@@ -10,7 +10,6 @@ import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -34,7 +33,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 //import net.neoforged.bus.api.SubscribeEvent;
@@ -43,13 +41,11 @@ import net.minecraft.world.phys.Vec3;
 //import net.neoforged.neoforge.items.IItemHandler;
 //import net.neoforged.neoforge.items.ItemStackHandler;
 //import net.neoforged.neoforge.items.wrapper.RecipeWrapper;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
 import net.minecraftforge.network.PacketDistributor;
+import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.block.entity.HeatableBlockEntity;
 import vectorwing.farmersdelight.common.block.entity.SyncedBlockEntity;
 //import vectorwing.farmersdelight.common.item.component.ItemStackWrapper;
@@ -212,7 +208,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 
 
 		if (compound.contains("LastRecipe", 8)) {
-			lastRecipeID = new ResourceLocation(compound.getString("LastRecipe"));
+			lastRecipeID = ResourceLocation.parse(compound.getString("LastRecipe"));
 		}
 
 
@@ -512,8 +508,7 @@ public class OvenBlockEntity extends SyncedBlockEntity
 	}
 
 	@Override
-	public AbstractContainerMenu createMenu(int id, Inventory playerinv, Player entity) {
-		// 发送同步数据包到客户端
+	public AbstractContainerMenu createMenu(int id, @NotNull Inventory playerinv, Player entity) {
 		if (entity.level().isClientSide) {
 			NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) entity),
 					new StyleableMenuSyncPacket(id, this.getBlockPos()));

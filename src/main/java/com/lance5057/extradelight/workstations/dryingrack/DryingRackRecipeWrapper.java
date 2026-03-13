@@ -7,24 +7,6 @@ import net.minecraftforge.items.wrapper.RecipeWrapper;
 import javax.annotation.Nonnull;
 
 public class DryingRackRecipeWrapper extends RecipeWrapper {
-//    private IItemHandler input;
-//
-//    public DryingRackRecipeWrapper(IItemHandler input) {
-//        super((IItemHandlerModifiable) input);
-//        this.input = input;
-//    }
-//
-//    public @Nonnull ItemStack getItem(int index) {
-//        if(index!=0){
-//            throw new IllegalArgumentException("no item for index"+index);
-//        }else{
-//            return this.input.getStackInSlot(index);
-//        }
-//    }
-//
-//    public int size() {
-//        return 1;
-//    }
 
     private IItemHandler input;
 
