@@ -106,7 +106,7 @@ public class EvaporatorRecipeBuilder implements RecipeBuilder {
 				.rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
 		this.criteria.forEach(this.advancement::addCriterion);
 		EvaporatorRecipe recipe = new EvaporatorRecipe(id,"",this.fluid,this.cookTime,this.lootTable,BuiltInRegistries.BLOCK.getKey(display),out);
-		pFinishedRecipeConsumer.accept(new Result(id,"",this.fluid,this.lootTable,this.display,this.out,this.cookTime,this.advancement, this.advancement.build(id.withPrefix("recipes/evaporator")).getId()));
+		pFinishedRecipeConsumer.accept(new Result(recipeId,"",this.fluid,this.lootTable,this.display,this.out,this.cookTime,this.advancement, this.advancement.build(id.withPrefix("recipes/evaporator")).getId()));
 				//recipeId,recipe,advancementBuilder.build(id.withPrefix("recpies/evaporator")));
 	}
 

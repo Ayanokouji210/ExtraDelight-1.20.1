@@ -95,7 +95,7 @@ public class DryingRackRecipeBuilder implements RecipeBuilder {
 		DryingRackRecipe recipe = new DryingRackRecipe(id,"", this.ingredient, this.result, this.experience,
 				this.cookingTime);
 		ResourceLocation advancementId = advancement.build(id.withPrefix("drying/")).getId();
-		output.accept(new Result(id,"",this.ingredient,this.result,this.experience,
+		output.accept(new Result(recipeId,"",this.ingredient,this.result,this.experience,
 				this.cookingTime,this.advancement,advancementId,this.serializer));
 				//recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/drying/")));
 	}

@@ -120,7 +120,7 @@ public class MixingBowlRecipeBuilder implements RecipeBuilder {
 //		MixingBowlRecipe recipe = new MixingBowlRecipe("", this.ingredients, this.fluids, this.result, this.stirs,
 //				this.usedItem);
         ResourceLocation advancementId = advancement$builder.build(id.withPrefix("recipes/mixing/")).getId();
-        output.accept(new Result(id, this.group == null ? "" : this.group, this.ingredients, this.fluids, this.result, this.stirs, this.container,
+        output.accept(new Result(recipeId, this.group == null ? "" : this.group, this.ingredients, this.fluids, this.result, this.stirs, this.container,
                 this.utensil,advancement$builder, advancementId));
         //recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/mixing/")));
     }

@@ -171,7 +171,7 @@ public class ChillerRecipeBuilder implements RecipeBuilder {
 //		ChillerRecipe recipe = new ChillerRecipe(id,"", this.ingredients, this.fluid, this.resultStack, this.container,
 //				this.experience, this.cookingTime, this.consumeContainer);
 		ResourceLocation advancementId = this.advancement.build(id.withPrefix("recipes/chilling")).getId();
-		output.accept(new Result(id,this.group,this.fluid,this.resultStack,this.container,this.advancement,advancementId,
+		output.accept(new Result(recipeId,this.group,this.fluid,this.resultStack,this.container,this.advancement,advancementId,
 				this.consumeContainer,this.cookingTime,this.experience,this.ingredients));
 				//recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/chilling/")));
 	}

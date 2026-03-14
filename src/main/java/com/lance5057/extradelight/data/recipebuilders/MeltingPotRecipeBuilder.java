@@ -71,7 +71,7 @@ public class MeltingPotRecipeBuilder implements RecipeBuilder {
 		this.criteria.forEach(advancement$builder::addCriterion);
 		//MeltingPotRecipe recipe = new MeltingPotRecipe(this.input, this.cooktime, this.output, group);
 		Advancement advancementId = this.advancement$builder.build(id.withPrefix("recipes/melting/"));
-		recipeOutput.accept(new Result(id,this.group,this.input,this.cooktime,
+		recipeOutput.accept(new Result(recipeId,this.group,this.input,this.cooktime,
 				this.output,this.serializer,advancementId.getId(),advancement$builder));
 				//recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/melting/")));
 	}

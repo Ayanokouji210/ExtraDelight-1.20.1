@@ -68,7 +68,7 @@ public class JuicerRecipeBuilder implements RecipeBuilder {
 				.rewards(AdvancementRewards.Builder.recipe(recipeId)).requirements(RequirementsStrategy.OR);
 		this.criteria.forEach(advancementBuilder::addCriterion);
 
-	    output.accept(new Result(id,this.ingredient,this.fluid,this.chance,this.result,
+	    output.accept(new Result(recipeId,this.ingredient,this.fluid,this.chance,this.result,
                 advancementBuilder,advancementBuilder.build(id.withPrefix("recipes/juicer/")).getId()));
 	}
 

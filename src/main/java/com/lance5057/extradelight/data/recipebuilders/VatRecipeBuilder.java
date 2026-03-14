@@ -124,10 +124,9 @@ public class VatRecipeBuilder implements RecipeBuilder {
 		this.criteria.forEach(advancementBuilder::addCriterion);
 //		VatRecipe recipe = new VatRecipe("", this.ingredients, stageIngredients, this.fluid, this.result, this.stages,
 //				this.containerItem);
-		recipeOutput.accept(new Result(id,group,ingredients,
+		recipeOutput.accept(new Result(recipeId,group,ingredients,
 				stageIngredients,fluid,result,stages,containerItem,
 				advancement,advancement.build(id.withPrefix("recipes/vat/")).getId()));
-				//recipeId, recipe, advancementBuilder.build(id.withPrefix("recipes/vat/")));
 	}
 
 	public static class Result implements FinishedRecipe {
@@ -160,43 +159,32 @@ public class VatRecipeBuilder implements RecipeBuilder {
 
 		@Override
 		public void serializeRecipeData(JsonObject json) {
+			//group
 			if (!this.group.isEmpty()) {
 				json.addProperty("group", this.group);
 			}
 
+			//fluids
+			json.add("fluids",StackUtil.FluidStacktoJson(fluid));
+
+			//ingredients
 			JsonArray ingredientsArray = new JsonArray();
 			for (Ingredient ingredient : this.ingredients) {
 				ingredientsArray.add(ingredient.toJson());
 			}
 			json.add("ingredients", ingredientsArray);
 
+			//stage ingredients
 			JsonArray stageIngredientsArray = new JsonArray();
 			for (StageIngredient stageIngredient : this.stageIngredients) {
 				stageIngredientsArray.add(stageIngredient.toJson());
 			}
 			json.add("stage_ingredients", stageIngredientsArray);
 
-			// 这里需要根据你的 FluidStack 序列化方式实现
-			// if (!this.fluid.isEmpty()) {
-			//     json.add("fluids", FluidStackUtil.toJson(this.fluid));
-			// }
-
-//			JsonObject resultJson = new JsonObject();
-//			resultJson.addProperty("item", this.result.getItem().toString());
-//			if (this.result.getCount() > 1) {
-//				resultJson.addProperty("count", this.result.getCount());
-//			}
 			json.add("result", StackUtil.ItemStacktoJson(this.result));
 
 			json.addProperty("stages", this.stages);
 
-//			if (!this.containerItem.isEmpty()) {
-//				JsonObject containerJson = new JsonObject();
-//				containerJson.addProperty("item", this.containerItem.getItem().toString());
-//				if (this.containerItem.getCount() > 1) {
-//					containerJson.addProperty("count", this.containerItem.getCount());
-//				}
-//			}
 			json.add("usedItem", StackUtil.ItemStacktoJson(this.containerItem));
 		}
 

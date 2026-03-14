@@ -73,7 +73,7 @@ public class MortarRecipeBuilder implements RecipeBuilder {
 		this.criteria.forEach(advancementBuilder::addCriterion);
 
 		//MortarRecipe recipe = new MortarRecipe("", this.ingredient, this.result, this.fluid, this.grinds);
-		output.accept(new Result(id,this.group==null?"":this.group,
+		output.accept(new Result(recipeId,this.group==null?"":this.group,
 				this.ingredient,this.result,
 				this.fluid,this.grinds,this.advancementBuilder,
 				this.advancementBuilder.build(id.withPrefix("recipes/mortar/")).getId()));
