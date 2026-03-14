@@ -1,16 +1,25 @@
 {
   "type": "extradelight:vat",
+  "fluids": {
+    "amount": 250,
+    "fluid": "extradelight:vinegar_fluid"
+  },
   "ingredients": [
     {
-      "tag": "extradelight:processed/cabbage"
+      "tag": "forge:ginger/sliced"
     },
     {
-      "tag": "extradelight:processed/cabbage"
+      "tag": "forge:ginger/sliced"
+    },
+    {
+      "tag": "forge:ginger/sliced"
+    },
+    {
+      "tag": "forge:ginger/sliced"
     }
   ],
   "result": {
-    "count": 2,
-    "item": "extradelight:sauerkraut_item"
+    "item": "extradelight:pickled_ginger_block_item"
   },
   "stage_ingredients": [
     {
@@ -28,7 +37,6 @@
   ],
   "stages": 2,
   "usedItem": {
-    "count": 2,
-    "item": "minecraft:bowl"
+    "item": "minecraft:glass_bottle"
   }
 }

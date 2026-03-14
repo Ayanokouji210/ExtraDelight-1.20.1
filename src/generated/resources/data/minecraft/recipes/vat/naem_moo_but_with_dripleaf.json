@@ -1,5 +1,9 @@
 {
   "type": "extradelight:vat",
+  "fluids": {
+    "amount": 250,
+    "fluid": "minecraft:water"
+  },
   "ingredients": [
     {
       "tag": "forge:pork/ground/raw"
@@ -30,6 +34,6 @@
   "stages": 1,
   "usedItem": {
     "count": 2,
-    "item": "minecraft:lily_pad"
+    "item": "minecraft:big_dripleaf"
   }
 }

@@ -1,26 +1,28 @@
 {
   "type": "extradelight:vat",
+  "fluids": {
+    "amount": 250,
+    "fluid": "minecraft:water"
+  },
   "ingredients": [
     {
-      "tag": "forge:fruit"
+      "tag": "forge:soybeans/cooked"
     }
   ],
   "result": {
-    "count": 16,
-    "item": "extradelight:yeast"
+    "item": "extradelight:natto_item"
   },
   "stage_ingredients": [
     {
       "ingredient": {
         "item": "extradelight:yeast"
       },
-      "lid": false,
-      "time": 168000
+      "lid": true,
+      "time": 72000
     }
   ],
   "stages": 1,
   "usedItem": {
-    "count": 16,
-    "item": "minecraft:glass_bottle"
+    "item": "minecraft:bowl"
   }
 }

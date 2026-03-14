@@ -1,5 +1,9 @@
 {
   "type": "extradelight:vat",
+  "fluids": {
+    "amount": 250,
+    "fluid": "extradelight:vinegar_fluid"
+  },
   "ingredients": [
     {
       "tag": "forge:crops/carrot"

@@ -1,31 +1,30 @@
 {
   "type": "extradelight:vat",
+  "fluids": {
+    "amount": 1000,
+    "fluid": "minecraft:water"
+  },
   "ingredients": [
     {
-      "item": "minecraft:sugar"
+      "tag": "forge:fruit"
     }
   ],
   "result": {
-    "count": 4,
-    "item": "extradelight:vinegar"
+    "count": 16,
+    "item": "extradelight:yeast"
   },
   "stage_ingredients": [
     {
       "ingredient": {
         "item": "extradelight:yeast"
       },
-      "lid": true,
-      "time": 72000
-    },
-    {
-      "ingredient": [],
       "lid": false,
       "time": 168000
     }
   ],
-  "stages": 2,
+  "stages": 1,
   "usedItem": {
-    "count": 4,
+    "count": 16,
     "item": "minecraft:glass_bottle"
   }
 }

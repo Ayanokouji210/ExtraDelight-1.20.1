@@ -1,21 +1,28 @@
 {
   "type": "extradelight:vat",
+  "fluids": {
+    "amount": 250,
+    "fluid": "extradelight:vinegar_fluid"
+  },
   "ingredients": [
     {
-      "tag": "forge:ginger/sliced"
+      "tag": "forge:raw_fishes"
     },
     {
-      "tag": "forge:ginger/sliced"
+      "tag": "forge:raw_fishes"
     },
     {
-      "tag": "forge:ginger/sliced"
+      "tag": "forge:raw_fishes"
     },
     {
-      "tag": "forge:ginger/sliced"
+      "tag": "forge:raw_fishes"
+    },
+    {
+      "item": "minecraft:sugar"
     }
   ],
   "result": {
-    "item": "extradelight:pickled_ginger_block_item"
+    "item": "extradelight:pickled_fish_block_item"
   },
   "stage_ingredients": [
     {
@@ -23,7 +30,7 @@
         "tag": "forge:salt"
       },
       "lid": false,
-      "time": 1000
+      "time": 24000
     },
     {
       "ingredient": [],

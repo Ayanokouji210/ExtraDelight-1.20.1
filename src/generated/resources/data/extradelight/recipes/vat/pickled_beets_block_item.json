@@ -1,40 +1,39 @@
 {
   "type": "extradelight:vat",
+  "fluids": {
+    "amount": 250,
+    "fluid": "extradelight:vinegar_fluid"
+  },
   "ingredients": [
     {
-      "tag": "forge:raw_fishes"
+      "tag": "extradelight:processed/beetroot"
     },
     {
-      "tag": "forge:raw_fishes"
+      "tag": "extradelight:processed/beetroot"
     },
     {
-      "tag": "forge:raw_fishes"
+      "tag": "extradelight:processed/beetroot"
     },
     {
-      "tag": "forge:raw_fishes"
+      "tag": "extradelight:processed/beetroot"
     },
     {
       "item": "minecraft:sugar"
     }
   ],
   "result": {
-    "item": "extradelight:pickled_fish_block_item"
+    "item": "extradelight:pickled_beets_block_item"
   },
   "stage_ingredients": [
     {
       "ingredient": {
         "tag": "forge:salt"
       },
-      "lid": false,
-      "time": 24000
-    },
-    {
-      "ingredient": [],
       "lid": true,
       "time": 168000
     }
   ],
-  "stages": 2,
+  "stages": 1,
   "usedItem": {
     "item": "minecraft:glass_bottle"
   }

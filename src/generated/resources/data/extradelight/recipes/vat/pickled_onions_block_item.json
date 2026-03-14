@@ -1,21 +1,25 @@
 {
   "type": "extradelight:vat",
+  "fluids": {
+    "amount": 250,
+    "fluid": "extradelight:vinegar_fluid"
+  },
   "ingredients": [
     {
-      "tag": "forge:crops/cucumber"
+      "tag": "forge:crops/onion"
     },
     {
-      "tag": "forge:crops/cucumber"
+      "tag": "forge:crops/onion"
     },
     {
-      "tag": "forge:crops/cucumber"
+      "tag": "forge:crops/onion"
     },
     {
-      "tag": "forge:crops/cucumber"
+      "tag": "forge:crops/onion"
     }
   ],
   "result": {
-    "item": "extradelight:gherkins_block_item"
+    "item": "extradelight:pickled_onions_block_item"
   },
   "stage_ingredients": [
     {

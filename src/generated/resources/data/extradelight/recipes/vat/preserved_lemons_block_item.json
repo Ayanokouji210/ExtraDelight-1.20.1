@@ -1,5 +1,9 @@
 {
   "type": "extradelight:vat",
+  "fluids": {
+    "amount": 250,
+    "fluid": "extradelight:lemon_juice_fluid"
+  },
   "ingredients": [
     {
       "tag": "extradelight:processed/lemon"

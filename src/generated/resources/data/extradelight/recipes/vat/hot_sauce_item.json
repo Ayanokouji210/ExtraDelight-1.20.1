@@ -1,21 +1,23 @@
 {
   "type": "extradelight:vat",
+  "fluids": {
+    "amount": 250,
+    "fluid": "extradelight:vinegar_fluid"
+  },
   "ingredients": [
     {
-      "tag": "forge:crops/onion"
+      "tag": "extradelight:processed/chili"
     },
     {
-      "tag": "forge:crops/onion"
+      "tag": "extradelight:processed/garlic"
     },
     {
-      "tag": "forge:crops/onion"
-    },
-    {
-      "tag": "forge:crops/onion"
+      "tag": "extradelight:processed/onion"
     }
   ],
   "result": {
-    "item": "extradelight:pickled_onions_block_item"
+    "count": 4,
+    "item": "extradelight:hot_sauce_item"
   },
   "stage_ingredients": [
     {
@@ -33,6 +35,7 @@
   ],
   "stages": 2,
   "usedItem": {
+    "count": 4,
     "item": "minecraft:glass_bottle"
   }
 }

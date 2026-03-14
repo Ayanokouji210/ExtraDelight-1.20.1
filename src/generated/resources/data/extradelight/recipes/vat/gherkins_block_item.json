@@ -1,25 +1,25 @@
 {
   "type": "extradelight:vat",
+  "fluids": {
+    "amount": 250,
+    "fluid": "extradelight:vinegar_fluid"
+  },
   "ingredients": [
     {
-      "tag": "extradelight:processed/cabbage"
+      "tag": "forge:crops/cucumber"
     },
     {
-      "tag": "extradelight:processed/cabbage"
+      "tag": "forge:crops/cucumber"
     },
     {
-      "tag": "extradelight:processed/ginger"
+      "tag": "forge:crops/cucumber"
     },
     {
-      "tag": "extradelight:processed/garlic"
-    },
-    {
-      "tag": "forge:chili/powder"
+      "tag": "forge:crops/cucumber"
     }
   ],
   "result": {
-    "count": 2,
-    "item": "extradelight:kimchi_item"
+    "item": "extradelight:gherkins_block_item"
   },
   "stage_ingredients": [
     {
@@ -27,7 +27,7 @@
         "tag": "forge:salt"
       },
       "lid": false,
-      "time": 7000
+      "time": 24000
     },
     {
       "ingredient": [],
@@ -37,7 +37,6 @@
   ],
   "stages": 2,
   "usedItem": {
-    "count": 2,
-    "item": "minecraft:bowl"
+    "item": "minecraft:glass_bottle"
   }
 }

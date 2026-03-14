@@ -1,5 +1,9 @@
 {
   "type": "extradelight:vat",
+  "fluids": {
+    "amount": 1000,
+    "fluid": "minecraft:water"
+  },
   "ingredients": [
     {
       "tag": "forge:crops/soybean"
